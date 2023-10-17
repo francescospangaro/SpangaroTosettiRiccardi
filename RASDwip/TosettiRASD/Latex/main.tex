@@ -1,0 +1,43 @@
+\documentclass{article}
+
+\usepackage{titlesec}
+\usepackage{titlesec}
+\titleformat*{\section}{\Huge\bfseries}
+\titleformat*{\subsection}{\LARGE\bfseries}
+\titleformat*{\subsubsection}{\Large\bfseries}
+
+\usepackage{graphicx} % Required for inserting images
+
+\title{RASD}
+\author{Luca Tosetti}
+\date{October 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+    \subsection{Purpose}
+        The purpose of this document is to present a detailed description about the platform "CodeKataBattle". It provides functional and non-functional requirements necessary for the correct development of the platform, including use cases, features, possible interactions with the users and system eventual system constraints
+        \subsubsection{Goals}
+            \begin{itemize}
+                \item[] {\large\textbf{G1:}} Allow groups to deliver the solution to a certain battle to the platform.
+                \item[] {\large\textbf{G2:}} Allow Educators to create new tournaments, and within them many battles.
+                \begin{itemize}
+                    \item[] {\large\textbf{G2.1:}} Allow to create serveral battles by: uploading the "code kata", and setting several battle's features.
+                \end{itemize}
+                \item[] {\large\textbf{G3:}} Allow to the Educator, creator of a certain tournament, to grant to other collegues the permission to create battle within the tournament.
+                \item[] {\large\textbf{G4:}} Allow student to subscribe to a certain tournament through the platform by tournament's subscription deadline.
+                \item[] {\large\textbf{G5:}} Allow students to form groups to partecipate to a battle of a tournament, always respecting the constaints on the number of the people per group imposed by the Educator when creating the battle.
+                \item[] {\large\textbf{G6:}} Allow students to compete with each others through a scoring and ranking system.
+                \item[] {\large\textbf{G7:}} Allow Educator to, optionally, evaluate manually the work done from the students through the platform.
+                \item[] {\large\textbf{G8:}} Allow students to compete and confront with each others through a scoring, ranking system.
+                \item[] \begin{itemize}
+                    \item[] {\large\textbf{G8.1:}} Grant to every student in a tournament a score, which is the sum of all battle scores received in that tournament, calculated via automated and manual evaluation respectively made by the platform and Educator (creator of the battle).
+                    \item[] {\large\textbf{G8.2:}} Rewards students with badges, representing achievement reached by a student in a tournament.
+                    \item[] {\large\textbf{G8.3:}} Allow to Educators to create new badges, rules to obtain them and variables that represent information relevant for scoring. 
+                \end{itemize}
+            \end{itemize}
+\end{document}

@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net" modified="2023-10-17T15:34:59.236Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="kbWnF14cQTPz1ck7Gwj4" version="21.5.2" type="device">
+  <diagram id="3228e29e-7158-1315-38df-8450db1d8a1d" name="Page-1">
+    <mxGraphModel dx="2607" dy="1378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="21532" value="" style="ellipse;fillColor=#12AAB5;opacity=60;strokeColor=none;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="60" y="18.5" width="680" height="621.5" as="geometry" />
+        </mxCell>
+        <mxCell id="21533" value="" style="ellipse;fillColor=#e85642;opacity=60;strokeColor=none;html=1;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="460" y="18.5" width="660" height="621.5" as="geometry" />
+        </mxCell>
+        <mxCell id="21534" value="The World" style="text;fontSize=24;align=center;verticalAlign=middle;html=1;fontColor=#FFFFFF;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="240" y="250" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="21535" value="The Machine" style="text;fontSize=24;align=center;verticalAlign=middle;html=1;fontColor=#FFFFFF;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="730" y="250" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="21538" value="deliver_solution" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="540" y="431" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21541" value="join_battle" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="640" y="390" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21542" value="join_tournament" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="520" y="356" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21551" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="850" y="330" width="200" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21544" value="battle_creation" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="530" y="300" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21545" value="tournament_creation" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="625" y="250" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21546" value="invite_student" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="650" y="330" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21547" value="create_repository" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="770" y="60" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21548" value="send_link" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="900" y="130" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21549" value="analyze_sources" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="934.75" y="396" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21550" value="compute_score" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="934.75" y="431" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21553" value="&lt;font color=&quot;#ec9589&quot;&gt;&lt;b&gt;Evaluate commits&lt;/b&gt;&lt;/font&gt;" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="850" y="330" width="200" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21557" value="pull_latest_sources" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="935.5" y="361" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21558" value="update_score (Optional)" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="935.5" y="471" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21559" value="close_tournament" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="585" y="140" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21560" value="notify_students" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="750" y="490" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21561" value="assign_badges" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="980" y="240" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21562" value="badges_creation" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="540" y="200" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21563" value="solution_developing" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="230" y="140" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21564" value="fork_code" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="200" y="374" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21565" value="manual_evaluation" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="584.5" y="481" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21566" value="compute_rankings" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="820" y="560" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="heakESXaLEnIxY6wwFmp-21567" value="evaluate_mandatory_factors" style="text;align=center;html=1;fontColor=#FFFFFF;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="850" y="190" width="40" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
