@@ -1,0 +1,85 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{SpangaroRASD-v0.1}
+\author{Francesco Spangaro}
+\date{October 2023}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\section{Introduction}
+\subsection{Purpose}
+\subsubsection{Goals}
+\begin{description}
+    
+
+    %Educator's goals
+    \item[G1:] Allow educators to create new tournaments:
+        \item Educators have the possibility to create new tournaments. 
+            When creating a tournament, educators have the opportunity to create new badges. Badges have corresponding achievements, called "Rules", which are defined on badge creation. Badges are obtained by users on achievement completion. Obtained badges will be then displayed on the user's profile page.
+    \item[G2:] Allow educators to create new battles:
+            \item Educators have the possibility to define new battles within tournament they crated or in tournaments they have been granted permission to do so. When creating a new battle educators have to set different parameters:
+            \begin{itemize}
+                \item upload project description;
+                \item specify the programming language and build tool to utilize, including test cases and build automation scripts;
+                \item set minimum and maximum number of students per group;
+                \item set a registration deadline;
+                \item set a final submission deadline;
+                \item set additional configuration for scoring.
+            \end{itemize}
+            % Assumption: educators can access al tournaments and battles with view only permission
+    \item[G3:] Allow educators to administer different tournaments:
+        \item Educators can grant other colleagues permission to create new battles in their tournaments. Educators have the possibility to close their tournaments, thus, not letting students submit new answers to any battle defined in the closed tournament, nor letting their colleagues create new battles in that tournament. 
+        % Ask if rank visualization is a goal or a user-interface point 
+    \item[G4:] Allow educators to administer different battles:
+        \item Educators have the possibility, once a battle has expired, to manually evaluate through the platform each student's work, and then assign a corresponding score to each one of them, ranging from 0 to 100. 
+    %Students' goals
+    \item[G5:] Allow students to subscribe in tournaments:
+        \item Students subscribed to the platform have the possibility to subscribe to different tournaments, in which they plan to participate in.
+        % Assumption: to do anything, both students and educators must be already subscribed to the platform 
+    \item[G6:] Allow students to participate in battles:
+        \item Students can join battles within a set deadline. They can do so by themselves, by inviting somebody else or by accepting someone's else invite.
+        \begin{description}
+            \item[G6.1:] Allow students to form groups to participate with:
+                \item Students have the possibility to send out invitations to other students, so that they can form a group to participate with. Groups need to follow the guidelines specified by the battle creator for it to be accepted.
+            \item[G6.2:] Allow students to submit their answers:
+                \item When students have developed a solution to the battle, they can submit their answer to the platform. Groups are requested to send only one answer. Students can change their answer as they proceed, when uploading a new solution the older one is overwritten, since there can only be one answer for each battle. 
+            \item[G6.2:] Allow students to see their scores:
+                \item After each answer submission, a new score is assigned to the students. The score can be manually created by an educator or automatically assigned to the students by the platform. Students can see the scores obtained  %TODO
+                % Ask professor if score is computated each commit, not visualized, and then published after battle closing, or if students can actively see their scores as the battle progresses (par. 2, last line - par. 4, last line) 
+        \end{description}
+        \item[G7:] Let the students be notified on important events:
+            \item When a new tournament is created, all students subscribed to the platform are notified. A different notification will be sent when a new battle is created in a tournament they are subscribed to.
+            % ask if this goal is correct
+\end{description}
+\subsection{Scope}
+\subsubsection{Phenomena}
+\subsection{Definitions, acronyms, abbreviations}
+\subsection{Revision history}
+\subsection{Reference documents}
+\subsection{Document structure}
+
+\section{Overall description}
+\subsection{Product perspective}
+\subsection{Product functions}
+\subsection{User characteristics}
+\subsection{Assumptions, dependencies and constraints}
+
+\section{Specific requirements}
+\subsection{External interface requirements}
+\subsection{Functional requirements}
+\subsection{Performance requirements}
+\subsection{Design constraints}
+\subsection{Software system attributes}
+
+\section{Formal analysis using Alloy}
+
+\section{Effort spent}
+
+\section{References}
+
+
+\end{document}
