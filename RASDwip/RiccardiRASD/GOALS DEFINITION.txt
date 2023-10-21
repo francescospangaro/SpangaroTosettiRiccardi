@@ -1,0 +1,6 @@
+GOALS DEFINITION
+1) Educator can create and administrate (check and control) tournament and create and control battles 
+
+2) Students can join the turnament (By a group) and work on it's battles and accumulate points 
+
+3) Badges can be created by Educator and assigned to the students
