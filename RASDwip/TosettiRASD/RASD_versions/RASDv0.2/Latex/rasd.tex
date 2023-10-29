@@ -1,0 +1,347 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{hyperref} % Required for using links
+
+%Packages and instruction to change scale of sections', subsections' and subsubsections' heads
+\usepackage{titlesec}
+\usepackage{titlesec}
+\titleformat*{\section}{\Huge\bfseries}
+\titleformat*{\subsection}{\LARGE\bfseries}
+\titleformat*{\subsubsection}{\Large\bfseries}
+
+%Instruction used to create a new subsection level (subsubsubsection) in the document
+\titleclass{\subsubsubsection}{straight}[\subsection]
+%Instructions used to create a new counter for the subsubsubsections and create the command to invoke(use) them
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+
+%Instruction used to align the new section layer in a correct manner in the table of contents
+\makeatletter
+
+%Instructions to change the scale and font of the subsubsubsections' head
+\titleformat{\subsubsubsection}
+  {\normalfont\large\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%Instructions to create the subsubsubsections entries in the table of contents (included the dot line)
+\def\toclevel@subsubsubsection{4}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+
+%Instruction used to make link to part of the document using table of contents
+\makeatother
+
+%Instructions to set table of contents and sections depth to 4 layers
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+%Used in order to have more symbols for itemize lists
+\usepackage{pifont}
+
+%Used to make the header and footer of each document page
+\usepackage{fancyhdr}
+
+%Defines a new style of header and footer
+\fancypagestyle{IntroductionStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 1. INTRODUCTION}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+\fancypagestyle{OverallDescriptionStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 2. OVERALL DESCRIPTION}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+\fancypagestyle{SpecificRequirementsStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 3. SPECIFIC REQUIREMENTS}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+\fancypagestyle{FormalAnalysisAlloyStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 4. FORMAL ANALYSIS USING ALLOY}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+\fancypagestyle{EffortSpentStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 5. EFFORT}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+
+\graphicspath{ {images/} }
+
+\title{TosettiRASD-v0.1}
+\author{Francesco Spangaro - Tosetti Luca - Francesco Riccardi}
+\date{October 2023}
+
+\begin{document}
+
+\maketitle
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{politecnico-di-milano-logo.png}
+\end{figure}
+
+
+
+\tableofcontents
+
+\newpage
+
+\pagestyle{IntroductionStyle}
+
+\section{Introduction}
+    \subsection{Purpose}
+        The purpose of the CodeKataBattle platform is to create a friendly and enjoyable environment for students
+        to acquire new skills and improve the ones already owned in Software Development. This is done by allowing students to train and compete with each others by writing code in order to resolve problems. All of this under the supervision of educators who can challenge their students to take part to these competitions.
+        \subsubsection{Goals}
+            \begin{description}
+    
+
+            %Educator's goals
+    \item[G1:] \textit{\textbf{Allow educators to create new tournaments:}}
+        \begin{description}
+            \item Educators have the possibility to create new tournaments. 
+                When creating a tournament, educators have the opportunity to create new badges. Badges have corresponding achievements, called "Rules", which are defined on badge creation. Badges are obtained by users on achievement completion. Obtained badges will be then displayed on the user's profile page.
+        \end{description}
+    \item[G2:] \textit{\textbf{Allow educators to create new battles:}}
+        \begin{description}
+            \item Educators have the possibility to define new battles within tournament they crated or in tournaments      they have been granted permission to do so. When creating a new battle educators have to set different         parameters:
+            \begin{itemize}
+                \item upload project description;
+                \item specify the programming language and build tool to utilize, including test cases and build automation scripts;
+                \item set minimum and maximum number of students per group;
+                \item set a registration deadline;
+                \item set a final submission deadline;
+                \item set additional configuration for scoring.
+            \end{itemize}
+        \end{description}
+        % Assumption: educators can access al tournaments and battles with view only permission
+    \item[G3:] \textit{\textbf{Allow educators to administer different tournaments:}}
+        \begin{description}
+        \item Educators can grant other colleagues permission to create new battles in their tournaments. Educators have the possibility to close their tournaments, thus, not letting students submit new answers to any battle defined in the closed tournament, nor letting their colleagues create new battles in that tournament. 
+        \end{description}
+        % Ask if rank visualization is a goal or a user-interface point 
+    \item[G4:] \textit{\textbf{Allow educators to administer different battles:}}
+        \begin{description}
+        \item Educators have the possibility, once a battle has expired, to manually evaluate through the platform each student's work, and then assign a corresponding score to each one of them, ranging from 0 to 100. 
+        \end{description}
+    %Students' goals
+    \item[G5:] \textbf{\textit{Allow students to subscribe in tournaments:}}
+        \begin{description}
+        \item Students subscribed to the platform have the possibility to subscribe to different tournaments, in which they plan to participate in.
+        \end{description}
+        % Assumption: to do anything, both students and educators must be already subscribed to the platform 
+    \item[G6:] \textbf{\textit{Allow students to participate in battles:}}
+        \begin{description}
+        \item Students can join battles within a set deadline. They can do so by themselves, by inviting somebody else or by accepting someone's else invite.
+        \begin{description}
+            \item[G6.1:] \textbf{\textit{Allow students to form groups to participate with:}}
+                \item Students have the possibility to send out invitations to other students, so that they can form a group to participate with. Groups need to follow the guidelines specified by the battle creator for it to be accepted.
+            \item[G6.2:] \textit{\textbf{Allow students to submit their answers:}}
+                \item When students have developed a solution to the battle, they can submit their answer to the platform. Groups are requested to send only one answer. Students can change their answer as they proceed, when uploading a new solution the older one is overwritten, since there can only be one answer for each battle. 
+            \item[G6.3:] \textit{\textbf{Allow students to see their scores:}}
+                \item After each answer submission, a new score is assigned to the students. The score can be manually created by an educator or automatically assigned to the students by the platform. Students can see the scores obtained  %TODO
+                % Ask professor if score is computated each commit, not visualized, and then published after battle closing, or if students can actively see their scores as the battle progresses (par. 2, last line - par. 4, last line) 
+        \end{description}
+        \end{description}
+        \item[G7:] \textit{\textbf{Let the students be notified on important events:}}
+            \begin{description}
+            \item When a new tournament is created, all students subscribed to the platform are notified. A different notification will be sent when a new battle is created in a tournament they are subscribed to.
+            % ask if this goal is correct
+            \end{description}
+    \end{description}
+\subsection{Scope}
+    CodeKataBattle (CKB) is an easy-to-use platform, which aims to allow educators to propose homework and/or lessons in a new and fresh way to involve students more in acquiring and improving software developing skills. To do that, CKB offers educators the possibility to open several tournaments. Each tournament is composed by several battles in which students can compete with each other, individually or in groups. 
+    In order to offer all of this CKB relies on the external platform GitHub. GitHub will take the role of a "bridge" between CKB platform and students, allowing them to upload their solutions on it. These solutions will be then taken by the CKB platform from GitHub and used to evaluate student's score in the battle for which they uploaded a specific solution. 
+\subsubsection{Phenomena}
+    Events that take place either in the real world, in machine world or in both. Used to describe respectively what cannot be observed by the machine, real world and event that connects the two.
+    \subsubsubsection{World phenomena}
+        Phenomena events that take place in the real world and are not observable by the machine
+        \begin{enumerate}
+            \item[\textbf{WP1:}] Students fork the GitHub repository of which they received a link by the platform.
+            \item[\textbf{WP2:}] Student write code on his personal device.
+            \item[\textbf{WP3:}] Students choose which tournament to join
+            \item[\textbf{WP4:}] Students choose which battle to join in a tournament precedently joined.
+            \item[\textbf{WP5:}] Student choose his teammates for a battle.
+            \item[\textbf{WP6:}] Educator choose whether and which colleagues to allow access to one of his tournaments
+            \item[\textbf{WP7:}] Student subscribed to a battle wait for its start (registration deadline expiration)
+            \item[\textbf{WP8:}] Educator decide to close a tournament
+        \end{enumerate}
+
+    \subsubsubsection{Shared phenomena}
+        \begin{itemize}
+            \item Phenomena controlled by the world and observed by the machine
+            \begin{enumerate}
+                \item[\ding{228}] Student related phenomena 
+                \begin{enumerate}
+                    \item[\textbf{SP1:}] Student registration to the platform
+                    \item[\textbf{SP2:}] Student log in to the platform
+                    \item[\textbf{SP3:}] Student subscribe to a tournament within a deadline
+                    \item[\textbf{SP4:}] Student invite other students to form a team
+                    \item[\textbf{SP5:}] Student accept an invite from another student and join its group.
+                    \item[\textbf{SP6:}] Student or a group of students join a battle in a tournament they are subscribed to within a deadline.
+                    \item[\textbf{SP7:}] Student upload a new software solution for the battle's problem, in which he's partecipating
+                    \item[\textbf{SP8:}] Student sees its, and others badges visualizing its or others profile page
+                    \item[\textbf{SP9:}] Student or a group of it, push a new commit on GitHub repository
+                \end{enumerate}
+                \item[\ding{228}] Educator related phenomena
+                \begin{enumerate}
+                    \item[\textbf{SP10}:] Educator create a new tournament
+                    \item[\textbf{SP11}:] Educator grant access to his other collegues to create new battle within a tournament he created
+                    \item[\textbf{SP12}:] Educator create a new battle
+                    \item[\textbf{SP13}:] Educator set battle's setting while creating one of them
+                    \item[\textbf{SP14}:] Educator manually evaluate the work done by students in a certain battle of a certain tournament during battle's consolidation phase
+                    \item[\textbf{SP15}:] Educator closes a tournament
+                    \item[\textbf{SP16}:] Educator defines new badges achievable in a tournament by students while creating it
+                    \item[\textbf{SP17}:] Educator sees collected badges of a student by visualizing its profile page
+                \end{enumerate}
+            \end{enumerate} 
+
+            \item Phenomena controlled by the machine and observed by the World.
+            \begin{enumerate}
+                \item[\ding{228}] Student related phenomena
+                \begin{enumerate}
+                    \item[\textbf{SP18}:] Student registered to the platform gets notified when a new tournament is created
+                    \item[\textbf{SP19}:] Student subscribed to a tournament gets notified of upcoming battle created in that tournament
+                    \item[\textbf{SP20}:] Student receive from the platform a invite notification in order to join a group of students to join a battle.
+                    \item[\textbf{SP21}:] Platform, when a battle's registration deadline expires, send every student that joined the battle a link to the GitHub repository created by the platform itself.
+                    \item[\textbf{SP22}:] Platform at the end of each battle updates students' score in the tournament in which battle took place allowing all students and educators to see them
+                    \item[\textbf{SP23}:] Students get notified when a tournament is closed
+                \end{enumerate}
+                \item[\ding{228}] Educator related phenomena
+                \begin{enumerate}
+                    \item[\textbf{SP24}:] Educator receive a notification when allowed by a collegue to access its collegue's tournament.
+                    \item[\textbf{SP25}:] Educator gets notified when submission deadline of solution for a battle expires, and start the consolidation phase.
+                \end{enumerate}
+            \end{enumerate}
+        \end{itemize}
+
+    \subsubsubsection{Machine phenomena}
+        Phenomena events that take place in the machine world and are not observable from the real world
+        \begin{enumerate}
+            \item[\textbf{MP1:}] The platform creates a GitHub repository containing the code kata when registration deadline of a battle expires.
+            \item[\textbf{MP2:}] The platform when notified by GitHub API pulls the latest sources of the repository of a battle
+            \item[\textbf{MP3:}] The platform analyzes the sources, by running tests on them.
+            \item[\textbf{MP4:}] The platform calculate the battle score of a team based on the executables uploaded by students for a battle. Score is automatically updated when the platform receive notification from GitHub about new push actions.
+            \item[\textbf{MP5:}] The platform at the end of each battle of a tournament, compute the tournament rank of each student in that tournament.
+            \item[\textbf{MP6:}] The platform automatically register badges acquirement from a student, when that student satisfy the rules to obtain them.
+        \end{enumerate}
+    
+\subsection{Definitions, acronyms, abbreviations}
+    \subsubsection{Definitions}
+        \textit{GitHub Repository} $\rightarrow$ A place on the GitHub platform where a user can store code, files and each file's revision history.
+        \\ \\
+        \textit{Registration deadline} $\rightarrow$ Maximum time within which a student can subscribe to a battle or to a tournament.
+        \\ \\
+        \textit{Submission deadline} $\rightarrow$ Maximum time within which a student, or a group of student, can upload their solution to a battle problem
+        \\ \\
+        \textit{Code Kata} $\rightarrow$ The word kata refers to a karate exercise in which a form gets repeated many time, making little improvements in each tentative.
+        In this context it's used to express the fact that the code need to be developed multiple times to reach a optimal solution to the battle problem.
+        \\ \\
+        \textit{Consolidation phase} $\rightarrow$ Phase started at the end of a battle, used to consolidate the score of each student in the battle by eventually a manual evaluation of the students' code by an Educator.
+        \\ \\
+        \textit{View-only mode} $\rightarrow$ An abstract modality (not an implementation detail) in which educator can be if he access to a tournament in which they have no rights to create new battles
+        \\ \\
+        \textit{Modify-enabled mode} $\rightarrow$ An abstract modality (not an implementation detail) in which educator can be if he access to a tournament in which he go granted the access by tournament's creator, and thus can create new battles.
+        
+
+    \subsubsection{Acronyms}
+        \textit{API} $\rightarrow$ Application Programming Interface, indicates on demand procedure which supply a specific task
+        \\ \\
+        \textit{CKB} $\rightarrow$ CodeKataBattle, the name of the platform described in this document
+        \\ \\
+        \textit{IT} $\rightarrow$ Used as acronym for Information Technology which identify something, generally a computing or communication hardware, with information storage capability and closely related to the informatic world.
+        
+
+\subsection{Revision history}
+    \begin{itemize}
+        \item **Placeholder data**: version 1.0
+        \item **Placeholder data**: version 1.1
+        \item **Placeholder data**: version 1.2
+        \item **Placeholder data**: version 2.0
+        \item **Placeholder data**: version 2.1
+    \end{itemize}    
+\subsection{Reference documents}
+    GitHub references:
+    \begin{itemize}
+        \item Official documentation to get started with GitHub: $\rightarrow$ \url{https://docs.github.com/en/get-started/quickstart}
+        \item Official documentation about fork process $\rightarrow$ \url{https://docs.github.com/en/get-started/quickstart/fork-a-repo}
+        \item Official documentation about GitHub actions $\rightarrow$ \url{https://docs.github.com/en/actions}
+    \end{itemize}
+\subsection{Document structure}
+    \begin{itemize}
+        \item \textbf{\textit{Section 1: Introduction}} \\
+        This section introduces the problem and the platform/application to be developed in order to resolve it. It describes the major purpose of the project, every one of his goals, the analysis of the its domain and every world, shared and machine phenomena associated with it.
+        In addition in this section are inserted the definitions, acronysm and abbreviations used in this ddocument, including even it's revision history and refereced documents or web pages.
+        \item \textbf{\textit{Section 2: Overall description}} \\
+        This section gives an overall description of the project and all the interactions that could occur between the platform and the final users (Students and educators). To do this, it will include different possibile scenarios that could happen, the different actors involved in the platform usage and all the assumptions, dependencies and eventual constraints that have to be considered in the development of the platform
+        \item \textbf{\textit{Section 3: Specific Requirements}} \\
+        This section is the most technical one, it contains more precise descriptions of each scenario called use cases. It describe the several functional and performance requirements of the project and their map to the goals of the project.
+        Finally it contains also all the design constraint and system attributes that must be followed/guaranteeded while developing the platform.
+        \item \textbf{\textit{Section 4: Formal analysis using allo}}y \\
+        In this setion can be found a formal description of the platform/application. The formal description is done using the formal language Alloy (referenced in section 1)
+        \item \textbf{\textit{Section 5: Effor spent}} \\
+        A simple section in which are included all the information about the time requested by each group member to complete this document, and it's division by each section of the document.
+    \end{itemize}
+
+\newpage
+
+\pagestyle{OverallDescriptionStyle}
+
+\section{Overall description}
+    \subsection{Product perspective}
+        The following section contains the UML diagram of the platform and a list of meaningful scenarios in which the platform can be used, how and when users can interact with it.
+        \subsubsection{Scenarios}
+        \subsubsection{Class diagram}
+\subsection{Product functions}
+\subsection{User characteristics}
+    \subsection{Assumptions, dependencies and constraints}
+        \begin{itemize}
+            \item[\textbf{D1:}] Students and educators have access to internet while using the platform
+            \item[\textbf{D2:}] Students and educators have their own IT device to connect to the application
+            \item[\textbf{D3:}] Students and educators have to be subscribed to the platform in order to use its features
+            \item[\textbf{D4:}] Students know how to use GitHub actions
+            \item[\textbf{D5:}] Students know how to fork a repository in GitHub
+            \item[\textbf{D6:}] A student can join a battle only if subscribed to the tournament in which that battle take place
+            \item[\textbf{D7:}] GitHub platform offers reliable services through its API allowing to CKB platform to always get notified when new code is uploaded by students.
+            \item[\textbf{D8:}] Educator know how to create new badges, and new rules to obtain them, for the tournaments
+            \item[\textbf{D9:}] Time information about registration and submission deadlines for tournaments and battles are always correct.
+            \item[\textbf{D10:}] Code written by students can not make the platform crash while testing it.
+            \item[\textbf{D11:}] Educators upload ,when creating a battle, some correct, meaningful and faultproof test cases and automation scripts.
+            \item[\textbf{D12:}] Students score is always correctly calculated and meaningful.
+            \item[\textbf{D13:}] Educators access always access a tournament either in view-only mode, if not invited by the tournament's creator, or in modify-enabled mode if the tournament's creator has granted him the access.
+            \textbf{(??? Verificare se potrebbe essere un goal piuttosto che una assumption ???)}
+        \end{itemize}
+
+\section{Specific requirements}
+\subsection{External interface requirements}
+\subsection{Functional requirements}
+\subsection{Performance requirements}
+\subsection{Design constraints}
+\subsection{Software system attributes}
+
+\section{Formal analysis using Alloy}
+
+\section{Effort spent}
+
+\section{References}
+
+
+\end{document}
