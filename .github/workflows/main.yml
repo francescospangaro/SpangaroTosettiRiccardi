@@ -3,13 +3,27 @@ on: [push]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
-      - name: Compile document
+      - name: Compile RASD document
+      timeout-minutes: 30
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex
-      - name: Upload PDF file
+          root_file: RASDwip/main.tex
+      - name: Upload RASD PDF file
+      timeout-minutes: 30
         uses: actions/upload/artifact@v3            
         with:
-          name: PDF
-          path: main.pdf
+          name: PDF_RASD
+          path: RASD_main.pdf
+      - name: Compile DD document
+      timeout-minutes: 30
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: DDwip/main.tex
+      - name: Upload DD PDF file
+      timeout-minutes: 30
+        uses: actions/upload/artifact@v3            
+        with:
+          name: PDF_DD
+          path: DD_main.pdf    
