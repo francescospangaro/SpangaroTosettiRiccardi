@@ -1,4 +1,4 @@
-name: LaTeX actions
+name: LaTeX RASD actions
 on: [push]
 jobs:
   build:
@@ -17,13 +17,4 @@ jobs:
         uses: actions/upload-artifact@v3            
         with:
           name: PDF_RASD
-          path: RASDwip/RASD_main.pdf
-      - name: Compile DD document
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: DDwip/main.tex
-      - name: Upload DD PDF file
-        uses: actions/upload-artifact@v3            
-        with:
-          name: PDF_DD
-          path: DDwip/DD_main.pdf    
+          path: RASDwip/RASD_main.pdf  
