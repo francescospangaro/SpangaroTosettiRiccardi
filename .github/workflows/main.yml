@@ -6,23 +6,19 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Compile RASD document
-      timeout-minutes: 30
         uses: xu-cheng/latex-action@v3
         with:
           root_file: RASDwip/main.tex
       - name: Upload RASD PDF file
-      timeout-minutes: 30
         uses: actions/upload-artifact@v3            
         with:
           name: PDF_RASD
           path: RASD_main.pdf
       - name: Compile DD document
-      timeout-minutes: 30
         uses: xu-cheng/latex-action@v3
         with:
           root_file: DDwip/main.tex
       - name: Upload DD PDF file
-      timeout-minutes: 30
         uses: actions/upload-artifact@v3            
         with:
           name: PDF_DD
