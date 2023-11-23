@@ -1,25 +1,29 @@
 name: LaTeX actions
 on: [push]
 jobs:
-  build_latex:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: "write"
+      pull-requests: "read"
     timeout-minutes: 30
     steps:
       - name: Compile RASD document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: /RASDwip/main.tex
+          root_file: RASDwip/main.tex
       - name: Upload RASD PDF file
         uses: actions/upload-artifact@v3            
         with:
           name: PDF_RASD
-          path: RASD_main.pdf
+          path: RASDwip/RASD_main.pdf
       - name: Compile DD document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: /DDwip/main.tex
+          root_file: DDwip/main.tex
       - name: Upload DD PDF file
         uses: actions/upload-artifact@v3            
         with:
           name: PDF_DD
-          path: DD_main.pdf    
+          path: DDwip/DD_main.pdf    
