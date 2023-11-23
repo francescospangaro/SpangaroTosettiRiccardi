@@ -9,14 +9,15 @@ jobs:
       pull-requests: "read"
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v3
-      - run: cd RASDwip
-      - uses: xu-cheng/latex-action@v3            
+      - name: Setup repo 
+        uses: actions/checkout@v3
+      - name: Compile document
+        uses: xu-cheng/latex-action@v3            
         with:
           root_file: main.tex
           working_directory: RASDwip
-      - run: cp main.pdf RASD_main.pdf
-      - uses: actions/upload-artifact@v3
+      - name: Upload file
+        uses: actions/upload-artifact@v3
         with:
           name: PDF
           path: RASD_main.pdf
