@@ -1,0 +1,87 @@
+RASD modify
+Scenari possibili:
+
+1)Utente si registra alla piattaforma (magari diviso in 2 separati, uno per lo studente e uno per il docente) 
+2)Educator crea un nuovo torneo (con annessa spiegazione dei badge) 
+3)Educator crea una nuova battaglia (con spiegazione dei parametri da settare) 
+4)studente entra in una battaglia (con spiegazione della formazione dei gruppi) 
+5)studente carica una nuova soluzione sulla repo di forkata di GitHub	
+	-secondo me manca il sistema analizza la soluzione appena pullata dall'utente e compila i test sull'eseguibile per calcolare ed 	aggiornare le score del team
+	(Mandatory automated evaluation)
+6)Studente carica una soluzione dopo la submissiom deadline della battaglia (caso di errore) 
+7)Educator chiude un torneo (Con anessa notifica e propagazione punteggi)
+8)Educator valuta manualmente lo score in una battaglia dopo la sua fine
+(Optional manual evaluation)
+9)Studente visualizza i propri risultati nei tornei in cui ha partecipato e le proprie badges. 
+
+
+PHENOMENA:
+
+World phenomena
+Phenomena events that take place in the real world and are not observable by the machine
+
+WP1: Students fork the GitHub repository of which they received a link by the platform.
+WP2: Student write code on his personal device.
+WP3: Students choose which tournament to join
+WP4: Students choose which battle to join in a tournament precedently joined.
+WP5: Student choose his teammates for a battle.
+WP6: Educator choose whether and which colleagues to allow access to one of his tournaments
+WP7: Student subscribed to a battle wait for its start (registration deadline expiration)
+WP8: Educator decide to close a tournament
+
+Shared phenomena
+Phenomena controlled by the world and observed by the machine
+
+--Student related phenomena
+SP1: Student registration to the platform
+SP2: Student log in to the platform
+SP3: Student subscribe to a tournament within a deadline
+SP4: Student invite other students to form a team
+SP5: Student accept an invite from another student and join its group or reject the invite.
+---->Student reject an invite from another student 
+SP6: Student or a group of students join a battle in a tournament they are subscribed to within a deadline
+SP7: Student upload a new software solution for the battle’s problem, in which he’s partecipating
+SP8: Student sees its own and others badges visualizing its or others profile page
+--> Split the phenomena in two different phenomenas:
+----SP8.0 Student sees that a member of its group have uploaded a new software solution
+----SP8.1 Student can see his own and other students' profile page, with the tournament which they have partecipated and also the badges they -	   	  have achived throughout their careers
+SP9: Student or a group of it, push a new commit on GitHub repository
+
+--Educator related phenomena
+SP10: Educator create a new tournament 
+---> and set the number of max and min members of the group 
+SP11: Educator grant access to his other collegues to create new battle within a tournament he created
+SP12: Educator create a new battle
+SP13: Educator set battle’s setting while creating one of them
+SP14: Educator manually evaluate the work done by students in a certain battle of a certain tournament during battle’s consolidation phase
+SP15: Educator closes a tournament
+SP16: Educator defines new badges achievable in a tournament by students while creating it
+SP17: Educator sees collected badges of a student by visualizing its profile page
+
+
+Phenomena controlled by the machine and observed by the World.
+
+-- Student related phenomena
+SP18: Student registered to the platform gets notified when a new tournament is created
+SP19: Student subscribed to a tournament gets notified of upcoming battle created in that tournament
+SP20: Student receive from the platform a invite notification in order to join a group of students to join a battle.
+SP21: Platform, when a battle’s registration deadline expires, send every student that joined the battle a link to the GitHub repository created by the platform itself.
+SP22: Platform at the end of each battle updates students’ score in the tournament in which battle took place allowing all students and
+educators to see them
+SP23: Students get notified when a tournament is closed
+
+--Educator related phenomena
+SP24: Educator receive a notification when allowed by a collegue to access its collegue’s tournament.
+SP25: Educator gets notified when submission deadline of solution for a battle expires, and start the consolidation phase.
+
+Machine phenomena
+Phenomena events that take place in the machine world and are not observable from the real world
+MP1: The platform creates a GitHub repository containing the code kata when registration deadline of a battle expires.
+MP2: The platform when notified by GitHub API pulls the latest sources of the repository of a battle
+MP3: The platform analyzes the sources, by running tests on them.
+MP4: The platform calculate the battle score of a team based on the executables uploaded by students for a battle. Score is automatically updated when the platform receive notification from GitHub about new push actions.
+MP5: The platform at the end of each battle of a tournament, compute the tournament rank of each student in that tournament.
+MP6: The platform automatically register badges acquirement from a student, when that student satisfy the rules to obtain them.
+
+---> machine control if there is the minimum members of partecipant in a group
+
