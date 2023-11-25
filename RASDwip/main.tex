@@ -103,7 +103,7 @@
 
 \begin{figure}[h]
     \centering
-    %\includegraphics[scale=0.5]{politecnico-di-milano-logo.png}
+    \includegraphics[scale=0.5]{politecnico-di-milano-logo.png}
 \end{figure}
 
 
@@ -436,7 +436,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Sign-up BPMN}
-                \label{fig:enter-label}
+                \label{fig:signUpBPMN}
             \end{figure}
 
             \item \textbf{Visualize student's profile:} Let an user (either a student or an educator) to visualize the profile page of a specific student.
@@ -444,7 +444,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Profile visualization BPMN}
-                \label{fig:enter-label}
+                \label{fig:profileVisualizationBPMN}
             \end{figure}
         \end{itemize}
 
@@ -455,7 +455,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Student's tournament subscription BPMN}
-                \label{fig:enter-label}
+                \label{fig:studTournamentSubBPMN}
             \end{figure}
 
             \item \textbf{Student join a battle:} Let student subscribed to a tournament, to search battle in it, according to some parameters (programming language requested, expiration date, difficulty, etc...) and join it alone or in a group.
@@ -463,7 +463,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Student's battle joining BPMN}
-                \label{fig:enter-label}
+                \label{fig:studBattleJoinBPMN}
             \end{figure}
 
             \item \textbf{Student gets notified of new events:} Notify the student about new tournaments created, if signed to the platform, and new upcoming battle that take place in tournament in which he has joined.
@@ -471,7 +471,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Student notification BPMN}
-                \label{fig:enter-label}
+                \label{fig:studNotificationBPMN}
             \end{figure}
             
             \item \textbf{Student's solutions get evaluated:} Let student, who connect to their forked repository on GitHub, to upload his solution and evaluate it according to some parameters.
@@ -479,7 +479,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Student's solutions evaluation BPMN}
-                \label{fig:enter-label}
+                \label{fig:studSolEvalBPMN}
             \end{figure}
 
             \item \textbf{Student form a group for a battle:} Let student the possibility to form a group with other student in order to face a battle, through invite messages.
@@ -487,7 +487,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Formation of a group BPMN}
-                \label{fig:enter-label}
+                \label{fig:groupFormationBPMN}
             \end{figure}
         \end{itemize}
 
@@ -498,7 +498,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Tournament's creation/closing BPMN}
-                \label{fig:enter-label}
+                \label{fig:TournamentCreationClosingBPMN}
             \end{figure}
 
             \item \textbf{Educator grant access to a tournament:} Let the educator the possibility to grant the access to one of his tournaments to a collegue.
@@ -506,7 +506,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Grant access to tournament BPMN}
-                \label{fig:enter-label}
+                \label{fig:accessGrantTournamentBPMN}
             \end{figure}
 
             \item \textbf{Educator notified of battle's end:} Educator gets notified about the end of a battle of one of his tournaments, letting him the possibility to manually evaluate the students' solutions.
@@ -514,7 +514,7 @@
                 \centering
                 %\includegraphics{}
                 \caption{Ending of a battle BPMN}
-                \label{fig:enter-label}
+                \label{fig:battleEndingBPMN}
             \end{figure}
         \end{itemize}
 \subsection{User characteristics}
@@ -539,6 +539,38 @@
 \section{Specific requirements}
 \subsection{External interface requirements}
 \subsection{Functional requirements}
+    \subsubsection{Requirements}
+        \subsubsection{Use case diagrams}
+            \begin{itemize}
+                \item \underline{\large{\textbf{Student}}}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramStudent.png}
+                        \caption{Student use case diagram}
+                        \label{fig:studentUseCaseDiagram}
+                    \end{figure}
+                    
+                    N.B: The repository citated in this diagram, on which the student upload their solution, it's not
+                    part of the platform. The system, in fact, relies on a third party service (GitHub) to handle the repository.
+                    This use case was specified in order to better clarify the tight interaction between the system and the student trought the GitHub service.
+                \item \underline{\large{\textbf{Educator}}}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{Educator use case diagram}
+                        \label{fig:educatorUseCaseDiagram}
+                    \end{figure}
+                \item \underline{\large{\textbf{GitHub}}}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{GitHub use case diagram}
+                        \label{fig:gitHubUseCaseDiagram}
+                    \end{figure}
+                
+            \end{itemize}
+        \subsubsection{Use cases w/ sequence diagrams}
+        \subsubsection{Traceability matrix}
 \subsection{Performance requirements}
 \subsection{Design constraints}
 \subsection{Software system attributes}
