@@ -11,17 +11,19 @@ jobs:
     steps:
       - name: Setup repo 
         uses: actions/checkout@v3
+      
+      
       - name: Compile RASD document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex
+          root_file: RASD.tex
           working_directory: RASDwip
       
     
       - name: Compile DD document
         uses: xu-cheng/latex-action@v3            
         with:
-          root_file: main.tex
+          root_file: DD.tex
           working_directory: DDwip
       - name: Upload DD file
         uses: actions/upload-artifact@v3
@@ -41,7 +43,7 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with: 
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "nightly"
+          automatic_release_tag: "pre release"
           prerelease: true
           title: "PDFs preRelease"
           files: |
