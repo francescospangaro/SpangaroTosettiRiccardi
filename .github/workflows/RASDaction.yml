@@ -11,13 +11,39 @@ jobs:
     steps:
       - name: Setup repo 
         uses: actions/checkout@v3
-      - name: Compile document
+      - name: Compile RASD document
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex
           working_directory: RASDwip
-      - name: Upload file
+      
+    
+      - name: Compile DD document
+        uses: xu-cheng/latex-action@v3            
+        with:
+          root_file: main.tex
+          working_directory: DDwip
+      - name: Upload DD file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: RASDwip/main.pdf 
+          path: DDwip/DD.pdf 
+      
+    
+      - name: Upload RASD file
+        uses: actions/upload-artifact@v3
+        with:
+          name: PDF
+          path: RASDwip/RASD.pdf 
+  
+   
+      - name: create PreRelease
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with: 
+          repo_token:
+          automatic_release_tag: "nightly"
+          prerelease: true
+          title: "PDFs preRelease"
+          files: |
+            RASDwip/RASD.pdf
+            DDwip/DD.pdf
