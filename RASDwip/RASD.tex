@@ -90,7 +90,13 @@
 %Change space between table columns
 \setlength{\tabcolsep}{18pt}
 
+%Command used to create a new column type whose background is lightgray colored
+\usepackage{xcolor,colortbl}
+\definecolor{LightGray}{gray}{0.85}
+\newcolumntype{g}{>{\columncolor{LightGray}}c}
 
+
+%Set the default path of images
 \graphicspath{ {images/} }
 
 \title{TosettiRASD-v0.1}
@@ -260,21 +266,32 @@
     
 \subsection{Definitions, acronyms, abbreviations}
     \subsubsection{Definitions}
-        {\renewcommand{\arraystretch}{1.5}%
+        {\renewcommand{\arraystretch}{1.5}
+            %\textwidth used to set table's width according to text's width of the page
+            %">{\raggedright\arraybackslash} c" used to align to the right the column c
+            %"X" column tag creates a paragraph-like column whose width automatically expands so that the declared width of the environment is filled
             \begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
                 \hline 
                 \textbf{Term} & \textbf{Definition} \\
                 \hline 
                 
-                \endfirsthead
+                \endfirsthead   %Everything above is used as "head" (first row) of
+                                %the table in the page where it is placed
 
                 \hline 
                 \textbf{Term} & \textbf{Definition} \\
                 \hline 
 
-                \endhead
-                \endfoot
-                \endlastfoot
+                \endhead    %Everything above is used as "head" (first row) of the
+                            %splitted parts of the table in the pages different from
+                            %the one in which the table was originally placed
+                
+                \endfoot    %Everything above is used as "foot" (last row) of the
+                            %splitted parts of the table in the pages different from
+                            %the last one in which the table appear
+
+                \endlastfoot    %Everything above is used as "foot" (last row) of the
+                                %table in the page where it appears last.
     
                 \textit{GitHub Repository} & $\rightarrow$ A place on the GitHub platform where a user can store code, files and each file's revision history. \\
                 \textit{Registration deadline} & $\rightarrow$ Maximum time within which a student can subscribe to a battle or to a tournament. \\
@@ -563,13 +580,261 @@
                 \item \underline{\large{\textbf{GitHub}}}
                     \begin{figure}[H]
                         \centering
-                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramGitHub}
                         \caption{GitHub use case diagram}
                         \label{fig:gitHubUseCaseDiagram}
                     \end{figure}
                 
             \end{itemize}
         \subsubsection{Use cases w/ sequence diagrams}
+            \begin{enumerate}
+                \item[\textbf{1.}] \textbf{Student sign up to the platform}
+
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & Student sign up \\
+                        \hline
+                        \textbf{ID} & UC.1 \\
+                        \hline
+                        \textbf{Actors} & Unregistered student \\
+                        \hline
+                        \textbf{Entry condition} & Student want to register to the platform \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                \item[1.] Student opens CKB platform
+                                                \item[2.] Student presses the sign-up button
+                                                \item[3.] Student fills the form with all the required informations (name, surname, nickname
+                                                        attended school, email, password, ...), accepts the "Terms \& Conditions" and finally
+                                                        clicks on a button to confirm.
+                                                \item[4.] CKB platform validates the personal information inserted by the student.
+                                                \item[5.] CBK platform display a confirmation message.
+                                                \item[6.] CKB platform send an email notification to the student regarding the registration outcome
+                                            \end{enumerate}   \\
+                        \hline
+                        \textbf{Exit condition} & Student's account is created, and its data are saved into the system\\
+                        \hline
+                        \textbf{Exceptions} &     \begin{itemize}
+                                            \item[4.1] CKB platform isn't able to validate student registration data (mail already taken, attended school non existings, ...)
+                                            \begin{itemize}
+                                                \item[$\rightarrow$] Unregistered student gets notified of the registration failure throught an error message
+                                            \end{itemize} 
+                                        \end{itemize}
+                        
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{Student sign up sequence diagram}
+                        \label{fig:StudentSignUpSeqDiagram}
+                    \end{figure}
+                    
+                
+                \item[\textbf{2.}] \textbf{Educator sign up to the platform}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & Educator sign up \\
+                        \hline
+                        \textbf{ID} & UC.2 \\
+                        \hline
+                        \textbf{Actors} & Unregistered educator \\
+                        \hline
+                        \textbf{Entry condition} & Educator want to register to the platform \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                \item[1.] Educator opens CKB platform
+                                                \item[2.] Educator presses the sign-up button
+                                                \item[3.] Educator fills the form with all the required informations (name, surname, nickname
+                                                        school in which teaches, istitutional email, password, ...), accepts the "Terms \& Conditions" and finally
+                                                        clicks on a button to confirm.
+                                                \item[4.] CKB platform validates the personal information inserted by the student.
+                                                \item[5.] CBK platform display a confirmation message.
+                                                \item[6.] CKB platform send an email notification to the educator regarding the registration outcome
+                                            \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} & Student's account is created, and its data are saved into the system \\
+                        \hline
+                        \textbf{Exceptions} &     \begin{itemize}
+                                                    \item[4.1] CKB platform isn't able to validate educator registration data (mail already taken, school's details not correct, ...)
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] Unregistered educator gets notified of the registration failure throught an error message
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{Educator sign up sequence diagram}
+                        \label{fig:EducatorSignUpSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{3.}] \textbf{Educator creates a new tournament}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & \\
+                        \hline
+                        \textbf{ID} & \\
+                        \hline
+                        \textbf{Actors} & \\
+                        \hline
+                        \textbf{Entry condition} & \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] 
+                                                        \item[2.] 
+                                                        \item[3.] 
+                                                        \item[4.] 
+                                                        \item[5.] 
+                                                        \item[6.] 
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} &  \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[N.N] 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] 
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:EducatorSignUpSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{4.}] \textbf{Educator creates new badges}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & \\
+                        \hline
+                        \textbf{ID} & \\
+                        \hline
+                        \textbf{Actors} & \\
+                        \hline
+                        \textbf{Entry condition} & \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] 
+                                                        \item[2.] 
+                                                        \item[3.] 
+                                                        \item[4.] 
+                                                        \item[5.] 
+                                                        \item[6.] 
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} &  \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[N.N] 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] 
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:EducatorSignUpSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{5.}] \textbf{Educator creates a new battle}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & \\
+                        \hline
+                        \textbf{ID} & \\
+                        \hline
+                        \textbf{Actors} & \\
+                        \hline
+                        \textbf{Entry condition} & \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] 
+                                                        \item[2.] 
+                                                        \item[3.] 
+                                                        \item[4.] 
+                                                        \item[5.] 
+                                                        \item[6.] 
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} &  \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[N.N] 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] 
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:EducatorSignUpSeqDiagram}
+                    \end{figure}
+            \end{enumerate}
         \subsubsection{Traceability matrix}
 \subsection{Performance requirements}
 \subsection{Design constraints}
