@@ -99,7 +99,7 @@
 %Set the default path of images
 \graphicspath{ {images/} }
 
-\title{TosettiRASD-v0.1}
+\title{RASD-v0.5}
 \author{Francesco Spangaro - Tosetti Luca - Francesco Riccardi}
 \date{October 2023}
 
@@ -452,7 +452,19 @@
                 Today, Luca log in his account on the platform, access to the tournament in which he created the battle and see that this battle in closed and is waiting for a manual evaluation and decide to examine the codes that have been delivered in the battle by the different groups.
                 The first group he analyzes is made un of three students, and sees that they have a score of 90/100 in the automated evaluation. After entering on the resource made available by the group, Luca check if the number of commits and work ha ìs been done equally among the students in the group and not noticing large differences between the number of lines of code written and the number of commit made by each student he decide to go next to the comment section.
                 Opening the code in the resource, he relizes that the group has limited himself to adding simple comments, without going to much in the details of the work done and choices made; so he decide to modify the grade assigned befor, by reducing it from 90/100 to 80/100, writing a little explanation of the reason for this change. It then continues to control all the others group and at the end he can close formally the battle.
-            \subsubsubsection{Educator creates a new battle}
+            \subsubsubsection{Student forms a group then joins a battle}
+                Francesca singns in the platform with her credentials and sees that a new tournament has opened. Shoe would like to participate in it, and so decides to form a group with two of her friends to compete in the tournament's battles. She clicks on the apposite menu and chooses the users she would like to invite to join her group.
+                After both her friends accept her invite, she enters the tournament by signing up her group as participant. She then looks at all of the proposed battles they can join in, and chooses one.
+                Once the registration deadline for the groups expires, Francesca's group forks the automatically created GitHub repository and sets up an automated workflow through GitHub Actions, to notify the platform of each of their commits.
+            \subsubsubsection{Student uploads a solution}
+                Piero is currently competing with his group in a tournament, they are working on a solution for a battle and they are confident that they are right with what they coded. Piero decides to upload a solution for the battle to the GitHub repository, so that it can be evaluated and they can see how much their score is for this first draft solution.
+                Piero uploads the current solution to the forked GitHub repository. After the push, the GitHub Actions workflow is started, letting the platform know that Piero has uploaded a new solution for the battle he's currently competing in.
+                The automated evaluation system integrated in the platform now starts, tests are automatically ran and no human evaluation is deemed needed, so the platform gives Piero's solution a score of 75/100.
+                Piero sees the score on his profile on the platform and understands that his solution is found correct, but not the best that can possibly be done. He decides to continue working on it, until his solution will obtain a score of at least 95/100.
+            \subsubsubsection{Student uploads a solution after deadline expiration time}
+                Frank has been competing in a tournament for very long, and has finally found a solution for the last battle he struggled to solve. After having uploaded his solution on the forked repository, the GitHub Actions workflow starts and notifies the platform that Frank's has uploaded a new solution for his final battle.
+                The CodeKataBattle platform then sees that the deadline for Frank's battle has expired. The platform notifies Frank that his last uploaded solution will not be considered on the final score he will get, and no further action is taken.
+            \subsubsubsection{new scenarioes}
         \subsubsection{Class diagram}
 \subsection{Product functions}
     \subsubsection{Shared functions}
