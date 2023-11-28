@@ -428,7 +428,7 @@
         The following section contains the UML diagram of the platform and a list of meaningful scenarios in which the platform can be used, how and when users can interact with it.
         \subsubsection{Scenarios}
             \subsubsubsection{Student sign up to the platform}
-                Peter is a volenterous student of an informatic class, that want to improve his software development skills. He comes to know about the platform CKB one day, when his c.s. professor propose to hhis class, a software development tournament in substitution to the normal, boring and limited tests organized through the academic year.
+                Peter is a volenterous student of an informatic class, that want to improve his software development skills. He comes to know about the platform CKB one day, when his c.s. professor propose to his class, a software development tournament in substitution to the normal, boring and limited tests organized through the academic year.
                 Peter is extremely interested, not only in the tournament, but also in the service offered by the platform itself, thus the same day he decide to try to register to it.
                 Peter open his personal browser and go to the CKB site's homepage. Here he goes to the student dedicated page and clicks the "Sign up" button in order to register. He inserts all the required information in the mandatory fields of the page that showed up (e.g. name, surname, attended school, email, nickname, password, ...) and clicks on "Confirm" button.
                 Peter now wait for the notification, through his email, about the correctness of his registration, and can now access all the CBK platform's features after loggin in with it's credentials.
@@ -488,7 +488,7 @@
 
     \subsubsection{Student functions}
         \begin{itemize}
-            \item \textbf{Student subscribe to a tournament:} Let student to search, according to some parameters (most used programming languages, creation date, number of partecipant, etc...) and subscribe to a tournament, after loggin in the platform.
+            \item \textbf{Student subscribes to a tournament:} Let a student search, according to some parameters (most used programming languages, creation date, number of partecipant, etc...) and subscribe to a tournament, after loggin in the platform.
             \begin{figure}[H]
                 \centering
                 %\includegraphics{}
@@ -496,7 +496,7 @@
                 \label{fig:studTournamentSubBPMN}
             \end{figure}
 
-            \item \textbf{Student join a battle:} Let student subscribed to a tournament, to search battle in it, according to some parameters (programming language requested, expiration date, difficulty, etc...) and join it alone or in a group.
+            \item \textbf{Student join a battle:} Let a student subscribed to a tournament search a battle in it according to some parameters (programming language requested, expiration date, difficulty, etc...) and join it alone or in a group.
             \begin{figure}[H]
                 \centering
                 %\includegraphics{}
@@ -504,7 +504,7 @@
                 \label{fig:studBattleJoinBPMN}
             \end{figure}
 
-            \item \textbf{Student gets notified of new events:} Notify the student about new tournaments created, if signed to the platform, and new upcoming battle that take place in tournament in which he has joined.
+            \item \textbf{Student gets notified of new events:} Notify the student about new tournaments created, if signed to the platform, and new upcoming battles that take place in tournaments in which he has joined.
             \begin{figure}[H]
                 \centering
                 %\includegraphics{}
@@ -512,7 +512,7 @@
                 \label{fig:studNotificationBPMN}
             \end{figure}
             
-            \item \textbf{Student's solutions get evaluated:} Let student, who connect to their forked repository on GitHub, to upload his solution and evaluate it according to some parameters.
+            \item \textbf{Student's solutions get evaluated:} Let a student, who connect to their forked repository on GitHub, upload his solution and evaluate it according to some parameters.
             \begin{figure}[H]
                 \centering
                 %\includegraphics{}
@@ -520,7 +520,7 @@
                 \label{fig:studSolEvalBPMN}
             \end{figure}
 
-            \item \textbf{Student form a group for a battle:} Let student the possibility to form a group with other student in order to face a battle, through invite messages.
+            \item \textbf{Student form a group for a battle:} Let a student form a group with other students in order to face a battle, through invite messages.
             \begin{figure}[H]
                 \centering
                 %\includegraphics{}
@@ -531,15 +531,23 @@
 
     \subsubsection{Educator functions}
         \begin{itemize}
-            \item \textbf{Educator create/close a tournament:} Let the educator to create a new tournament and set its parameters. Also let him to close the tournament whenever he wants.
+            \item \textbf{Educator create a tournament:} Let an educator create a new tournament and set its parameters.
             \begin{figure}[H]
                 \centering
                 %\includegraphics{}
                 \caption{Tournament's creation/closing BPMN}
-                \label{fig:TournamentCreationClosingBPMN}
+                \label{fig:TournamentCreationBPMN}
             \end{figure}
 
-            \item \textbf{Educator grant access to a tournament:} Let the educator the possibility to grant the access to one of his tournaments to a collegue.
+            \item \textbf{Educator close a tournament:} Let an educator close one of his tournaments whenever he wants.
+            \begin{figure}[H]
+                \centering
+                %\includegraphics{}
+                \caption{Tournament's closing BPMN}
+                \label{fig:TournamentClosingBPMN}
+            \end{figure}
+
+            \item \textbf{Educator grant access to a tournament:} Give an educator the possibility to grant the access to one of his tournaments to a colleague.
             \begin{figure}[H]
                 \centering
                 %\includegraphics{}
@@ -547,7 +555,7 @@
                 \label{fig:accessGrantTournamentBPMN}
             \end{figure}
 
-            \item \textbf{Educator notified of battle's end:} Educator gets notified about the end of a battle of one of his tournaments, letting him the possibility to manually evaluate the students' solutions.
+            \item \textbf{Educator notified of battle's end:} Educator gets notified about the end of a battle in one of his tournaments, give him the possibility to manually evaluate the students' solutions.
             \begin{figure}[H]
                 \centering
                 %\includegraphics{}
