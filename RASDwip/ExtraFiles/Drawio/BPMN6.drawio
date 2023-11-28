@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net" modified="2023-11-28T16:45:15.575Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0" etag="dP-8I32MQ2Xsk2qoM_Dw" version="21.3.7" type="device">
+  <diagram name="Page-1" id="c7488fd3-1785-93aa-aadb-54a6760d102a">
+    <mxGraphModel dx="1027" dy="955" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CDbokZhid0h3c1UekMTh-214" value="Student&#39;s solution gets evaluated" style="swimlane;html=1;childLayout=stackLayout;horizontal=1;startSize=20;horizontalStack=0;rounded=0;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" vertex="1" parent="1">
+          <mxGeometry x="60" y="140" width="660" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-215" value="Student" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="CDbokZhid0h3c1UekMTh-214">
+          <mxGeometry y="20" width="660" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-306" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="CDbokZhid0h3c1UekMTh-215" source="CDbokZhid0h3c1UekMTh-304">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="90" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-304" value="" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=general;" vertex="1" parent="CDbokZhid0h3c1UekMTh-215">
+          <mxGeometry x="50" y="72.5" width="35" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-289" value="Upload solution" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="CDbokZhid0h3c1UekMTh-215">
+          <mxGeometry x="132.5" y="107.5" width="95" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-307" value="" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=send;" vertex="1" parent="CDbokZhid0h3c1UekMTh-215">
+          <mxGeometry x="130" y="65" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-245" value="&lt;div&gt;GitHub&lt;/div&gt;" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="CDbokZhid0h3c1UekMTh-214">
+          <mxGeometry y="200" width="660" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-311" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="CDbokZhid0h3c1UekMTh-245" source="CDbokZhid0h3c1UekMTh-298">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="150" y="75" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-298" value="Receive solution" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=message;" vertex="1" parent="CDbokZhid0h3c1UekMTh-245">
+          <mxGeometry x="60" y="58.5" width="33" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-312" value="GitHub Actions" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=send;" vertex="1" parent="CDbokZhid0h3c1UekMTh-245">
+          <mxGeometry x="150" y="50" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-313" value="Notify the platform" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="CDbokZhid0h3c1UekMTh-245">
+          <mxGeometry x="145" y="91.5" width="105" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-309" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="CDbokZhid0h3c1UekMTh-214" source="CDbokZhid0h3c1UekMTh-307" target="CDbokZhid0h3c1UekMTh-298">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="180" />
+              <mxPoint x="77" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-308" value="Platform" style="swimlane;html=1;startSize=20;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="490" width="660" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-316" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="CDbokZhid0h3c1UekMTh-308" source="CDbokZhid0h3c1UekMTh-314" target="CDbokZhid0h3c1UekMTh-310">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-314" value="&lt;div&gt;Receive upload&amp;nbsp;&lt;/div&gt;&lt;div&gt;notification&lt;/div&gt;" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=message;" vertex="1" parent="CDbokZhid0h3c1UekMTh-308">
+          <mxGeometry x="60" y="40" width="33" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-322" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="CDbokZhid0h3c1UekMTh-308" source="CDbokZhid0h3c1UekMTh-310">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="56.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-310" value="&lt;font size=&quot;1&quot;&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" vertex="1" parent="CDbokZhid0h3c1UekMTh-308">
+          <mxGeometry x="160" y="31.5" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-317" value="Evaluate solution" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="CDbokZhid0h3c1UekMTh-308">
+          <mxGeometry x="160" y="81.5" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-328" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="CDbokZhid0h3c1UekMTh-308" source="CDbokZhid0h3c1UekMTh-326" target="CDbokZhid0h3c1UekMTh-225">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-326" value="&lt;font size=&quot;1&quot;&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=8;align=center;" vertex="1" parent="CDbokZhid0h3c1UekMTh-308">
+          <mxGeometry x="330" y="31.5" width="95" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-327" value="Publish score" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="CDbokZhid0h3c1UekMTh-308">
+          <mxGeometry x="327.5" y="81.5" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-225" value="" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;" vertex="1" parent="CDbokZhid0h3c1UekMTh-308">
+          <mxGeometry x="475" y="41.5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="CDbokZhid0h3c1UekMTh-315" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CDbokZhid0h3c1UekMTh-312" target="CDbokZhid0h3c1UekMTh-314">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="470" />
+              <mxPoint x="137" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
