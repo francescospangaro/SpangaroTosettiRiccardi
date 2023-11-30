@@ -430,7 +430,7 @@
             \subsubsubsection{Student sign up to the platform}
                 Peter is a volenterous student of an informatic class, that want to improve his software development skills. He comes to know about the platform CKB one day, when his c.s. professor propose to his class, a software development tournament in substitution to the normal, boring and limited tests organized through the academic year.
                 Peter is extremely interested, not only in the tournament, but also in the service offered by the platform itself, thus the same day he decide to try to register to it.
-                Peter open his personal browser and go to the CKB site's homepage. Here he goes to the student dedicated page and clicks the "Sign up" button in order to register. He inserts all the required information in the mandatory fields of the page that showed up (e.g. name, surname, attended school, email, nickname, password, ...) and clicks on "Confirm" button.
+                Peter open his personal browser and go to the CKB site's homepage. Here he goes to the student dedicated page and clicks the "Sign up" button in order to register. He inserts all the required information in the mandatory fields of the page that showed up (e.g. name, surname, attended school, email, username, password, ...) and clicks on "Confirm" button.
                 Peter now wait for the notification, through his email, about the correctness of his registration, and can now access all the CBK platform's features after loggin in with it's credentials.
             \subsubsubsection{Educator sign up to the platform}
                 Vittorio is an innovative teacher who teaches c.s. in a school. He discovered, while searching the web for new ideas on how testing his students' abilities in software developing, the CKB platform and its services.
@@ -663,20 +663,24 @@
                         \textbf{Flow of events} &    \begin{enumerate}
                                                 \item[1.] Student opens CKB platform
                                                 \item[2.] Student presses the sign-up button
-                                                \item[3.] Student fills the form with all the required informations (name, surname, nickname
-                                                        attended school, email, password, ...), accepts the "Terms \& Conditions" and finally
-                                                        clicks on a button to confirm.
-                                                \item[4.] CKB platform validates the personal information inserted by the student.
-                                                \item[5.] CBK platform display a confirmation message.
-                                                \item[6.] CKB platform send an email notification to the student regarding the registration outcome
+                                                \item[3.] Student fills the form with all the required informations (name, surname, username
+                                                        attended school, email, password, ...), accepts the "Terms \& Conditions".
+                                                \item[4.] Student clicks on a button to confirm.
+                                                \item[5.] CKB platform validates the personal information inserted by the student.
+                                                \item[6.] CBK platform display a confirmation message.
+                                                \item[7.] CKB platform send an email notification to the student regarding the registration outcome
                                             \end{enumerate}   \\
                         \hline
                         \textbf{Exit condition} & Student's account is created, and its data are saved into the system\\
                         \hline
                         \textbf{Exceptions} &     \begin{itemize}
-                                            \item[4.1] CKB platform isn't able to validate student registration data (mail already taken, attended school non existings, ...)
+                                            \item[4.1] Email already used to register another account, or inexisting.
+                                            \item[4.2] Inserted attended school non existings
+                                            \item[4.3] Username contains forbidden characters
+                                            \item[4.4] Password don't respect security standards 
                                             \begin{itemize}
-                                                \item[$\rightarrow$] Unregistered student gets notified of the registration failure throught an error message
+                                                \item[$\rightarrow$] Unregistered student gets notified of the registration failure throught an 
+                                                error message and flow restart from point 3.
                                             \end{itemize} 
                                         \end{itemize}
                         
@@ -715,20 +719,24 @@
                         \textbf{Flow of events} &    \begin{enumerate}
                                                 \item[1.] Educator opens CKB platform
                                                 \item[2.] Educator presses the sign-up button
-                                                \item[3.] Educator fills the form with all the required informations (name, surname, nickname
-                                                        school in which teaches, istitutional email, password, ...), accepts the "Terms \& Conditions" and finally
-                                                        clicks on a button to confirm.
-                                                \item[4.] CKB platform validates the personal information inserted by the student.
-                                                \item[5.] CBK platform display a confirmation message.
-                                                \item[6.] CKB platform send an email notification to the educator regarding the registration outcome
+                                                \item[3.] Educator fills the form with all the required informations (name, surname, username
+                                                        school in which teaches, istitutional email, password, ...), accepts the "Terms \& Conditions".
+                                                \item[4.] Educator clicks on a button to confirm.
+                                                \item[5.] CKB platform validates the personal information inserted by the student.
+                                                \item[6.] CBK platform display a confirmation message.
+                                                \item[7.] CKB platform send an email notification to the educator regarding the registration outcome
                                             \end{enumerate} \\
                         \hline
                         \textbf{Exit condition} & Student's account is created, and its data are saved into the system \\
                         \hline
                         \textbf{Exceptions} &     \begin{itemize}
-                                                    \item[4.1] CKB platform isn't able to validate educator registration data (mail already taken, school's details not correct, ...)
+                                                    \item[4.1] Email already used to register another account, or inexisting.
+                                                    \item[4.2] Inserted school's details non correct
+                                                    \item[4.3] Username contains forbidden characters
+                                                    \item[4.4] Password don't respect security standards 
                                                     \begin{itemize}
                                                         \item[$\rightarrow$] Unregistered educator gets notified of the registration failure throught an error message
+                                                        and flow restart from point 3.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
@@ -754,29 +762,38 @@
 
                         
                         
-                        \textbf{Name} & \\
+                        \textbf{Name} & Tournament creation\\
                         \hline
-                        \textbf{ID} & \\
+                        \textbf{ID} & UC.3\\
                         \hline
-                        \textbf{Actors} & \\
+                        \textbf{Actors} & Educator, Student\\
                         \hline
-                        \textbf{Entry condition} & \\
+                        \textbf{Entry condition} & Educator has logged in the platform and 
+                        want to create a new tournament\\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
-                                                        \item[1.] 
-                                                        \item[2.] 
-                                                        \item[3.] 
-                                                        \item[4.] 
-                                                        \item[5.] 
-                                                        \item[6.] 
+                                                        \item[1.] Educator clicks on a "Create tournament" button
+                                                        \item[2.] Educator fills a form of the page that has appeared with tournament details,
+                                                        such as: its deadline (eventually), allowed programming languages, name, access method and related
+                                                        information about how to use it,  etc.
+                                                        \item[3.] Educator clicks on a "Confirmation" button.
+                                                        \item[4.] \textit{$<<$eventually$>>$} Defines new badges for the tournament (see UC.4)
+                                                        \item[5.] CKB platform checks the validity of the informations inserted by the Educator
+                                                        \item[6.] CKB platform displays a message that confirms that the tournament
+                                                        has been created successfully
+                                                        \item[7.] CKB platform sends a notification to all the Students registered to the platform itself
                                                     \end{enumerate} \\
                         \hline
                         \textbf{Exit condition} &  \\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
-                                                    \item[N.N] 
+                                                    \item[5.1] Tournament's name contain forbidden characters.
+                                                    \item[5.2] Deadline inserted for the tournament is invalid. 
+                                                    \item[5.3] Tournament's access method has been configured wrongly.
+                                                    \item[5.4] A program language inserted is not recognized by the platform. 
                                                     \begin{itemize}
-                                                        \item[$\rightarrow$] 
+                                                        \item[$\rightarrow$] Educator gets notified about the failure of the creation of the tournament
+                                                        throught an error message displayed by the platform. The flow restart from point 2.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
@@ -802,29 +819,35 @@
 
                         
                         
-                        \textbf{Name} & \\
+                        \textbf{Name} & Badges creation\\
                         \hline
-                        \textbf{ID} & \\
+                        \textbf{ID} & UC.4\\
                         \hline
-                        \textbf{Actors} & \\
+                        \textbf{Actors} & Educator\\
                         \hline
-                        \textbf{Entry condition} & \\
+                        \textbf{Entry condition} & Educator has logged in the platform, he's creating a new tournament and want to
+                        define new badges for that tournament\\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
-                                                        \item[1.] 
-                                                        \item[2.] 
-                                                        \item[3.] 
-                                                        \item[4.] 
-                                                        \item[5.] 
-                                                        \item[6.] 
+                                                        \item[1.] Educator clicks on the "Create badge" button on the tournament
+                                                        creation page.
+                                                        \item[2.] On the new page that appeared, the Educator defines badge's
+                                                        characteristics, such as: its name, value, icon, rules to obtain it, ...
+                                                        \item[3.] Educator clicks on a button in order to confirm its choices.
+                                                        \item[4.] CKB platform checks if all the badge informations are well defined
+                                                        \item[5.] CKB platform displays a message that confirm the successfull creation
+                                                        of a new badge, and that the badge has been added to the tournament.
                                                     \end{enumerate} \\
                         \hline
                         \textbf{Exit condition} &  \\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
-                                                    \item[N.N] 
+                                                    \item[4.1] Badge's name contain forbidden characters
+                                                    \item[4.2] The image uploaded as icon image it's too big or have an unsupported format.
+                                                    \item[4.3] Badge's rules are not well defined.   
                                                     \begin{itemize}
-                                                        \item[$\rightarrow$] 
+                                                        \item[$\rightarrow$] Educator gets notified about the failure of the badge creation
+                                                        process throught an error message displayed by the platform. Flow restart from point 2.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
@@ -850,9 +873,9 @@
 
                         
                         
-                        \textbf{Name} & \\
+                        \textbf{Name} & Deletion of a badge\\
                         \hline
-                        \textbf{ID} & \\
+                        \textbf{ID} & UC.5\\
                         \hline
                         \textbf{Actors} & \\
                         \hline
