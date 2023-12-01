@@ -688,7 +688,7 @@
                     
                     \begin{figure}[H]
                         \centering
-                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \includegraphics[scale=0.65]{images/SequenceDiagrams/StudentSignUpSeqDiagram.png}
                         \caption{Student sign up sequence diagram}
                         \label{fig:StudentSignUpSeqDiagram}
                     \end{figure}
@@ -781,16 +781,17 @@
                                                         \item[5.] CKB platform checks the validity of the informations inserted by the Educator
                                                         \item[6.] CKB platform displays a message that confirms that the tournament
                                                         has been created successfully
-                                                        \item[7.] CKB platform sends a notification to all the Students registered to the platform itself
                                                     \end{enumerate} \\
                         \hline
-                        \textbf{Exit condition} &  \\
+                        \textbf{Exit condition} & Tournament is created by saving it's data into the system
+                        and the platform sends a notification to all the Students registered to the platform itself.
+                        Educator is led back to the riepilogative page of the tournaments created by him. \\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
                                                     \item[5.1] Tournament's name contain forbidden characters.
                                                     \item[5.2] Deadline inserted for the tournament is invalid. 
                                                     \item[5.3] Tournament's access method has been configured wrongly.
-                                                    \item[5.4] A program language inserted is not recognized by the platform. 
+                                                    \item[5.4] A programming language inserted is not recognized by the platform. 
                                                     \begin{itemize}
                                                         \item[$\rightarrow$] Educator gets notified about the failure of the creation of the tournament
                                                         throught an error message displayed by the platform. The flow restart from point 2.
@@ -802,7 +803,7 @@
                         \centering
                         %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
                         \caption{...}
-                        \label{fig:EducatorSignUpSeqDiagram}
+                        \label{fig:TournamentCreationSeqDiagram}
                     \end{figure}
 
                     \item[\textbf{4.}] \textbf{Educator creates new badges}
@@ -839,12 +840,15 @@
                                                         of a new badge, and that the badge has been added to the tournament.
                                                     \end{enumerate} \\
                         \hline
-                        \textbf{Exit condition} &  \\
+                        \textbf{Exit condition} & Badge is created, its data are saved and associated to the
+                        tournament which is being created by the Educator and Educator is led back to the 
+                        create tournament page. \\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
                                                     \item[4.1] Badge's name contain forbidden characters
                                                     \item[4.2] The image uploaded as icon image it's too big or have an unsupported format.
                                                     \item[4.3] Badge's rules are not well defined.   
+                                                    \item[4.4] Some badge's features has been left empty  
                                                     \begin{itemize}
                                                         \item[$\rightarrow$] Educator gets notified about the failure of the badge creation
                                                         process throught an error message displayed by the platform. Flow restart from point 2.
@@ -856,10 +860,10 @@
                         \centering
                         %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
                         \caption{...}
-                        \label{fig:EducatorSignUpSeqDiagram}
+                        \label{fig:BadgesCreationSeqDiagram}
                     \end{figure}
 
-                    \item[\textbf{5.}] \textbf{Educator creates a new battle}
+                    \item[\textbf{5.}] \textbf{Educator delete a badge}
                     \begin{xltabular}{\textwidth}
                         {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
                         \hline
@@ -873,29 +877,116 @@
 
                         
                         
-                        \textbf{Name} & Deletion of a badge\\
+                        \textbf{Name} & Deletion \& update of a badge\\
                         \hline
                         \textbf{ID} & UC.5\\
                         \hline
-                        \textbf{Actors} & \\
+                        \textbf{Actors} & Educator\\
                         \hline
-                        \textbf{Entry condition} & \\
+                        \textbf{Entry condition} & Educator has logged in the platform, has started the creation of a new
+                        tournament in which has already created at least 1 badge and want to delete and/or update one of them\\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
-                                                        \item[1.] 
-                                                        \item[2.] 
-                                                        \item[3.] 
-                                                        \item[4.] 
-                                                        \item[5.] 
-                                                        \item[6.] 
+                                                        \item[1.] Educator clicks on a update button related to the badge and 
+                                                        present on the tournament creation page. 
+                                                        \item[2.] CKB platform show a modifiable form, filled with the 
+                                                        badge's data which the Educator want to modify.
+                                                        \item[3.] Educator proceeds to modify the badge's data
+                                                        \item[4.] CKB platform tries to validate the new data
+                                                        \item[5.] Update is confirmed with the display of a message by the CKB platform. 
+                                                        \item[6.] Educator clicks on a delete button related to 
+                                                        the badge and present on the tournament creation page. 
+                                                        \item[7.] CKB platform show a message requiring confirmation
+                                                        for the Deletion
+                                                        \item[8.] Educator presses a confirmation button
+                                                        \item[9.] CKB platform delete the badge and bring the Educator 
+                                                        to the previous page.
                                                     \end{enumerate} \\
                         \hline
-                        \textbf{Exit condition} &  \\
+                        \textbf{Exit condition} & Deleted badges are removed from the tournament, and their data are removed
+                        from the system. The modifications of the updated ones are committed to the system. The Educator
+                        is led back to the tournament creation page. \\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
-                                                    \item[N.N] 
+                                                    \item[4.1] Badge's updated name contain forbidden characters
+                                                    \item[4.2] The new image uploaded as icon, it's too big or have an unsupported format.
+                                                    \item[4.3] New Badge's rules are not well defined.
+                                                    \item[4.4] Some badge's features has been left empty 
                                                     \begin{itemize}
-                                                        \item[$\rightarrow$] 
+                                                        \item[$\rightarrow$] Badge it's not updated, Educator it's led to
+                                                        the tournament creation page (point 1.)
+                                                    \end{itemize}
+                                                    \item[6.1] Educator presses the cancel button 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] Delete procedure is stopped, and the Educator
+                                                        it's led back to the tournament creation page (point 6.).
+                                                    \end{itemize} 
+
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:DeletionUpdateBadgesSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{6.}] \textbf{Educator creates a new battle}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & Battle creation\\
+                        \hline
+                        \textbf{ID} & UC.6\\
+                        \hline
+                        \textbf{Actors} & Educator\\
+                        \hline
+                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
+                        and want to add a battle in a specific tournament \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] Educator open the page related to a specific tournament
+                                                        which has created.
+                                                        \item[2.] Educator clicks on a button used to create a new battle.
+                                                        \item[3.] Educator fills the form shown by the platform with informations
+                                                        related to the battle that he want to create (name, programming languages
+                                                        allowed, maximum and minimum number of students for each partecipating 
+                                                        group, registration and submission deadlines, ...)
+                                                        \item[4.] Educator clicks on a button to confirm.
+                                                        \item[5.] CKB platform validates the battle characteristics
+                                                        \item[6.] CKB platform display a confirmation message of the successfull
+                                                        creation of the battle.
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
+                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
+                         page of the battles within the tournament.
+                         \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[3.1] Battle's name contain forbidden characters
+                                                    \item[3.2] A programming language inserted it's not included in the tournament
+                                                    allowed programming languages.
+                                                    \item[3.3] The specified number of minimum or maximum students for each group
+                                                    it's beyond upper and/or lower limits imposed by the platform
+                                                    \item[3.4] Registration deadline inserted for the battle it's not valid or
+                                                    bigger than the submission one.
+                                                    \item[3.5] Submission deadline inserted for the battle it's not valid or 
+                                                    smaller than the registration one.
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] Educator gets notified about battle creation failure
+                                                        by the platform throught an error message. The flow restart from point 3.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
@@ -904,7 +995,7 @@
                         \centering
                         %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
                         \caption{...}
-                        \label{fig:EducatorSignUpSeqDiagram}
+                        \label{fig:BattleCreationSeqDiagram}
                     \end{figure}
             \end{enumerate}
         \subsubsection{Traceability matrix}
