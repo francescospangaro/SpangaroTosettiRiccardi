@@ -3,6 +3,8 @@
 \usepackage{graphicx} % Required for inserting images
 \usepackage[hidelinks]{hyperref} % Required for using links
 
+%Allow to use pdf images
+\usepackage{pdfpages}
 
 %Packages and instruction to change scale of sections', subsections' and subsubsections' heads
 \usepackage{titlesec}
@@ -686,9 +688,10 @@
                         
                     \end{xltabular}
                     
+                    
                     \begin{figure}[H]
                         \centering
-                        \includegraphics[scale=0.65]{images/SequenceDiagrams/StudentSignUpSeqDiagram.png}
+                        \includegraphics[scale=0.95]{SequenceDiagrams/StudentSignUpSeqDiagram.pdf}
                         \caption{Student sign up sequence diagram}
                         \label{fig:StudentSignUpSeqDiagram}
                     \end{figure}
@@ -743,7 +746,7 @@
                     
                     \begin{figure}[H]
                         \centering
-                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \includegraphics[scale=0.95]{SequenceDiagrams/EducatorSignUpSeqDiagram.pdf}
                         \caption{Educator sign up sequence diagram}
                         \label{fig:EducatorSignUpSeqDiagram}
                     \end{figure}
@@ -776,8 +779,8 @@
                                                         \item[2.] Educator fills a form of the page that has appeared with tournament details,
                                                         such as: its deadline (eventually), allowed programming languages, name, access method and related
                                                         information about how to use it,  etc.
-                                                        \item[3.] Educator clicks on a "Confirmation" button.
-                                                        \item[4.] \textit{$<<$eventually$>>$} Defines new badges for the tournament (see UC.4)
+                                                        \item[3.] \textit{$<<$eventually$>>$} Defines new badges for the tournament (see UC.4)
+                                                        \item[4.] Educator clicks on a "Confirmation" button.
                                                         \item[5.] CKB platform checks the validity of the informations inserted by the Educator
                                                         \item[6.] CKB platform displays a message that confirms that the tournament
                                                         has been created successfully
@@ -801,7 +804,7 @@
                     
                     \begin{figure}[H]
                         \centering
-                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \includegraphics[scale=0.95]{SequenceDiagrams/TournamentCreationSeqDiagram.pdf}
                         \caption{...}
                         \label{fig:TournamentCreationSeqDiagram}
                     \end{figure}
