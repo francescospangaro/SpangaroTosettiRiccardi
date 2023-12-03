@@ -448,12 +448,12 @@
                 At the end of the battle, which automaticcaly close itself at submission deadline, students' score gets calculated and added to their tournament score.
             \subsubsubsection{Educator close a tournament}
                 Marco is an c.s educator who registered to the CKB platform. He has created a new tournament one mounth ago, today, after this mounth he decide to close it. In order to do so, Marco log in his account on the platform and access the tournament which he wants to close through an appropriate web page, at this point Marco control il there are battles that aren't altready closed and sees that Laura has a tournament that is still open, so he now control when is the submission deadline of this battle. After discovering that the submission deadline is in two days he close the possibility of other educators to creates new battles.
-                After three days Marco, after log in to the platform, control that there are'n still open tournament or tournament that are waiting for the manual evaluation. Then he proceed to close the tournament
+                After three days Marco, after log in to the platform, control that there are'n still open battles or battles that are waiting for the manual evaluation. Then he proceed to close the tournament
             \subsubsubsection{Educator manually evaluate a battle after the end}
                 Luca is an c.s educator who registered to the CKB platform. He has created a new battle in a tournament two weeks ago, choosing as the submission deadline yesterday and choosing to include a Manual evaluation in the total evaluation of the battle, according to the requirments of shared balaced partecipation, optimization and writing comments related to the code and the implementative choice.
-                Today, Luca log in his account on the platform, access to the tournament in which he created the battle and see that this battle in closed and is waiting for a manual evaluation and decide to examine the codes that have been delivered in the battle by the different groups.
-                The first group he analyzes is made un of three students, and sees that they have a score of 90/100 in the automated evaluation. After entering on the resource made available by the group, Luca check if the number of commits and work ha ìs been done equally among the students in the group and not noticing large differences between the number of lines of code written and the number of commit made by each student he decide to go next to the comment section.
-                Opening the code in the resource, he relizes that the group has limited himself to adding simple comments, without going to much in the details of the work done and choices made; so he decide to modify the grade assigned befor, by reducing it from 90/100 to 80/100, writing a little explanation of the reason for this change. It then continues to control all the others group and at the end he can close formally the battle.
+                Today, Luca log in his account on the platform, access to the tournament in which he created the battle and see that this battle is closed and is waiting for a manual evaluation and decide to examine the codes that have been delivered in the battle by the different groups.
+                The first group he analyzes is made of three students, and sees that they have a score of 90/100 in the automated evaluation. After entering on the resource made available by the group, Luca check if the number of commits and work has been done equally among the students in the group and not noticing large differences between the number of lines of code written and the number of commit made by each student he decide to go next to the comment section.
+                Opening the code in the resource, he relizes that the group has limited himself to adding simple comments, without going to much in the details of the work done and choices made; so he decide to modify the grade assigned befor, by reducing it from 90/100 to 80/100, writing a little explanation of the reason for this change. It then continues to control all the others group and at the end he can close definitively the battle.
             \subsubsubsection{Student forms a group then joins a battle}
                 Francesca singns in the platform with her credentials and sees that a new tournament has opened. Shoe would like to participate in it, and so decides to form a group with two of her friends to compete in the tournament's battles. She clicks on the apposite menu and chooses the users she would like to invite to join her group.
                 After both her friends accept her invite, she enters the tournament by signing up her group as participant. She then looks at all of the proposed battles they can join in, and chooses one.
@@ -990,6 +990,333 @@
                                                     \begin{itemize}
                                                         \item[$\rightarrow$] Educator gets notified about battle creation failure
                                                         by the platform throught an error message. The flow restart from point 3.
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:BattleCreationSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{7.}] \textbf{Educator close a tournament}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & Tournament closure\\
+                        \hline
+                        \textbf{ID} & UC.7\\
+                        \hline
+                        \textbf{Actors} & Educator\\
+                        \hline
+                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
+                        and want to close one of them in order to end the competition \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] Educator access the page of the tournament 
+                                                        that want to close.
+                                                        \item[2.] Educator checks whether there are battles that
+                                                        aren't already closed.
+                                                        \item[3.] Educator clicks on a "close" button related to
+                                                        the tournament and clicks on a confirm button.
+                                                        \item[4.] CKB platform verifies if there are no battles
+                                                        still active within the tournament.
+                                                        \item[5.] CKB platform notifies the Educator throught 
+                                                        a message that confirms the deletion of the tournament.
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} & The chosen tournament is closed, its data are kept saved in
+                        order to create an history of tournaments. Educator is led back to the riepilogative 
+                        page of the tournaments created by him. \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[2.1] There are still active battles within the tournament. 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] Educator can close the possibility of 
+                                                        other educators to create new battles if he's the tournament
+                                                        creator, otherwise it can ask to the creator if he can do
+                                                        that. The flow restart from point 1.
+                                                    \end{itemize} 
+                                                    \item[4.1] There are still active battles within the tournament.
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] CKB platform interrupts the tournament
+                                                        deletion and display an error message to the Educator. Flow
+                                                        restart from point 1.
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:BattleCreationSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{8.}] \textbf{Educator evaluate battle's results}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & Battle's results evaluation\\
+                        \hline
+                        \textbf{ID} & UC.8\\
+                        \hline
+                        \textbf{Actors} & Educator\\
+                        \hline
+                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 battle
+                        within a tournament, that has terminated. Educator want to manually evaluate its results\\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] Educator accesses the page related to tournament
+                                                        he has created.
+                                                        \item[2.] Educator accesses the page related to a battle
+                                                        within that tournament in which was included manual evaluation
+                                                        and has terminated
+                                                        \item[3.] Educator manually evaluates groups' works by decreasing or
+                                                        increasing their scores according to his personal preferences, or 
+                                                        the ones accorded with the students.
+                                                        \item[4.] Educator after evaluating all the groups, proceeds to 
+                                                        close definitively the battle.
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} & Groups' scores within the battle get updated by the platform,
+                        battle is definitively closed and the Educator is led back to the riepilogative page of
+                        the tournament to whom the battle belonged.\\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[N.N] 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] 
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:BattleCreationSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{9.}] \textbf{Student forms a group and join a battle}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & Group formation and joining the battle\\
+                        \hline
+                        \textbf{ID} & UC.9\\
+                        \hline
+                        \textbf{Actors} & Student\\
+                        \hline
+                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
+                        and want to add a battle in a specific tournament \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] 
+                                                        \item[2.] 
+                                                        \item[3.] 
+                                                        \item[4.] 
+                                                        \item[5.] 
+                                                        \item[6.] 
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
+                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
+                         page of the battles within the tournament.
+                         \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[N.N] 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] 
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:BattleCreationSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{10.}] \textbf{Student upload a new solution}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & Upload of a solution\\
+                        \hline
+                        \textbf{ID} & UC.10\\
+                        \hline
+                        \textbf{Actors} & Educator\\
+                        \hline
+                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
+                        and want to add a battle in a specific tournament \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] 
+                                                        \item[2.] 
+                                                        \item[3.] 
+                                                        \item[4.] 
+                                                        \item[5.] 
+                                                        \item[6.] 
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
+                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
+                         page of the battles within the tournament.
+                         \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[N.N] 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] 
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:BattleCreationSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{11.}] \textbf{Student uploads a solution after submission deadline}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & Solution upload exceeding deadline\\
+                        \hline
+                        \textbf{ID} & UC.11\\
+                        \hline
+                        \textbf{Actors} & Educator\\
+                        \hline
+                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
+                        and want to add a battle in a specific tournament \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] 
+                                                        \item[2.] 
+                                                        \item[3.] 
+                                                        \item[4.] 
+                                                        \item[5.] 
+                                                        \item[6.] 
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
+                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
+                         page of the battles within the tournament.
+                         \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[N.N] 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] 
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:BattleCreationSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{12.}] \textbf{Student visualize his tournament's results and badges}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & viewing results and badges \\
+                        \hline
+                        \textbf{ID} & UC.12\\
+                        \hline
+                        \textbf{Actors} & Student\\
+                        \hline
+                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
+                        and want to add a battle in a specific tournament \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] 
+                                                        \item[2.] 
+                                                        \item[3.] 
+                                                        \item[4.] 
+                                                        \item[5.] 
+                                                        \item[6.] 
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
+                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
+                         page of the battles within the tournament.
+                         \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[N.N] 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] 
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
