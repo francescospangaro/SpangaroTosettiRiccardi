@@ -455,7 +455,7 @@
                 The first group he analyzes is made of three students, and sees that they have a score of 90/100 in the automated evaluation. After entering on the resource made available by the group, Luca check if the number of commits and work has been done equally among the students in the group and not noticing large differences between the number of lines of code written and the number of commit made by each student he decide to go next to the comment section.
                 Opening the code in the resource, he relizes that the group has limited himself to adding simple comments, without going to much in the details of the work done and choices made; so he decide to modify the grade assigned befor, by reducing it from 90/100 to 80/100, writing a little explanation of the reason for this change. It then continues to control all the others group and at the end he can close definitively the battle.
             \subsubsubsection{Student forms a group then joins a battle}
-                Francesca singns in the platform with her credentials and sees that a new tournament has opened. Shoe would like to participate in it, and so decides to form a group with two of her friends to compete in the tournament's battles. She clicks on the apposite menu and chooses the users she would like to invite to join her group.
+                Francesca signs in the platform with her credentials and sees that a new tournament has opened. She would like to participate in it, and so decides to form a group with two of her friends to compete in the tournament's battles. She clicks on the apposite menu and chooses the users she would like to invite to join her group.
                 After both her friends accept her invite, she enters the tournament by signing up her group as participant. She then looks at all of the proposed battles they can join in, and chooses one.
                 Once the registration deadline for the groups expires, Francesca's group forks the automatically created GitHub repository and sets up an automated workflow through GitHub Actions, to notify the platform of each of their commits.
             \subsubsubsection{Student uploads a solution}
@@ -1091,9 +1091,9 @@
                         \textbf{Flow of events} &    \begin{enumerate}
                                                         \item[1.] Educator accesses the page related to tournament
                                                         he has created.
-                                                        \item[2.] Educator accesses the page related to a battle
-                                                        within that tournament in which was included manual evaluation
-                                                        and has terminated
+                                                        \item[2.] Educator accesses the page related to a terminated 
+                                                        battle within that tournament in which was included manual 
+                                                        evaluation.
                                                         \item[3.] Educator manually evaluates groups' works by decreasing or
                                                         increasing their scores according to his personal preferences, or 
                                                         the ones accorded with the students.
@@ -1106,9 +1106,12 @@
                         the tournament to whom the battle belonged.\\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
-                                                    \item[N.N] 
+                                                    \item[2.1] In accessed battle was not included at the moment of the creation
+                                                    the possibility to manually evaluate the results.
+                                                    \item[2.2] Accessed battle isn't terminated.
                                                     \begin{itemize}
-                                                        \item[$\rightarrow$] 
+                                                        \item[$\rightarrow$] CKB don't allow the Educator to manually evaluate
+                                                        the battle. Flow restart from point 2.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
@@ -1120,7 +1123,7 @@
                         \label{fig:BattleCreationSeqDiagram}
                     \end{figure}
 
-                    \item[\textbf{9.}] \textbf{Student forms a group and join a battle}
+                    \item[\textbf{9.}] \textbf{Student forms a group}
                     \begin{xltabular}{\textwidth}
                         {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
                         \hline
@@ -1134,14 +1137,15 @@
 
                         
                         
-                        \textbf{Name} & Group formation and joining the battle\\
+                        \textbf{Name} & Group formation\\
                         \hline
                         \textbf{ID} & UC.9\\
                         \hline
                         \textbf{Actors} & Student\\
                         \hline
-                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
-                        and want to add a battle in a specific tournament \\
+                        \textbf{Entry condition} & Student has logged in the platform, has subscribed to a 
+                        tournament and want to form a group in order to later join a battle within that 
+                        tournament.\\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
                                                         \item[1.] 
@@ -1152,10 +1156,7 @@
                                                         \item[6.] 
                                                     \end{enumerate} \\
                         \hline
-                        \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
-                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
-                         page of the battles within the tournament.
-                         \\
+                        \textbf{Exit condition} & \\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
                                                     \item[N.N] 
@@ -1172,7 +1173,7 @@
                         \label{fig:BattleCreationSeqDiagram}
                     \end{figure}
 
-                    \item[\textbf{10.}] \textbf{Student upload a new solution}
+                    \item[\textbf{10.}] \textbf{Student join a battle}
                     \begin{xltabular}{\textwidth}
                         {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
                         \hline
@@ -1186,14 +1187,14 @@
 
                         
                         
-                        \textbf{Name} & Upload of a solution\\
+                        \textbf{Name} & Battle joining\\
                         \hline
                         \textbf{ID} & UC.10\\
                         \hline
-                        \textbf{Actors} & Educator\\
+                        \textbf{Actors} & Student\\
                         \hline
-                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
-                        and want to add a battle in a specific tournament \\
+                        \textbf{Entry condition} & Student has logged in the platform, has subscribed to a 
+                        tournament and want to join a battle within that tournament.\\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
                                                         \item[1.] 
@@ -1204,10 +1205,7 @@
                                                         \item[6.] 
                                                     \end{enumerate} \\
                         \hline
-                        \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
-                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
-                         page of the battles within the tournament.
-                         \\
+                        \textbf{Exit condition} & \\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
                                                     \item[N.N] 
@@ -1224,7 +1222,68 @@
                         \label{fig:BattleCreationSeqDiagram}
                     \end{figure}
 
-                    \item[\textbf{11.}] \textbf{Student uploads a solution after submission deadline}
+                    \item[\textbf{11.}] \textbf{Student upload a new solution}
+                    \begin{xltabular}{\textwidth}
+                        {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
+                        \hline
+                        \endfirsthead
+                        \hline
+                        \endhead
+                        \endfoot
+                        \hline
+                        \endlastfoot
+                        
+
+                        
+                        
+                        \textbf{Name} & Upload of a solution within deadline\\
+                        \hline
+                        \textbf{ID} & UC.11\\
+                        \hline
+                        \textbf{Actors} & Student, GitHub\\
+                        \hline
+                        \textbf{Entry condition} & Student has logged in the platform, has registered to at least 1 tournament
+                        and 1 battle within it, and want to upload a new solution to that battle. \\
+                        \hline
+                        \textbf{Flow of events} &    \begin{enumerate}
+                                                        \item[1.] Student access his GitHub account
+                                                        \item[2.] Student upload his solution (or the group one)
+                                                        to his GitHub repository, precedently forked.
+                                                        \item[3.] GitHub platform, throught his "GitHub Actions" notifies
+                                                        the CKB platform of the upload of the new solution by the Student.
+                                                        \item[4.] CKB platform receives the new solution uploaded and starts
+                                                        testing it.
+                                                        \item[5.] CKB platform gives a score to the solution based on the 
+                                                        tests results.
+                                                    \end{enumerate} \\
+                        \hline
+                        \textbf{Exit condition} & Student's (or his group's) score is updated based on the 
+                        uploaded solution.
+                         \\
+                        \hline
+                        \textbf{Exceptions} &    \begin{itemize}
+                                                    \item[2.1] Generic upload error. 
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] Handled by GitHub, flow restart from point 2.
+                                                    \end{itemize} 
+                                                    \item[4.1] Tested code generates major issues, such as infinite loops,
+                                                    huge resource consumption, ...
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] CKB platform, terminates the testing phase and
+                                                        notifies the Student with an error message in the place of the 
+                                                        solution score.
+                                                    \end{itemize} 
+                                                \end{itemize}
+                    \end{xltabular}
+                    
+                    \begin{figure}[H]
+                        \centering
+                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \caption{...}
+                        \label{fig:BattleCreationSeqDiagram}
+                    \end{figure}
+
+                    \item[\textbf{12.}] \textbf{Student uploads a solution after submission deadline}
                     \begin{xltabular}{\textwidth}
                         {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
                         \hline
@@ -1240,31 +1299,34 @@
                         
                         \textbf{Name} & Solution upload exceeding deadline\\
                         \hline
-                        \textbf{ID} & UC.11\\
+                        \textbf{ID} & UC.12\\
                         \hline
-                        \textbf{Actors} & Educator\\
+                        \textbf{Actors} & Student\\
                         \hline
-                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
-                        and want to add a battle in a specific tournament \\
+                        \textbf{Entry condition} & Student has logged in the platform, has registered to at least 1 tournament
+                        and 1 battle within it, and want to upload a new solution to that battle but the submission deadline
+                        expired. \\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
-                                                        \item[1.] 
-                                                        \item[2.] 
-                                                        \item[3.] 
-                                                        \item[4.] 
-                                                        \item[5.] 
-                                                        \item[6.] 
+                                                        \item[1.] Student access his GitHub account
+                                                        \item[2.] Student upload his solution (or the group one)
+                                                        to his GitHub repository, precedently forked.
+                                                        \item[3.] GitHub platform, throught his "GitHub Actions" notifies
+                                                        the CKB platform of the upload of the new solution by the Student.
+                                                        \item[4.] CKB platform receives the new solution uploaded and sees
+                                                        that the submission deadline of the battle for which the solution
+                                                        was uploaded has expired.
+                                                        \item[5.] CKB platform notifies the Student with an error message.
                                                     \end{enumerate} \\
                         \hline
-                        \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
-                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
-                         page of the battles within the tournament.
-                         \\
+                        \textbf{Exit condition} & Student's (or his group's) receives a notification by the CKB platform
+                        stating that their last uploaded solution will not be considered on the final score since the
+                        submission deadline was expired.\\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
-                                                    \item[N.N] 
+                                                    \item[2.1] Generic upload error. 
                                                     \begin{itemize}
-                                                        \item[$\rightarrow$] 
+                                                        \item[$\rightarrow$] Handled by GitHub, flow restart from point 2.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
@@ -1276,7 +1338,7 @@
                         \label{fig:BattleCreationSeqDiagram}
                     \end{figure}
 
-                    \item[\textbf{12.}] \textbf{Student visualize his tournament's results and badges}
+                    \item[\textbf{13.}] \textbf{Student visualize his tournament's results and badges}
                     \begin{xltabular}{\textwidth}
                         {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}      
                         \hline
@@ -1290,33 +1352,36 @@
 
                         
                         
-                        \textbf{Name} & viewing results and badges \\
+                        \textbf{Name} & Viewing results and badges \\
                         \hline
-                        \textbf{ID} & UC.12\\
+                        \textbf{ID} & UC.13\\
                         \hline
                         \textbf{Actors} & Student\\
                         \hline
-                        \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
-                        and want to add a battle in a specific tournament \\
+                        \textbf{Entry condition} & Student has logged in the platform and want to 
+                        see his or others tournament score and badges.\\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
-                                                        \item[1.] 
-                                                        \item[2.] 
-                                                        \item[3.] 
-                                                        \item[4.] 
-                                                        \item[5.] 
-                                                        \item[6.] 
+                                                        \item[1.] Student enters in his profile page or in the profile
+                                                        page of the Student of which want to see his tournament score
+                                                        and badges.
+                                                        \item[2.] Student choose the tournament of which want to see the 
+                                                        details from the appropriate section.
+                                                        \item[3.] Student consult his tournament score and badges
                                                     \end{enumerate} \\
                         \hline
-                        \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
-                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
-                         page of the battles within the tournament.
+                        \textbf{Exit condition} & Student has consulted his tournament score and badges obtained 
+                        during it, other than that the Student can see several details about all the tournament
+                        that he partecipated to.
                          \\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
-                                                    \item[N.N] 
+                                                    \item[2.1] Student of the profile page accessed,
+                                                    doesn't have partecipated to any tournament.
                                                     \begin{itemize}
-                                                        \item[$\rightarrow$] 
+                                                        \item[$\rightarrow$] CKB platform still allow the Student to 
+                                                        access to the profile page of the Student that hasn't partecipated
+                                                        to any tournament, but doesn't show any tournament's score and badges.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
