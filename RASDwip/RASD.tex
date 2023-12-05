@@ -101,9 +101,9 @@
 %Set the default path of images
 \graphicspath{ {images/} }
 
-\title{RASD-v0.5}
+\title{RASD-v0.7}
 \author{Francesco Spangaro - Tosetti Luca - Francesco Riccardi}
-\date{October 2023}
+\date{22 December 2023}
 
 \begin{document}
 
@@ -610,6 +610,31 @@
 
 \section{Specific requirements}
 \subsection{External interface requirements}
+    \subsection{User Interfaces}
+        The system should interfaces with the users (both Educator and Students) throught their 
+        devices, such as: laptops, desktops, smartphones, which must be connected to the internet.
+        Every users in order to access the platform have to reach an existing domain (like "www.codekatabattle.com"
+        for example).
+        
+    \subsection{Software Interfaces}
+        The system have to use different software interfaces in order to function properly:
+        \begin{itemize}
+            \item \textbf{DB Interfaces:} The system has to interact with a data based
+            used to store all the useful information necessary to the system to work properly.
+            \item \textbf{GitHub Interfaces:} The system has to interact with GitHub platform
+            in order to receive the new solutions uploaded by the students. This is done throught
+            "GitHub Actions", APIs made available by GitHub to automate tasks.
+            \item \textbf{Testing Interfaces:} The system needs to test various piece of code
+            belonging to the solutions uploaded by the students. In order to do this several
+            testing APIs can be used such as Maven. 
+        \end{itemize}
+
+    \subsection{Hardware Interfaces}
+        The system has to interfaces with the hardware components that contain
+        the data base.
+    \subsection{Communication Interfaces}
+        All communication made from and to the CKB platform have to be done
+        using HTTPS protocol.
 \subsection{Functional requirements}
     \subsubsection{Requirements}
         \subsubsection{Use case diagrams}
@@ -617,7 +642,7 @@
                 \item \underline{\large{\textbf{Student}}}
                     \begin{figure}[H]
                         \centering
-                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramStudent.png}
+                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramStudent.pdf}
                         \caption{Student use case diagram}
                         \label{fig:studentUseCaseDiagram}
                     \end{figure}
@@ -628,14 +653,14 @@
                 \item \underline{\large{\textbf{Educator}}}
                     \begin{figure}[H]
                         \centering
-                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator.pdf}
                         \caption{Educator use case diagram}
                         \label{fig:educatorUseCaseDiagram}
                     \end{figure}
                 \item \underline{\large{\textbf{GitHub}}}
                     \begin{figure}[H]
                         \centering
-                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramGitHub}
+                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramGitHub.pdf}
                         \caption{GitHub use case diagram}
                         \label{fig:gitHubUseCaseDiagram}
                     \end{figure}
