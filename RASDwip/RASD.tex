@@ -415,7 +415,7 @@
         \item \textbf{\textit{Section 3: Specific Requirements}} \\
         This section is the most technical one, it contains more precise descriptions of each scenario called use cases. It describe the several functional and performance requirements of the project and their map to the goals of the project.
         Finally it contains also all the design constraint and system attributes that must be followed/guaranteeded while developing the platform.
-        \item \textbf{\textit{Section 4: Formal analysis using allo}}y \\
+        \item \textbf{\textit{Section 4: Formal analysis using alloy}} \\
         In this setion can be found a formal description of the platform/application. The formal description is done using the formal language Alloy (referenced in section 1)
         \item \textbf{\textit{Section 5: Effor spent}} \\
         A simple section in which are included all the information about the time requested by each group member to complete this document, and it's division by each section of the document.
@@ -623,6 +623,9 @@
             \item[\textbf{D12:}] Students score is always correctly calculated and meaningful.
             \item[\textbf{D13:}] Educators access always access a tournament either in view-only mode, if not invited by the tournament's creator, or in modify-enabled mode if the tournament's creator has granted him the access.
             \textbf{(??? Verificare se potrebbe essere un goal piuttosto che una assumption ???)}
+            \item[\textbf{D14:}] Students can send an invitation to their group to any other student even if they are not
+            subscribed to the same tournament in which they want to partecipate. If it is the case the invited students get
+            subscribed automatically to the tournament if they accept the invite.
         \end{itemize}
 
 \section{Specific requirements}
@@ -642,8 +645,8 @@
             in order to receive the new solutions uploaded by the students. This is done throught
             "GitHub Actions", APIs made available by GitHub to automate tasks.
             \item \textbf{Testing Interfaces:} The system needs to test various piece of code
-            belonging to the solutions uploaded by the students. In order to do this several
-            testing APIs can be used such as Maven. 
+            belonging to the solutions uploaded by the students. In order to do this must be used
+            a Testing API. 
         \end{itemize}
 
     \subsubsection{Hardware Interfaces}
@@ -654,7 +657,30 @@
         using HTTPS protocol.
 \subsection{Functional requirements}
     \subsubsection{Requirements}
-        \subsubsection{Use case diagrams}
+        \begin{itemize}
+            
+            \item[\textbf{R.1}] The CKB platform shall allow an unregistered Student to create a new account.
+            \item[\textbf{R.2}] The CKB platform shall allow an unregistered Educator to create a new account.
+            \item[\textbf{R.3}] The CKB platform must allow the access to itself only if the credentials used are correct.                
+            \item[\textbf{R.4}] The CKB platform must not allow a Student or an Educator to register more than once in the system.
+            \item[\textbf{R.5}] Educators and Students can access the platform only if they are registered to it.
+            \item[\textbf{R.6}] The CKB platform shall not allow Students to create tournaments and/or battles.
+            \item[\textbf{R.7}] The CKB platform shall allow to create battles within a tournament only to the creator of
+            the tournament or to any other Educator that has the permission to do so, given by the tournament's creator.
+                            \item[\textbf{R.8}] The CKB platform must allow Educators to personalize the tournaments that they create.
+            \item[\textbf{R.9}] The CKB platform must allow Edcuators to personalize the battles that they create.
+            \item[\textbf{R.10}] The CKB platform must allow Educators to define new obtainable badges for each tournament they
+            create
+            \item[\textbf{R.11}] The CKB platform must allow Educators to manually evaluate the solutions uploaded by the students.
+            \item[\textbf{R.12}] The CKB platform must allow Educators to delete or update badges before finalizing tournament creation.
+            \item[\textbf{R.13}] The CKB platform must allow Educators to define rules to obtain badges in tournaments created by them.
+            \item[\textbf{R.14}] The CKB platform must ensures that badges' characteristics respect some guidelines regarding their
+            name, icon format and rules to obtain them.
+            \item[\textbf{R.15}] The CKB platform must allow only to Educators to create new tournaments.
+            \item[\textbf{R.16}] The CKB platform must ensures that tournaments' characteristics respect some guidelines regarding their
+            name, deadline and access method. 
+        \end{itemize}
+    \subsubsection{Use case diagrams}
             \begin{itemize}
                 \item \underline{\large{\textbf{Student}}}
                     \begin{figure}[H]
