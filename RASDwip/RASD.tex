@@ -101,7 +101,7 @@
 %Set the default path of images
 \graphicspath{ {images/} }
 
-\title{RASD-v0.7}
+\title{RASD-v0.8}
 \author{Francesco Spangaro - Tosetti Luca - Francesco Riccardi}
 \date{22 December 2023}
 
@@ -623,9 +623,9 @@
             \item[\textbf{D12:}] Students score is always correctly calculated and meaningful.
             \item[\textbf{D13:}] Educators access always access a tournament either in view-only mode, if not invited by the tournament's creator, or in modify-enabled mode if the tournament's creator has granted him the access.
             \textbf{(??? Verificare se potrebbe essere un goal piuttosto che una assumption ???)}
-            \item[\textbf{D14:}] Students can send an invitation to their group to any other student even if they are not
-            subscribed to the same tournament in which they want to partecipate. If it is the case the invited students get
-            subscribed automatically to the tournament if they accept the invite.
+            \item[\textbf{D14:}] Students can invite any other student to form a group, and in case
+            the invited student is not registered to the tournament in which the Student that is 
+            inviting him has already registered, he get automatically registered by the platform.
         \end{itemize}
 
 \section{Specific requirements}
@@ -1118,8 +1118,7 @@
                                                     \begin{itemize}
                                                         \item[$\rightarrow$] Educator can close the possibility of 
                                                         other educators to create new battles if he's the tournament
-                                                        creator, otherwise it can ask to the creator if he can do
-                                                        that. The flow restart from point 1.
+                                                        creator. The flow restart from point 1.
                                                     \end{itemize} 
                                                     \item[4.1] There are still active battles within the tournament.
                                                     \begin{itemize}
@@ -1132,7 +1131,7 @@
                     
                     \begin{figure}[H]
                         \centering
-                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence7.pdf}
                         \caption{...}
                         \label{fig:TournamentClosingSeqDiagram}
                     \end{figure}
@@ -1190,7 +1189,7 @@
                     
                     \begin{figure}[H]
                         \centering
-                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence8.pdf}
                         \caption{...}
                         \label{fig:BattleEvalSeqDiagram}
                     \end{figure}
@@ -1220,20 +1219,37 @@
                         tournament.\\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
-                                                        \item[1.] 
-                                                        \item[2.] 
-                                                        \item[3.] 
-                                                        \item[4.] 
-                                                        \item[5.] 
-                                                        \item[6.] 
+                                                        \item[1.] Student clicks on a button that lead to 
+                                                        an appropriate page to form a group between partecipant
+                                                        of a tournament.
+                                                        \item[2.] Student choose the filters to seach one or more
+                                                        students to invite.
+                                                        \item[3.] CKB platform compute all the filters and returns to
+                                                        the Student the available students according to the filters inserted.
+                                                        \item[4.] Student choose the other students to which send
+                                                        the invite from the showed page.
+                                                        \item[5.] Student clicks on a confirm button to send the invitations.
+                                                        \item[6.] CKB platform proceeds to send the invitation to all students
+                                                        specified and send a notification with it in order to notify the receivers.
+                                                        \item[7.] Invited students accept the invitation.
                                                     \end{enumerate} \\
                         \hline
-                        \textbf{Exit condition} & \\
+                        \textbf{Exit condition} & The group is formed and registered by the 
+                        CKB platform. The Student is led back to the tournament riepilogative page.\\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
-                                                    \item[N.N] 
+                                                    \item[3.1] The set of students returned applying the filters
+                                                    doesn't contain any available student.Flow restart from point 2.
                                                     \begin{itemize}
-                                                        \item[$\rightarrow$] 
+                                                        \item[$\rightarrow$] CKB platform show an empty list, with
+                                                        a message explaining the absence of students in the list.
+                                                    \end{itemize} 
+                                                    \item[3.2] The set of students returned contains only students
+                                                    already in a group.
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] CKB platform shows the students returned
+                                                        from the computation but doesn't allow to the Student to select them.
+                                                        Flow restart from point 2.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
@@ -1269,20 +1285,28 @@
                         tournament and want to join a battle within that tournament.\\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
-                                                        \item[1.] 
-                                                        \item[2.] 
-                                                        \item[3.] 
-                                                        \item[4.] 
-                                                        \item[5.] 
-                                                        \item[6.] 
+                                                        \item[1.] Student enter the tournament's page and  
+                                                        subsequently the battle's page.
+                                                        \item[2.] Student clicks on a button to join the battle.
+                                                        \item[3.] CKB platform shows a riepilogative page of 
+                                                        the battle. 
+                                                        \item[4.] Student clicks on a button to subscribe to the
+                                                        battle his group.
+                                                        \item[5.] CKB platform checks whether the group respect all the
+                                                        battle requirements.
+                                                        \item[6.] CKB platform sends a notification to group members
+                                                        when subscription deadline expires.
                                                     \end{enumerate} \\
                         \hline
-                        \textbf{Exit condition} & \\
+                        \textbf{Exit condition} & The Student and his group have joined the battle.
+                        CKB platform start saving all the solutions and statistics regarding the group's
+                        work. The student is led to the riepilogative page of the battle.\\
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
-                                                    \item[N.N] 
+                                                    \item[5.1] The group doesn't respect the requirement of the battle
+                                                    (too many or too few members).
                                                     \begin{itemize}
-                                                        \item[$\rightarrow$] 
+                                                        \item[$\rightarrow$] CKB platform shows an error message.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
@@ -1343,7 +1367,7 @@
                                                     \begin{itemize}
                                                         \item[$\rightarrow$] CKB platform, terminates the testing phase and
                                                         notifies the Student with an error message in the place of the 
-                                                        solution score.
+                                                        solution score, flow ends.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
@@ -1454,6 +1478,7 @@
                                                         \item[$\rightarrow$] CKB platform still allow the Student to 
                                                         access to the profile page of the Student that hasn't partecipated
                                                         to any tournament, but doesn't show any tournament's score and badges.
+                                                        Flow ends.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
