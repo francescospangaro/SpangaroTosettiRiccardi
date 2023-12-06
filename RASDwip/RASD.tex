@@ -6,6 +6,8 @@
 %Allow to use pdf images
 \usepackage{pdfpages}
 
+\usepackage{makecell}
+
 %Packages and instruction to change scale of sections', subsections' and subsubsections' heads
 \usepackage{titlesec}
 \usepackage{titlesec}
@@ -662,30 +664,34 @@
             \item[\textbf{R.1}] The CKB platform shall allow an unregistered Student to create a new account.
             \item[\textbf{R.2}] The CKB platform shall allow an unregistered Educator to create a new account.
             \item[\textbf{R.3}] The CKB platform must allow the access to itself only if the credentials used are correct.                
-            \item[\textbf{R.4}] The CKB platform must not allow a Student or an Educator to register more than once in the system.
-            \item[\textbf{R.5}] Educators and Students can access the platform only if they are registered to it.
-            \item[\textbf{R.6}] The CKB platform shall not allow Students to create tournaments and/or battles.
-            \item[\textbf{R.7}] The CKB platform shall allow to create battles within a tournament only to the creator of
+            \item[\textbf{R.4}] The CKB platform must not allow a Student to register more than once in the system.
+            \item[\textbf{R.5}] The CKB platform must not allow an Educator to register more than once in the system.
+            \item[\textbf{R.6}] Educators can access the platform only if they are registered to it.
+            \item[\textbf{R.7}] Students can access the platform only if they are registered to it.
+            \item[\textbf{R.8}] The CKB platform shall not allow Students to create tournaments and/or battles.
+            \item[\textbf{R.9}] The CKB platform shall allow to create battles within a tournament only to the creator of
             the tournament or to any other Educator that has the permission to do so, given by the tournament's creator.
-                            \item[\textbf{R.8}] The CKB platform must allow Educators to personalize the tournaments that they create.
-            \item[\textbf{R.9}] The CKB platform must allow Edcuators to personalize the battles that they create.
-            \item[\textbf{R.10}] The CKB platform must allow Educators to define new obtainable badges for each tournament they
+            \item[\textbf{R.10}] The CKB platform must allow Educators to personalize the tournaments that they create.
+            \item[\textbf{R.11}] The CKB platform must allow Edcuators to personalize the battles that they create.
+            \item[\textbf{R.12}] The CKB platform must allow Educators to define new obtainable badges for each tournament they
             create
-            \item[\textbf{R.11}] The CKB platform must allow Educators to manually evaluate the solutions uploaded by the students.
-            \item[\textbf{R.12}] The CKB platform must allow Educators to delete or update badges before finalizing tournament creation.
-            \item[\textbf{R.13}] The CKB platform must allow Educators to define rules to obtain badges in tournaments created by them.
-            \item[\textbf{R.14}] The CKB platform must ensures that badges' characteristics respect some guidelines regarding their
+            \item[\textbf{R.13}] The CKB platform must allow Educators to manually evaluate the solutions uploaded by the students.
+            \item[\textbf{R.14}] The CKB platform must allow Educators to delete or update badges before finalizing tournament creation.
+            \item[\textbf{R.15}] The CKB platform must allow Educators to define rules to obtain badges in tournaments created by them.
+            \item[\textbf{R.16}] The CKB platform must ensures that badges' characteristics respect some guidelines regarding their
             name, icon format and rules to obtain them.
-            \item[\textbf{R.15}] The CKB platform must allow only to Educators to create new tournaments.
-            \item[\textbf{R.16}] The CKB platform must ensures that tournaments' characteristics respect some guidelines regarding their
+            \item[\textbf{R.17}] The CKB platform must allow only to Educators to create new tournaments.
+            \item[\textbf{R.18}] The CKB platform must ensures that tournaments' characteristics respect some guidelines regarding their
             name, deadline and access method. 
+            \item[\textbf{R.19}] The CKB platform shall allow to educators to close the tournament that they have
+            created.
         \end{itemize}
     \subsubsection{Use case diagrams}
             \begin{itemize}
                 \item \underline{\large{\textbf{Student}}}
                     \begin{figure}[H]
                         \centering
-                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramStudent.pdf}
+                        \includegraphics[scale=0.55]{images/3.2.2_UseCaseDiagrams/CaseDiagramStudent.pdf}
                         \caption{Student use case diagram}
                         \label{fig:studentUseCaseDiagram}
                     \end{figure}
@@ -696,14 +702,14 @@
                 \item \underline{\large{\textbf{Educator}}}
                     \begin{figure}[H]
                         \centering
-                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator.pdf}
+                        \includegraphics[scale=0.55]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator.pdf}
                         \caption{Educator use case diagram}
                         \label{fig:educatorUseCaseDiagram}
                     \end{figure}
                 \item \underline{\large{\textbf{GitHub}}}
                     \begin{figure}[H]
                         \centering
-                        \includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramGitHub.pdf}
+                        \includegraphics[scale=0.55]{images/3.2.2_UseCaseDiagrams/CaseDiagramGitHub.pdf}
                         \caption{GitHub use case diagram}
                         \label{fig:gitHubUseCaseDiagram}
                     \end{figure}
@@ -877,7 +883,7 @@
                     \begin{figure}[H]
                         \centering
                         \includegraphics[scale=0.95]{SequenceDiagrams/Sequence3.pdf}
-                        \caption{...}
+                        \caption{Educator create a new tournament sequence diagram}
                         \label{fig:TournamentCreationSeqDiagram}
                     \end{figure}
 
@@ -934,7 +940,7 @@
                     \begin{figure}[H]
                         \centering
                         \includegraphics[scale=0.95]{SequenceDiagrams/Sequence4.pdf}
-                        \caption{...}
+                        \caption{Educator creates new badges for a tournament, sequence diagram}
                         \label{fig:BadgesCreationSeqDiagram}
                     \end{figure}
 
@@ -1003,7 +1009,7 @@
                     \begin{figure}[H]
                         \centering
                         \includegraphics[scale=0.95]{SequenceDiagrams/Sequence5.pdf}
-                        \caption{...}
+                        \caption{Educator delete and/or update badge(s) of a tournament, sequence diagram}
                         \label{fig:DeletionUpdateBadgesSeqDiagram}
                     \end{figure}
 
@@ -1069,7 +1075,7 @@
                     \begin{figure}[H]
                         \centering
                         \includegraphics[scale=0.95]{SequenceDiagrams/Sequence6.pdf}
-                        \caption{...}
+                        \caption{Educator creates a new battle, sequence diagram}
                         \label{fig:BattleCreationSeqDiagram}
                     \end{figure}
 
@@ -1132,7 +1138,7 @@
                     \begin{figure}[H]
                         \centering
                         \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence7.pdf}
-                        \caption{...}
+                        \caption{Educator close a tournament, sequence diagram}
                         \label{fig:TournamentClosingSeqDiagram}
                     \end{figure}
 
@@ -1190,7 +1196,7 @@
                     \begin{figure}[H]
                         \centering
                         \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence8.pdf}
-                        \caption{...}
+                        \caption{Educator evaluates manually a battle's score, sequence diagram}
                         \label{fig:BattleEvalSeqDiagram}
                     \end{figure}
 
@@ -1257,8 +1263,8 @@
                     \begin{figure}[H]
                         \centering
                         %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
-                        \caption{...}
-                        \label{fig:BattleCreationSeqDiagram}
+                        \caption{Students form a new group, sequence diagram}
+                        \label{fig:GroupFormationSeqDiagram}
                     \end{figure}
 
                     \item[\textbf{10.}] \textbf{Student join a battle}
@@ -1314,8 +1320,8 @@
                     \begin{figure}[H]
                         \centering
                         %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
-                        \caption{...}
-                        \label{fig:BattleCreationSeqDiagram}
+                        \caption{Student join a battle within a tournament, sequence diagram}
+                        \label{fig:BattleJoiningSeqDiagram}
                     \end{figure}
 
                     \item[\textbf{11.}] \textbf{Student upload a new solution}
@@ -1375,8 +1381,8 @@
                     \begin{figure}[H]
                         \centering
                         %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
-                        \caption{...}
-                        \label{fig:BattleCreationSeqDiagram}
+                        \caption{Student upload a new solution of the battle's problem within the deadline, sequence diagram}
+                        \label{fig:CorrectSolutionUploadSeqDiagram}
                     \end{figure}
 
                     \item[\textbf{12.}] \textbf{Student uploads a solution after submission deadline}
@@ -1430,8 +1436,8 @@
                     \begin{figure}[H]
                         \centering
                         %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
-                        \caption{...}
-                        \label{fig:BattleCreationSeqDiagram}
+                        \caption{Student upload a new solution of the battle's problem beyond the deadline, sequence diagram}
+                        \label{fig:WrongSolutionUploadSeqDiagram}
                     \end{figure}
 
                     \item[\textbf{13.}] \textbf{Student visualize his tournament's results and badges}
@@ -1486,11 +1492,34 @@
                     \begin{figure}[H]
                         \centering
                         \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence13.pdf}
-                        \caption{...}
-                        \label{fig:BattleCreationSeqDiagram}
+                        \caption{Student visualize his/other score(s) and badge(s), sequence diagram}
+                        \label{fig:ScoresBadgesVisualizationSeqDiagram}
                     \end{figure}
             \end{enumerate}
         \subsubsection{Traceability matrix}
+            \begin{xltabular}{\textwidth}
+                {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X | >{\raggedright\arraybackslash}X }
+                    \hline
+                    \endfirsthead
+                    \hline
+                    \endhead
+                    \endfoot
+                    \hline
+                    \endlastfoot
+
+                    \textbf{Goal ID} & \textbf{Req. ID} & \textbf{Use case ID} \\
+                    \textbf{G.1} & R.2, R.3, R.5, R.6, R.10, R.12, R.14, R.15, R.16, R.17 & UC.2, UC.3, UC.4, UC.5 \\
+                    \textbf{G.2} & R.2, R.3, R.5, R.6, R.9, R.11, & UC.2,UC.6 \\
+                    \textbf{G.3} & \\
+                    \textbf{G.4} & \\
+                    \textbf{G.5} & \\
+                    \textbf{G.6} & \\
+                    \textbf{G.6.1} & \\
+                    \textbf{G.6.2} & \\
+                    \textbf{G.6.3} & \\
+                    \textbf{G.7} & \\
+                
+            \end{xltabular}
 \subsection{Performance requirements}
 \subsection{Design constraints}
 \subsection{Software system attributes}
@@ -1498,8 +1527,29 @@
 \section{Formal analysis using Alloy}
 
 \section{Effort spent}
-
+    \begin{tabular}{|g|c|c|}
+        \hline
+        \multicolumn{2}{|g|}{\textbf{Group member}} & \multicolumn{1}{|g|}{\textbf{Effort spent}} \\
+        \hline
+        \textbf{Francesco Spangaro} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\ \vspace{\baselineskip}} & \makecell[l]{\textit{Xh}\\\textit{Xh}\\\textit{Xh}\\\textit{Xh} \vspace{\baselineskip}}\\
+        \hline
+        \textbf{Luca Tosetti} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\ \vspace{\baselineskip}} & \makecell[l]{\textit{Xh}\\\textit{Xh}\\\textit{Xh}\\\textit{Xh}}\\
+        \hline
+        \textbf{Francesco Riccardi} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\ \vspace{\baselineskip}} & \makecell[l]{\textit{Xh}\\\textit{Xh}\\\textit{Xh}\\\textit{Xh} \vspace{\baselineskip}}\\
+        \hline
+    \end{tabular}
 \section{References}
-
+    \subsection{Paper references}
+        \begin{itemize}
+            \item Specification document Assignment RDD AY 2023-2024.pdf
+            \item //TODO:
+        \end{itemize}
+    \subsection{Used tools}
+        \begin{itemize}
+            \item GitHub for project versioning.
+            \item Diagrams.net for UML,Use case,Sequence and BPMN diagrams.
+            \item Visual Studio Code as \LaTeX editor.
+            \item Alloy analyzer for formal analysis of alloy code.
+        \end{itemize}
 
 \end{document}
