@@ -1273,6 +1273,7 @@
                                                         \item[6.] CKB platform proceeds to send the invitation to all students
                                                         specified and send a notification with it in order to notify the receivers.
                                                         \item[7.] Invited students accept the invitation.
+                                                        \item[8.] CKB platform send notification to the Student. 
                                                     \end{enumerate} \\
                         \hline
                         \textbf{Exit condition} & The group is formed and registered by the 
@@ -1280,10 +1281,10 @@
                         \hline
                         \textbf{Exceptions} &    \begin{itemize}
                                                     \item[3.1] The set of students returned applying the filters
-                                                    doesn't contain any available student.Flow restart from point 2.
+                                                    doesn't contain any available student.
                                                     \begin{itemize}
                                                         \item[$\rightarrow$] CKB platform show an empty list, with
-                                                        a message explaining the absence of students in the list.
+                                                        a message explaining the absence of students in the list. Flow restart from point 2.
                                                     \end{itemize} 
                                                     \item[3.2] The set of students returned contains only students
                                                     already in a group.
@@ -1292,12 +1293,17 @@
                                                         from the computation but doesn't allow to the Student to select them.
                                                         Flow restart from point 2.
                                                     \end{itemize} 
+                                                    \item[7.1] One or more invited students don't accept the invitation
+                                                    \begin{itemize}
+                                                        \item[$\rightarrow$] CKB platform notifies the Student that sent the invitation
+                                                        of the refusal of the invitation. Flow restart from point 1.
+                                                    \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
                     
                     \begin{figure}[H]
                         \centering
-                        %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence9.pdf}
                         \caption{Students form a new group, sequence diagram}
                         \label{fig:GroupFormationSeqDiagram}
                     \end{figure}
@@ -1555,7 +1561,21 @@
                     \textbf{G.7} & \\
                 
             \end{xltabular}
-\subsection{Performance requirements}
+    \subsection{Performance requirements}
+        We expect to have thousands of registrations in the first year of the platform, due to the possible
+        subscription to the service of several private and public academic environment (especially high schools).
+        In the subsequent years we expect to have progressively less and less subscription, for this reason scalability
+        is not our main concern, althought it should not be overlooked considering the huge escalation in registered
+        user expected in the first years. On the other hand time response and above all reliability are our main focus.
+        We need to guarantee a low response time, in order to let students and educator interact actively with the platform
+        without high delays, that could compromise students' works for instance. We have to take in consideration
+        also the reliability since, basically for the same reasons we want a low response time: students' possibility
+        to upload their work, possibility of educator to create new battle, tournament or close the existing ones
+        would be compromised in case of unavailability of the platform.
+        From the point of view of the data storage, we expect to need a storage of medium size: necessary to store
+        users data (which we expect to don't occupy much space), tournaments and battles' data (don't occupy much space either)
+        and statistics, information and code about groups' commits (which are the main reason why we expect to need a
+        medium sized storage).
 \subsection{Design constraints}
 \subsection{Software system attributes}
 
