@@ -176,9 +176,9 @@
                                 \begin{description}
                                     \item When students have developed a solution to the battle, they can submit their answer to the platform. Groups are requested to send only one answer. Students can change their answer as they proceed, when uploading a new solution the older one is overwritten, since there can only be one answer for each battle. 
                                 \end{description}
-                            \item[G6.3:] \textit{\textbf{Allow students to see their scores:}}
+                            \item[G6.3:] \textit{\textbf{Allow students to see their scores and badges:}}
                                 \begin{description}
-                                    \item After each answer submission, a new score is assigned to the students. The score can be manually created by an educator or automatically assigned to the students by the platform. Students can see the scores obtained
+                                    \item After each answer submission, a new score is assigned to the students. The score can be manually created by an educator or automatically assigned to the students by the platform. Students can see the scores obtained in a battle and in a tournament they partecipated to. Finally students can even see the badges obtained in a tournament.
                                 \end{description}
                         %TODO
                         % Ask professor if score is computated each commit, not visualized, and then published after battle closing, or if students can actively see their scores as the battle progresses (par. 2, last line - par. 4, last line) 
@@ -411,7 +411,7 @@
     \begin{itemize}
         \item \textbf{\textit{Section 1: Introduction}} \\
         This section introduces the problem and the platform/application to be developed in order to resolve it. It describes the major purpose of the project, every one of his goals, the analysis of the its domain and every world, shared and machine phenomena associated with it.
-        In addition in this section are inserted the definitions, acronysm and abbreviations used in this ddocument, including even it's revision history and refereced documents or web pages.
+        In addition in this section are inserted the definitions, acronyms and abbreviations used in this ddocument, including even it's revision history and refereced documents or web pages.
         \item \textbf{\textit{Section 2: Overall description}} \\
         This section gives an overall description of the project and all the interactions that could occur between the platform and the final users (Students and educators). To do this, it will include different possibile scenarios that could happen, the different actors involved in the platform usage and all the assumptions, dependencies and eventual constraints that have to be considered in the development of the platform
         \item \textbf{\textit{Section 3: Specific Requirements}} \\
@@ -683,8 +683,43 @@
             \item[\textbf{R.17}] The CKB platform must allow only to Educators to create new tournaments.
             \item[\textbf{R.18}] The CKB platform must ensures that tournaments' characteristics respect some guidelines regarding their
             name, deadline and access method. 
-            \item[\textbf{R.19}] The CKB platform shall allow to educators to close the tournament that they have
-            created.
+            \item[\textbf{R.19}] The CKB platform shall allow to educators to close the tournament that they have created.
+            \item[\textbf{R.20}] The CKB platform must ensures that when a tournament get closed, educators cannot create new battles
+            within it.
+            \item[\textbf{R.21}] The CKB platform must ensures that if a group upload a solution to a battle beyond the submission deadline
+            , that solution will not be considered in the score computation, by preventing its upload.
+            \item[\textbf{R.22}] The CKB platform must ensures that the score given to a group in a tournament is
+            coherent with scores given to the same group in the battles they have partecipated in.
+            \item[\textbf{R.23}] The CKB platform must ensures that the computation of the tournament's score
+            will take into consideration even the battles to which a group hasn't partecipated, in order to guarantees
+            a fair competition with the other groups.
+            \item[\textbf{R.24}] The CKB platform must allow to a Student to subscribe to a tournament.
+            \item[\textbf{R.25}] The CKB platform must allow to a Student to partecipate in a battle of a tournament
+            within the registration deadline.
+            \item[\textbf{R.26}] The CKB platform must allow a Student to send and receive group invitation to and from
+            other students in order to form groups.
+            \item[\textbf{R.27}] The CKB platform shall allow to a Student to join a battle only if he respect the 
+            rules of that battle in term of group composition. Eventually allowing to enter a battle even as a single
+            member of a group if the battle's rules allow to do so.
+            \item[\textbf{R.28}] The CKB platform must ensure that solutions regarding a battle uploaded by a group
+            registered to it, will be taken into consideration at the end of the battle.
+            \item[\textbf{R.29}] The CKB platform must allow student to upload solution to a battle relying on the
+            external service GitHub.
+            \item[\textbf{R.30}] The CKB platform must ensure to consider only one (the latest) solution uploaded by
+            a group in a battle.
+            \item[\textbf{R.31}] The CKB platform must allow gropus partecipating into a battle, to change their solution
+            if they want, if the battle is still going on (submission deadline hasn't expired yet).
+            \item[\textbf{R.32}] The CKB platform must ensure that the score given to a group's solution is
+            updated as soon as possible.
+            \item[\textbf{R.33}] The CKB platform must allow an Educator to modify the score automatically
+            assigned by the platform to a solution of a group.
+            \item[\textbf{R.34}] The CKB platform must ensure that when a new tournament is created, all
+            students subscribed to the platform will receive a notification.
+            \item[\textbf{R.35}] The CKB platform must ensure that when a new battle is created in a tournament
+            , all students subscribed to the tournament will receive a notification.
+            \item[\textbf{R.36}] The CKB platform must allow students to visualize their score obtained in a battle they partecipated to.
+            \item[\textbf{R.37}] The CKB platform must allow students to visualize their score obtained in a tournament they partecipated to.
+            \item[\textbf{R.38}] The CKB platform must allow students to visualize their badges obtained in a tournament they partecipated to.  
         \end{itemize}
     \subsubsection{Use case diagrams}
             \begin{itemize}
@@ -1509,7 +1544,7 @@
 
                     \textbf{Goal ID} & \textbf{Req. ID} & \textbf{Use case ID} \\
                     \textbf{G.1} & R.2, R.3, R.5, R.6, R.10, R.12, R.14, R.15, R.16, R.17 & UC.2, UC.3, UC.4, UC.5 \\
-                    \textbf{G.2} & R.2, R.3, R.5, R.6, R.9, R.11, & UC.2,UC.6 \\
+                    \textbf{G.2} & R.2, R.3, R.5, R.6, R.9, R.11, & UC.2, UC.6 \\
                     \textbf{G.3} & \\
                     \textbf{G.4} & \\
                     \textbf{G.5} & \\
