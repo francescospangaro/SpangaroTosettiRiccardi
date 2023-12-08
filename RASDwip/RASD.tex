@@ -633,93 +633,90 @@
 \section{Specific requirements}
 \subsection{External interface requirements}
     \subsubsection{User Interfaces}
-        The system should interfaces with the users (both Educator and Students) throught their 
-        devices, such as: laptops, desktops, smartphones, which must be connected to the internet.
-        Every users in order to access the platform have to reach an existing domain (like "www.codekatabattle.com"
-        for example).
+        The system should interface with the users (both Educator and Students) through their 
+        devices, such as: laptops, PC desktops and smartphones, whom must be connected to the internet.
+        Every user, in order to access the platform, has to connect to an existing domain (like "www.codekatabattle.com").
         
     \subsubsection{Software Interfaces}
-        The system have to use different software interfaces in order to function properly:
+        The system has to use different software interfaces in order to properly function:
         \begin{itemize}
-            \item \textbf{DB Interfaces:} The system has to interact with a data based
-            used to store all the useful information necessary to the system to work properly.
-            \item \textbf{GitHub Interfaces:} The system has to interact with GitHub platform
-            in order to receive the new solutions uploaded by the students. This is done throught
-            "GitHub Actions", APIs made available by GitHub to automate tasks.
-            \item \textbf{Testing Interfaces:} The system needs to test various piece of code
-            belonging to the solutions uploaded by the students. In order to do this must be used
-            a Testing API. 
+            \item \textbf{DB Interfaces:} The system has to interact with a database,
+            used to store all information necessary for the system to function.
+            \item \textbf{GitHub Interfaces:} The system has to interact with the GitHub platform,
+            in order to receive the students' solutions. This is done through "GitHub Actions"
+            APIs made available by GitHub to automate tasks.
+            \item \textbf{Testing Interfaces:} The system needs to test the students' solutions. 
+            In order to do this a Testing API must be used . 
         \end{itemize}
 
     \subsubsection{Hardware Interfaces}
-        The system has to interfaces with the hardware components that contain
-        the data base.
+        The system has to interface with the hardware components containing
+        the database.
     \subsubsection{Communication Interfaces}
-        All communication made from and to the CKB platform have to be done
-        using HTTPS protocol.
+        All communications from and to the CKB platform have to use the HTTPS protocol.
 \subsection{Functional requirements}
     \subsubsection{Requirements}
         \begin{itemize}
             
-            \item[\textbf{R.1}] The CKB platform shall allow an unregistered Student to create a new account.
-            \item[\textbf{R.2}] The CKB platform shall allow an unregistered Educator to create a new account.
-            \item[\textbf{R.3}] The CKB platform must allow the access to itself only if the credentials used are correct.                
+            \item[\textbf{R.1}] The CKB platform should allow an unregistered Student to create a new account.
+            \item[\textbf{R.2}] The CKB platform should allow an unregistered Educator to create a new account.
+            \item[\textbf{R.3}] The CKB platform must allow access to it's pages only if the used credentials are correct.                
             \item[\textbf{R.4}] The CKB platform must not allow a Student to register more than once in the system.
             \item[\textbf{R.5}] The CKB platform must not allow an Educator to register more than once in the system.
             \item[\textbf{R.6}] Educators can access the platform only if they are registered to it.
             \item[\textbf{R.7}] Students can access the platform only if they are registered to it.
-            \item[\textbf{R.8}] The CKB platform shall not allow Students to create tournaments and/or battles.
-            \item[\textbf{R.9}] The CKB platform shall allow to create battles within a tournament only to the creator of
-            the tournament or to any other Educator that has the permission to do so, given by the tournament's creator.
-            \item[\textbf{R.10}] The CKB platform must allow Educators to personalize the tournaments that they create.
-            \item[\textbf{R.11}] The CKB platform must allow Edcuators to personalize the battles that they create.
+            \item[\textbf{R.8}] The CKB platform should not allow Students to create tournaments and/or battles.
+            \item[\textbf{R.9}] The CKB platform should allow Educators to create battles within a tournament only to the tournament
+            creator and to any other Educator that has been granted permission to do so by the tournament creator.
+            \item[\textbf{R.10}] The CKB platform must allow Educators to personalize the tournaments they create.
+            \item[\textbf{R.11}] The CKB platform must allow Edcuators to personalize the battles they create.
             \item[\textbf{R.12}] The CKB platform must allow Educators to define new obtainable badges for each tournament they
-            create
-            \item[\textbf{R.13}] The CKB platform must allow Educators to manually evaluate the solutions uploaded by the students.
-            \item[\textbf{R.14}] The CKB platform must allow Educators to delete or update badges before finalizing tournament creation.
+            create.
+            \item[\textbf{R.13}] The CKB platform must allow Educators to manually evaluate the solutions uploaded by the students for the battles that
+            the Educators created.
+            \item[\textbf{R.14}] The CKB platform must allow Educators to delete or update badges before finalizing a tournament's creation.
             \item[\textbf{R.15}] The CKB platform must allow Educators to define rules to obtain badges in tournaments created by them.
-            \item[\textbf{R.16}] The CKB platform must ensures that badges' characteristics respect some guidelines regarding their
+            \item[\textbf{R.16}] The CKB platform must ensure that badges' characteristics respect guidelines regarding their
             name, icon format and rules to obtain them.
-            \item[\textbf{R.17}] The CKB platform must allow only to Educators to create new tournaments.
-            \item[\textbf{R.18}] The CKB platform must ensures that tournaments' characteristics respect some guidelines regarding their
+            \item[\textbf{R.17}] The CKB platform must allow Educators to create new tournaments.
+            \item[\textbf{R.18}] The CKB platform must ensure that tournaments' characteristics respect guidelines regarding their
             name, deadline and access method. 
-            \item[\textbf{R.19}] The CKB platform shall allow to educators to close the tournament that they have created.
-            \item[\textbf{R.20}] The CKB platform must ensures that when a tournament get closed, educators cannot create new battles
+            \item[\textbf{R.19}] The CKB platform should allow to educators to close tournaments they have created.
+            \item[\textbf{R.20}] The CKB platform must ensure that when a tournament is closed, educators cannot create new battles
             within it.
-            \item[\textbf{R.21}] The CKB platform must ensures that if a group upload a solution to a battle beyond the submission deadline
-            , that solution will not be considered in the score computation, by preventing its upload.
-            \item[\textbf{R.22}] The CKB platform must ensures that the score given to a group in a tournament is
+            \item[\textbf{R.21}] The CKB platform must ensure that if a group uploads a solution to a battle after the submission's deadline, 
+            that solution will not be considered in the score computation, by preventing its upload.
+            \item[\textbf{R.22}] The CKB platform must ensure that the score given to a group in a tournament is
             coherent with scores given to the same group in the battles they have partecipated in.
-            \item[\textbf{R.23}] The CKB platform must ensures that the computation of the tournament's score
-            will take into consideration even the battles to which a group hasn't partecipated, in order to guarantees
-            a fair competition with the other groups.
-            \item[\textbf{R.24}] The CKB platform must allow to a Student to subscribe to a tournament.
-            \item[\textbf{R.25}] The CKB platform must allow to a Student to partecipate in a battle of a tournament
+            \item[\textbf{R.23}] The CKB platform must ensure fair competition between group scores. In the tournament's evaluation, the final
+            group score should be the average score of all the battles in the tournament for each group. Any battle with no solution submitted will count 
+            as 0 points.
+            \item[\textbf{R.24}] The CKB platform must allow Students to subscribe to a tournament.
+            \item[\textbf{R.25}] The CKB platform must allow Students to subscribe to a battle of a tournament
             within the registration deadline.
-            \item[\textbf{R.26}] The CKB platform must allow a Student to send and receive group invitation to and from
+            \item[\textbf{R.26}] The CKB platform must allow Students to submit solutions to a tournament's battle 
+            within the battle's deadline.
+            \item[\textbf{R.27}] The CKB platform must allow Students to send and receive group invitations to and from
             other students in order to form groups.
-            \item[\textbf{R.27}] The CKB platform shall allow to a Student to join a battle only if he respect the 
-            rules of that battle in term of group composition. Eventually allowing to enter a battle even as a single
-            member of a group if the battle's rules allow to do so.
-            \item[\textbf{R.28}] The CKB platform must ensure that solutions regarding a battle uploaded by a group
-            registered to it, will be taken into consideration at the end of the battle.
-            \item[\textbf{R.29}] The CKB platform must allow student to upload solution to a battle relying on the
-            external service GitHub.
-            \item[\textbf{R.30}] The CKB platform must ensure to consider only one (the latest) solution uploaded by
-            a group in a battle.
-            \item[\textbf{R.31}] The CKB platform must allow gropus partecipating into a battle, to change their solution
-            if they want, if the battle is still going on (submission deadline hasn't expired yet).
-            \item[\textbf{R.32}] The CKB platform must ensure that the score given to a group's solution is
+            \item[\textbf{R.28}] The CKB platform should allow Students to join a battle only if the group composition rules 
+            for that battle are complied with.
+            \item[\textbf{R.29}] The CKB platform must ensure that solutions uploaded by a Student for a battle are evaluated.
+            \item[\textbf{R.30}] The CKB platform must allow a Student to upload solutions to a battle relying on the
+            external GitHub service.
+            \item[\textbf{R.31}] The CKB platform must ensure that only the latest solution uploaded by a Student for a battle he is subscribed to will
+            be taken into consideration for the final score.
+            \item[\textbf{R.32}] The CKB platform must allow groups partecipating in a battle to change their solution, 
+            if the battle's deadline submission hasn't expired yet.
+            \item[\textbf{R.33}] The CKB platform must ensure that the score given to a group's solution is
             updated as soon as possible.
-            \item[\textbf{R.33}] The CKB platform must allow an Educator to modify the score automatically
-            assigned by the platform to a solution of a group.
-            \item[\textbf{R.34}] The CKB platform must ensure that when a new tournament is created, all
+            \item[\textbf{R.34}] The CKB platform must allow an Educator to modify the score for a Student's solution.
+            \item[\textbf{R.35}] The CKB platform must ensure that when a new tournament is created, all
             students subscribed to the platform will receive a notification.
-            \item[\textbf{R.35}] The CKB platform must ensure that when a new battle is created in a tournament
-            , all students subscribed to the tournament will receive a notification.
-            \item[\textbf{R.36}] The CKB platform must allow students to visualize their score obtained in a battle they partecipated to.
-            \item[\textbf{R.37}] The CKB platform must allow students to visualize their score obtained in a tournament they partecipated to.
-            \item[\textbf{R.38}] The CKB platform must allow students to visualize their badges obtained in a tournament they partecipated to.  
+            \item[\textbf{R.36}] The CKB platform must ensure that when a new battle is created in a tournament, 
+            all students subscribed to the tournament will receive a notification.
+            \item[\textbf{R.37}] The CKB platform must allow Students to visualize the score they obtained in a battle they partecipated in.
+            \item[\textbf{R.38}] The CKB platform must allow Students to visualize the score they obtained in a tournament they partecipated in.
+            \item[\textbf{R.39}] The CKB platform must allow Students to visualize the badges they obtained.  
         \end{itemize}
     \subsubsection{Use case diagrams}
             \begin{itemize}
