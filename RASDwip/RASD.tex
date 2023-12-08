@@ -1559,20 +1559,21 @@
                 
             \end{xltabular}
     \subsection{Performance requirements}
-        We expect to have thousands of registrations in the first year of the platform, due to the possible
-        subscription to the service of several private and public academic environment (especially high schools).
-        In the subsequent years we expect to have progressively less and less subscription, for this reason scalability
-        is not our main concern, althought it should not be overlooked considering the huge escalation in registered
-        user expected in the first years. On the other hand time response and above all reliability are our main focus.
-        We need to guarantee a low response time, in order to let students and educator interact actively with the platform
-        without high delays, that could compromise students' works for instance. We have to take in consideration
-        also the reliability since, basically for the same reasons we want a low response time: students' possibility
-        to upload their work, possibility of educator to create new battle, tournament or close the existing ones
-        would be compromised in case of unavailability of the platform.
-        From the point of view of the data storage, we expect to need a storage of medium size: necessary to store
-        users data (which we expect to don't occupy much space), tournaments and battles' data (don't occupy much space either)
-        and statistics, information and code about groups' commits (which are the main reason why we expect to need a
-        medium sized storage).
+        We expect thousands of registrations in the first year of the platform's publication, due to the possible
+        subscription of several private and public academic environments (especially high schools).
+        In the subsequent years we expect to have progressively less and less subscriptions. For this reason scalability
+        is not our main concern, althought it should not be overlooked considering the huge number of registered
+        user expected in the first years. Response time and reliability are our main focuses.
+        We need to guarantee a low response time in order to let students and educators interact actively with the platform
+        without high delays that could compromise students' works. 
+        We have to take into consideration reliability since with a low reliability platform, students would not be able to upload their solutions consistently,
+        educators would not be able to access the platform and manually evaluate students' solutions, and would be a bad experience overall.
+        For data storing, we expect we'll need a high capacity database. It's necessary for storing
+        the user's data, tournaments and battles' data and statistics, informations and code about groups' commits.
+        We'll need a high capacity database, since being the platform built around students and schools, we expect to ha velots of users subscribing together
+        at the same time, when school starts. These times are differenciated throught the year, for example in Italy schools starts in Semptember, while in 
+        New Zealand in starts in July. The platform being based around schools means that we'll have  lots of user's data of old students that are now not using 
+        the platform anymore.
 \subsection{Design constraints}
 \subsection{Software system attributes}
 
