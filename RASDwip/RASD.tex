@@ -147,6 +147,7 @@
                             \item set a final submission deadline;
                             \item set additional configuration for scoring.
                         \end{itemize}
+                        
                     \end{description}
                     % Assumption: educators can access al tournaments and battles with view only permission
                 \item[G3:] \textit{\textbf{Allow educators to administer different tournaments:}}
@@ -663,8 +664,8 @@
             \item[\textbf{R.3}] The CKB platform must allow access to it's pages only if the used credentials are correct.                
             \item[\textbf{R.4}] The CKB platform must not allow a Student to register more than once in the system.
             \item[\textbf{R.5}] The CKB platform must not allow an Educator to register more than once in the system.
-            \item[\textbf{R.6}] Educators can access the platform only if they are registered to it.
-            \item[\textbf{R.7}] Students can access the platform only if they are registered to it.
+            \item[\textbf{R.6}] Educators can access the platform's services only if they are registered to it.
+            \item[\textbf{R.7}] Students can access the platform's services only if they are registered to it.
             \item[\textbf{R.8}] The CKB platform should not allow Students to create tournaments and/or battles.
             \item[\textbf{R.9}] The CKB platform should allow Educators to create battles within a tournament only to the tournament
             creator and to any other Educator that has been granted permission to do so by the tournament creator.
@@ -680,7 +681,7 @@
             name, icon format and rules to obtain them.
             \item[\textbf{R.17}] The CKB platform must allow Educators to create new tournaments.
             \item[\textbf{R.18}] The CKB platform must ensure that tournaments' characteristics respect guidelines regarding their
-            name, deadline and access method. 
+            name, deadline, access method, programming language. 
             \item[\textbf{R.19}] The CKB platform should allow to educators to close tournaments they have created.
             \item[\textbf{R.20}] The CKB platform must ensure that when a tournament is closed, educators cannot create new battles
             within it.
@@ -717,6 +718,8 @@
             \item[\textbf{R.37}] The CKB platform must allow Students to visualize the score they obtained in a battle they partecipated in.
             \item[\textbf{R.38}] The CKB platform must allow Students to visualize the score they obtained in a tournament they partecipated in.
             \item[\textbf{R.39}] The CKB platform must allow Students to visualize the badges they obtained.  
+            \item[\textbf{R.40}] The CKB platform must ensures that battles' characteristics respect guidelines
+            regarding their name, deadlines, programming language, number of member per group.
         \end{itemize}
     \subsubsection{Use case diagrams}
             \begin{itemize}
@@ -799,12 +802,12 @@
                     \end{xltabular}
                     
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{SequenceDiagrams/StudentSignUpSeqDiagram.pdf}
-                    %    \caption{Student sign up sequence diagram}
-                    %    \label{fig:StudentSignUpSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{SequenceDiagrams/StudentSignUpSeqDiagram.pdf}
+                        \caption{Student sign up sequence diagram}
+                        \label{fig:StudentSignUpSeqDiagram}
+                    \end{figure}
                     
                 
                 \item[\textbf{2.}] \textbf{Educator sign up to the platform}
@@ -854,12 +857,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{SequenceDiagrams/Sequence2.pdf}
-                    %    \caption{Educator sign up sequence diagram}
-                    %    \label{fig:EducatorSignUpSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{SequenceDiagrams/Sequence2.pdf}
+                        \caption{Educator sign up sequence diagram}
+                        \label{fig:EducatorSignUpSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{3.}] \textbf{Educator creates a new tournament}
                     \begin{xltabular}{\textwidth}
@@ -912,12 +915,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{SequenceDiagrams/Sequence3.pdf}
-                    %    \caption{Educator create a new tournament sequence diagram}
-                    %    \label{fig:TournamentCreationSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{SequenceDiagrams/Sequence3.pdf}
+                        \caption{Educator create a new tournament sequence diagram}
+                        \label{fig:TournamentCreationSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{4.}] \textbf{Educator creates new badges}
                     \begin{xltabular}{\textwidth}
@@ -969,12 +972,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{SequenceDiagrams/Sequence4.pdf}
-                    %    \caption{Educator creates new badges for a tournament, sequence diagram}
-                    %    \label{fig:BadgesCreationSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{SequenceDiagrams/Sequence4.pdf}
+                        \caption{Educator creates new badges for a tournament, sequence diagram}
+                        \label{fig:BadgesCreationSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{5.}] \textbf{Educator delete a badge}
                     \begin{xltabular}{\textwidth}
@@ -1038,12 +1041,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{SequenceDiagrams/Sequence5.pdf}
-                    %    \caption{Educator delete and/or update badge(s) of a tournament, sequence diagram}
-                    %    \label{fig:DeletionUpdateBadgesSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{SequenceDiagrams/Sequence5.pdf}
+                        \caption{Educator delete and/or update badge(s) of a tournament, sequence diagram}
+                        \label{fig:DeletionUpdateBadgesSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{6.}] \textbf{Educator creates a new battle}
                     \begin{xltabular}{\textwidth}
@@ -1083,7 +1086,8 @@
                                                     \end{enumerate} \\
                         \hline
                         \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
-                         is created within the tournament chosen by the Educator itself. Educator it's then led to the riepilogative
+                         is created within the tournament chosen by the Educator itself. All the students subscribed to the tournament
+                         in which the battle has been created get notified. Educator it's then led to the riepilogative
                          page of the battles within the tournament.
                          \\
                         \hline
@@ -1104,12 +1108,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{SequenceDiagrams/Sequence6.pdf}
-                    %    \caption{Educator creates a new battle, sequence diagram}
-                    %    \label{fig:BattleCreationSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{SequenceDiagrams/Sequence6.pdf}
+                        \caption{Educator creates a new battle, sequence diagram}
+                        \label{fig:BattleCreationSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{7.}] \textbf{Educator close a tournament}
                     \begin{xltabular}{\textwidth}
@@ -1167,12 +1171,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence7.pdf}
-                    %    \caption{Educator close a tournament, sequence diagram}
-                    %    \label{fig:TournamentClosingSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence7.pdf}
+                        \caption{Educator close a tournament, sequence diagram}
+                        \label{fig:TournamentClosingSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{8.}] \textbf{Educator evaluate battle's results}
                     \begin{xltabular}{\textwidth}
@@ -1225,12 +1229,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence8.pdf}
-                    %    \caption{Educator evaluates manually a battle's score, sequence diagram}
-                    %    \label{fig:BattleEvalSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence8.pdf}
+                        \caption{Educator evaluates manually a battle's score, sequence diagram}
+                        \label{fig:BattleEvalSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{9.}] \textbf{Student forms a group}
                     \begin{xltabular}{\textwidth}
@@ -1298,12 +1302,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence9.pdf}
-                    %    \caption{Students form a new group, sequence diagram}
-                    %    \label{fig:GroupFormationSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence9.pdf}
+                        \caption{Students form a new group, sequence diagram}
+                        \label{fig:GroupFormationSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{10.}] \textbf{Student join a battle}
                     \begin{xltabular}{\textwidth}
@@ -1338,8 +1342,10 @@
                                                         battle his group.
                                                         \item[5.] CKB platform checks whether the group respect all the
                                                         battle requirements.
+                                                        \item[5.] CKB platform returns a confirmation message to all the group
+                                                        members.
                                                         \item[6.] CKB platform sends a notification to group members
-                                                        when subscription deadline expires.
+                                                        when subscription deadline expires and battle starts.
                                                     \end{enumerate} \\
                         \hline
                         \textbf{Exit condition} & The Student and his group have joined the battle.
@@ -1349,18 +1355,20 @@
                         \textbf{Exceptions} &    \begin{itemize}
                                                     \item[5.1] The group doesn't respect the requirement of the battle
                                                     (too many or too few members).
+                                                    \item[5.2] The group contains members not subscribed to the tournament in which
+                                                    the battle is held.
                                                     \begin{itemize}
                                                         \item[$\rightarrow$] CKB platform shows an error message.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
-                    %    \caption{Student join a battle within a tournament, sequence diagram}
-                    %    \label{fig:BattleJoiningSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence10.pdf}
+                        \caption{Student join a battle within a tournament, sequence diagram}
+                        \label{fig:BattleJoiningSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{11.}] \textbf{Student upload a new solution}
                     \begin{xltabular}{\textwidth}
@@ -1382,7 +1390,7 @@
                         \hline
                         \textbf{Actors} & Student, GitHub\\
                         \hline
-                        \textbf{Entry condition} & Student has logged in the platform, has registered to at least 1 tournament
+                        \textbf{Entry condition} & Student has a GitHub account, has registered to at least 1 tournament
                         and 1 battle within it, and want to upload a new solution to that battle. \\
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
@@ -1395,6 +1403,8 @@
                                                         testing it.
                                                         \item[5.] CKB platform gives a score to the solution based on the 
                                                         tests results.
+                                                        \item[6.] CKB platform updates group score in the battle and tournament.
+                                                        \item[7.] CKB platform notifies the group's members of the successfull testing. 
                                                     \end{enumerate} \\
                         \hline
                         \textbf{Exit condition} & Student's (or his group's) score is updated based on the 
@@ -1410,18 +1420,18 @@
                                                     huge resource consumption, ...
                                                     \begin{itemize}
                                                         \item[$\rightarrow$] CKB platform, terminates the testing phase and
-                                                        notifies the Student with an error message in the place of the 
+                                                        notifies the Student's group with an error message in the place of the 
                                                         solution score, flow ends.
                                                     \end{itemize} 
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
-                    %    \caption{Student upload a new solution of the battle's problem within the deadline, sequence diagram}
-                    %    \label{fig:CorrectSolutionUploadSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence11.pdf}
+                        \caption{Student upload a new solution of the battle's problem within the deadline, sequence diagram}
+                        \label{fig:CorrectSolutionUploadSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{12.}] \textbf{Student uploads a solution after submission deadline}
                     \begin{xltabular}{\textwidth}
@@ -1449,14 +1459,14 @@
                         \hline
                         \textbf{Flow of events} &    \begin{enumerate}
                                                         \item[1.] Student access his GitHub account
-                                                        \item[2.] Student upload his solution (or the group one)
-                                                        to his GitHub repository, precedently forked.
+                                                        \item[2.] Student upload his solution (the group one)
+                                                        to the group's GitHub repository, precedently forked.
                                                         \item[3.] GitHub platform, throught his "GitHub Actions" notifies
                                                         the CKB platform of the upload of the new solution by the Student.
                                                         \item[4.] CKB platform receives the new solution uploaded and sees
                                                         that the submission deadline of the battle for which the solution
                                                         was uploaded has expired.
-                                                        \item[5.] CKB platform notifies the Student with an error message.
+                                                        \item[5.] CKB platform notifies the group's members with an error message.
                                                     \end{enumerate} \\
                         \hline
                         \textbf{Exit condition} & Student's (or his group's) receives a notification by the CKB platform
@@ -1471,12 +1481,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    %\includegraphics[scale=0.4]{images/3.2.2_UseCaseDiagrams/CaseDiagramEducator}
-                    %    \caption{Student upload a new solution of the battle's problem beyond the deadline, sequence diagram}
-                    %    \label{fig:WrongSolutionUploadSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence12.pdf}
+                        \caption{Student upload a new solution of the battle's problem beyond the deadline, sequence diagram}
+                        \label{fig:WrongSolutionUploadSeqDiagram}
+                    \end{figure}
 
                     \item[\textbf{13.}] \textbf{Student visualize his tournament's results and badges}
                     \begin{xltabular}{\textwidth}
@@ -1527,12 +1537,12 @@
                                                 \end{itemize}
                     \end{xltabular}
                     
-                    %\begin{figure}[H]
-                    %    \centering
-                    %    \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence13.pdf}
-                    %    \caption{Student visualize his/other score(s) and badge(s), sequence diagram}
-                    %    \label{fig:ScoresBadgesVisualizationSeqDiagram}
-                    %\end{figure}
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence13.pdf}
+                        \caption{Student visualize his/other score(s) and badge(s), sequence diagram}
+                        \label{fig:ScoresBadgesVisualizationSeqDiagram}
+                    \end{figure}
             \end{enumerate}
         \subsubsection{Traceability matrix}
             \begin{xltabular}{\textwidth}
@@ -1546,16 +1556,16 @@
                     \endlastfoot
 
                     \textbf{Goal ID} & \textbf{Req. ID} & \textbf{Use case ID} \\
-                    \textbf{G.1} & R.2, R.3, R.5, R.6, R.10, R.12, R.14, R.15, R.16, R.17 & UC.2, UC.3, UC.4, UC.5 \\
-                    \textbf{G.2} & R.2, R.3, R.5, R.6, R.9, R.11, & UC.2, UC.6 \\
-                    \textbf{G.3} & \\
-                    \textbf{G.4} & \\
-                    \textbf{G.5} & \\
-                    \textbf{G.6} & \\
-                    \textbf{G.6.1} & \\
-                    \textbf{G.6.2} & \\
-                    \textbf{G.6.3} & \\
-                    \textbf{G.7} & \\
+                    \textbf{G.1} & R.2, R.3, R.5, R.6, R.8, R.10, R.12, R.14, R.15, R.16, R.17, R.18 & UC.2, UC.3, UC.4, UC.5 \\
+                    \textbf{G.2} & R.2, R.3, R.5, R.6, R.8, R.9, R.11, R.40 & UC.2, UC.6 \\
+                    \textbf{G.3} & R.2, R.3, R.5, R.6, R.19, R.20 & UC.2, UC.7 \\
+                    \textbf{G.4} & R.2, R.3, R.5, R.6, R.13, R.34 & UC.2, UC.8\\
+                    \textbf{G.5} & R.1, R.3, R.4, R.7, R.24 & UC.1\\
+                    \textbf{G.6} & R.1, R.3, R.4, R.7, R.25, R.27, R.28 & UC.1, UC.10\\
+                    \textbf{G.6.1} & R.1, R.3, R.4, R.7, R.27 & UC.1, UC.9\\
+                    \textbf{G.6.2} & R.1, R.3, R.4, R.7, R.21, R.26, R.29, R.30, R.31, R.32 & UC.1, UC.11, UC.12\\
+                    \textbf{G.6.3} & R.1, R.3, R.4, R.7, R.22, R.23, R.33, R.37, R.38, R.39 & UC.1, UC.13\\
+                    \textbf{G.7} & R.1, R.3, R.4, R.7, R.35, R.36 & UC.1, UC.3, UC.6\\
                 
             \end{xltabular}
     \subsection{Performance requirements}
