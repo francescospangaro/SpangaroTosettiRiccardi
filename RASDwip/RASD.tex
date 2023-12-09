@@ -1,13 +1,15 @@
 \documentclass{article}
 \usepackage{float}
-\usepackage{graphicx} % Required for inserting images
+\usepackage{graphicx} % Required for inserting images with \includegraphics command.
 \usepackage[hidelinks]{hyperref} % Required in order to use in-page links in the table of contents
-% Option "hidelinks" used to hide links border in some pdf reader such as Acrobat Reader.
+                                 % Option "hidelinks" used to hide links border in some pdf reader such as Acrobat Reader.
 
 %|
 \usepackage[utf8]{inputenc}
 \inputencoding{latin1}
 
+%Package imported in order to customize cells in tabularx environment. In particular was
+%added to allow the use of "\\" syntax inside a table's cell.
 %Package imported in order to customize cells in tabularx environment. In particular was
 %added to allow the use of "\\" syntax inside a table's cell.
 \usepackage{makecell}
@@ -1602,6 +1604,9 @@
 \pagestyle{FormalAnalysisAlloyStyle}
 
 \section{Formal analysis using Alloy}
+
+\newpage
+\pagestyle{EffortSpentStyle}
 
 
 \subsection{SIGNATURES}
