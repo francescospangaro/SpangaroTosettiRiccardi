@@ -1,85 +1,172 @@
 \documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\usepackage{float}
+\usepackage{graphicx} % Required for inserting images with \includegraphics command.
+\usepackage[hidelinks]{hyperref} % Required in order to use in-page links in the table of contents
+                                 % Option "hidelinks" used to hide links border in some pdf reader such as Acrobat Reader.
 
-\title{SpangaroRASD-v0.1}
-\author{Francesco Spangaro}
-\date{October 2023}
+%Package imported in order to customize cells in tabularx environment. In particular was
+%added to allow the use of "\\" syntax inside a table's cell.
+\usepackage{makecell}
+
+%Packages and instruction to change scale of sections', subsections' and subsubsections' heads
+\usepackage{titlesec}
+\usepackage{titlesec}
+%Makes sections' contents in bold, and increases their sizes.
+\titleformat*{\section}{\Huge\bfseries}
+%Same thing as above but for subsections
+\titleformat*{\subsection}{\LARGE\bfseries}
+%Same thing as above but for subsubsections
+\titleformat*{\subsubsection}{\Large\bfseries}
+
+%Instruction used to create a new subsection level (subsubsubsection) in the document
+\titleclass{\subsubsubsection}{straight}[\subsection]
+%Instructions used to create a new counter (used to count the number of subsubsubsections
+%within a subsubsection) for the subsubsubsections and creation of the command to invoke(use) them
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+
+%Instruction used to align the new section layer in a correct manner in the table of contents
+%Without this subsubsubsections would remain on the same line, creating a mess in the table of
+%contents.
+\makeatletter
+
+%Instructions to change the scale and font of the subsubsubsections' head
+\titleformat{\subsubsubsection}
+  {\normalfont\large\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%Instructions to create the subsubsubsections entries in the table of contents (included the dot line)
+\def\toclevel@subsubsubsection{4}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+
+%Instruction used to restore "@" symbol to "other" instead of a "latter" made by
+%\makeatletter command. Just a safety command useful for latex but not of our interest.
+\makeatother
+
+%Instructions to set table of contents and sections depth to 4 layers (in order to include even
+%subsubsubsections).
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+%Used in order to have more symbols for itemize lists (in our case the "arrow" symbol in phenomena section)
+\usepackage{pifont}
+
+%Used to make the header and footer of each document page
+\usepackage{fancyhdr}
+
+%Defines a new style of header and footer
+%Defines the content of the header and the footer of the pages of the first section
+\fancypagestyle{IntroductionStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 1. INTRODUCTION}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+%Defines the content of the header and the footer of the pages of the second section
+\fancypagestyle{OverallDescriptionStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 2. ARCHITECTURAL DESIGN}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+%Defines the content of the header and the footer of the pages of the third section
+\fancypagestyle{SpecificRequirementsStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 3. USER INTERFACE DESING}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+%Defines the content of the header and the footer of the pages of the fourth section
+\fancypagestyle{FormalAnalysisAlloyStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 4. REQUIREMENTS TRACEABILITY}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+%Defines the content of the header and the footer of the pages of the fifth section
+\fancypagestyle{EffortSpentStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 5. IMPLEMENTATION, INTEGRATION, TEST PLAN}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+%Defines the content of the header and the footer of the pages of the sixth section
+\fancypagestyle{ReferencesStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 6. EFFORT SPENT}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+%Defines the content of the header and the footer of the pages of the seventh section
+\fancypagestyle{ReferencesStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 7. REFERENCES}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+
+%Used to handle table width and split tables across different pages
+\usepackage{xltabular}
+%Change space between table columns
+\setlength{\tabcolsep}{18pt}
+
+%Command used to create a new column type whose background is lightgray colored
+\usepackage{xcolor,colortbl}
+\definecolor{LightGray}{gray}{0.85}
+\newcolumntype{g}{>{\columncolor{LightGray}}c}
+
+
+%Set the default path of images (used in includegraphics command)
+\graphicspath{ {images/} }
+
+\title{DD-v0.1}
+\author{Francesco Spangaro - Tosetti Luca - Francesco Riccardi}
+\date{07 January 2024}
 
 \begin{document}
 
 \maketitle
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{politecnico-di-milano-logo.png}
+\end{figure}
+
 \tableofcontents
 \section{Introduction}
-\subsection{Purpose}
-\subsubsection{Goals}
-\begin{description}
-    
-
-    %Educator's goals
-    \item[G1:] Allow educators to create new tournaments:
-        \item Educators have the possibility to create new tournaments. 
-            When creating a tournament, educators have the opportunity to create new badges. Badges have corresponding achievements, called "Rules", which are defined on badge creation. Badges are obtained by users on achievement completion. Obtained badges will be then displayed on the user's profile page.
-    \item[G2:] Allow educators to create new battles:
-            \item Educators have the possibility to define new battles within tournament they crated or in tournaments they have been granted permission to do so. When creating a new battle educators have to set different parameters:
-            \begin{itemize}
-                \item upload project description;
-                \item specify the programming language and build tool to utilize, including test cases and build automation scripts;
-                \item set minimum and maximum number of students per group;
-                \item set a registration deadline;
-                \item set a final submission deadline;
-                \item set additional configuration for scoring.
-            \end{itemize}
-            % Assumption: educators can access al tournaments and battles with view only permission
-    \item[G3:] Allow educators to administer different tournaments:
-        \item Educators can grant other colleagues permission to create new battles in their tournaments. Educators have the possibility to close their tournaments, thus, not letting students submit new answers to any battle defined in the closed tournament, nor letting their colleagues create new battles in that tournament. 
-        % Ask if rank visualization is a goal or a user-interface point 
-    \item[G4:] Allow educators to administer different battles:
-        \item Educators have the possibility, once a battle has expired, to manually evaluate through the platform each student's work, and then assign a corresponding score to each one of them, ranging from 0 to 100. 
-    %Students' goals
-    \item[G5:] Allow students to subscribe in tournaments:
-        \item Students subscribed to the platform have the possibility to subscribe to different tournaments, in which they plan to participate in.
-        % Assumption: to do anything, both students and educators must be already subscribed to the platform 
-    \item[G6:] Allow students to participate in battles:
-        \item Students can join battles within a set deadline. They can do so by themselves, by inviting somebody else or by accepting someone's else invite.
-        \begin{description}
-            \item[G6.1:] Allow students to form groups to participate with:
-                \item Students have the possibility to send out invitations to other students, so that they can form a group to participate with. Groups need to follow the guidelines specified by the battle creator for it to be accepted.
-            \item[G6.2:] Allow students to submit their answers:
-                \item When students have developed a solution to the battle, they can submit their answer to the platform. Groups are requested to send only one answer. Students can change their answer as they proceed, when uploading a new solution the older one is overwritten, since there can only be one answer for each battle. 
-            \item[G6.2:] Allow students to see their scores:
-                \item After each answer submission, a new score is assigned to the students. The score can be manually created by an educator or automatically assigned to the students by the platform. Students can see the scores obtained  %TODO
-                % Ask professor if score is computated each commit, not visualized, and then published after battle closing, or if students can actively see their scores as the battle progresses (par. 2, last line - par. 4, last line) 
-        \end{description}
-        \item[G7:] Let the students be notified on important events:
-            \item When a new tournament is created, all students subscribed to the platform are notified. A different notification will be sent when a new battle is created in a tournament they are subscribed to.
-            % ask if this goal is correct
-\end{description}
-\subsection{Scope}
-\subsubsection{Phenomena}
-\subsection{Definitions, acronyms, abbreviations}
-\subsection{Revision history}
-\subsection{Reference documents}
-\subsection{Document structure}
-
-\section{Overall description}
-\subsection{Product perspective}
-\subsection{Product functions}
-\subsection{User characteristics}
-\subsection{Assumptions, dependencies and constraints}
-
-\section{Specific requirements}
-\subsection{External interface requirements}
-\subsection{Functional requirements}
-\subsection{Performance requirements}
-\subsection{Design constraints}
-\subsection{Software system attributes}
-
-\section{Formal analysis using Alloy}
-
-\section{Effort spent}
-
+    \subsection{Scope}
+    \subsection{Definitions, acronyms, abbreviations}
+    \subsection{Overview}
+\section{Architectural Design}
+    \subsection{Overview: High-level components and interactions}
+    \subsection{Component view}
+    \subsection{Deployment view}
+    \subsection{Component interfaces}
+    \subsection{Runtime view}
+    \subsection{Selected architectural styles and patterns}
+    \subsection{Other design decisions}
+\section{User Interface Design}
+\section{Requirements traceability}
+\section{Implementation, Integration and test plan}
+\section{Effort Spent}
 \section{References}
+
+
 
 
 \end{document}
