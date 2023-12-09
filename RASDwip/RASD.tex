@@ -1,7 +1,8 @@
 \documentclass{article}
 \usepackage{float}
 \usepackage{graphicx} % Required for inserting images
-\usepackage[hidelinks]{hyperref} % Required for using links
+\usepackage[hidelinks]{hyperref} % Required in order to use in-page links in the table of contents
+% Option "hidelinks" used to hide links border in some pdf reader such as Acrobat Reader.
 
 %|
 \usepackage[utf8]{inputenc}
@@ -1723,7 +1724,7 @@
     \color{gray}
     //The creator of a tournament can give the permission to creare battle in the tournament only one time at educator\\
     \color{black}
-    fact NoTwoPermissionAtSameEducator\{\\
+    \color{blue} fact \color{black} NoTwoPermissionAtSameEducator\{\\
         \-\hspace{1cm} \color{blue} all disj \color{black} p1, p2 : Permit | \\
         \-\hspace{1cm} (p1.tournament \color{blue} = \color{black} p2.tournament an\color{blue} and \color{black}d p1.tournamentCreator \color{blue} = \color{black} p2.tournamentCreator) \\
         \-\hspace{1cm} implies (\color{blue} all \color{black} bC : p1.battleCreators | bC \color{blue} not in \color{black} p2.battleCreators)\\
@@ -1828,7 +1829,7 @@
     \end{figure}
     \begin{figure}[H]
         \centering
-        \hspace*{-3cm}\includegraphics[scale=1.]{images/ALLOY/Picture2.png}
+        \hspace*{-3cm}\includegraphics[scale=1.3]{images/ALLOY/Picture2.png}
         \caption{tournament, educator and battle}
         \label{fig:tournament, educator and battle}
     \end{figure}
@@ -1848,7 +1849,7 @@
     A permission is relative to one tournament created by an educator (tournament)\\
     \color{brown}
     A permission is also relative to the educator that created at least one tournament (tournamentCreator)\\
-
+    \color{black}
 
 \section{Effort spent}
     \begin{tabular}{|g|c|c|}
