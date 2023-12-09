@@ -5,29 +5,32 @@
 
 %|
 \usepackage[utf8]{inputenc}
-
 \inputencoding{latin1}
 
-
-%Allow to use pdf images
-\usepackage{pdfpages}
-
+%Package imported in order to customize cells in tabularx environment. In particular was
+%added to allow the use of "\\" syntax inside a table's cell.
 \usepackage{makecell}
 
 %Packages and instruction to change scale of sections', subsections' and subsubsections' heads
 \usepackage{titlesec}
 \usepackage{titlesec}
+%Makes sections' contents in bold, and increases their sizes.
 \titleformat*{\section}{\Huge\bfseries}
+%Same thing as above but for subsections
 \titleformat*{\subsection}{\LARGE\bfseries}
+%Same thing as above but for subsubsections
 \titleformat*{\subsubsection}{\Large\bfseries}
 
 %Instruction used to create a new subsection level (subsubsubsection) in the document
 \titleclass{\subsubsubsection}{straight}[\subsection]
-%Instructions used to create a new counter for the subsubsubsections and create the command to invoke(use) them
+%Instructions used to create a new counter (used to count the number of subsubsubsections
+%within a subsubsection) for the subsubsubsections and creation of the command to invoke(use) them
 \newcounter{subsubsubsection}[subsubsection]
 \renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
 
 %Instruction used to align the new section layer in a correct manner in the table of contents
+%Without this subsubsubsections would remain on the same line, creating a mess in the table of
+%contents.
 \makeatletter
 
 %Instructions to change the scale and font of the subsubsubsections' head
@@ -40,20 +43,23 @@
 \def\toclevel@subsubsubsection{4}
 \def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
 
-%Instruction used to make link to part of the document using table of contents
+%Instruction used to restore "@" symbol to "other" instead of a "latter" made by
+%\makeatletter command. Just a safety command useful for latex but not of our interest.
 \makeatother
 
-%Instructions to set table of contents and sections depth to 4 layers
+%Instructions to set table of contents and sections depth to 4 layers (in order to include even
+%subsubsubsections).
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
-%Used in order to have more symbols for itemize lists
+%Used in order to have more symbols for itemize lists (in our case the "arrow" symbol in phenomena section)
 \usepackage{pifont}
 
 %Used to make the header and footer of each document page
 \usepackage{fancyhdr}
 
 %Defines a new style of header and footer
+%Defines the content of the header and the footer of the pages of the first section
 \fancypagestyle{IntroductionStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 1. INTRODUCTION}}}
@@ -62,6 +68,7 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 }
+%Defines the content of the header and the footer of the pages of the second section
 \fancypagestyle{OverallDescriptionStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 2. OVERALL DESCRIPTION}}}
@@ -70,6 +77,7 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 }
+%Defines the content of the header and the footer of the pages of the third section
 \fancypagestyle{SpecificRequirementsStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 3. SPECIFIC REQUIREMENTS}}}
@@ -78,6 +86,7 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 }
+%Defines the content of the header and the footer of the pages of the fourth section
 \fancypagestyle{FormalAnalysisAlloyStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 4. FORMAL ANALYSIS USING ALLOY}}}
@@ -86,9 +95,19 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 }
+%Defines the content of the header and the footer of the pages of the fifth section
 \fancypagestyle{EffortSpentStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 5. EFFORT}}}
+\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+}
+%Defines the content of the header and the footer of the pages of the sixth section
+\fancypagestyle{ReferencesStyle}{
+\fancyhf{}
+\fancyhead[L]{\textit{\textbf{SECTION 6. REFERENCES}}}
 \fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -106,10 +125,10 @@
 \newcolumntype{g}{>{\columncolor{LightGray}}c}
 
 
-%Set the default path of images
+%Set the default path of images (used in includegraphics command)
 \graphicspath{ {images/} }
 
-\title{RASD-v0.8}
+\title{RASD-v0.9}
 \author{Francesco Spangaro - Tosetti Luca - Francesco Riccardi}
 \date{22 December 2023}
 
@@ -136,7 +155,6 @@
         to acquire new skills and improve the ones already owned in Software Development. This is done by allowing students to train and compete with each others by writing code in order to resolve problems. All of this under the supervision of educators who can challenge their students to take part to these competitions.
         \subsubsection{Goals}
             \begin{description}
-                %Educator's goals
                 \item[G1:] \textit{\textbf{Allow educators to create new tournaments:}}
                     \begin{description}
                         \item Educators have the possibility to create new tournaments. 
@@ -155,7 +173,7 @@
                         \end{itemize}
                         
                     \end{description}
-                    % Assumption: educators can access al tournaments and battles with view only permission
+                    % Assumption: educators can access all tournaments and battles with view only permission
                 \item[G3:] \textit{\textbf{Allow educators to administer different tournaments:}}
                     \begin{description}
                         \item Educators can grant other colleagues permission to create new battles in their tournaments. Educators have the possibility to close their tournaments, thus, not letting students submit new answers to any battle defined in the closed tournament, nor letting their colleagues create new battles in that tournament. 
@@ -165,12 +183,10 @@
                     \begin{description}
                         \item Educators have the possibility, once a battle has expired, to manually evaluate through the platform each student's work, and then assign a corresponding score to each one of them, ranging from 0 to 100. 
                     \end{description}
-                %Students' goals
                 \item[G5:] \textbf{\textit{Allow students to subscribe in tournaments:}}
                     \begin{description}
                         \item Students subscribed to the platform have the possibility to subscribe to different tournaments, in which they plan to participate in.
                     \end{description}
-                    % Assumption: to do anything, both students and educators must be already subscribed to the platform 
                 \item[G6:] \textbf{\textit{Allow students to participate in battles:}}
                     \begin{description}
                         \item Students can join battles within a set deadline. They can do so by themselves, by inviting somebody else or by accepting someone's else invite.
@@ -312,23 +328,7 @@
                 \textit{Consolidation phase} & $\rightarrow$ Phase started at the end of a battle, used to consolidate the score of each student in the battle by eventually a manual evaluation of the students' code by an Educator. \\
                 \textit{View-only mode} & $\rightarrow$ An abstract modality (not an implementation detail) in which educator can be if he access to a tournament in which they have no rights to create new battles \\
                 \textit{Modify-enabled mode }& $\rightarrow$ An abstract modality (not an implementation detail) in which educator can be if he access to a tournament in which he go granted the access by tournament's creator, and thus can create new battles.
-            \end{xltabular}
-    
-        % \textit{GitHub Repository} $\rightarrow$ A place on the GitHub platform where a user can store code, files and each file's revision history.
-        % \\ \\
-        % \textit{Registration deadline} $\rightarrow$ Maximum time within which a student can subscribe to a battle or to a tournament.
-        % \\ \\
-        % \textit{Submission deadline} $\rightarrow$ Maximum time within which a student, or a group of student, can upload their solution to a battle problem
-        % \\ \\
-        % \textit{Code Kata} $\rightarrow$ The word kata refers to a karate exercise in which a form gets repeated many time, making little improvements in each tentative.
-        % In this context it's used to express the fact that the code need to be developed multiple times to reach a optimal solution to the battle problem.
-        % \\ \\
-        % \textit{Consolidation phase} $\rightarrow$ Phase started at the end of a battle, used to consolidate the score of each student in the battle by eventually a manual evaluation of the students' code by an Educator.
-        % \\ \\
-        % \textit{View-only mode} $\rightarrow$ An abstract modality (not an implementation detail) in which educator can be if he access to a tournament in which they have no rights to create new battles
-        % \\ \\
-        % \textit{Modify-enabled mode} $\rightarrow$ An abstract modality (not an implementation detail) in which educator can be if he access to a tournament in which he go granted the access by tournament's creator, and thus can create new battles.
-        
+            \end{xltabular}        
 
     \subsubsection{Acronyms}
         \begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
@@ -360,11 +360,7 @@
             
         \end{xltabular}
         
-        % \textit{API} $\rightarrow$ Application Programming Interface, indicates on demand procedure which supply a specific task
-        % \\ \\
-        % \textit{CKB} $\rightarrow$ CodeKataBattle, the name of the platform described in this document
-        % \\ \\
-        % \textit{IT} $\rightarrow$ Used as acronym for Information Technology which identify something, generally a computing or communication hardware, with information storage capability and closely related to the informatic world.
+        
     \subsubsection{Abbreviations}
        \begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
             \hline 
@@ -635,7 +631,15 @@
             \item[\textbf{D14:}] Students can invite any other student to form a group, and in case
             the invited student is not registered to the tournament in which the Student that is 
             inviting him has already registered, he get automatically registered by the platform.
+        
         \end{itemize}
+
+
+        //TODO: Complete the domain assumptions.
+
+\newpage
+
+\pagestyle{SpecificRequirementsStyle}
 
 \section{Specific requirements}
 \subsection{External interface requirements}
@@ -1593,6 +1597,9 @@
 \subsection{Design constraints}
 \subsection{Software system attributes}
 
+\newpage
+\pagestyle{FormalAnalysisAlloyStyle}
+
 \section{Formal analysis using Alloy}
 
 
@@ -1716,7 +1723,7 @@
     \color{gray}
     //The creator of a tournament can give the permission to creare battle in the tournament only one time at educator\\
     \color{black}
-    \color{blue} fact \color{black} NoTwoPermissionAtSameEducator\{\\
+    fact NoTwoPermissionAtSameEducator\{\\
         \-\hspace{1cm} \color{blue} all disj \color{black} p1, p2 : Permit | \\
         \-\hspace{1cm} (p1.tournament \color{blue} = \color{black} p2.tournament an\color{blue} and \color{black}d p1.tournamentCreator \color{blue} = \color{black} p2.tournamentCreator) \\
         \-\hspace{1cm} implies (\color{blue} all \color{black} bC : p1.battleCreators | bC \color{blue} not in \color{black} p2.battleCreators)\\
@@ -1821,7 +1828,7 @@
     \end{figure}
     \begin{figure}[H]
         \centering
-        \hspace*{-3cm}\includegraphics[scale=1.3]{images/ALLOY/Picture2.png}
+        \hspace*{-3cm}\includegraphics[scale=1.]{images/ALLOY/Picture2.png}
         \caption{tournament, educator and battle}
         \label{fig:tournament, educator and battle}
     \end{figure}
@@ -1841,7 +1848,7 @@
     A permission is relative to one tournament created by an educator (tournament)\\
     \color{brown}
     A permission is also relative to the educator that created at least one tournament (tournamentCreator)\\
-    \color{black}
+
 
 \section{Effort spent}
     \begin{tabular}{|g|c|c|}
@@ -1855,6 +1862,10 @@
         \textbf{Francesco Riccardi} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\ \vspace{\baselineskip}} & \makecell[l]{\textit{Xh}\\\textit{Xh}\\\textit{Xh}\\\textit{Xh} \vspace{\baselineskip}}\\
         \hline
     \end{tabular}
+    
+\newpage
+\pagestyle{ReferencesStyle}
+
 \section{References}
     \subsection{Paper references}
         \begin{itemize}
