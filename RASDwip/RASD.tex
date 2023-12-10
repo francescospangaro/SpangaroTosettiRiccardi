@@ -360,7 +360,10 @@
             \textit{BPMN} & $\rightarrow$ Stands for Business Process Modeling Notation, standard notation to represent processes through diagrams.  
             \\
             \textit{OO} & $\rightarrow$ Object-Oriented is a programming paradigm based on the concept of object which can contain data and code, and represent usually real world object.
-            
+            \\
+            \textit{DB} & $\rightarrow$ Database, a set of data held in a computer which is accessible, modifiable, queryable in various ways.
+            \\
+            \textit{GDPR} & $\rightarrow$ General Data Protection Regulation, an European law to protect the privacy and security of users' data. 
         \end{xltabular}
         
         
@@ -390,6 +393,8 @@
             \\
             \textit{D\#} & $\rightarrow$ Domain assumption number \#
             \\
+            \textit{R.\#} & $\rightarrow$ Requirement number \#
+            \\
             \textit{c.s.} & $\rightarrow$ Computer science
             \\
             \textit{e.g.} & $\rightarrow$ Exempli gratia, latin phrase corresponding to "for example"
@@ -413,7 +418,11 @@
     UML official specification $\rightarrow$ \url{https://www.omg.org/spec/UML}
     \\ \\
     BPMN official specification $\rightarrow$ \url{https://www.omg.org/spec/BPMN/2.0}
-\subsection{Document structure}
+    \\ \\
+    Use case diagrams specification used $\rightarrow$ \url{https://it.wikipedia.org/wiki/Use_Case_Diagram}
+    \\ \\
+    Sequence diagrams specification $\rightarrow$ \url{https://www.uml-diagrams.org/sequence-diagrams.html}
+    \subsection{Document structure}
     \begin{itemize}
         \item \textbf{\textit{Section 1: Introduction}} \\
         This section introduces the problem and the platform/application to be developed in order to resolve it. It describes the major purpose of the project, every one of his goals, the analysis of the its domain and every world, shared and machine phenomena associated with it.
@@ -517,7 +526,7 @@
             \item \textbf{Student subscribes to a tournament:} Let a student search, according to some parameters (most used programming languages, creation date, number of partecipant, etc...) and subscribe to a tournament, after loggin in the platform.
             \begin{figure}[H]
                 \centering
-                \hspace*{-1.85cm}\includegraphics[scale=0.4]{images/BPMN/BPMN3.png}
+                \hspace*{-1.1cm}\includegraphics[scale=0.4]{images/BPMN/BPMN3.png}
                 \caption{Student's tournament subscription BPMN}
                 \label{fig:studTournamentSubBPMN}
             \end{figure}
@@ -525,10 +534,13 @@
             \item \textbf{Student join a battle:} Let a student subscribed to a tournament search a battle in it according to some parameters (programming language requested, expiration date, difficulty, etc...) and join it alone or in a group.
             \begin{figure}[H]
                 \centering
-                \hspace*{-1.85cm}\includegraphics[scale=0.4]{images/BPMN/BPMN4.png}
+                \hspace*{-1.1cm}\includegraphics[scale=0.4]{images/BPMN/BPMN4.png}
                 \caption{Student's battle joining BPMN}
                 \label{fig:studBattleJoinBPMN}
             \end{figure}
+
+            %newpage command used to better format the pdf content
+            \newpage
 
             \item \textbf{Student gets notified of new events:} Notify the student about new tournaments created, if signed to the platform, and new upcoming battles that take place in tournaments in which he has joined.
             \begin{figure}[H]
@@ -541,7 +553,7 @@
             \item \textbf{Student's solutions get evaluated:} Let a student, who connects to his forked repository on GitHub, upload his solution and evaluate it according to some parameters.
             \begin{figure}[H]
                 \centering
-                \includegraphics[scale=0.4]{images/BPMN/BPMN6.png}
+                \includegraphics[scale=0.35]{images/BPMN/BPMN6.png}
                 \caption{Student's solutions evaluation BPMN}
                 \label{fig:studSolEvalBPMN}
             \end{figure}
@@ -549,28 +561,22 @@
             \item \textbf{Student form a group for a battle:} Let a student form a group with other students in order to face a battle, through invite messages.
             \begin{figure}[H]
                 \centering
-                \hspace*{-1.85cm}\includegraphics[scale=0.4]{images/BPMN/BPMN7.png}
+                \hspace*{-0.9cm}\includegraphics[scale=0.35]{images/BPMN/BPMN7.png}
                 \caption{Formation of a group BPMN}
                 \label{fig:groupFormationBPMN}
             \end{figure}
         \end{itemize}
+
+        
 
     \subsubsection{Educator functions}
         \begin{itemize}
             \item \textbf{Educator create a tournament:} Let an educator create a new tournament and set its parameters.
             \begin{figure}[H]
                 \centering
-                \includegraphics[scale=0.4]{images/BPMN/BPMN8.png}
+                \includegraphics[scale=0.35]{images/BPMN/BPMN8.png}
                 \caption{Tournament's creation BPMN}
                 \label{fig:TournamentCreationBPMN}
-            \end{figure}
-
-            \item \textbf{Educator close a tournament:} Let an educator close one of his tournaments whenever he wants.
-            \begin{figure}[H]
-                \centering
-                \includegraphics[scale=0.4]{images/BPMN/BPMN9.png}
-                \caption{Tournament's closing BPMN}
-                \label{fig:TournamentClosingBPMN}
             \end{figure}
 
             \item \textbf{Educator grant access to a tournament:} Give an educator the possibility to grant the access to one of his tournaments to a colleague.
@@ -579,6 +585,17 @@
                 \includegraphics[scale=0.4]{images/BPMN/BPMN10.png}
                 \caption{Grant access to tournament BPMN}
                 \label{fig:accessGrantTournamentBPMN}
+            \end{figure}
+
+            %newpage command used to better format the pdf content
+            \newpage
+
+            \item \textbf{Educator close a tournament:} Let an educator close one of his tournaments whenever he wants.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[scale=0.4]{images/BPMN/BPMN9.png}
+                \caption{Tournament's closing BPMN}
+                \label{fig:TournamentClosingBPMN}
             \end{figure}
 
             \item \textbf{Educator creates a battle:} Grant an educator the possibility of creating a battle in tournaments where he has permission to.
@@ -592,7 +609,7 @@
             \item \textbf{Educator notified of battle's end:} Educator gets notified about the end of a battle in one of his tournaments, give him the possibility to manually evaluate the students' solutions.
             \begin{figure}[H]
                 \centering
-                \includegraphics[scale=0.4]{images/BPMN/BPMN12.png}
+                \includegraphics[scale=0.35]{images/BPMN/BPMN12.png}
                 \caption{Ending of a battle BPMN}
                 \label{fig:battleEndingBPMN}
             \end{figure}
@@ -615,6 +632,10 @@
             platform and how to create GitHub Actions, fundamental for the correct
             functioning of the CKB platform.
         \end{itemize}
+
+        %newpage command used to better format the pdf content
+        \newpage
+
     \subsection{Assumptions, dependencies and constraints}
         \begin{itemize}
             \item[\textbf{D1:}] Students and educators have access to internet while using the platform
@@ -654,7 +675,7 @@
     \subsubsection{Software Interfaces}
         The system has to use different software interfaces in order to properly function:
         \begin{itemize}
-            \item \textbf{DB Interfaces:} The system has to interact with a database,
+            \item \textbf{DB Interfaces:} The system has to interact with a DB,
             used to store all information necessary for the system to function.
             \item \textbf{GitHub Interfaces:} The system has to interact with the GitHub platform,
             in order to receive the students' solutions. This is done through "GitHub Actions"
@@ -665,7 +686,7 @@
 
     \subsubsection{Hardware Interfaces}
         The system has to interface with the hardware components containing
-        the database.
+        the DB.
     \subsubsection{Communication Interfaces}
         All communications from and to the CKB platform have to use the HTTPS protocol.
 \subsection{Functional requirements}
@@ -734,6 +755,10 @@
             \item[\textbf{R.40}] The CKB platform must ensures that battles' characteristics respect guidelines
             regarding their name, deadlines, programming language, number of member per group.
         \end{itemize}
+
+        %newpage command used to better format the pdf content
+        \newpage
+
     \subsubsection{Use case diagrams}
             \begin{itemize}
                 \item \underline{\large{\textbf{Student}}}
@@ -747,6 +772,10 @@
                     N.B: The repository citated in this diagram, on which the student upload their solution, it's not
                     part of the platform. The system, in fact, relies on a third party service (GitHub) to handle the repository.
                     This use case was specified in order to better clarify the tight interaction between the system and the student trought the GitHub service.
+                
+                    %newpage command used to better format the pdf content
+                    \newpage
+                    
                 \item \underline{\large{\textbf{Educator}}}
                     \begin{figure}[H]
                         \centering
@@ -1559,7 +1588,7 @@
             \end{enumerate}
         \subsubsection{Traceability matrix}
             \begin{xltabular}{\textwidth}
-                {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X | >{\raggedright\arraybackslash}X }
+                {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X | >{\raggedright\arraybackslash}X |}
                     \hline
                     \endfirsthead
                     \hline
@@ -1568,7 +1597,8 @@
                     \hline
                     \endlastfoot
 
-                    \textbf{Goal ID} & \textbf{Req. ID} & \textbf{Use case ID} \\
+                    \textbf{Goal ID} & \multicolumn{1}{|g|}{\textbf{Req. ID}} & \multicolumn{1}{|g|}{\textbf{Use case ID}} \\
+                    \hline
                     \textbf{G.1} & R.2, R.3, R.5, R.6, R.8, R.10, R.12, R.14, R.15, R.16, R.17, R.18 & UC.2, UC.3, UC.4, UC.5 \\
                     \textbf{G.2} & R.2, R.3, R.5, R.6, R.8, R.9, R.11, R.40 & UC.2, UC.6 \\
                     \textbf{G.3} & R.2, R.3, R.5, R.6, R.19, R.20 & UC.2, UC.7 \\
@@ -1591,9 +1621,9 @@
         without high delays that could compromise students' works. 
         We have to take into consideration reliability since with a low reliability platform, students would not be able to upload their solutions consistently,
         educators would not be able to access the platform and manually evaluate students' solutions, and would be a bad experience overall.
-        For data storing, we expect we'll need a high capacity database. It's necessary for storing
+        For data storing, we expect we'll need a high capacity DB. It's necessary for storing
         the user's data, tournaments and battles' data and statistics, informations and code about groups' commits.
-        We'll need a high capacity database, since being the platform built around students and schools, we expect to ha velots of users subscribing together
+        We'll need a high capacity DB, since being the platform built around students and schools, we expect to ha velots of users subscribing together
         at the same time, when school starts. These times are differenciated throught the year, for example in Italy schools starts in Semptember, while in 
         New Zealand in starts in July. The platform being based around schools means that we'll have  lots of user's data of old students that are now not using 
         the platform anymore.
@@ -1607,11 +1637,11 @@
         best if everything that is concerning to coding and submitting a solution is done via personal computer.
 \subsubsection{Privacy constraints}
         Since the main application area is the european one, the platform must be compliant to the GDPR's law. 
-        Data must be encrypted before it is saved on the database, no data must be accessed by any user other than the data's owner.
+        Data must be encrypted before it is saved on the DB, no data must be accessed by any user other than the data's owner.
         For preventing cyber attacks, data must pass through secure connections and channels. In this case, no \textit{Man in the Middle} attacks can occur.
         Autentication and login will be provided by the CKB platform, so all data must be treated accordingly to the platform's privacy policy.
-        When a new User, both Educator and Student, wants to register to the platform, the privacy policy must be shown and accepted, before the new user is saved in the database.
-        If the privacy policy is not accepted, the user registration procedure is not completed and the new user is not saved in the database, not granting access to the person that was
+        When a new User, both Educator and Student, wants to register to the platform, the privacy policy must be shown and accepted, before the new user is saved in the DB.
+        If the privacy policy is not accepted, the user registration procedure is not completed and the new user is not saved in the DB, not granting access to the person that was
         trying to register to the platform. 
 \subsection{Software system attributes}
 \subsubsection{Usability}
@@ -1624,12 +1654,12 @@
         We expect the highest number of simultaneous access to be whenever schools start and end, since more students will register on school starting,
         and more will rush to finish battles and projects as school is ending.
 \subsubsection{Availability}
-        The platform must be available as much as possible, at least 97\% of the time.
+        The platform must be available as much as possible, at least 99\% of the time.
         Both Students and Educators must have access to the platform whenever they need to.
 \subsubsection{Security}
         Communication between Users and the Platform must pass through secure channels, and it must be encrypted.
         With a web certificate for the platform we can ensure that the SSL protocol is followed, and can ensure security for the platform and its Users.
-        The database guarantees that performed operations are all authorized, and permitted.
+        The DB guarantees that performed operations are all authorized, and permitted.
         \textit{A Student cannot create new battles, for example.} 
 \subsubsection{Web Browsing}
         The platform must be usable on any major web browser, since access to it is fully online.
@@ -1646,7 +1676,7 @@
 \pagestyle{EffortSpentStyle}
 
 
-\subsection{SIGNATURES}
+\subsection{Signatures}
     \color{gray}
     //signature Educator used to represent the educator subscribed to the CBK  \\
     \color{blue}
@@ -1762,7 +1792,7 @@
     \}\\
     \\  
 
-\subsection{FACT}
+\subsection{Facts}
     \color{gray}
     //The creator of a tournament can give the permission to creare battle in the tournament only one time at educator\\
     \color{black}
