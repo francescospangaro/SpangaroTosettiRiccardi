@@ -1598,6 +1598,21 @@
         New Zealand in starts in July. The platform being based around schools means that we'll have  lots of user's data of old students that are now not using 
         the platform anymore.
 \subsection{Design constraints}
+\subsubsection{Hardware constraints}
+        The users, both Educators and Students, to have access to the platform need to have a functioning internet access and a device connected to the net.
+        The Educators must have at least a smartphone, so that they can perform all of the different functions the platform offers them, like creating new battles 
+        and tournament, badges and manually evaluate groups' solutions. All of this can be done via smartphone.
+        The Students are required to have a personal computer, either a desktop or a laptop, such that they can write and submit their solutions to the platform.
+        Students can access the platform via smartphone too, for consulting their profile and looking at new tournaments and battles, but it would be 
+        best if everything that is concerning to coding and submitting a solution is done via personal computer.
+\subsubsection{Privacy constraints}
+        Since the main application area is the european one, the system must be compliant to the GDPR's law. 
+        Data must be encrypted before it is saved on the database, no data must be accessed by any user other than the data's owner.
+        For preventing cyber attacks, data must pass through secure connections and channels. In this case, no \textit{Man in the Middle} attacks can occur.
+        Autentication and login will be provided by the CKB platform, so all data must be treated accordingly to the platform's privacy policy.
+        When a new User, both Educator and Student, wants to register to the platform, the privacy policy must be shown and accepted, before the new user is saved in the database.
+        If the privacy policy is not accepted, the user registration procedure is not completed and the new user is not saved in the database, not granting access to the person that was
+        trying to register to the platform. 
 \subsection{Software system attributes}
 
 \newpage
