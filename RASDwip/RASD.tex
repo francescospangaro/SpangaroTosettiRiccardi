@@ -315,13 +315,13 @@ Phenomena that take place in the real World and are not observable by the Machin
 \subsubsubsection{Machine phenomena}
 Phenomena that take place in the Machine World and are not observable from the real World
 \begin{enumerate}
-    %TODO: Check for typos from here on out
-    \item[\textbf{MP1:}] The platform creates a GitHub repository containing the code kata when registration deadline of a battle expires.
-    \item[\textbf{MP2:}] The platform when notified by GitHub API pulls the latest sources of the repository of a battle
-    \item[\textbf{MP3:}] The platform analyzes the sources, by running tests on them.
-    \item[\textbf{MP4:}] The platform calculate the battle score of a team based on the executables uploaded by students for a battle. Score is automatically updated when the platform receive notification from GitHub about new push actions.
-    \item[\textbf{MP5:}] The platform at the end of each battle of a tournament, compute the tournament rank of each student in that tournament.
-    \item[\textbf{MP6:}] The platform automatically register badges acquirement from a student, when that student satisfy the rules to obtain them.
+    \item[\textbf{MP1:}] The platform creates a GitHub repository containing the code kata when a battle's registration deadline expires.
+    \item[\textbf{MP2:}] The platform, when notified by the GitHub API, pulls the latest sources of a battle's the repository.
+    \item[\textbf{MP3:}] The platform analyses the sources by running tests on them.
+    \item[\textbf{MP4:}] The platform computes the scores of a team, based on the executables uploaded by the Students for a battle. 
+    The score is automatically updated when the platform receives a notification from GitHub about new push actions%??? Chiedere a toso.
+    \item[\textbf{MP5:}] The platform, at the end of each battle, compute the overall tournament rank of each student.
+    \item[\textbf{MP6:}] The platform automatically registers a Student's badge achievement when that Student satisfies the rule to obtain said badge.
 \end{enumerate}
 
 
@@ -355,13 +355,18 @@ Phenomena that take place in the Machine World and are not observable from the r
     %table in the page where it appears last.
 
     \textit{GitHub Repository} & $\rightarrow$ A place on the GitHub platform where a user can store code, files and each file's revision history. \\
-    \textit{Registration deadline} & $\rightarrow$ Maximum time within which a student can subscribe to a battle or to a tournament. \\
-    \textit{Submission deadline} & $\rightarrow$ Maximum time within which a student, or a group of student, can upload their solution to a battle problem \\
-    \textit{Code Kata} & $\rightarrow$ The word kata refers to a karate exercise in which a form gets repeated many time, making little improvements in each tentative.
-    In this context it's used to express the fact that the code need to be developed multiple times to reach a optimal solution to the battle problem. \\
-    \textit{Consolidation phase} & $\rightarrow$ Phase started at the end of a battle, used to consolidate the score of each student in the battle by eventually a manual evaluation of the students' code by an Educator. \\
-    \textit{View-only mode} & $\rightarrow$ An abstract modality (not an implementation detail) in which educator can be if he access to a tournament in which they have no rights to create new battles \\
-    \textit{Modify-enabled mode }& $\rightarrow$ An abstract modality (not an implementation detail) in which educator can be if he access to a tournament in which he go granted the access by tournament's creator, and thus can create new battles.
+    \textit{Registration deadline} & $\rightarrow$ Maximum timespan in which a Student can subscribe in a battle or in a tournament. \\
+    \textit{Submission deadline} & $\rightarrow$ Maximum timespan in which a Student, or a group of Students, can upload their solution to a battle. \\
+    \textit{Code Kata} & $\rightarrow$ The word "kata" refers to a karate exercise in which a form gets repeated many times, 
+    making little improvements each time.
+    In this context it's used to express the fact that the code needs to be developed multiple times to reach an optimal solution. \\
+    \textit{Consolidation phase} & $\rightarrow$ Phase started at the end of a battle's submission deadline, used to consolidate the score of each Student 
+    in that battle. A manual evaluation of the students' code by an Educator may occur. \\
+    \textit{View-only mode} & $\rightarrow$ An abstract mode (not an implementation detail) in which an Educator can be if he accesses
+     a tournament in which he has no rights of creating new battles. \\
+    \textit{Modify-enabled mode }& $\rightarrow$ An abstract mode (not an implementation detail) in which an Educator can be if
+     he accesses a tournament he got granted modificational access to by that tournament's creator. 
+     In this mode, the first Educator can create new battles in the tournament.
 \end{xltabular}
 
 \subsubsection{Acronyms}
@@ -380,21 +385,25 @@ Phenomena that take place in the Machine World and are not observable from the r
     \endfoot
     \endlastfoot
 
-    \textit{API} & $\rightarrow$ Application Programming Interface, indicates on demand procedure which supply a specific task
+    \textit{API} & $\rightarrow$ Application Programming Interface: indicates on demand procedure which supplies a specific task.
     \\
-    \textit{CKB} & $\rightarrow$ CodeKataBattle, the name of the platform described in this document
+    \textit{CKB} & $\rightarrow$ CodeKataBattle: the name of the platform described in this document.
     \\
-    \textit{IT} & $\rightarrow$ Used as acronym for Information Technology which identify something, generally a computing or communication hardware, with information storage capability and closely related to the informatic world.
+    \textit{IT} & $\rightarrow$ Used as acronym for Information Technology to identify something, 
+    generally a computing or communication hardware, with information storage capability, closely related to the informatic world.
     \\
-    \textit{UML} & $\rightarrow$ Unified Modeling Language, a standard notation for modeling real world object, in an high level diagram representing OO components.
+    \textit{UML} & $\rightarrow$ Unified Modeling Language: a standard notation for modeling real world objects in an high level diagram
+     representing OO components.
     \\
-    \textit{BPMN} & $\rightarrow$ Stands for Business Process Modeling Notation, standard notation to represent processes through diagrams.
+    \textit{BPMN} & $\rightarrow$ Stands for Business Process Modeling Notation: a standard notation for representing processes through diagrams.
     \\
-    \textit{OO} & $\rightarrow$ Object-Oriented is a programming paradigm based on the concept of object which can contain data and code, and represent usually real world object.
+    \textit{OO} & $\rightarrow$ Object-Orientation: a programming paradigm based on the concept of objects that can contain data and code
+     and that usually represent real world objects.
     \\
-    \textit{DB} & $\rightarrow$ Database, a set of data held in a computer which is accessible, modifiable, queryable in various ways.
+    \textit{DB} & $\rightarrow$ Database: a physical container for sets of data held in a computer. 
+    The database is accessible, modifiable and queryable in various ways.
     \\
-    \textit{GDPR} & $\rightarrow$ General Data Protection Regulation, an European law to protect the privacy and security of users' data.
+    \textit{GDPR} & $\rightarrow$ General Data Protection Regulation: an European law that aims at protecting the privacy and security of users' data.
 \end{xltabular}
 
 
@@ -414,21 +423,21 @@ Phenomena that take place in the Machine World and are not observable from the r
     \endfoot
     \endlastfoot
 
-    \textit{G\#} & $\rightarrow$ Goal number \#
+    \textit{G\#} & $\rightarrow$ Goal number. \#
     \\
-    \textit{WP\#} & $\rightarrow$ World phenomena number \#
+    \textit{WP\#} & $\rightarrow$ World phenomena number. \#
     \\
-    \textit{SP\#} & $\rightarrow$ Shared phenomena number \#
+    \textit{SP\#} & $\rightarrow$ Shared phenomena number. \#
     \\
-    \textit{MP\#} & $\rightarrow$ Machine phenomena number \#
+    \textit{MP\#} & $\rightarrow$ Machine phenomena number. \#
     \\
-    \textit{D\#} & $\rightarrow$ Domain assumption number \#
+    \textit{D\#} & $\rightarrow$ Domain assumption number. \#
     \\
-    \textit{R.\#} & $\rightarrow$ Requirement number \#
+    \textit{R.\#} & $\rightarrow$ Requirement number. \#
     \\
-    \textit{c.s.} & $\rightarrow$ Computer science
+    \textit{c.s.} & $\rightarrow$ Computer science.
     \\
-    \textit{e.g.} & $\rightarrow$ Exempli gratia, latin phrase corresponding to "for example"
+    \textit{e.g.} & $\rightarrow$ Exempli gratia, latin phrase meaning "for example".
 \end{xltabular}
 
 \subsection{Revision history}
@@ -452,17 +461,26 @@ Sequence diagrams specification $\rightarrow$ \url{https://www.uml-diagrams.org/
 \subsection{Document structure}
 \begin{itemize}
     \item \textbf{\textit{Section 1: Introduction}} \\
-          This section introduces the problem and the platform/application to be developed in order to resolve it. It describes the major purpose of the project, every one of his goals, the analysis of the its domain and every world, shared and machine phenomena associated with it.
-          In addition in this section are inserted the definitions, acronyms and abbreviations used in this ddocument, including even it's revision history and refereced documents or web pages.
+          This section introduces the problem and the platform/application that needs to be developed in order to resolve it.
+           It describes the major purpose of the project, every goal of it, the analysis of its domain and every World and phenomena, 
+           shared, Machine only and real World only, associated with it.
+          In addition, in this section are inserted definitions, acronyms and abbreviations used in this document, including 
+          it's revision history and refereced documents or web pages.
     \item \textbf{\textit{Section 2: Overall description}} \\
-          This section gives an overall description of the project and all the interactions that could occur between the platform and the final users (Students and educators). To do this, it will include different possibile scenarios that could happen, the different actors involved in the platform usage and all the assumptions, dependencies and eventual constraints that have to be considered in the development of the platform
+          This section gives an overall description of the project and all interactions that could occur between the platform 
+          and the final users (Students and Educators). To do this, this section includes different possibile scenarios that could happen, 
+          different actors involved in the platform usage and all of the assumptions, dependencies and eventual constraints that have 
+          to be considered in the development of the platform.
     \item \textbf{\textit{Section 3: Specific Requirements}} \\
-          This section is the most technical one, it contains more precise descriptions of each scenario called use cases. It describe the several functional and performance requirements of the project and their map to the goals of the project.
-          Finally it contains also all the design constraint and system attributes that must be followed/guaranteeded while developing the platform.
+          This section contains the use cases, that are a more precise description of each scenario. 
+          It describes the several functional and performance requirements of the project and their correspondance to the project's goals.
+          It also contains all the design constraints and system attributes that must be followed/guaranteeded while developing the platform.
     \item \textbf{\textit{Section 4: Formal analysis using alloy}} \\
-          In this setion can be found a formal description of the platform/application. The formal description is done using the formal language Alloy (referenced in section 1)
+          This section contains a formal description of the platform. The formal description is done using the formal language Alloy 
+          (referenced in section 1).
     \item \textbf{\textit{Section 5: Effor spent}} \\
-          A simple section in which are included all the information about the time requested by each group member to complete this document, and it's division by each section of the document.
+        This section contains all the information about the time spent by each group member in order to complete this document 
+          and it's division by each section of the document.
 \end{itemize}
 
 \newpage
@@ -471,53 +489,110 @@ Sequence diagrams specification $\rightarrow$ \url{https://www.uml-diagrams.org/
 
 \section{Overall description}
 \subsection{Product perspective}
-The following section contains the UML diagram of the platform and a list of meaningful scenarios in which the platform can be used, how and when users can interact with it.
+The following section contains the platform's UML diagram and a list of meaningful 
+scenarios in which the platform can be used by different users.
 \subsubsection{Scenarios}
-\subsubsubsection{Student sign up to the platform}
-Peter is a volenterous student of an informatic class, that want to improve his software development skills. He comes to know about the platform CKB one day, when his c.s. professor propose to his class, a software development tournament in substitution to the normal, boring and limited tests organized through the academic year.
-Peter is extremely interested, not only in the tournament, but also in the service offered by the platform itself, thus the same day he decide to try to register to it.
-Peter open his personal browser and go to the CKB site's homepage. Here he goes to the student dedicated page and clicks the "Sign up" button in order to register. He inserts all the required information in the mandatory fields of the page that showed up (e.g. name, surname, attended school, email, username, password, ...) and clicks on "Confirm" button.
-Peter now wait for the notification, through his email, about the correctness of his registration, and can now access all the CBK platform's features after loggin in with it's credentials.
-\subsubsubsection{Educator sign up to the platform}
-Vittorio is an innovative teacher who teaches c.s. in a school. He discovered, while searching the web for new ideas on how testing his students' abilities in software developing, the CKB platform and its services.
-Vittorio decide to try to register to the platform, as he's very intrigued about it. To do that Vittorio goes on the CKB Homepage and then on the page dedicated to educators and clicks the "Sign up" button. At this point he compiles all the fields in the form that showed up with the new page (e.g. name, surname, school in which he teaches, istitutional email, password, ...), especially the fields related to his profession, and in the end clicks on "Confirm" button.
-Finally Vittorio wait for the registration confirm email, and start using CKB platform's features after loggin in with it's credentials.
+\subsubsubsection{Student signs up to the platform}
+Peter is an IT's student that wants to improve his software development skills. 
+He learns about the platform CKB one day, when his c.s. professor proposes to his class a software development tournament 
+in substitution to the normal, boring and limited tests organized through the academic year.
+Peter is extremely intrigued by the idea and the platform, so much that the same day he decides to try and register to the platform.
+Peter opens his personal browser and goes to the CKB site's homepage. Here he navigates to the student's dedicated page and clicks the 
+"Sign up" button in order to register. 
+He inserts all the required information in the registration page's mandatory fields(e.g. name, surname, attended school, email, username, password, ...)
+ and clicks the "Confirm" button.
+Peter now looks his email homepage for the notification about the correctness of his registration 
+and can now access all the CBK platform's features, after loggin in with it's credentials.
+\subsubsubsection{Educator signs up to the platform}
+Vittorio is an innovative computer science's teacher. 
+He discovered the CKB platform while searching the web for new testing ideas.
+Vittorio decides to register to the platform as he's very intrigued with it. 
+To register, Vittorio goes on the CKB's Homepage, then on the page dedicated to educators and clicks the "Sign up" button.
+ After the registration page shows up, he compiles all the fields in the registration form (e.g. name, surname, school in which he teaches, istitutional email, password, ...), 
+ especially the ones related to his profession, then clicks on the "Confirm" button.
+Vittorio then waits for the registration confirm email and starts using the CKB platform's features, after loggin in with his credentials.
 \subsubsubsection{Educator creates a new tournament (and badges)}
-Laura is an c.s. educator who registered to CKB platform. She decide to create a new tournament to let her student compete with each other and improve their software developing skills. In order to do so, Laura log in her account on the platform and try to create a new tournament. While doing so, she decide which programming languages can be used to develop the solution to the battles that will be contained in the tournament, the name of the tournament, the method through which students can access it, eventually its maximum duration, and finally she decide if the tournament will contains some new or default badges, obtainable by the students by doing some achievements.
-Laura wants to create new particular badges, in order to encourage her students to participate more actively to the tournament. To do so, Laura access the appopriate section during tournament creations, and starts creating the badges, specifing their title, rules to obtain them, their icon and eventually their score, that will be added to the student's score that obtained them.
-At the end of the process Laura, confirm her choices and the tournament starts.
+Laura is a c.s. educator who registered to CKB platform. She decides to create a new tournament to let her students compete with each other and improve their software developing skills. 
+In order to do so, Laura logs in her account tries to create a new tournament. 
+While doing so, she chooses the programming language to be used when developing the solution to the battles that will be contained in the tournament, 
+the name of the tournament, the method to allows students to access it, its maximum duration and finally she decides if the tournament is going to contain some new or default badges,
+ obtainable by the students by doing some achievements.
+Laura also wants to create new badges in order to encourage her students to participate more actively to the tournament. 
+To do so, Laura accesses the appopriate section while creating the tournament and starts creating the badges, specifing their title, the rules to obtain them, their icon and their score, 
+that will be added to the student's score when obtained.
+At the end of the process Laura confirms her choices and the tournament starts.
 \subsubsubsection{Educator creates a new battle}
-Laura is an c.s educator who registered to the CKB platform. After she created a new tournament, Laura wants to immediately create a new battle within it, to let her students compete with each other. To do so Laura, log in her account on the platform, access the tournament in which she wants to create a new battle through an appropriate web page. At this point Laura try to create a new battle within the tournament. While doing so, she decide the battle's name, the programming language allowed in the battle, maximum number of partecipant, dimension of group of students that can partecipate to it, a registration and submission deadline and eventually sets some personalized rules to calculate students' score in the battle.
-At the end of all of this process, Laura waits for the students of her class, subscribed to the tournament in which the battle has been created, to join the battle. At the end of the registration deadline, partecipant can start competing with each other, while Laura can supervise their work.
-At the end of the battle, which automaticcaly close itself at submission deadline, students' score gets calculated and added to their tournament score.
-\subsubsubsection{Educator close a tournament}
-Marco is an c.s educator who registered to the CKB platform. He has created a new tournament one mounth ago, today, after this mounth he decide to close it. In order to do so, Marco log in his account on the platform and access the tournament which he wants to close through an appropriate web page, at this point Marco control il there are battles that aren't altready closed and sees that Laura has a tournament that is still open, so he now control when is the submission deadline of this battle. After discovering that the submission deadline is in two days he close the possibility of other educators to creates new battles.
-After three days Marco, after log in to the platform, control that there are'n still open battles or battles that are waiting for the manual evaluation. Then he proceed to close the tournament
-\subsubsubsection{Educator manually evaluate a battle after the end}
-Luca is an c.s educator who registered to the CKB platform. He has created a new battle in a tournament two weeks ago, choosing as the submission deadline yesterday and choosing to include a Manual evaluation in the total evaluation of the battle, according to the requirments of shared balaced partecipation, optimization and writing comments related to the code and the implementative choice.
-Today, Luca log in his account on the platform, access to the tournament in which he created the battle and see that this battle is closed and is waiting for a manual evaluation and decide to examine the codes that have been delivered in the battle by the different groups.
-The first group he analyzes is made of three students, and sees that they have a score of 90/100 in the automated evaluation. After entering on the resource made available by the group, Luca check if the number of commits and work has been done equally among the students in the group and not noticing large differences between the number of lines of code written and the number of commit made by each student he decide to go next to the comment section.
-Opening the code in the resource, he relizes that the group has limited himself to adding simple comments, without going to much in the details of the work done and choices made; so he decide to modify the grade assigned befor, by reducing it from 90/100 to 80/100, writing a little explanation of the reason for this change. It then continues to control all the others group and at the end he can close definitively the battle.
+Laura is a c.s educator who registered to the CKB platform. After she created a new tournament, Laura wants to create a new battle within it to let her students compete with each other. 
+To do so Laura logs in her account and accesses the tournament in which she wants to create a new battle. 
+At this point Laura tries to create a new battle within the tournament. 
+While doing so, she decides the battle's name, the programming language allowed in the battle, the dimensions of the students' groups that can partecipate in it, 
+a registration and submission deadline and some personalized rules to elaborate students' scores.
+Laura then waits for her class' students subscribed to the tournament in which the battle has been created to join the battle. 
+At the end of the registration deadline the partecipants can start competing with each other while Laura supervises their work.
+At the end of the battle, which is automaticaly closed at submission deadline, the students' work gets evaluated and the battle's score added to their overall tournament score.
+\subsubsubsection{Educator closes a tournament}
+Marco is a c.s educator who is registered to the CKB platform. He has created a new tournament a month ago and today, after this month he decides to close it. 
+In order to do so, Marco logs in his account and accesses the tournament that he wants to close, at this point Marco controls if there are battles still open. 
+Marco notices that Noemi has created a battle in his tournament, and that said battle is still open.
+Him being the tournament owner, he can control all battles contained in it. 
+He notices that Noemi's battle's submission deadline is in two days, so he decides to wait until the end of her battle before closing his tournament.
+After three days Marco, after logging in the platform, checks that there aren't open battles or ones that are waiting for manual evaluation. 
+He then proceeds to close the tournament.
+\subsubsubsection{Educator manually evaluates a battle after it's end}
+Luca is a c.s educator registered to the CKB platform. 
+He has created a new battle in a tournament 16 days ago, choosing as the submission deadline the day 14 days after the battle's creation.
+Luca logs in his account on the platform, accesses the tournament in which he created the battle and sees that said battle is closed and waiting for a manual evaluation.
+He then decides to examine the solutions that have been submitted by the different groups.
+The first group he analyses is composed of three students. He sees that they have a score of 90/100 in the automated evaluation. 
+Luca opens the solution proposed by the group, then he checks if the number of commits is equal amongst the students in the group.
+Since he doesn't notice any large differences between the number of lines of code written and the number of commits made by each student he decides to go to the comment section.
+By looking at the code written bu the students, Luca relises that they have not written any specific explanation to the code, and that the overall documentation is very lacking 
+in quality and detail. 
+Because of this, he decides to modify the previously assigned grade by reducing it from a 90/100 to a 80/100.
+He then writes an explanation for this change to the group. 
+He then confirms his modifications and goes on evaluating the next group.
+When there are no more groups to evaluate, he closes the battle.
 \subsubsubsection{Student forms a group then joins a battle}
-Francesca signs in the platform with her credentials and sees that a new tournament has opened. She would like to participate in it, and so decides to form a group with two of her friends to compete in the tournament's battles. She clicks on the apposite menu and chooses the users she would like to invite to join her group.
+Francesca signs in the platform with her credentials and sees that a new tournament has opened. 
+She would like to participate in it, and so decides to form a group with two of her friends to compete in the tournament's battles. 
+She clicks on the apposite menu and chooses the users she would like to invite to join her group.
 After both her friends accept her invite, she enters the tournament by signing up her group as participant.
 \subsubsubsection{Student joins a battle}
 Andres is subscribed to a tournament with his group. One day he is notified that a new battle for the tournament he is subscribed to is available.
-After reading the battle's description he decides that he wants to try and join in. He autonomously asks his group members if they want to join the battle too (through email or another external messaging platform).
-After reading their answers, he subscribes the group to the new battle.
-Once the registration deadline for the groups expires, Andres' group forks the automatically created GitHub repository and sets up an automated workflow through GitHub Actions, to notify the platform of each of their commits.
+After reading the battle's description, Andres decides that he wants to try and join in. He autonomously asks his group members if they want to join
+ the battle too (through email or another external messaging platform).
+After reading their answers, Andres subscribes the group to the new battle.
+Once the registration deadline for the groups expires, Andres' group forks the automatically created GitHub repository and sets 
+up an automated workflow through GitHub Actions, to notify the platform of each of their commits.
 \subsubsubsection{Student uploads a solution}
-Piero is currently competing with his group in a tournament, they are working on a solution for a battle and they are confident that they are right with what they coded. Piero decides to upload a solution for the battle to the GitHub repository, so that it can be evaluated and they can see how much their score is for this first draft solution.
-Piero uploads the current solution to the forked GitHub repository. After the push, the GitHub Actions workflow is started, letting the platform know that Piero has uploaded a new solution for the battle he's currently competing in.
-The automated evaluation system integrated in the platform now starts, tests are automatically ran and no human evaluation is deemed needed, so the platform gives Piero's solution a score of 75/100.
-Piero sees the score on his profile on the platform and understands that his solution is found correct, but not the best that can possibly be done. He decides to continue working on it, until his solution will obtain a score of at least 95/100.
+Piero is currently competing with his group in a tournament, they are working on a solution for a battle and they are confident that they are right with what they coded. 
+Piero decides to upload a solution for the battle to the GitHub repository, so that it can be evaluated and they can see how much their score is for this first draft solution.
+Piero uploads the current solution to the forked GitHub repository. 
+After the push, the GitHub Actions workflow is started, letting the platform know that Piero has uploaded a new solution for the battle he's currently competing in.
+The automated evaluation system integrated in the platform now starts, tests are automatically ran and no human evaluation is deemed needed, 
+so the platform gives Piero's solution a score of 75/100.
+Piero sees the score on his profile on the platform and understands that his solution is found correct, but not the best that can possibly be done. 
+He decides to continue working on it, until his solution will obtain a score of at least 95/100.
 \subsubsubsection{Student uploads a solution after deadline expiration time}
-Frank has been competing in a tournament for very long, and has finally found a solution for the last battle he struggled to solve. After having uploaded his solution on the forked repository, the GitHub Actions workflow starts and notifies the platform that Frank's has uploaded a new solution for his final battle.
-The CodeKataBattle platform then sees that the deadline for Frank's battle has expired. The platform notifies Frank that his last uploaded solution will not be considered on the final score he will get, and no further action is taken.
+Frank has been competing in a tournament for a very long time and has finally found a solution for the last battle he struggled to solve. 
+After having uploaded his solution on the forked repository, the GitHub Actions workflow starts and notifies the platform that Frank has uploaded a new solution for his final battle.
+The CodeKataBattle platform then sees that the deadline for Frank's battle has expired. 
+The platform notifies Frank that his last uploaded solution will not be considered on the final score he will get, and no further action is taken.
 \subsubsubsection{Students visualize his tournament's results and his badges}
-Paolo, Lucia e Alessandro are three friends that are subscribed in the CKB platform, one evening they decide to compare their tournament's result on the CKB platform. First, they want to compare their result in the last tournament, which ended the day before.
-Paolo, after logging in the site and entering his profile page, sees that he achived a score of 70/100. Lucia in last tournament was in the same group as Paolo, so she achived the same score. Alessandro, who was in a different group, sees that he has a score of 90/100, thus becoming the best of the three. Lucia now wants to see the best score they have ever achieved, so after logging in the site and searching for her best result, found out that she participated in a tournament two months prior, where she achived a score of 95/100. Alessandro wants to see his best result and after logging in the site, he sees that in his badges there is the "perfect score" badge, which is assigned to a student who got a score of 100/100 in at least one tournament.
-Paolo then wants to know who out of the three has the most badges. After accessing his profile page, he sees that he has obtained a total of 57 badges, obtained in all of the tournaments in which he participated; in this badges Paolo sees that have achived badges for being the most committer of a tournament, one for having partecipated at 50 tournaments and one for having write the most number of code row in a tournament. Alessandro checks that too, and sees that he obtained only 13 badges.
+Paolo, Lucia e Alessandro are three friends that are subscribed in the CKB platform, one evening they decide to compare their tournament's result on the CKB platform. 
+They want to compare their results in the last tournament, which ended the day before.
+Paolo, after logging in the site and navigating to his profile page, sees that he achived a score of 70/100. 
+Lucia in last tournament was in the same group as Paolo, so she achived the same score. Alessandro, who was in a different group, sees that he got a score of 90/100, 
+thus becoming the best of the three. Lucia now wants to see the best score they have ever achieved, so after logging in the site and searching for her best result, 
+she discovered that she participated in a tournament two months prior where she achived a score of 95/100. 
+Alessandro wants to see his best result too, and after logging in the site, he sees that in his badges there is the "perfect score" badge, 
+which is assigned to a student who got a score of 100/100 in at least one battle.
+Paolo then wants to know who out of the three has the most badges. 
+After accessing his profile page, Paolo sees that he has obtained a total of 57 badges, obtained in all of the tournaments in which he participated. 
+By looking at his badges Paolo notices that he has achieved badges for having the most commits in a battle, for having partecipated in 50 tournaments and 
+for having written the most code in a tournament. 
+Alessandro checks that too, and sees that he obtained only 13 badges total.
+%Check from here
 \subsubsection{Class diagram}
 \begin{figure}[H]
     \centering
