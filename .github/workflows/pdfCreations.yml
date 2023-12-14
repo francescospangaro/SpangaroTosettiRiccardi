@@ -1,4 +1,4 @@
-name: LaTeX RASD actions
+name: LaTeX  actions
 on: [push]
 jobs:
   build:
@@ -18,27 +18,26 @@ jobs:
         with:
           root_file: RASD.tex
           working_directory: RASDwip
-      
+  
+      - name: Upload RASD file
+        uses: actions/upload-artifact@v3
+        with:
+            name: PDF
+            path: RASDwip/RASD.pdf 
+    
     
       - name: Compile DD document
         uses: xu-cheng/latex-action@v3            
         with:
           root_file: DD.tex
           working_directory: DDwip
+   
       - name: Upload DD file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
           path: DDwip/DD.pdf 
       
-    
-      - name: Upload RASD file
-        uses: actions/upload-artifact@v3
-        with:
-          name: PDF
-          path: RASDwip/RASD.pdf 
-  
-   
       - name: create PreRelease
         uses: "marvinpinto/action-automatic-releases@latest"
         with: 
