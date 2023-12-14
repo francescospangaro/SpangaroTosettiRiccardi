@@ -1783,18 +1783,16 @@ reliability and availability failures can be corrected.
 
 \section{Formal analysis using Alloy}
 
-%Check from here
-=======
 \subsection{Signatures}
 \color{gray}
-//signature Educator used to represent the educator subscribed to the CBK  \\
+//Used to represent an Educator subscribed to the CBK platform \\
 \color{blue}
 sig
 \color{black}
 Educator  \{\} \\
 \\
 \color{gray}
-//A Permit is from one educator to a set of other educator, and regard only one tournament\\
+//A Permit is given by an Educator to a set of other Educators, and regards only one tournament created by the permit's sender\\
 \color{blue}
 sig
 \color{black}
@@ -1809,7 +1807,7 @@ Permit \{\\
 \}\\
 \\
 \color{gray}
-//A tournament have a creator and a set of educator that can create battle\\
+//A tournament has a creator and a set of Educators that can create battles in it\\
 \color{blue}
 sig
 \color{black}
@@ -1819,7 +1817,7 @@ Tournament \{ \\
 \}\\
 \color{gray}
 \\
-//A battle have a creator and a tournament, the creator must be the creator or an educator that can create tournament\\
+//A battle has a creator and a tournament, the creator must be the tournament's creator or another Educator that can create battles within that tournament\\
 \color{blue}
 sig
 \color{black}
@@ -1833,14 +1831,14 @@ Battle \{\\
 \}\\
 \color{gray}
 \\
-//Test represent the test of a battle\\
+//Test represents a battle's test\\
 \color{blue}
 sig
 \color{black}
 Test \{\}\\
 \color{gray}
 \\
-//Student in CKB can have a set of badges\\
+//Students subscribed to the CKB platform can have a set of badges\\
 \color{blue}
 sig
 \color{black}
@@ -1862,7 +1860,7 @@ Repository\{\\
 \}\\
 \\
 \color{gray}
-//A group is formed by n student and partecipate to one tournament\\
+//A group is formed by some Students and partecipates to one tournament\\
 \color{blue}
 sig
 \color{black}
@@ -1875,7 +1873,7 @@ Group\{\\
 \}\\
 \\
 \color{gray}
-//A badge is created by an educator\\
+//A badge is created by an Educator\\
 \color{blue}
 sig
 \color{black}
@@ -1887,7 +1885,7 @@ Badge\{\\
 \}\\
 \\
 \color{gray}
-//An invite is made by a student of a group and direct to other student\\
+//An invite is made by a Student of a group and directed to another Student\\
 \color{blue}
 sig
 \color{black}
@@ -1903,7 +1901,7 @@ Invite\{\\
 
 \subsection{Facts}
 \color{gray}
-//The creator of a tournament can give the permission to creare battle in the tournament only one time at educator\\
+//A tournament's creator can grant another Educator permission to create battles in his tournament only once per Educator\\
 \color{black}
 \color{blue} fact \color{black} NoTwoPermissionAtSameEducator\{\\
 \-\hspace{1cm} \color{blue} all disj \color{black} p1, p2 : Permit | \\
@@ -1912,7 +1910,7 @@ Invite\{\\
 \}
 \\
 \color{gray}
-//A group can have at most only one repository for every battle\\
+//A group can have at most one repository for each battle\\
 \color{blue} fact \color{black} onlyOneRepository \{\\
 \-\hspace{1cm} \color{blue} all disj \color{black} r1, r2 : Repository | \color{blue} all \color{black} g : r1.group | \color{blue} all \color{black} b : r1.battle | \\
 \-\hspace{1cm}b \color{blue} != \color{black} r2.battle or \\
@@ -1920,7 +1918,7 @@ Invite\{\\
 \}
 \\
 \color{gray}
-//For every battle, a student can partecipate in only one group\\
+//For each battle, a Student can only participate in one group\\
 \color{black}
 \color{blue} fact \color{black} noStudentsInMoreGroupInABattle\{\\
 \-\hspace{1cm} \color{blue} all \color{black} s: Student | \color{blue} all disj \color{black} g1, g2: Group | \\
@@ -1928,7 +1926,7 @@ Invite\{\\
 \}\\
 \\
 \color{gray}
-//The sender of an invite in a group and the receiver must be in the same tournament\\
+//The sender and the receiver of a group invite must have at least one tournament subscription in common\\
 \color{black}
 \color{blue} fact \color{black} SenderAndReceiverInSameTournament\{\\
 \-\hspace{1cm} \color{blue} all \color{black} i : Invite | \color{blue} all \color{black} r : i.receiver |  \color{blue} some \color{black} t : r.tournament | \\
@@ -1936,7 +1934,7 @@ Invite\{\\
 \}\\
 \\
 \color{gray}
-//All students in a group must partecipate at the tournament of the battle they partecipate\\
+//All Students in a group must be subscribed to a tournament for the group to compete in one battle of that tournament\\%magic
 \color{black}
 \color{blue} fact \color{black} memberOfAGroupSameTournament\{\\
 \-\hspace{1cm} \color{blue} all \color{black} g : Group | \color{blue} all disj \color{black} s1, s2 : g.students | \\
@@ -1945,7 +1943,7 @@ Invite\{\\
 \}\\
 \\
 \color{gray}
-//Student must be in at least one battle in a tournament to receive badges from it\\
+//Students must be subscribed to at least one battle to receive badges from it\\
 \color{black}
 \color{blue} fact \color{black} StudentReceiveBadges\{\\
 \-\hspace{1cm} \color{blue} all \color{black} s:Student | \color{blue} all \color{black} b : s.badges | \color{blue} all \color{black} g: Group |  \\
@@ -1954,7 +1952,7 @@ Invite\{\\
 \}\\
 \\
 \color{gray}
-//Student must be in the tournament where the battle is for partecipate at them\\
+//Students must be subscribed in a tournament to compete in that tournament's battles\\
 \color{black}
 \color{blue} fact \color{black} StudentsGroupBattleInTournament\{\\
 \-\hspace{1cm} \color{blue} all \color{black} g : Group | \color{blue} all \color{black} s : g.students | \\
@@ -1963,7 +1961,7 @@ Invite\{\\
 \}\\
 \\
 \color{gray}
-//A student need to receive at least one invite from the leader of the group to be into the group\\
+//A Student needs to receive at least one invite from the leader of a group to be a member of that group\\
 \color{black}
 \color{blue} fact \color{black} StudentInAGroup\{\\
 \-\hspace{1cm} \color{blue} all \color{black} g : Group | \color{blue} all \color{black} s : g.students | \color{blue} some \color{black} i : Invite |\\
@@ -2012,24 +2010,25 @@ Invite\{\\
     \centering
     \hspace*{-3cm}\includegraphics[scale=1.3]{images/ALLOY/Picture2.png}
     \caption{tournament, educator and battle}
-    \label{fig:tournament, educator and battle}
+    \label{fig:tournament, Educator and battle}
 \end{figure}
 \color{red}
-Every permit give the possibility of create new tournaments to one Educator that isn't the creator of the tournament or have already the permit to create Battle (battleCreators)\\
-\color{brown}
-The past description is propagated then to all the tournament (battleCreators)\\
+Every permit gives an Educator who didn't create a tournament, the possibility of creating new battles inside another Educator's tournament.
+For this, the tournament's creator must grant permission to the other Educator, via a permit. (battleCreators)\\
 \color{orange}
-Every battle is created by only one Educator that can be the creator of the tournament or also an educator that receive the permit to create battle in this tournament (creator) [Ex. Battle0 is created by Educator1 in Tournament2, that is created by Educator0. Educator0 give the Permit0 to Educator1 of create Battle in Tournament2 ]\\
+Every battle is created by an Educator, he can be the tournament's creator or an Educator that has received 
+modification permit by the tournament's creator (creator) [Ex. Battle0 is created by Educator1 in 
+Tournament2, that is created by Educator0. Educator0 grants Educator1 Permit0 so that Educator1 can create Battle0 in Tournament2 ]\\
 \color{green}
-Every tournament must be created by only one Educator (creator)\\
+Every tournament can be created by only one Educator (creator)\\
 \color{blue}
-A test is relative to one or more battle, we can't exclude that one test can be only in one battle (tests)\\
+Tests may be reused amonst more battles, while a test has to be relative to at least one battle, it can be utilized by more than one (tests)\\
 \color{violet}
 A battle is only in one tournament (tournament)\\
 \color{red}
-A permission is relative to one tournament created by an educator (tournament)\\
+A permission is relative to one tournament created by an Educator (tournament)\\
 \color{brown}
-A permission is also relative to the educator that created at least one tournament (tournamentCreator)\\
+A permission can only be granted by an Educator that created at least one tournament (tournamentCreator)\\
 \color{black}
 
 \newpage
@@ -2065,7 +2064,7 @@ A permission is also relative to the educator that created at least one tourname
     \item GitHub for project versioning.
     \item Diagrams.net for UML,Use case,Sequence and BPMN diagrams.
     \item Visual Studio Code as \LaTeX editor.
-    \item Alloy analyzer for formal analysis of alloy code.
+    \item Alloy analyzer for alloy code's formal analysis.
 \end{itemize}
 
 \end{document}
