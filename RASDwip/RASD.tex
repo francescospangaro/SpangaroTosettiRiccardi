@@ -1125,8 +1125,8 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \caption{Educator creates new badges for a tournament sequence diagram}
               \label{fig:BadgesCreationSeqDiagram}
           \end{figure}
-% Check from here
-    \item[\textbf{5.}] \textbf{Educator delete a badge}
+
+    \item[\textbf{5.}] \textbf{Educator deletes a badge}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
               \hline
@@ -1147,41 +1147,41 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \textbf{Actors} & Educator\\
               \hline
               \textbf{Entry condition} & Educator has logged in the platform, has started the creation of a new
-              tournament in which has already created at least 1 badge and want to delete and/or update one of them\\
+              tournament in which he has already created at least one badge and wants to delete and/or update one of this tournament's badges.\\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Educator clicks on a update button related to the badge and
+                  \item[1.] Educator clicks on the update button related to the badge and
                         present on the tournament creation page.
-                  \item[2.] CKB platform show a modifiable form, filled with the
-                        badge's data which the Educator want to modify.
-                  \item[3.] Educator proceeds to modify the badge's data
-                  \item[4.] CKB platform tries to validate the new data
-                  \item[5.] Update is confirmed with the display of a message by the CKB platform.
-                  \item[6.] Educator clicks on a delete button related to
+                  \item[2.] CKB platform shows a modifiable form, filled with the
+                        badge's data that the Educator wants to modify.
+                  \item[3.] Educator proceeds to modify the badge's data.
+                  \item[4.] CKB platform tries to validate the new data.
+                  \item[5.] Update is confirmed with the display of a confirmation message by the CKB platform.
+                  \item[6.] Educator clicks on the delete button related to
                         the badge and present on the tournament creation page.
                   \item[7.] CKB platform show a message requiring confirmation
-                        for the Deletion
-                  \item[8.] Educator presses a confirmation button
-                  \item[9.] CKB platform delete the badge and bring the Educator
-                        to the previous page.
+                        for the badge deletion.
+                  \item[8.] Educator presses the confirmation button.
+                  \item[9.] CKB platform deletes the badge and forwards the Educator
+                        back to the previous page.
               \end{enumerate} \\
               \hline
-              \textbf{Exit condition} & Deleted badges are removed from the tournament, and their data are removed
-              from the system. The modifications of the updated ones are committed to the system. The Educator
+              \textbf{Exit condition} & Deleted badges are removed from the tournament and their data is removed
+              from the platform. The modifications of the updated badges are committed to the platform. The Educator
               is led back to the tournament creation page. \\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
-                  \item[4.1] Badge's updated name contain forbidden characters
-                  \item[4.2] The new image uploaded as icon, it is too big or have an unsupported format.
-                  \item[4.3] New Badge's rules are not well defined.
-                  \item[4.4] Some badge's features has been left empty
+                  \item[4.1] Badge's updated name contain forbidden characters.
+                  \item[4.2] The new image uploaded as icon is too big or has an unsupported format.
+                  \item[4.3] New badge's rules are not well defined.
+                  \item[4.4] Some badge's features have been left empty.
                         \begin{itemize}
-                            \item[$\rightarrow$] Badge it is not updated, Educator is led to
-                                  the tournament creation page (point 1.)
+                            \item[$\rightarrow$] Badge is not updated, Educator is led back to
+                                  the tournament creation page. (point 1.).
                         \end{itemize}
                   \item[6.1] Educator presses the cancel button
                         \begin{itemize}
-                            \item[$\rightarrow$] Delete procedure is stopped, and the Educator
+                            \item[$\rightarrow$] Delete procedure is stopped, Educator
                                   is led back to the tournament creation page (point 6.).
                         \end{itemize}
 
@@ -1191,7 +1191,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{SequenceDiagrams/Sequence5.pdf}
-              \caption{Educator delete and/or update badge(s) of a tournament, sequence diagram}
+              \caption{Educator deletes and/or updates a tournament's badge(s) sequence diagram}
               \label{fig:DeletionUpdateBadgesSeqDiagram}
           \end{figure}
 
@@ -1215,42 +1215,42 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \hline
               \textbf{Actors} & Educator\\
               \hline
-              \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
-              and want to add a battle in a specific tournament \\
+              \textbf{Entry condition} & Educator has logged in the platform, has created at least one tournament
+              and wants to add a battle in a specific tournament. \\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Educator open the page related to a specific tournament
-                        which has created.
-                  \item[2.] Educator clicks on a button used to create a new battle.
+                  \item[1.] Educator opens the page related to a specific tournament
+                        which he has created.
+                  \item[2.] Educator clicks on the button used to create a new battle.
                   \item[3.] Educator fills the form shown by the platform with informations
-                        related to the battle that he want to create (name, programming languages
+                        related to the battle that he wants to create (name, programming languages
                         allowed, maximum and minimum number of students for each partecipating
-                        group, registration and submission deadlines, ...)
+                        group, registration and submission deadlines, ...).
                   \item[4.] Educator clicks on a button to confirm.
-                  \item[5.] CKB platform validates the battle characteristics
-                  \item[6.] CKB platform display a confirmation message of the successfull
-                        creation of the battle.
+                  \item[5.] CKB platform validates the battle characteristics.
+                  \item[6.] CKB platform displays a confirmation message of the successfull
+                        battle's creation.
               \end{enumerate} \\
               \hline
               \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
-              is created within the tournament chosen by the Educator itself. All the students subscribed to the tournament
+              is created within the tournament chosen by the Educator himself. All the Students subscribed to the tournament
               in which the battle has been created get notified. Educator is then led to the riepilogative
-              page of the battles within the tournament.
+              page of the tournament's battles.
               \\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
-                  \item[3.1] Battle's name contain forbidden characters
+                  \item[3.1] Battle's name contains forbidden characters.
                   \item[3.2] A programming language inserted is not included in the tournament
                         allowed programming languages.
-                  \item[3.3] The specified number of minimum or maximum students for each group
-                        is beyond upper and/or lower limits imposed by the platform
+                  \item[3.3] The specified number of minimum or maximum Students for each group
+                        is beyond upper and/or lower limits imposed by the platform.
                   \item[3.4] Registration deadline inserted for the battle is not valid or
                         bigger than the submission one.
                   \item[3.5] Submission deadline inserted for the battle is not valid or
                         smaller than the registration one.
                         \begin{itemize}
-                            \item[$\rightarrow$] Educator gets notified about battle creation failure
-                                  by the platform throught an error message. The flow restart from point 3.
+                            \item[$\rightarrow$] Educator gets notified about battle's creation failure
+                                  by the platform through an error message. The flow restarts from point 3.
                         \end{itemize}
               \end{itemize}
           \end{xltabular}
@@ -1258,11 +1258,11 @@ All communication from and to the CKB platform has to be done through the HTTPS 
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{SequenceDiagrams/Sequence6.pdf}
-              \caption{Educator creates a new battle, sequence diagram}
+              \caption{Educator creates a new battle sequence diagram}
               \label{fig:BattleCreationSeqDiagram}
           \end{figure}
 
-    \item[\textbf{7.}] \textbf{Educator close a tournament}
+    \item[\textbf{7.}] \textbf{Educator closes a tournament}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
               \hline
@@ -1282,38 +1282,38 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \hline
               \textbf{Actors} & Educator\\
               \hline
-              \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 tournament
-              and want to close one of them in order to end the competition \\
+              \textbf{Entry condition} & Educator has logged in the platform, has created at least one tournament
+              and wants to close one of them in order to end the competition \\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Educator access the page of the tournament
-                        that want to close.
+                  \item[1.] Educator accesses the tournament's page
+                        that he wants to close.
                   \item[2.] Educator checks whether there are battles that
                         aren't already closed.
-                  \item[3.] Educator clicks on a "close" button related to
-                        the tournament and clicks on a confirm button.
+                  \item[3.] Educator clicks on the close button related to
+                        the tournament, then clicks on the confirm button.
                   \item[4.] CKB platform verifies if there are no battles
                         still active within the tournament.
-                  \item[5.] CKB platform notifies the Educator throught
+                  \item[5.] CKB platform notifies the Educator through
                         a message that confirms the deletion of the tournament.
               \end{enumerate} \\
               \hline
               \textbf{Exit condition} & The chosen tournament is closed, its data are kept saved in
               order to create an history of tournaments. Educator is led back to the riepilogative
-              page of the tournaments created by him. \\
+              page of the tournaments he created. \\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
-                  \item[2.1] There are still active battles within the tournament.
+                  \item[2.1] Active battles are found within the tournament.
                         \begin{itemize}
-                            \item[$\rightarrow$] Educator can close the possibility of
-                                  other educators to create new battles if he's the tournament
-                                  creator. The flow restart from point 1.
+                            \item[$\rightarrow$] Educator can prevent 
+                                  other Educators from creating new battles if he's the tournament
+                                  creator. The flow restarts from point 1.
                         \end{itemize}
-                  \item[4.1] There are still active battles within the tournament.
+                  \item[4.1] Active battles are found within the tournament.
                         \begin{itemize}
                             \item[$\rightarrow$] CKB platform interrupts the tournament
-                                  deletion and display an error message to the Educator. Flow
-                                  restart from point 1.
+                                  deletion and displays an error message to the Educator. Flow
+                                  restarts from point 1.
                         \end{itemize}
               \end{itemize}
           \end{xltabular}
@@ -1321,11 +1321,11 @@ All communication from and to the CKB platform has to be done through the HTTPS 
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence7.pdf}
-              \caption{Educator close a tournament, sequence diagram}
+              \caption{Educator closes a tournament sequence diagram}
               \label{fig:TournamentClosingSeqDiagram}
           \end{figure}
 
-    \item[\textbf{8.}] \textbf{Educator evaluate battle's results}
+    \item[\textbf{8.}] \textbf{Educator evaluates a battle's results}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
               \hline
@@ -1345,33 +1345,31 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \hline
               \textbf{Actors} & Educator\\
               \hline
-              \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 battle
-              within a tournament, that has terminated. Educator want to manually evaluate the results\\
+              \textbf{Entry condition} & Educator has logged in the platform, has created at least one battle
+              within a tournament that has terminated. Educator wants to manually evaluate the results\\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Educator accesses the page related to tournament
+                  \item[1.] Educator accesses the page related to the tournament
                         he has created.
                   \item[2.] Educator accesses the page related to a terminated
-                        battle within that tournament in which was included manual
-                        evaluation.
+                        battle within that tournament.
                   \item[3.] Educator manually evaluates groups' works by decreasing or
-                        increasing their scores according to his personal preferences, or
+                        increasing their scores according to his personal preferences or
                         the ones accorded with the students.
-                  \item[4.] Educator after evaluating all the groups, proceeds to
-                        close definitively the battle.
+                  \item[4.] Educator after evaluating all the groups proceeds to
+                        definitively close the battle.
               \end{enumerate} \\
               \hline
               \textbf{Exit condition} & Groups' scores within the battle get updated by the platform,
               battle is definitively closed and the Educator is led back to the riepilogative page of
-              the tournament to whom the battle belonged.\\
+              the tournament whom the battle belonged.\\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
-                  \item[2.1] In accessed battle was not included at the moment of the creation
-                        the possibility to manually evaluate the results.
+                  \item[2.1] The battle cannot be manually evaluated.
                   \item[2.2] Accessed battle isn't terminated.
                         \begin{itemize}
-                            \item[$\rightarrow$] CKB don't allow the Educator to manually evaluate
-                                  the battle. Flow restart from point 2.
+                            \item[$\rightarrow$] CKB platform doesn't allow the Educator to manually evaluate
+                                  the battle. Flow restarts from point 2.
                         \end{itemize}
               \end{itemize}
           \end{xltabular}
@@ -1379,7 +1377,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence8.pdf}
-              \caption{Educator evaluates manually a battle's score, sequence diagram}
+              \caption{Educator evaluates manually a battle's score sequence diagram}
               \label{fig:BattleEvalSeqDiagram}
           \end{figure}
 
@@ -1404,47 +1402,46 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \textbf{Actors} & Student\\
               \hline
               \textbf{Entry condition} & Student has logged in the platform, has subscribed to a
-              tournament and want to form a group in order to later join a battle within that
+              tournament and wants to form a group in order to later join a battle within that
               tournament.\\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Student clicks on a button that lead to
-                        an appropriate page to form a group between partecipant
-                        of a tournament.
-                  \item[2.] Student choose the filters to seach one or more
-                        students to invite.
-                  \item[3.] CKB platform compute all the filters and returns to
-                        the Student the available students according to the filters inserted.
-                  \item[4.] Student choose the other students to which send
+                  \item[1.] Student clicks on a button that leads to
+                        an appropriate page to form a group between Students.
+                  \item[2.] Student choose the filters to search one or more
+                        other Students to invite.
+                  \item[3.] CKB platform computes all the filters and returns to
+                        the Student the available Students, according to the filters he inserted.
+                  \item[4.] Student chooses the other Students to whom send
                         the invite from the showed page.
-                  \item[5.] Student clicks on a confirm button to send the invitations.
-                  \item[6.] CKB platform proceeds to send the invitation to all students
-                        specified and send a notification with it in order to notify the receivers.
-                  \item[7.] Invited students accept the invitation.
-                  \item[8.] CKB platform send notification to the Student.
+                  \item[5.] Student clicks on confirm button to send the invitations.
+                  \item[6.] CKB platform proceeds to send the invitations to all Students
+                        specified and sends a notification with it in order to notify the receivers.
+                  \item[7.] Invited Students accept the invitation.
+                  \item[8.] CKB platform sends notification to the Student.
               \end{enumerate} \\
               \hline
               \textbf{Exit condition} & The group is formed and registered by the
-              CKB platform. The Student is led back to the tournament riepilogative page.\\
+              CKB platform. The Student is led back to the tournament's riepilogative page.\\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
-                  \item[3.1] The set of students returned applying the filters
-                        doesn't contain any available student.
+                  \item[3.1] The set of Students returned applying the filters
+                        doesn't contain any available Student.
                         \begin{itemize}
-                            \item[$\rightarrow$] CKB platform show an empty list, with
-                                  a message explaining the absence of students in the list. Flow restart from point 2.
+                            \item[$\rightarrow$] CKB platform shows an empty list, with
+                                  a message explaining the absence of Students in the list. Flow restarts from point 2.
                         \end{itemize}
-                  \item[3.2] The set of students returned contains only students
+                  \item[3.2] The set of Students returned contains only Students
                         already in a group.
                         \begin{itemize}
-                            \item[$\rightarrow$] CKB platform shows the students returned
-                                  from the computation but doesn't allow to the Student to select them.
+                            \item[$\rightarrow$] CKB platform shows the Students returned
+                                  from the computation but doesn't allow the Student to select them.
                                   Flow restart from point 2.
                         \end{itemize}
-                  \item[7.1] One or more invited students don't accept the invitation
+                  \item[7.1] One or more invited Students don't accept the invitation
                         \begin{itemize}
                             \item[$\rightarrow$] CKB platform notifies the Student that sent the invitation
-                                  of the refusal of the invitation. Flow restart from point 1.
+                                  of the received refusal. Flow restarts from point 1.
                         \end{itemize}
               \end{itemize}
           \end{xltabular}
@@ -1452,11 +1449,11 @@ All communication from and to the CKB platform has to be done through the HTTPS 
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence9.pdf}
-              \caption{Students form a new group, sequence diagram}
+              \caption{Students form a new group sequence diagram}
               \label{fig:GroupFormationSeqDiagram}
           \end{figure}
 
-    \item[\textbf{10.}] \textbf{Student join a battle}
+    \item[\textbf{10.}] \textbf{Student joins a battle}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
               \hline
@@ -1477,30 +1474,30 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \textbf{Actors} & Student\\
               \hline
               \textbf{Entry condition} & Student has logged in the platform, has subscribed to a
-              tournament and want to join a battle within that tournament.\\
+              tournament and wants to join a battle within that tournament.\\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Student enter the tournament's page and
+                  \item[1.] Student enters the tournament's page and
                         subsequently the battle's page.
-                  \item[2.] Student clicks on a button to join the battle.
+                  \item[2.] Student clicks on the button to join the battle.
                   \item[3.] CKB platform shows a riepilogative page of
                         the battle.
-                  \item[4.] Student clicks on a button to subscribe to the
-                        battle his group.
-                  \item[5.] CKB platform checks whether the group respect all the
+                  \item[4.] Student clicks on the button to subscribe his group 
+                        to the battle.
+                  \item[5.] CKB platform checks whether the group respects all of the
                         battle requirements.
                   \item[5.] CKB platform returns a confirmation message to all the group
                         members.
-                  \item[6.] CKB platform sends a notification to group members
-                        when subscription deadline expires and battle starts.
+                  \item[6.] CKB platform sends a notification to the group members
+                        when the subscription deadline expires and battle starts.
               \end{enumerate} \\
               \hline
               \textbf{Exit condition} & The Student and his group have joined the battle.
-              CKB platform start saving all the solutions and statistics regarding the group's
-              work. The student is led to the riepilogative page of the battle.\\
+              CKB platform starts saving all the solutions and statistics regarding the group's
+              work. The Student is led to the riepilogative page of the battle.\\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
-                  \item[5.1] The group doesn't respect the requirement of the battle
+                  \item[5.1] The group doesn't respect the battle's requirements
                         (too many or too few members).
                   \item[5.2] The group contains members not subscribed to the tournament in which
                         the battle is held.
@@ -1513,11 +1510,11 @@ All communication from and to the CKB platform has to be done through the HTTPS 
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence10.pdf}
-              \caption{Student join a battle within a tournament, sequence diagram}
+              \caption{Student joins a battle within a tournament, sequence diagram}
               \label{fig:BattleJoiningSeqDiagram}
           \end{figure}
 
-    \item[\textbf{11.}] \textbf{Student upload a new solution}
+    \item[\textbf{11.}] \textbf{Student uploads a new solution}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
               \hline
@@ -1537,21 +1534,21 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \hline
               \textbf{Actors} & Student, GitHub\\
               \hline
-              \textbf{Entry condition} & Student has a GitHub account, has registered to at least 1 tournament
-              and 1 battle within it, and want to upload a new solution to that battle. \\
+              \textbf{Entry condition} & Student has a GitHub account, has registered to at least one tournament
+              and one battle within it, and wants to upload a new solution to that battle. \\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Student access his GitHub account
-                  \item[2.] Student upload his solution (or the group one)
+                  \item[1.] Student accesses his GitHub account.
+                  \item[2.] Student uploads his solution (or the group one)
                         to his GitHub repository, precedently forked.
-                  \item[3.] GitHub platform, throught his "GitHub Actions" notifies
+                  \item[3.] GitHub platform, through its "GitHub Actions" notifies
                         the CKB platform of the upload of the new solution by the Student.
                   \item[4.] CKB platform receives the new solution uploaded and starts
                         testing it.
                   \item[5.] CKB platform gives a score to the solution based on the
-                        tests results.
-                  \item[6.] CKB platform updates group score in the battle and tournament.
-                  \item[7.] CKB platform notifies the group's members of the successfull testing.
+                        tests' results.
+                  \item[6.] CKB platform updates the group's score in the battle and tournament.
+                  \item[7.] CKB platform notifies the group's members of the successful testing.
               \end{enumerate} \\
               \hline
               \textbf{Exit condition} & Student's (or his group's) score is updated based on the
@@ -1561,13 +1558,13 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \textbf{Exceptions} &    \begin{itemize}
                   \item[2.1] Generic upload error.
                         \begin{itemize}
-                            \item[$\rightarrow$] Handled by GitHub, flow restart from point 2.
+                            \item[$\rightarrow$] Handled by GitHub, flow restarts from point 2.
                         \end{itemize}
-                  \item[4.1] Tested code generates major issues, such as infinite loops,
-                        huge resource consumption, ...
+                  \item[4.1] Tested code generated major issues, such as infinite loops,
+                        huge resources consumption, ...
                         \begin{itemize}
-                            \item[$\rightarrow$] CKB platform, terminates the testing phase and
-                                  notifies the Student's group with an error message in the place of the
+                            \item[$\rightarrow$] CKB platform terminates the testing phase and
+                                  notifies the Student's group with an error message instead of the
                                   solution score, flow ends.
                         \end{itemize}
               \end{itemize}
@@ -1576,7 +1573,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence11.pdf}
-              \caption{Student upload a new solution of the battle's problem within the deadline, sequence diagram}
+              \caption{Student uploads a new solution of the battle's problem within the deadline, sequence diagram}
               \label{fig:CorrectSolutionUploadSeqDiagram}
           \end{figure}
 
@@ -1600,30 +1597,30 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \hline
               \textbf{Actors} & Student\\
               \hline
-              \textbf{Entry condition} & Student has logged in the platform, has registered to at least 1 tournament
-              and 1 battle within it, and want to upload a new solution to that battle but the submission deadline
+              \textbf{Entry condition} & Student has logged in the platform, has registered to at least one tournament
+              and one battle within it, and wants to upload a new solution to that battle, but the submission deadline
               expired. \\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Student access his GitHub account
-                  \item[2.] Student upload his solution (the group one)
+                  \item[1.] Student accesses his GitHub account.
+                  \item[2.] Student uploads his solution
                         to the group's GitHub repository, precedently forked.
-                  \item[3.] GitHub platform, throught his "GitHub Actions" notifies
-                        the CKB platform of the upload of the new solution by the Student.
+                  \item[3.] GitHub platform, through his "GitHub Actions" notifies
+                        the CKB platform of the Student's new solution's upload.
                   \item[4.] CKB platform receives the new solution uploaded and sees
                         that the submission deadline of the battle for which the solution
                         was uploaded has expired.
-                  \item[5.] CKB platform notifies the group's members with an error message.
+                  \item[5.] CKB platform notifies the group's members of the error by sending an error message.
               \end{enumerate} \\
               \hline
               \textbf{Exit condition} & Student's (or his group's) receives a notification by the CKB platform
               stating that their last uploaded solution will not be considered on the final score since the
-              submission deadline was expired.\\
+              submission deadline has expired.\\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
                   \item[2.1] Generic upload error.
                         \begin{itemize}
-                            \item[$\rightarrow$] Handled by GitHub, flow restart from point 2.
+                            \item[$\rightarrow$] Handled by GitHub, flow restarts from point 2.
                         \end{itemize}
               \end{itemize}
           \end{xltabular}
@@ -1631,11 +1628,11 @@ All communication from and to the CKB platform has to be done through the HTTPS 
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence12.pdf}
-              \caption{Student upload a new solution of the battle's problem beyond the deadline, sequence diagram}
+              \caption{Student uploads a solution after submission deadline sequence diagram}
               \label{fig:WrongSolutionUploadSeqDiagram}
           \end{figure}
 
-    \item[\textbf{13.}] \textbf{Student visualize his tournament's results and badges}
+    \item[\textbf{13.}] \textbf{Student visualises his tournament's results and badges}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
               \hline
@@ -1655,30 +1652,29 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \hline
               \textbf{Actors} & Student\\
               \hline
-              \textbf{Entry condition} & Student has logged in the platform and want to
-              see his or others tournament score and badges.\\
+              \textbf{Entry condition} & Student has logged in the platform and wants to
+              see his or others' tournament's scores and badges.\\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
                   \item[1.] Student enters in his profile page or in the profile
-                        page of the Student of which want to see his tournament score
+                        page's of the Student for which he wants to see the tournament scores
                         and badges.
-                  \item[2.] Student choose the tournament of which want to see the
+                  \item[2.] Student chooses the tournament for which he wants to see the
                         details from the appropriate section.
-                  \item[3.] Student consult his tournament score and badges
+                  \item[3.] Student consults his tournament scores and badges
               \end{enumerate} \\
               \hline
               \textbf{Exit condition} & Student has consulted his tournament score and badges obtained
-              during it, other than that the Student can see several details about all the tournament
-              that he partecipated to. Flow ends when Student go back to a precedent page.
+              during it. The Student can see several details about all the tournaments
+              in which he partecipated. Flow ends when the Student goes back to a precedent page.
               \\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
-                  \item[2.1] Student of the profile page accessed,
-                        doesn't have partecipated to any tournament.
+                  \item[2.1] The Student has not yet participated in any tournament.
                         \begin{itemize}
-                            \item[$\rightarrow$] CKB platform still allow the Student to
-                                  access to the profile page of the Student that hasn't partecipated
-                                  to any tournament, but doesn't show any tournament's score and badges.
+                            \item[$\rightarrow$] CKB platform still allows the Student to
+                                  access the profile page of the Student that hasn't partecipated
+                                  to any tournament, but doesn't show anything regarding tournaments.
                                   Flow ends.
                         \end{itemize}
               \end{itemize}
@@ -1687,7 +1683,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence13.pdf}
-              \caption{Student visualize his/other score(s) and badge(s), sequence diagram}
+              \caption{Student visualises his/other score(s) and badge(s), sequence diagram}
               \label{fig:ScoresBadgesVisualizationSeqDiagram}
           \end{figure}
 \end{enumerate}
