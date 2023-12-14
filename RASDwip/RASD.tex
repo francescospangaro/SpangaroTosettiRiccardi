@@ -254,7 +254,7 @@ Phenomena that take place in the real World and are not observable by the Machin
     \item[\textbf{WP4:}] Students choose which battle to join from the ones belonging to a tournament he precedently subscribed to.
     \item[\textbf{WP5:}] Student chooses his teammates for a battle.
     \item[\textbf{WP6:}] Educator chooses which colleagues to allow access to one of his tournaments.
-    \item[\textbf{WP7:}] Student subscribed to a battle waits for it's start (registration deadline expiration).
+    \item[\textbf{WP7:}] Student subscribed to a battle waits for the battle to start (registration deadline expiration).
     \item[\textbf{WP8:}] Educator decides to close a tournament.
 \end{enumerate}
 
@@ -292,7 +292,7 @@ Phenomena that take place in the real World and are not observable by the Machin
           \begin{enumerate}
               \item[\ding{228}] Student related phenomena
                     \begin{enumerate}
-                        \item[\textbf{SP18}:] The platform, whenever a new tournament is created, notifies all Students registers of it's creation.
+                        \item[\textbf{SP18}:] The platform, whenever a new tournament is created, notifies all Students registers of its creation.
                         \item[\textbf{SP19}:] The platform, whenever a new battle is created in a tournament, notifies all Students subscribed to that 
                         tournament of the new battle created.
                         \item[\textbf{SP20}:] The platform, whenever an invite is sent from a Student to another for joining a group, notifies the recipient 
@@ -359,7 +359,7 @@ Phenomena that take place in the Machine World and are not observable from the r
     \textit{Submission deadline} & $\rightarrow$ Maximum timespan in which a Student, or a group of Students, can upload their solution to a battle. \\
     \textit{Code Kata} & $\rightarrow$ The word "kata" refers to a karate exercise in which a form gets repeated many times, 
     making little improvements each time.
-    In this context it's used to express the fact that the code needs to be developed multiple times to reach an optimal solution. \\
+    In this context it is used to express the fact that the code needs to be developed multiple times to reach an optimal solution. \\
     \textit{Consolidation phase} & $\rightarrow$ Phase started at the end of a battle's submission deadline, used to consolidate the score of each Student 
     in that battle. A manual evaluation of the students' code by an Educator may occur. \\
     \textit{View-only mode} & $\rightarrow$ An abstract mode (not an implementation detail) in which an Educator can be if he accesses
@@ -465,7 +465,7 @@ Sequence diagrams specification $\rightarrow$ \url{https://www.uml-diagrams.org/
            It describes the major purpose of the project, every goal of it, the analysis of its domain and every World and phenomena, 
            shared, Machine only and real World only, associated with it.
           In addition, in this section are inserted definitions, acronyms and abbreviations used in this document, including 
-          it's revision history and refereced documents or web pages.
+          its revision history and refereced documents or web pages.
     \item \textbf{\textit{Section 2: Overall description}} \\
           This section gives an overall description of the project and all interactions that could occur between the platform 
           and the final users (Students and Educators). To do this, this section includes different possibile scenarios that could happen, 
@@ -480,7 +480,7 @@ Sequence diagrams specification $\rightarrow$ \url{https://www.uml-diagrams.org/
           (referenced in section 1).
     \item \textbf{\textit{Section 5: Effor spent}} \\
         This section contains all the information about the time spent by each group member in order to complete this document 
-          and it's division by each section of the document.
+          and its division by each section of the document.
 \end{itemize}
 
 \newpage
@@ -498,16 +498,16 @@ He learns about the platform CKB one day, when his c.s. professor proposes to hi
 in substitution to the normal, boring and limited tests organized through the academic year.
 Peter is extremely intrigued by the idea and the platform, so much that the same day he decides to try and register to the platform.
 Peter opens his personal browser and goes to the CKB site's homepage. Here he navigates to the student's dedicated page and clicks the 
-"Sign up" button in order to register. 
+"Sign-up" button in order to register. 
 He inserts all the required information in the registration page's mandatory fields(e.g. name, surname, attended school, email, username, password, ...)
  and clicks the "Confirm" button.
 Peter now looks his email homepage for the notification about the correctness of his registration 
-and can now access all the CBK platform's features, after loggin in with it's credentials.
+and can now access all the CBK platform's features, after loggin in with his credentials.
 \subsubsubsection{Educator signs up to the platform}
 Vittorio is an innovative computer science's teacher. 
 He discovered the CKB platform while searching the web for new testing ideas.
 Vittorio decides to register to the platform as he's very intrigued with it. 
-To register, Vittorio goes on the CKB's Homepage, then on the page dedicated to educators and clicks the "Sign up" button.
+To register, Vittorio goes on the CKB's Homepage, then on the page dedicated to educators and clicks the "Sign-up" button.
  After the registration page shows up, he compiles all the fields in the registration form (e.g. name, surname, school in which he teaches, istitutional email, password, ...), 
  especially the ones related to his profession, then clicks on the "Confirm" button.
 Vittorio then waits for the registration confirm email and starts using the CKB platform's features, after loggin in with his credentials.
@@ -538,7 +538,7 @@ Him being the tournament owner, he can control all battles contained in it.
 He notices that Noemi's battle's submission deadline is in two days, so he decides to wait until the end of her battle before closing his tournament.
 After three days Marco, after logging in the platform, checks that there aren't open battles or ones that are waiting for manual evaluation. 
 He then proceeds to close the tournament.
-\subsubsubsection{Educator manually evaluates a battle after it's end}
+\subsubsubsection{Educator manually evaluates a battle after its end}
 Luca is a c.s educator registered to the CKB platform. 
 He has created a new battle in a tournament 16 days ago, choosing as the submission deadline the day 14 days after the battle's creation.
 Luca logs in his account on the platform, accesses the tournament in which he created the battle and sees that said battle is closed and waiting for a manual evaluation.
@@ -592,7 +592,7 @@ After accessing his profile page, Paolo sees that he has obtained a total of 57 
 By looking at his badges Paolo notices that he has achieved badges for having the most commits in a battle, for having partecipated in 50 tournaments and 
 for having written the most code in a tournament. 
 Alessandro checks that too, and sees that he obtained only 13 badges total.
-%Check from here
+
 \subsubsection{Class diagram}
 \begin{figure}[H]
     \centering
@@ -606,7 +606,7 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
 \subsection{Product functions}
 \subsubsection{Shared functions}
 \begin{itemize}
-    \item \textbf{Sign-up:} Let the user (either students or educators) sign-up to the platform.
+    \item \textbf{Sign-up:} Let the user (Students or Educators) sign-up to the platform.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.4]{images/BPMN/BPMN1.png}
@@ -614,7 +614,7 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
               \label{fig:signUpBPMN}
           \end{figure}
 
-    \item \textbf{Visualize student's profile:} Let an user (either a student or an educator) to visualize the profile page of a specific student.
+    \item \textbf{Visualize student's profile:} Let a user (Student or Educator) visualise the page of a specific Student.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.4]{images/BPMN/BPMN2.png}
@@ -625,7 +625,8 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
 
 \subsubsection{Student functions}
 \begin{itemize}
-    \item \textbf{Student subscribes to a tournament:} Let a student search, according to some parameters (most used programming languages, creation date, number of partecipant, etc...) and subscribe to a tournament, after loggin in the platform.
+    \item \textbf{Student subscribes to a tournament:} Let a Student search, according to some parameters 
+    (most used programming languages, creation date, number of partecipant, etc...) and subscribe to a tournament, after logging in the platform.
           \begin{figure}[H]
               \centering
               \hspace*{-1.1cm}\includegraphics[scale=0.4]{images/BPMN/BPMN3.png}
@@ -633,7 +634,8 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
               \label{fig:studTournamentSubBPMN}
           \end{figure}
 
-    \item \textbf{Student join a battle:} Let a student subscribed to a tournament search a battle in it according to some parameters (programming language requested, expiration date, difficulty, etc...) and join it alone or in a group.
+    \item \textbf{Student join a battle:} Let a student Subscribed to a tournament search for a tournament's battle according 
+    to some parameters (programming language requested, expiration date, difficulty, etc...) and join it alone or in a group.
           \begin{figure}[H]
               \centering
               \hspace*{-1.1cm}\includegraphics[scale=0.4]{images/BPMN/BPMN4.png}
@@ -644,7 +646,8 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
           %newpage command used to better format the pdf content
           \newpage
 
-    \item \textbf{Student gets notified of new events:} Notify the student about new tournaments created, if signed to the platform, and new upcoming battles that take place in tournaments in which he has joined.
+    \item \textbf{Student gets notified of new events:} Notify a Student about new tournaments created, if signed into the platform, 
+    and new battles for the tournaments he is subscribed to.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.4]{images/BPMN/BPMN5.png}
@@ -652,7 +655,8 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
               \label{fig:studNotificationBPMN}
           \end{figure}
 
-    \item \textbf{Student's solutions get evaluated:} Let a student, who connects to his forked repository on GitHub, upload his solution and evaluate it according to some parameters.
+    \item \textbf{Student's solutions get evaluated:} Let a Student, who connects to his forked repository on GitHub, 
+    upload his solution and evaluate it according to some parameters.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.35]{images/BPMN/BPMN6.png}
@@ -660,7 +664,7 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
               \label{fig:studSolEvalBPMN}
           \end{figure}
 
-    \item \textbf{Student form a group for a battle:} Let a student form a group with other students in order to face a battle, through invite messages.
+    \item \textbf{Student form a group for a battle:} Let a Student form a group with other Students in order to face a battle, through invite messages.
           \begin{figure}[H]
               \centering
               \hspace*{-0.9cm}\includegraphics[scale=0.35]{images/BPMN/BPMN7.png}
@@ -673,7 +677,7 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
 
 \subsubsection{Educator functions}
 \begin{itemize}
-    \item \textbf{Educator create a tournament:} Let an educator create a new tournament and set its parameters.
+    \item \textbf{Educator create a tournament:} Let an Educator create a new tournament and set its parameters.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.35]{images/BPMN/BPMN8.png}
@@ -681,7 +685,7 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
               \label{fig:TournamentCreationBPMN}
           \end{figure}
 
-    \item \textbf{Educator grant access to a tournament:} Give an educator the possibility to grant the access to one of his tournaments to a colleague.
+    \item \textbf{Educator grant access to a tournament:} Give an Educator the possibility to grant modification access to one of his tournaments to a colleague.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.4]{images/BPMN/BPMN10.png}
@@ -692,7 +696,7 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
           %newpage command used to better format the pdf content
           \newpage
 
-    \item \textbf{Educator close a tournament:} Let an educator close one of his tournaments whenever he wants.
+    \item \textbf{Educator close a tournament:} Let an Educator close one of his tournaments.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.4]{images/BPMN/BPMN9.png}
@@ -700,7 +704,7 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
               \label{fig:TournamentClosingBPMN}
           \end{figure}
 
-    \item \textbf{Educator creates a battle:} Grant an educator the possibility of creating a battle in tournaments where he has permission to.
+    \item \textbf{Educator creates a battle:} Grant an Educator the possibility of creating a battle in tournaments where he has permission to.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.4]{images/BPMN/BPMN11.png}
@@ -708,7 +712,8 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
               \label{fig:createBattleBPMN}
           \end{figure}
 
-    \item \textbf{Educator notified of battle's end:} Educator gets notified about the end of a battle in one of his tournaments, give him the possibility to manually evaluate the students' solutions.
+    \item \textbf{Educator notified of battle's end:} Educator gets notified about the end of a battle in one of his tournaments, 
+    then give him the possibility to manually evaluate the students' solutions.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.35]{images/BPMN/BPMN12.png}
@@ -720,18 +725,17 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
 \subsection{User characteristics}
 CKB platform has 2 different users:
 \begin{itemize}
-    \item \textbf{Educators:} They are educators teaching in a school
+    \item \textbf{Educators:} They are Educators teaching in a school
           environment. They must be qualified to teach. They need to have
-          medium/high programming skills, or at least enough to mostly
-          understand a language on which they want to create a tournament and
-          for which they have to write tests code.
-          Finally they must be provided of an istitutional email in order to properly
+          medium to high programming skills, or at least enough knowledge of a programming language
+          to create test codes for the tournament they want to create.
+          Finally they must be provided with an istitutional email in order to properly
           register to the platform.
-    \item \textbf{Students:} They are students of a school that want to
-          improve their development skills. They can be of any school and it's
-          not relevant if they subscribe to a tournament created by an educator
-          not part of their school. They must have some knowledge about GitHub
-          platform and how to create GitHub Actions, fundamental for the correct
+    \item \textbf{Students:} They are Students of a school that want to
+          improve their programming skills. They can be students of any school and they
+          can subscribe to tournaments created by an Educators
+          employed or not by their school. They must have some knowledge about the GitHub
+          platform and how to create GitHub Actions, which are fundamental for the correct
           functioning of the CKB platform.
 \end{itemize}
 
@@ -740,29 +744,27 @@ CKB platform has 2 different users:
 
 \subsection{Assumptions, dependencies and constraints}
 \begin{itemize}
-    \item[\textbf{D1:}] Students and educators have access to internet while using the platform
-    \item[\textbf{D2:}] Students and educators have their own IT device to connect to the application
-    \item[\textbf{D3:}] Students and educators have to be subscribed to the platform in order to use its features
-    \item[\textbf{D4:}] Students know how to use GitHub actions
-    \item[\textbf{D5:}] Students know how to fork a repository in GitHub
-    \item[\textbf{D6:}] A student can join a battle only if subscribed to the tournament in which that battle take place
-    \item[\textbf{D7:}] GitHub platform offers reliable services through its API allowing to CKB platform to always get notified when new code is uploaded by students.
-    \item[\textbf{D8:}] Educator know how to create new badges, and new rules to obtain them, for the tournaments
+    \item[\textbf{D1:}] Students and Educators have access to internet while using the platform.
+    \item[\textbf{D2:}] Students and Educators have their own IT device to connect to the application.
+    \item[\textbf{D3:}] Students and Educators have to be subscribed to the platform in order to use its features.
+    \item[\textbf{D4:}] Students know how to use GitHub actions.
+    \item[\textbf{D5:}] Students know how to fork a repository on GitHub.
+    \item[\textbf{D6:}] A Student can join a battle only if subscribed to the tournament in which that battle takes place.
+    \item[\textbf{D7:}] GitHub platform offers reliable services through its API allowing the CKB platform to always get notified when new code is uploaded by Students.
+    \item[\textbf{D8:}] Educator knows how to create new badges and new rules to obtain them.
     \item[\textbf{D9:}] Time information about registration and submission deadlines for tournaments and battles are always correct.
-    \item[\textbf{D10:}] Code written by students can not make the platform crash while testing it.
-    \item[\textbf{D11:}] Educators upload ,when creating a battle, some correct, meaningful and faultproof test cases and automation scripts.
-    \item[\textbf{D12:}] Students score is always correctly calculated and meaningful.
-    \item[\textbf{D13:}] Educators access always access a tournament either in view-only mode, if not invited by the tournament's creator, or in modify-enabled mode if the tournament's creator has granted him the access.
+    \item[\textbf{D10:}] Code written by Students cannnot make the platform crash while testing it.
+    \item[\textbf{D11:}] Educators upload, when creating a battle, some correct, meaningful and faultproof test cases and automation scripts.
+    \item[\textbf{D12:}] Students score is always correctly calculated.
+    \item[\textbf{D13:}] Educators always access a tournament either in view-only mode, if not allowed by the tournament's creator, or in modify-enabled mode if the
+     tournament's creator has granted him the access.
     \item[\textbf{D14:}] In order to register to a battle, all the group members must be registered in the tournament
-          in which the battle take place.
-    \item[\textbf{D15:}] Students and educators have to install, on their devices, a functioning browser application.
-    \item[\textbf{D16:}] An educator can insert in a battle a test or automation script, precedently created by him or by another
-          educator.
-    \item[\textbf{D17:}] Only the Student that created the group can invite other students in it.
+          in which the battle takes place.
+    \item[\textbf{D15:}] Students and Educators have to install on their devices, a functioning browser application.
+    \item[\textbf{D16:}] An Educator can insert in a battle a test or automated script.
+    \item[\textbf{D17:}] Only the Student that created the group can invite other Students in it.
 \end{itemize}
 
-
-//TODO: Complete the domain assumptions.
 
 \newpage
 
@@ -783,22 +785,22 @@ The system has to use different software interfaces in order to properly functio
     \item \textbf{GitHub Interfaces:} The system has to interact with the GitHub platform,
           in order to receive the students' solutions. This is done through "GitHub Actions"
           APIs made available by GitHub to automate tasks.
-    \item \textbf{Testing Interfaces:} The system needs to test the students' solutions.
-          In order to do this a Testing API must be used .
+    \item \textbf{Testing Interfaces:} The system needs to test the Students' solutions.
+          In order to do this a Testing API must be used.
 \end{itemize}
 
 \subsubsection{Hardware Interfaces}
 The system has to interface with the hardware components containing
 the DB.
 \subsubsection{Communication Interfaces}
-All communications from and to the CKB platform have to use the HTTPS protocol.
+All communication from and to the CKB platform has to be done through the HTTPS protocol.
 \subsection{Functional requirements}
 \subsubsection{Requirements}
 \begin{itemize}
 
     \item[\textbf{R.1}] The CKB platform should allow an unregistered Student to create a new account.
     \item[\textbf{R.2}] The CKB platform should allow an unregistered Educator to create a new account.
-    \item[\textbf{R.3}] The CKB platform must allow access to it's pages only if the used credentials are correct.
+    \item[\textbf{R.3}] The CKB platform must allow access to its pages only if the used credentials are correct.
     \item[\textbf{R.4}] The CKB platform must not allow a Student to register more than once in the system.
     \item[\textbf{R.5}] The CKB platform must not allow an Educator to register more than once in the system.
     \item[\textbf{R.6}] Educators can access the platform's services only if they are registered to it.
@@ -806,11 +808,11 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
     \item[\textbf{R.8}] The CKB platform should not allow Students to create tournaments and/or battles.
     \item[\textbf{R.9}] The CKB platform should allow Educators to create battles within a tournament only to the tournament
           creator and to any other Educator that has been granted permission to do so by the tournament creator.
-    \item[\textbf{R.10}] The CKB platform must allow Educators to personalize the tournaments they create.
-    \item[\textbf{R.11}] The CKB platform must allow Edcuators to personalize the battles they create.
+    \item[\textbf{R.10}] The CKB platform must allow Educators to personalise the tournaments they create.
+    \item[\textbf{R.11}] The CKB platform must allow Edcuators to personalise the battles they create.
     \item[\textbf{R.12}] The CKB platform must allow Educators to define new obtainable badges for each tournament they
           create.
-    \item[\textbf{R.13}] The CKB platform must allow Educators to manually evaluate the solutions uploaded by the students for the battles that
+    \item[\textbf{R.13}] The CKB platform must allow Educators to manually evaluate the solutions uploaded by the Students for the battles that
           the Educators created.
     \item[\textbf{R.14}] The CKB platform must allow Educators to delete or update badges before finalizing a tournament's creation.
     \item[\textbf{R.15}] The CKB platform must allow Educators to define rules to obtain badges in tournaments created by them.
@@ -819,23 +821,23 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
     \item[\textbf{R.17}] The CKB platform must allow Educators to create new tournaments.
     \item[\textbf{R.18}] The CKB platform must ensure that tournaments' characteristics respect guidelines regarding their
           name, deadline, access method, programming language.
-    \item[\textbf{R.19}] The CKB platform should allow to educators to close tournaments they have created.
-    \item[\textbf{R.20}] The CKB platform must ensure that when a tournament is closed, educators cannot create new battles
+    \item[\textbf{R.19}] The CKB platform must allow Educators to close tournaments they have created.
+    \item[\textbf{R.20}] The CKB platform must ensure that when a tournament is closed, Educators cannot create new battles
           within it.
     \item[\textbf{R.21}] The CKB platform must ensure that if a group uploads a solution to a battle after the submission's deadline,
-          that solution will not be considered in the score computation, by preventing its upload.
+          that solution will not be considered in the score computation by preventing its upload.
     \item[\textbf{R.22}] The CKB platform must ensure that the score given to a group in a tournament is
           coherent with scores given to the same group in the battles they have partecipated in.
     \item[\textbf{R.23}] The CKB platform must ensure fair competition between group scores. In the tournament's evaluation, the final
           group score should be the average score of all the battles in the tournament for each group. Any battle with no solution submitted will count
           as 0 points.
     \item[\textbf{R.24}] The CKB platform must allow Students to subscribe to a tournament.
-    \item[\textbf{R.25}] The CKB platform must allow Students to subscribe to a battle of a tournament
+    \item[\textbf{R.25}] The CKB platform must allow Students to subscribe to a tournament's battle
           within the registration deadline.
     \item[\textbf{R.26}] The CKB platform must allow Students to submit solutions to a tournament's battle
           within the battle's deadline.
     \item[\textbf{R.27}] The CKB platform must allow Students to send and receive group invitations to and from
-          other students in order to form groups.
+          other Students in order to form groups.
     \item[\textbf{R.28}] The CKB platform should allow Students to join a battle only if the group composition rules
           for that battle are complied with.
     \item[\textbf{R.29}] The CKB platform must ensure that solutions uploaded by a Student for a battle are evaluated.
@@ -844,17 +846,17 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
     \item[\textbf{R.31}] The CKB platform must ensure that only the latest solution uploaded by a Student for a battle he is subscribed to will
           be taken into consideration for the final score.
     \item[\textbf{R.32}] The CKB platform must allow groups partecipating in a battle to change their solution,
-          if the battle's deadline submission hasn't expired yet.
+          if the battle's submission deadline hasn't expired yet.
     \item[\textbf{R.33}] The CKB platform must ensure that the score given to a group's solution is
           updated as soon as possible.
     \item[\textbf{R.34}] The CKB platform must allow an Educator to modify the score for a Student's solution.
     \item[\textbf{R.35}] The CKB platform must ensure that when a new tournament is created, all
-          students subscribed to the platform will receive a notification.
+          Students subscribed to the platform are going to receive a notification.
     \item[\textbf{R.36}] The CKB platform must ensure that when a new battle is created in a tournament,
-          all students subscribed to the tournament will receive a notification.
-    \item[\textbf{R.37}] The CKB platform must allow Students to visualize the score they obtained in a battle they partecipated in.
-    \item[\textbf{R.38}] The CKB platform must allow Students to visualize the score they obtained in a tournament they partecipated in.
-    \item[\textbf{R.39}] The CKB platform must allow Students to visualize the badges they obtained.
+          all Students subscribed to that tournament are going to receive a notification.
+    \item[\textbf{R.37}] The CKB platform must allow Students to visualise the score they obtained in a battle they partecipated in.
+    \item[\textbf{R.38}] The CKB platform must allow Students to visualise the score they obtained in a tournament they partecipated in.
+    \item[\textbf{R.39}] The CKB platform must allow Students to visualise the badges they obtained.
     \item[\textbf{R.40}] The CKB platform must ensures that battles' characteristics respect guidelines
           regarding their name, deadlines, programming language, number of member per group.
 \end{itemize}
@@ -872,9 +874,9 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
               \label{fig:studentUseCaseDiagram}
           \end{figure}
 
-          N.B: The repository citated in this diagram, on which the student upload their solution, it's not
+          N.B: The repository citated in this diagram, on which the student upload their solution, it is not
           part of the platform. The system, in fact, relies on a third party service (GitHub) to handle the repository.
-          This use case was specified in order to better clarify the tight interaction between the system and the student trought the GitHub service.
+          This use case was specified in order to better clarify the tight interaction between the system and the Student through the GitHub service.
 
           %newpage command used to better format the pdf content
           \newpage
@@ -897,7 +899,7 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
 \end{itemize}
 \subsubsection{Use cases w/ sequence diagrams}
 \begin{enumerate}
-    \item[\textbf{1.}] \textbf{Student sign up to the platform}
+    \item[\textbf{1.}] \textbf{Student sign-up to the platform}
 
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -912,35 +914,35 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
 
 
 
-              \textbf{Name} & Student sign up \\
+              \textbf{Name} & Student sign-up \\
               \hline
               \textbf{ID} & UC.1 \\
               \hline
-              \textbf{Actors} & Unregistered student \\
+              \textbf{Actors} & Unregistered Student \\
               \hline
-              \textbf{Entry condition} & Student want to register to the platform \\
+              \textbf{Entry condition} & Student wants to register to the platform \\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Student opens CKB platform
-                  \item[2.] Student presses the sign-up button
+                  \item[1.] Student opens CKB platform.
+                  \item[2.] Student presses the sign-up button.
                   \item[3.] Student fills the form with all the required informations (name, surname, username
                         attended school, email, password, ...), accepts the "Terms \& Conditions".
-                  \item[4.] Student clicks on a button to confirm.
-                  \item[5.] CKB platform validates the personal information inserted by the student.
-                  \item[6.] CBK platform display a confirmation message.
-                  \item[7.] CKB platform send an email notification to the student regarding the registration outcome
+                  \item[4.] Student clicks on the "Confirm" button to confirm.
+                  \item[5.] CKB platform validates the personal information inserted by the Student.
+                  \item[6.] CBK platform displays a confirmation message.
+                  \item[7.] CKB platform sends an email notification to the Student regarding the registration outcome.
               \end{enumerate}   \\
               \hline
-              \textbf{Exit condition} & Student's account is created, and its data are saved into the system\\
+              \textbf{Exit condition} & Student's account is created, and its data are saved into the system.\\
               \hline
               \textbf{Exceptions} &     \begin{itemize}
                   \item[4.1] Email already used to register another account, or inexisting.
-                  \item[4.2] Inserted attended school non existings
-                  \item[4.3] Username contains forbidden characters
-                  \item[4.4] Password don't respect security standards
+                  \item[4.2] Inserted attended school non existings.
+                  \item[4.3] Username contains forbidden characters.
+                  \item[4.4] Password doesn't respect security standards.
                         \begin{itemize}
-                            \item[$\rightarrow$] Unregistered student gets notified of the registration failure throught an
-                                  error message and flow restart from point 3.
+                            \item[$\rightarrow$] Unregistered Student gets notified of the registration failure through an
+                                  error message and flow restarts from point 3.
                         \end{itemize}
               \end{itemize}
 
@@ -950,12 +952,12 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{SequenceDiagrams/StudentSignUpSeqDiagram.pdf}
-              \caption{Student sign up sequence diagram}
+              \caption{Student sign-up sequence diagram}
               \label{fig:StudentSignUpSeqDiagram}
           \end{figure}
 
 
-    \item[\textbf{2.}] \textbf{Educator sign up to the platform}
+    \item[\textbf{2.}] \textbf{Educator sign-up to the platform}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
               \hline
@@ -969,34 +971,34 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
 
 
 
-              \textbf{Name} & Educator sign up \\
+              \textbf{Name} & Educator sign-up \\
               \hline
               \textbf{ID} & UC.2 \\
               \hline
-              \textbf{Actors} & Unregistered educator \\
+              \textbf{Actors} & Unregistered Educator \\
               \hline
-              \textbf{Entry condition} & Educator want to register to the platform \\
+              \textbf{Entry condition} & Educator wants to register to the platform \\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Educator opens CKB platform
-                  \item[2.] Educator presses the sign-up button
+                  \item[1.] Educator opens CKB platform.
+                  \item[2.] Educator presses the sign-up button.
                   \item[3.] Educator fills the form with all the required informations (name, surname, username
                         school in which teaches, istitutional email, password, ...), accepts the "Terms \& Conditions".
-                  \item[4.] Educator clicks on a button to confirm.
-                  \item[5.] CKB platform validates the personal information inserted by the student.
-                  \item[6.] CBK platform display a confirmation message.
-                  \item[7.] CKB platform send an email notification to the educator regarding the registration outcome
+                  \item[4.] Educator clicks on "Confirm" button to confirm.
+                  \item[5.] CKB platform validates the personal information inserted by the Educator.
+                  \item[6.] CBK platform displays a confirmation message.
+                  \item[7.] CKB platform sends an email notification to the Educator regarding the registration outcome.
               \end{enumerate} \\
               \hline
-              \textbf{Exit condition} & Student's account is created, and its data are saved into the system \\
+              \textbf{Exit condition} & Educator's account is created, and its data are saved into the system. \\
               \hline
               \textbf{Exceptions} &     \begin{itemize}
                   \item[4.1] Email already used to register another account, or inexisting.
-                  \item[4.2] Inserted school's details non correct
-                  \item[4.3] Username contains forbidden characters
-                  \item[4.4] Password don't respect security standards
+                  \item[4.2] Inserted school's details non correct.
+                  \item[4.3] Username contains forbidden characters.
+                  \item[4.4] Password don't respect security standards.
                         \begin{itemize}
-                            \item[$\rightarrow$] Unregistered educator gets notified of the registration failure throught an error message
+                            \item[$\rightarrow$] Unregistered Educator gets notified of the registration failure through an error message
                                   and flow restart from point 3.
                         \end{itemize}
               \end{itemize}
@@ -1005,7 +1007,7 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{SequenceDiagrams/Sequence2.pdf}
-              \caption{Educator sign up sequence diagram}
+              \caption{Educator sign-up sequence diagram}
               \label{fig:EducatorSignUpSeqDiagram}
           \end{figure}
 
@@ -1030,32 +1032,32 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
               \textbf{Actors} & Educator, Student\\
               \hline
               \textbf{Entry condition} & Educator has logged in the platform and
-              want to create a new tournament\\
+              wants to create a new tournament\\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Educator clicks on a "Create tournament" button
-                  \item[2.] Educator fills a form of the page that has appeared with tournament details,
-                        such as: its deadline (eventually), allowed programming languages, name, access method and related
-                        information about how to use it,  etc.
-                  \item[3.] \textit{$<<$eventually$>>$} Defines new badges for the tournament (see UC.4)
-                  \item[4.] Educator clicks on a "Confirmation" button.
-                  \item[5.] CKB platform checks the validity of the informations inserted by the Educator
+                  \item[1.] Educator clicks on "Create tournament" button.
+                  \item[2.] Educator fills a form on the page that has appeared with tournament details,
+                        such as: deadline (eventually), allowed programming languages, name, access method and related
+                        information about how to use it, etc.
+                  \item[3.] \textit{$<<$eventually$>>$} Educator defines new badges for the tournament (see UC.4)
+                  \item[4.] Educator clicks on "Confirmation" button.
+                  \item[5.] CKB platform checks the validity of the informations inserted by the Educator.
                   \item[6.] CKB platform displays a message that confirms that the tournament
-                        has been created successfully
+                        has been created successfully.
               \end{enumerate} \\
               \hline
-              \textbf{Exit condition} & Tournament is created by saving it's data into the system
-              and the platform sends a notification to all the Students registered to the platform itself.
-              Educator is led back to the riepilogative page of the tournaments created by him. \\
+              \textbf{Exit condition} & Tournament is created by saving its data into the system
+              and the platform sends a notification to all the Students registered to the platform about the new tournament created.
+              Educator is led back to the riepilogative page of the tournament creation. \\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
                   \item[5.1] Tournament's name contain forbidden characters.
                   \item[5.2] Deadline inserted for the tournament is invalid.
                   \item[5.3] Tournament's access method has been configured wrongly.
-                  \item[5.4] A programming language inserted is not recognized by the platform.
+                  \item[5.4] The programming language inserted is not recognized by the platform.
                         \begin{itemize}
-                            \item[$\rightarrow$] Educator gets notified about the failure of the creation of the tournament
-                                  throught an error message displayed by the platform. The flow restart from point 2.
+                            \item[$\rightarrow$] Educator gets notified about the tournament's creation failure
+                                  through an error message displayed by the platform. The flow restarts from point 2.
                         \end{itemize}
               \end{itemize}
           \end{xltabular}
@@ -1063,7 +1065,7 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{SequenceDiagrams/Sequence3.pdf}
-              \caption{Educator create a new tournament sequence diagram}
+              \caption{Educator creates a new tournament sequence diagram}
               \label{fig:TournamentCreationSeqDiagram}
           \end{figure}
 
@@ -1087,32 +1089,32 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
               \hline
               \textbf{Actors} & Educator\\
               \hline
-              \textbf{Entry condition} & Educator has logged in the platform, he's creating a new tournament and want to
+              \textbf{Entry condition} & Educator has logged in the platform, he's creating a new tournament and wants to
               define new badges for that tournament\\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
                   \item[1.] Educator clicks on the "Create badge" button on the tournament
                         creation page.
                   \item[2.] On the new page that appeared, the Educator defines badge's
-                        characteristics, such as: its name, value, icon, rules to obtain it, ...
-                  \item[3.] Educator clicks on a button in order to confirm its choices.
-                  \item[4.] CKB platform checks if all the badge informations are well defined
-                  \item[5.] CKB platform displays a message that confirm the successfull creation
+                        characteristics, such as: name, value, icon, rules to obtain it, ...
+                  \item[3.] Educator clicks on "Confirm" button in order to confirm its choices.
+                  \item[4.] CKB platform checks if all the badge informations are well defined.
+                  \item[5.] CKB platform displays a message that confirms the successfull creation
                         of a new badge, and that the badge has been added to the tournament.
               \end{enumerate} \\
               \hline
               \textbf{Exit condition} & Badge is created, its data are saved and associated to the
-              tournament which is being created by the Educator and Educator is led back to the
-              create tournament page. \\
+              tournament for which is being created by the Educator. The Educator is then led back to the
+              tournament creation page. \\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
                   \item[4.1] Badge's name contain forbidden characters
-                  \item[4.2] The image uploaded as icon image it's too big or have an unsupported format.
+                  \item[4.2] The image uploaded as icon image is too big or has an unsupported format.
                   \item[4.3] Badge's rules are not well defined.
-                  \item[4.4] Some badge's features has been left empty
+                  \item[4.4] Some badge's features have been left empty
                         \begin{itemize}
-                            \item[$\rightarrow$] Educator gets notified about the failure of the badge creation
-                                  process throught an error message displayed by the platform. Flow restart from point 2.
+                            \item[$\rightarrow$] Educator gets notified about the badge's creation process failure
+                                   through an error message displayed by the platform. Flow restarts from point 2.
                         \end{itemize}
               \end{itemize}
           \end{xltabular}
@@ -1120,10 +1122,10 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.95]{SequenceDiagrams/Sequence4.pdf}
-              \caption{Educator creates new badges for a tournament, sequence diagram}
+              \caption{Educator creates new badges for a tournament sequence diagram}
               \label{fig:BadgesCreationSeqDiagram}
           \end{figure}
-
+% Check from here
     \item[\textbf{5.}] \textbf{Educator delete a badge}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -1170,17 +1172,17 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
               \hline
               \textbf{Exceptions} &    \begin{itemize}
                   \item[4.1] Badge's updated name contain forbidden characters
-                  \item[4.2] The new image uploaded as icon, it's too big or have an unsupported format.
+                  \item[4.2] The new image uploaded as icon, it is too big or have an unsupported format.
                   \item[4.3] New Badge's rules are not well defined.
                   \item[4.4] Some badge's features has been left empty
                         \begin{itemize}
-                            \item[$\rightarrow$] Badge it's not updated, Educator it's led to
+                            \item[$\rightarrow$] Badge it is not updated, Educator is led to
                                   the tournament creation page (point 1.)
                         \end{itemize}
                   \item[6.1] Educator presses the cancel button
                         \begin{itemize}
                             \item[$\rightarrow$] Delete procedure is stopped, and the Educator
-                                  it's led back to the tournament creation page (point 6.).
+                                  is led back to the tournament creation page (point 6.).
                         \end{itemize}
 
               \end{itemize}
@@ -1232,19 +1234,19 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
               \hline
               \textbf{Exit condition} & New battle, with characteristics specified by the Educator,
               is created within the tournament chosen by the Educator itself. All the students subscribed to the tournament
-              in which the battle has been created get notified. Educator it's then led to the riepilogative
+              in which the battle has been created get notified. Educator is then led to the riepilogative
               page of the battles within the tournament.
               \\
               \hline
               \textbf{Exceptions} &    \begin{itemize}
                   \item[3.1] Battle's name contain forbidden characters
-                  \item[3.2] A programming language inserted it's not included in the tournament
+                  \item[3.2] A programming language inserted is not included in the tournament
                         allowed programming languages.
                   \item[3.3] The specified number of minimum or maximum students for each group
-                        it's beyond upper and/or lower limits imposed by the platform
-                  \item[3.4] Registration deadline inserted for the battle it's not valid or
+                        is beyond upper and/or lower limits imposed by the platform
+                  \item[3.4] Registration deadline inserted for the battle is not valid or
                         bigger than the submission one.
-                  \item[3.5] Submission deadline inserted for the battle it's not valid or
+                  \item[3.5] Submission deadline inserted for the battle is not valid or
                         smaller than the registration one.
                         \begin{itemize}
                             \item[$\rightarrow$] Educator gets notified about battle creation failure
@@ -1344,7 +1346,7 @@ All communications from and to the CKB platform have to use the HTTPS protocol.
               \textbf{Actors} & Educator\\
               \hline
               \textbf{Entry condition} & Educator has logged in the platform, has created at least 1 battle
-              within a tournament, that has terminated. Educator want to manually evaluate its results\\
+              within a tournament, that has terminated. Educator want to manually evaluate the results\\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
                   \item[1.] Educator accesses the page related to tournament
