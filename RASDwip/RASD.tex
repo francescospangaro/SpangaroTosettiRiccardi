@@ -120,7 +120,7 @@
 %Used to handle table width and split tables across different pages
 \usepackage{xltabular}
 %Change space between table columns
-\setlength{\tabcolsep}{18pt}
+\setlength{\tabcolsep}{13pt}
 
 %Command used to create a new column type whose background is lightgray colored
 \usepackage{xcolor,colortbl}
@@ -761,8 +761,7 @@ CKB platform has 2 different users:
     \item[\textbf{D14:}] In order to register to a battle, all the group members must be registered in the tournament
           in which the battle takes place.
     \item[\textbf{D15:}] Students and Educators have to install on their devices, a functioning browser application.
-    \item[\textbf{D16:}] An Educator can insert in a battle a test or automated script.
-    \item[\textbf{D17:}] Only the Student that created the group can invite other Students in it.
+    \item[\textbf{D16:}] Only the Student that created the group can invite other Students in it.
 \end{itemize}
 
 
@@ -1689,7 +1688,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
 \end{enumerate}
 \subsubsection{Traceability matrix}
 \begin{xltabular}{\textwidth}
-    {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X | >{\raggedright\arraybackslash}X |}
+    {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X | >{\raggedright\arraybackslash}X | >{\raggedright\arraybackslash}X |}
     \hline
     \endfirsthead
     \hline
@@ -1698,18 +1697,18 @@ All communication from and to the CKB platform has to be done through the HTTPS 
     \hline
     \endlastfoot
 
-    \textbf{Goal ID} & \multicolumn{1}{|g|}{\textbf{Req. ID}} & \multicolumn{1}{|g|}{\textbf{Use case ID}} \\
+    \textbf{Goal ID} & \multicolumn{1}{|g|}{\textbf{Req. ID}} & \multicolumn{1}{|g|}{\textbf{Use case ID}} & \multicolumn{1}{|g|}{\textbf{Assump. ID}} \\
     \hline
-    \textbf{G.1} & R.2, R.3, R.5, R.6, R.8, R.10, R.12, R.14, R.15, R.16, R.17, R.18 & UC.2, UC.3, UC.4, UC.5 \\
-    \textbf{G.2} & R.2, R.3, R.5, R.6, R.8, R.9, R.11, R.40 & UC.2, UC.6 \\
-    \textbf{G.3} & R.2, R.3, R.5, R.6, R.19, R.20 & UC.2, UC.7 \\
-    \textbf{G.4} & R.2, R.3, R.5, R.6, R.13, R.34 & UC.2, UC.8\\
-    \textbf{G.5} & R.1, R.3, R.4, R.7, R.24 & UC.1\\
-    \textbf{G.6} & R.1, R.3, R.4, R.7, R.25, R.27, R.28 & UC.1, UC.10\\
-    \textbf{G.6.1} & R.1, R.3, R.4, R.7, R.27 & UC.1, UC.9\\
-    \textbf{G.6.2} & R.1, R.3, R.4, R.7, R.21, R.26, R.29, R.30, R.31, R.32 & UC.1, UC.11, UC.12\\
-    \textbf{G.6.3} & R.1, R.3, R.4, R.7, R.22, R.23, R.33, R.37, R.38, R.39 & UC.1, UC.13\\
-    \textbf{G.7} & R.1, R.3, R.4, R.7, R.35, R.36 & UC.1, UC.3, UC.6\\
+    \textbf{G.1} & R.2, R.3, R.5, R.6, R.8, R.10, R.12, R.14, R.15, R.16, R.17, R.18 & UC.2, UC.3, UC.4, UC.5 & D.1, D.2, D.3, D.8, D.9, D.15\\
+    \textbf{G.2} & R.2, R.3, R.5, R.6, R.8, R.9, R.11, R.40 & UC.2, UC.6 & D.1, D.2, D.3, D.9, D.11, D.15\\
+    \textbf{G.3} & R.2, R.3, R.5, R.6, R.19, R.20 & UC.2, UC.7 & D.1, D.2, D.3, D.13, D.15\\
+    \textbf{G.4} & R.2, R.3, R.5, R.6, R.13, R.34 & UC.2, UC.8 & D.1, D.2, D.3, D.12, D.15\\
+    \textbf{G.5} & R.1, R.3, R.4, R.7, R.24 & UC.1 & D.1, D.2, D.3, D.9, D.15\\
+    \textbf{G.6} & R.1, R.3, R.4, R.7, R.25, R.27, R.28 & UC.1, UC.10 & D.1, D.2, D.3, D.4, D.5, D.6, D.9, D.14, D.15\\
+    \textbf{G.6.1} & R.1, R.3, R.4, R.7, R.27 & UC.1, UC.9 & D.1, D.2, D.3, D.14, D.15, D.17\\
+    \textbf{G.6.2} & R.1, R.3, R.4, R.7, R.21, R.26, R.29, R.30, R.31, R.32 & UC.1, UC.11, UC.12 & D.1, D.2, D.3, D.4, D.5, D.7, D.9, D.10, D.15\\
+    \textbf{G.6.3} & R.1, R.3, R.4, R.7, R.22, R.23, R.33, R.37, R.38, R.39 & UC.1, UC.13 & D.1, D.2, D.3, D.12, D.15\\
+    \textbf{G.7} & R.1, R.3, R.4, R.7, R.35, R.36 & UC.1, UC.3, UC.6 & D.1, D.2, D.3, D.15\\
 
 \end{xltabular}
 \subsection{Performance requirements}
@@ -1991,14 +1990,14 @@ Invite\{\\
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.85]{images/ALLOY/receiver.png}
-    \caption{And all invite are being send to Student0}
+    \caption{All invite are being sent to Student0}
     \label{fig:receiving invite}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics{images/ALLOY/students.png}
-    \caption{Here we can see Student0 in group1 and group0, since he have received two invite for group0 he have rejected the first one but accepted the second}
-    \label{fig:receiving invite}
+    \caption{Here we can see Student0 in group1 and group0, since he has received two invite for group0 he has rejected the first one but accepted the second one}
+    \label{fig:receivingAcceptingRefusingInvite}
 \end{figure}
 \begin{figure}[H]
     \centering
