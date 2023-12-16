@@ -955,7 +955,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \label{fig:StudentSignUpSeqDiagram}
           \end{figure}
 
-
+    \newpage
     \item[\textbf{2.}] \textbf{Educator sign-up to the platform}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -1068,6 +1068,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \label{fig:TournamentCreationSeqDiagram}
           \end{figure}
 
+    \newpage
     \item[\textbf{4.}] \textbf{Educator creates new badges}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -1120,7 +1121,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
 
           \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.95]{SequenceDiagrams/Sequence4.pdf}
+              \includegraphics[scale=0.875]{SequenceDiagrams/Sequence4.pdf}
               \caption{Educator creates new badges for a tournament sequence diagram}
               \label{fig:BadgesCreationSeqDiagram}
           \end{figure}
@@ -1261,6 +1262,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \label{fig:BattleCreationSeqDiagram}
           \end{figure}
 
+    \newpage
     \item[\textbf{7.}] \textbf{Educator closes a tournament}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -1289,8 +1291,8 @@ All communication from and to the CKB platform has to be done through the HTTPS 
                         that he wants to close.
                   \item[2.] Educator checks whether there are battles that
                         aren't already closed.
-                  \item[3.] Educator clicks on the close button related to
-                        the tournament, then clicks on the confirm button.
+                  \item[3.] Educator clicks on the tournament's close button,
+                        then clicks on the confirm button.
                   \item[4.] CKB platform verifies if there are no battles
                         still active within the tournament.
                   \item[5.] CKB platform notifies the Educator through
@@ -1324,6 +1326,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \label{fig:TournamentClosingSeqDiagram}
           \end{figure}
 
+    \newpage
     \item[\textbf{8.}] \textbf{Educator evaluates a battle's results}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -1380,6 +1383,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \label{fig:BattleEvalSeqDiagram}
           \end{figure}
 
+    \newpage
     \item[\textbf{9.}] \textbf{Student forms a group}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -1452,6 +1456,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \label{fig:GroupFormationSeqDiagram}
           \end{figure}
 
+    \newpage
     \item[\textbf{10.}] \textbf{Student joins a battle}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -1513,6 +1518,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \label{fig:BattleJoiningSeqDiagram}
           \end{figure}
 
+    \newpage
     \item[\textbf{11.}] \textbf{Student uploads a new solution}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -1534,11 +1540,11 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \textbf{Actors} & Student, GitHub\\
               \hline
               \textbf{Entry condition} & Student has a GitHub account, has registered to at least one tournament
-              and one battle within it, and wants to upload a new solution to that battle. \\
+              and one battle in it, and wants to upload a new solution to that battle. \\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
                   \item[1.] Student accesses his GitHub account.
-                  \item[2.] Student uploads his solution (or the group one)
+                  \item[2.] Student uploads group's solution
                         to his GitHub repository, precedently forked.
                   \item[3.] GitHub platform, through its "GitHub Actions" notifies
                         the CKB platform of the upload of the new solution by the Student.
@@ -1571,7 +1577,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
 
           \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence11.pdf}
+              \hspace*{-1.6cm}\includegraphics[scale=0.92]{images/SequenceDiagrams/Sequence11.pdf}
               \caption{Student uploads a new solution of the battle's problem within the deadline, sequence diagram}
               \label{fig:CorrectSolutionUploadSeqDiagram}
           \end{figure}
@@ -1626,11 +1632,12 @@ All communication from and to the CKB platform has to be done through the HTTPS 
 
           \begin{figure}[H]
               \centering
-              \includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence12.pdf}
+              \hspace*{-2cm}\includegraphics[scale=0.95]{images/SequenceDiagrams/Sequence12.pdf}
               \caption{Student uploads a solution after submission deadline sequence diagram}
               \label{fig:WrongSolutionUploadSeqDiagram}
           \end{figure}
 
+    \newpage
     \item[\textbf{13.}] \textbf{Student visualises his tournament's results and badges}
           \begin{xltabular}{\textwidth}
               {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X |}
@@ -1686,6 +1693,8 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \label{fig:ScoresBadgesVisualizationSeqDiagram}
           \end{figure}
 \end{enumerate}
+
+\newpage
 \subsubsection{Traceability matrix}
 \begin{xltabular}{\textwidth}
     {| >{\raggedright\arraybackslash}g | >{\raggedright\arraybackslash}X | >{\raggedright\arraybackslash}X | >{\raggedright\arraybackslash}X |}
@@ -1835,9 +1844,11 @@ Battle \{\\
 \color{blue}
 sig
 \color{black}
-Test \{\}\\
+Test \{\}
+
+\newpage
+
 \color{gray}
-\\
 //Students subscribed to the CKB platform can have a set of badges\\
 \color{blue}
 sig
@@ -1950,7 +1961,8 @@ Invite\{\\
 \-\hspace{1cm} s \color{blue} in \color{black} g.students and    \\
 \-\hspace{1cm} g.battle.tournament \color{blue} = \color{black} b.tournament\\
 \}\\
-\\
+
+\newpage
 \color{gray}
 //Students must be subscribed in a tournament to compete in that tournament's battles\\
 \color{black}
@@ -1969,10 +1981,12 @@ Invite\{\\
 \-\hspace{1cm} i.receiver \color{blue} = \color{black} s  and \\
 \-\hspace{1cm} i.group \color{blue} = \color{black} g\\
 \}\\
+
+
 \subsection{Examples of instances}
 \begin{figure}[H]
     \centering
-    \hspace*{-4cm}\includegraphics[scale=0.7]{images/ALLOY/AlloyInstance1.png}
+    \hspace*{-4.3cm}\includegraphics[scale=0.68]{images/ALLOY/AlloyInstance1.png}
     \caption{Picture of a general instance}
     \label{fig:Picture of a general instance}
 \end{figure}
@@ -2013,8 +2027,8 @@ Invite\{\\
     \label{fig:tournament, Educator and battle}
 \end{figure}
 \color{red}
-Every permit gives an Educator who didn't create a tournament, the possibility of creating new battles inside another Educator's tournament.
-For this, the tournament's creator must grant permission to the other Educator, via a permit. (battleCreators)\\
+Every permit gives an Educator who isn't the creator, the possibility of creating new battles inside another Educator's tournament.
+The tournament's creator must grant permission to the other Educator, via a permit. (battleCreators)\\
 \color{orange}
 Every battle is created by an Educator, he can be the tournament's creator or an Educator that has received 
 modification permit by the tournament's creator (creator) [Ex. Battle0 is created by Educator1 in 
@@ -2031,7 +2045,6 @@ A permission is relative to one tournament created by an Educator (tournament)\\
 A permission can only be granted by an Educator that created at least one tournament (tournamentCreator)\\
 \color{black}
 
-\newpage
 \pagestyle{EffortSpentStyle}
 
 \section{Effort spent}
@@ -2040,13 +2053,13 @@ A permission can only be granted by an Educator that created at least one tourna
     \multicolumn{2}{|g|}{\textbf{Group member}} & \multicolumn{1}{|g|}{\textbf{Effort spent}} \\
     \hline
     \textbf{Francesco Spangaro} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\
-     \vspace{\baselineskip}} & \makecell[l]{\textit{4h}\\\textit{12h}\\\textit{7h}\\\textit{2h} \vspace{\baselineskip}}\\
+     \vspace{\baselineskip}} & \makecell[l]{\textit{6h}\\\textit{13h}\\\textit{7h}\\\textit{2h} \vspace{\baselineskip}}\\
     \hline
     \textbf{Luca Tosetti} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\
-     \vspace{\baselineskip}} & \makecell[l]{\textit{4h}\\\textit{5h}\\\textit{18h}\\\textit{2h}}\\
+     \vspace{\baselineskip}} & \makecell[l]{\textit{6h}\\\textit{6h}\\\textit{18h}\\\textit{2h}}\\
     \hline
     \textbf{Francesco Riccardi} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\
-     \vspace{\baselineskip}} & \makecell[l]{\textit{4h}\\\textit{10h}\\\textit{2h}\\\textit{12h} \vspace{\baselineskip}}\\
+     \vspace{\baselineskip}} & \makecell[l]{\textit{6h}\\\textit{10h}\\\textit{2h}\\\textit{13h} \vspace{\baselineskip}}\\
     \hline
 \end{tabular}
 
