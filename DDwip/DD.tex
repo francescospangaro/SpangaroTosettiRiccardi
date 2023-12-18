@@ -331,13 +331,39 @@ Deployment diagrams specification $\rightarrow$ \url{https://pubs.opengroup.org/
           in order to complete this document and its division by each section of the document.
 \end{itemize}
 \section{Architectural Design}
-\subsection{Overview: High-level components and interactions}
-\subsection{Component view}
-\subsection{Deployment view}
-\subsection{Component interfaces}
-\subsection{Runtime view}
-\subsection{Selected architectural styles and patterns}
-\subsection{Other design decisions}
+    \subsection{Overview: High-level components and interactions}
+    To ensure high maintainability, security and reliability, the service is structured by following the four-tier architecture model.
+    Figure 1. shows how the tiers are divided, and what are the relations between each tier of the system.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.35]{images/FourTierApplication.png}
+        \caption{Four-tier architecture}
+        \label{fig:Figure 1}
+    \end{figure}
+    The main components are:
+    \textbf{Web Application:} The web application allows users to connect to the platform's services. The web application can be accessed by any device
+    that is connected to the internet and can browse the web. Students and Educators will have different views of the web application, because they have
+    different parameters that they can view and manage. \\
+    \textbf{Web Server:} The web server is what manages the web application. It is connected directly to the GitHub Platform to give Educators the possibility
+    of seeing their Students' uploaded solutions. It is connected to the GitHub platform to also give Students the possibility of seeing their 
+    solutions uploaded to the platform in real time. It is the main container for the JavaScript and general backend code for the platform.
+    The web server is connected to the Application server because it needs to be automatically updated when new grades for Students' solutions are generated
+    by the platform. \\
+    \textbf{Application Server:} The application server is the main backend of the CKB Platform. It contains all the code needed for th eplatform to run 
+    smoothly and without interruptions. It contains the logic needed to answer the API requests made by the users to the platform. It 
+    automatically evaluates Students' solutions proposed via the GitHub platform and uploads the new grade to the web server. \\
+    \textbf{DBMS:} The DBMS is the main interpreter between the CKB platform and the data stored onto the database. \\
+    \textbf{DataBase:} The database stores all the information needed by the application. \\
+    \textbf{External Services:} These services provide informations and funtionalities that the CKB platform alone could not provide.
+    These funtionalities include a \textit{GitHub actions API} that notifies the platform of the upload of a new Student's solution, a \textit{notification API}
+    that notify Students when a new tournament or a new battle in a tournament they are subscribed to is created and a connection to the \textit{GitHub platform}
+    since the code needs to be uploaded from the GitHub platform to the CKB platform automatically. \\
+    \subsection{Component view}
+    \subsection{Deployment view}
+    \subsection{Component interfaces}
+    \subsection{Runtime view}
+    \subsection{Selected architectural styles and patterns}
+    \subsection{Other design decisions}
 \section{User Interface Design}
 \section{Requirements traceability}
 \section{Implementation, Integration \& Test plan}
