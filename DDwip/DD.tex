@@ -153,175 +153,191 @@
 \pagestyle{IntroductionStyle}
 
 \section{Introduction}
-    \subsection{Purpose}
-        The purpose of this document is to provide an exhausting and implementative
-        description of the platform that will be implemented (CKB platform).
-        In particular the document is focused on the description of the architectural styles and decisions
-        that will be adopted, the modules that compose the platform and their interfaces.
-        The document will contains also several details regarding the deployment choices,
-        the runtime view of the core functionalites of the platform that will be used in it.
-        The document contains some mockups of the user interface design.
-        The document also covers the implementation, integration and testing
-        processes required to implement correctly the CKB platform.
-    \subsection{Scope}
-        CodeKataBattle (CKB) is a platform which aims to give to Educators an easy-to-use experience, and let
-        them propose homework and/or lessons in a new and fresh way.
-        The main goal of the platform is to give the Students the possibility to improve and acquire new software
-        developing skills by particpating to several battles in as many tournaments.
-        The platform let Educators of the Students to create such tournaments and battles within them
-        in order to challenge the Students to upload the best possible solution to the battle's
-        problem. That solution will be then automatically evaluated by the platform which will give it a score,
-        and eventually even by the Educator who created the battle, and will be associated to it a proper score.
-        The platform also allow Educators to add several recognition badges for the work done by the students.
-        This badges can be personalized by the Educators themselves.
-        \\ \\
-        From the architectural point of view we have decided to adopt a 3-Tier Client-Server architecture combined
-        with a MSA server side, in addition to a MVC software architectural choice.
-    \subsection{Definitions, acronyms, abbreviations}
-        \subsubsection{Definitions}
-            {\renewcommand{\arraystretch}{1.5}
-            %\textwidth used to set table's width according to text's width of the page
-            %">{\raggedright\arraybackslash} c" used to align to the right the column c
-            %"X" column tag creates a paragraph-like column whose width automatically expands so that the declared width of the environment is filled
-            \begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
-                \hline
-                \textbf{Term} & \textbf{Definition} \\
-                \hline
+\subsection{Purpose}
+The purpose of this document is to provide an exhausting and implementative
+description of the platform that will be implemented (CKB platform).
+In particular the document is focused on the description of the architectural styles and decisions
+that will be adopted, the modules that compose the platform and their interfaces.
+The document will contains also several details regarding the deployment choices,
+the runtime view of the core functionalites of the platform that will be used in it.
+The document contains some mockups of the user interface design.
+The document also covers the implementation, integration and testing
+processes required to implement correctly the CKB platform.
+\subsection{Scope}
+CodeKataBattle (CKB) is a platform which aims to give to Educators an easy-to-use experience, and let
+them propose homework and/or lessons in a new and fresh way.
+The main goal of the platform is to give the Students the possibility to improve and acquire new software
+developing skills by particpating to several battles in as many tournaments.
+The platform let Educators of the Students to create such tournaments and battles within them
+in order to challenge the Students to upload the best possible solution to the battle's
+problem. That solution will be then automatically evaluated by the platform which will give it a score,
+and eventually even by the Educator who created the battle, and will be associated to it a proper score.
+The platform also allow Educators to add several recognition badges for the work done by the students.
+This badges can be personalized by the Educators themselves.
+\\ \\
+From the architectural point of view we have decided to adopt a 4-Tier Client-Server architecture combined
+with a MSA server side, in addition to a MVC software architectural choice.
+\subsection{Definitions, acronyms, abbreviations}
+\subsubsection{Definitions}
+{\renewcommand{\arraystretch}{1.5}
+%\textwidth used to set table's width according to text's width of the page
+%">{\raggedright\arraybackslash} c" used to align to the right the column c
+%"X" column tag creates a paragraph-like column whose width automatically expands so that the declared width of the environment is filled
+\begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
+    \hline
+    \textbf{Term} & \textbf{Definition} \\
+    \hline
 
-                \endfirsthead   %Everything above is used as "head" (first row) of
-                %the table in the page where it is placed
+    \endfirsthead   %Everything above is used as "head" (first row) of
+    %the table in the page where it is placed
 
-                \hline
-                \textbf{Term} & \textbf{Definition} \\
-                \hline
+    \hline
+    \textbf{Term} & \textbf{Definition} \\
+    \hline
 
-                \endhead    %Everything above is used as "head" (first row) of the
-                %splitted parts of the table in the pages different from
-                %the one in which the table was originally placed
+    \endhead    %Everything above is used as "head" (first row) of the
+    %splitted parts of the table in the pages different from
+    %the one in which the table was originally placed
 
-                \endfoot    %Everything above is used as "foot" (last row) of the
-                %splitted parts of the table in the pages different from
-                %the last one in which the table appear
+    \endfoot    %Everything above is used as "foot" (last row) of the
+    %splitted parts of the table in the pages different from
+    %the last one in which the table appear
 
-                \endlastfoot    %Everything above is used as "foot" (last row) of the
-                %table in the page where it appears last.
+    \endlastfoot    %Everything above is used as "foot" (last row) of the
+    %table in the page where it appears last.
 
-                \textit{3-Tier Architecture} & $\rightarrow$ A 3-Tier architecture in the field of informatic systems, very simply
-                a software and hardware architecture in which a running application/platform is divided in three different modules
-                or also called "layers" which are: Presentation Layer, Logic Layer, Data Layer. \\
-                \textit{Presentation Layer} & $\rightarrow$ The top layer of the 3-Tier architecture. It takes care of the interaction
-                between the user and the application.\\
-                \textit{Logic Layer} & $\rightarrow$ The middle layer of the 3-Tier architecture. It takes care of implementing the real
-                application logic that allows to the application/platform to actually work. \\
-                \textit{Data Layer} & $\rightarrow$ The bottom layer of the 3-Tier architecture. It takes care of all the data generated 
-                by the users or the application, and with which the application itself has to interact. The interactions
-                can include queries, updates, deletions, ... \\
-                \textit{Microservice architecture} & $\rightarrow$ An architectural style that consist in the creation of an 
-                application/platform as a suite of small services, each one handling a part of the business logic of the application
-                and that comunicates with each other throught lightweight protocols (such as HTTP). \\
-                \textit{Model-View-Controller} & $\rightarrow$ An architectural pattern used to develop the 
-                software logic of an application. This pattern consist in dividing the application in three
-                different parts: View, Model and Controller. \\
-                \textit{View} & $\rightarrow$ Part of the MVC pattern which takes care of the visualization of the
-                data contained in the model and the interaction with the user. \\
-                \textit{Controller} & $\rightarrow$ Part of the MVC pattern that receives commands from the user, and execute them
-                by modifying the View and/or Model parts. \\
-                \textit{Model} & $\rightarrow$ Part of the MVC pattern that gives to the Controller part, the
-                methods to access the application's data and to modify them.
-            \end{xltabular}
+    \textit{4-Tier Architecture} & $\rightarrow$ A 4-Tier architecture in the field of informatic systems, very simply
+    a software and hardware architecture in which a running application/platform is divided in four different modules
+    or also called "layers" which usually are: Presentation Layer, WebServer layer, Logic Layer, Data Layer. \\
+    \textit{Presentation Layer} & $\rightarrow$ The top layer of the 4-Tier architecture. It takes care of the interaction
+    between the user and the application.\\
+    \textit{WebServer Layer} & $\rightarrow$ The second layer of the 4-Tier architecture. It takes care of handling the requests
+    sent by the users throught a browser application.
+    \textit{Logic Layer} & $\rightarrow$ The third layer of the 4-Tier architecture. It takes care of implementing the real
+    application logic that allows to the application/platform to actually work. \\
+    \textit{Data Layer} & $\rightarrow$ The bottom layer of the 4-Tier architecture. It takes care of all the data generated
+    by the users or the application, and with which the application itself has to interact. The interactions
+    can include queries, updates, deletions, ... \\
+    \textit{Microservice architecture} & $\rightarrow$ An architectural style that consist in the creation of an
+    application/platform as a suite of small services, each one handling a part of the business logic of the application
+    and that comunicates with each other throught lightweight protocols (such as HTTP). \\
+    \textit{Model-View-Controller} & $\rightarrow$ An architectural pattern used to develop the
+    software logic of an application. This pattern consist in dividing the application in three
+    different parts: View, Model and Controller. \\
+    \textit{View} & $\rightarrow$ Part of the MVC pattern which takes care of the visualization of the
+    data contained in the model and the interaction with the user. \\
+    \textit{Controller} & $\rightarrow$ Part of the MVC pattern that receives commands from the user, and execute them
+    by modifying the View and/or Model parts. \\
+    \textit{Model} & $\rightarrow$ Part of the MVC pattern that gives to the Controller part, the
+    methods to access the application's data and to modify them.
+\end{xltabular}
 
-        \subsubsection{Acronyms}
-            \begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
-                \hline
-                \textbf{Acronym} & \textbf{Meaning} \\
-                \hline
+\subsubsection{Acronyms}
+\begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
+    \hline
+    \textbf{Acronym} & \textbf{Meaning} \\
+    \hline
 
-                \endfirsthead
+    \endfirsthead
 
-                \hline
-                \textbf{Acronym} & \textbf{Meaning} \\
-                \hline
+    \hline
+    \textbf{Acronym} & \textbf{Meaning} \\
+    \hline
 
-                \endhead
-                \endfoot
-                \endlastfoot
+    \endhead
+    \endfoot
+    \endlastfoot
 
-                \textit{MSA} & $\rightarrow$ MicroServices Architecture\\
-                \textit{MVC} & $\rightarrow$ Model-View-Controller\\
-                \textit{RASD} & $\rightarrow$ Requirement Analysis and Specification Document\\
-                \textit{} & $\rightarrow$ \\
-                \textit{} & $\rightarrow$ \\
-                \textit{} & $\rightarrow$ \\
-            \end{xltabular}
+    \textit{MSA} & $\rightarrow$ MicroServices Architecture\\
+    \textit{MVC} & $\rightarrow$ Model-View-Controller\\
+    \textit{RASD} & $\rightarrow$ Requirement Analysis and Specification Document\\
+    \textit{DD} & $\rightarrow$ Design Document\\
+    \textit{CKB} & $\rightarrow$ CodeKataBattle\\
+    \textit{} & $\rightarrow$ \\
+\end{xltabular}
 
 
-        \subsubsection{Abbreviations}
-            \begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
-                \hline
-                \textbf{Abbreviation} & \textbf{Meaning} \\
-                \hline
+\subsubsection{Abbreviations}
+\begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
+    \hline
+    \textbf{Abbreviation} & \textbf{Meaning} \\
+    \hline
 
-                \endfirsthead
+    \endfirsthead
 
-                \hline
-                \textbf{Abbreviation} & \textbf{Meaning} \\
-                \hline
+    \hline
+    \textbf{Abbreviation} & \textbf{Meaning} \\
+    \hline
 
-                \endhead
-                \endfoot
-                \endlastfoot
+    \endhead
+    \endfoot
+    \endlastfoot
 
-                \textit{e.g.} & $\rightarrow$ Exempli gratia, latin phrase meaning "for example".
-                \\
-                \textit{} & $\rightarrow$ 
-                \\
-                \textit{} & $\rightarrow$ 
-                \\
-                \textit{} & $\rightarrow$ 
-                \\
-                \textit{} & $\rightarrow$ 
-                \\
-            \end{xltabular}
-    \subsection{Revision history}
-        \begin{itemize}
-            \item **Placeholder data**: version 1.0
-        \end{itemize}
-    
-    \subsection{Reference documents}
-        UML official specification $\rightarrow$ \url{https://www.omg.org/spec/UML}
-        \\ \\
-        Sequence diagrams specification $\rightarrow$ \url{https://www.uml-diagrams.org/sequence-diagrams.html}
-    \subsection{Document structure}
-        \begin{itemize}
-            \item \textbf{\textit{Section 1: Introduction}} \\
-                This section offers a brief description of the problem and the platform/application that will be developed in order to resolve it.
-                It describes the major purpose of this document, a brief very brief recap of the domain described in detail
-                in the RASD document.
-                In addition, in this section are inserted definitions, acronyms and abbreviations used in the document, including 
-                its revision history and refereced documents or web pages.
-            \item \textbf{\textit{Section 2: Architectural Design}} \\
-                  
-            \item \textbf{\textit{Section 3: User interface design}} \\
-                This section describes the user interface design of the platform.
-                It contains several mockups of the interface that the Educators and
-                Students will find. The presented mockups refers to the client-side
-                experience.
-            \item \textbf{\textit{Section 4: Requirements traceability}} \\
-                  
-            \item \textbf{\textit{Section 5: Implementation, Integration \& Test plan}} \\
-                  
-            \item \textbf{\textit{Section 6: Effort spent}} \\
-                This section contains all the information about the time spent by each group member in order to complete this document 
-                and its division by each section of the document.
-        \end{itemize}   
+    \textit{e.g.} & $\rightarrow$ Exempli gratia, latin phrase meaning "for example".
+    \\
+    \textit{} & $\rightarrow$
+    \\
+    \textit{} & $\rightarrow$
+    \\
+    \textit{} & $\rightarrow$
+    \\
+    \textit{} & $\rightarrow$
+    \\
+\end{xltabular}
+\subsection{Revision history}
+\begin{itemize}
+    \item **Placeholder data**: version 1.0
+\end{itemize}
+
+\subsection{Reference documents}
+UML official specification $\rightarrow$ \url{https://www.omg.org/spec/UML}
+\\ \\
+Sequence diagrams specification $\rightarrow$ \url{https://www.uml-diagrams.org/sequence-diagrams.html}
+\\ \\
+Component diagrams specification $\rightarrow$ \url{https://creately.com/blog/software-teams/component-diagram-tutorial/}
+\\ \\
+Deployment diagrams specification $\rightarrow$ \url{https://pubs.opengroup.org/architecture/archimate32-doc.singlepage/}
+\subsection{Document structure}
+\begin{itemize}
+    \item \textbf{\textit{Section 1: Introduction}} \\
+          This section offers a brief description of the problem and the platform/application that will be developed in order to resolve it.
+          It describes the major purpose of this document, a very brief recap of the domain which is
+          described in detail in the RASD document.
+          In addition, in this section are inserted definitions, acronyms and abbreviations used in the document,
+          its revision history and refereced documents or web pages.
+    \item \textbf{\textit{Section 2: Architectural Design}} \\
+          This section is the main part of the document. It describes the architectures used to
+          realize the platform, the CKB platform's components, its interfaces, its deployment
+          structure and finally its runtime behaviour.
+          All these aspects are described through several diagrams such as:
+          component diagrams, class diagrams, deployment diagrams and other
+          generic diagrams which are used to give a representation of main and most important
+          features of the platform.
+    \item \textbf{\textit{Section 3: User interface design}} \\
+          This section describes the user interface design of the platform.
+          It contains several mockups of the interface that the Educators and
+          Students will find when they access to the platform. The presented mockups
+          refers to the client-side experience throught an appropriate browser application.
+    \item \textbf{\textit{Section 4: Requirements traceability}} \\
+          This section describe the connection between the RASD and DD document,
+          by providing a complete map of the requirements and goals expressed in the RASD
+          to the modules presented in this document.
+    \item \textbf{\textit{Section 5: Implementation, Integration \& Test plan}} \\
+          This section describes the plan followed for implementing, testing and
+          integrating the platform's components, the order in which
+          these operations are performed and what they generate.
+    \item \textbf{\textit{Section 6: Effort spent}} \\
+          This section contains all the information about the time spent by each group member
+          in order to complete this document and its division by each section of the document.
+\end{itemize}
 \section{Architectural Design}
-    \subsection{Overview: High-level components and interactions}
-    \subsection{Component view}
-    \subsection{Deployment view}
-    \subsection{Component interfaces}
-    \subsection{Runtime view}
-    \subsection{Selected architectural styles and patterns}
-    \subsection{Other design decisions}
+\subsection{Overview: High-level components and interactions}
+\subsection{Component view}
+\subsection{Deployment view}
+\subsection{Component interfaces}
+\subsection{Runtime view}
+\subsection{Selected architectural styles and patterns}
+\subsection{Other design decisions}
 \section{User Interface Design}
 \section{Requirements traceability}
 \section{Implementation, Integration \& Test plan}
