@@ -131,7 +131,7 @@
 %Set the default path of images (used in includegraphics command)
 \graphicspath{ {images/} }
 
-\title{RASD-v1.0}
+\title{RASD-v1.1}
 \author{Francesco Spangaro - Tosetti Luca - Francesco Riccardi}
 \date{22 December 2023}
 
@@ -156,7 +156,7 @@
 \subsection{Purpose}
 The purpose of the CodeKataBattle platform is to create a friendly and enjoyable environment for Students, in which
 to improve and acquire skills in Software Development. 
-This is done by allowing Students to compete with each other in solving problems with software development.
+This is done by allowing Students to compete with each other in solving problems through software development.
 All of this is done under the supervision of Educators who can challenge students by creating these competitions.
 \subsubsection{Goals}
 \begin{description}
@@ -172,15 +172,15 @@ All of this is done under the supervision of Educators who can challenge student
           \end{description}
     \item[G2:] \textit{\textbf{Allow Educators to create new battles:}}
           \begin{description}
-              \item Educators have the possibility to define new battles within tournaments they crated or in tournaments they have been granted permission to do so. 
+              \item Educators have the possibility to define new battles within tournaments they have created or in tournaments they have been granted permission to do so. 
               When creating a new battle, Educators have to set different parameters:
                     \begin{itemize}
-                        \item upload project description;
-                        \item specify the programming language and build tool to utilise, including test cases and build automation scripts;
+                        \item set project description;
+                        \item specify the programming language and building tools to utilise, including test cases and build automation scripts;
                         \item set minimum and maximum number of Students per group;
                         \item set a registration deadline;
                         \item set a final submission deadline;
-                        \item set additional configuration for scoring.
+                        \item set additional configurations to evaluate Students' work and compute their score.
                     \end{itemize}
 
           \end{description}
@@ -194,7 +194,7 @@ All of this is done under the supervision of Educators who can challenge student
           % Ask if rank visualization is a goal or a user-interface point 
     \item[G4:] \textit{\textbf{Allow Educators to administer different battles:}}
           \begin{description}
-              \item Educators have the possibility, once a battle has expired, 
+              \item Educators have the possibility, once a battle has expired and entered the consolidation phase, 
               to manually evaluate, through the platform, each Student's work, they can then assign a corresponding score to each one of them, ranging from 0 to 100.
           \end{description}
     \item[G5:] \textbf{\textit{Allow Students to subscribe in tournaments:}}
@@ -244,7 +244,7 @@ allowing Students to upload their solutions on it. These solutions will then be 
 in the battle for which they uploaded a specific solution.
 \subsubsection{Phenomena}
 Events that take place either in the real World, in the Machine World or in both. Used to describe respectively what cannot be observed by the Machine, real 
-World and event that connects the two.
+World and events that connects the two.
 \subsubsubsection{World phenomena}
 Phenomena that take place in the real World and are not observable by the Machine
 \begin{enumerate}
@@ -292,7 +292,7 @@ Phenomena that take place in the real World and are not observable by the Machin
           \begin{enumerate}
               \item[\ding{228}] Student related phenomena
                     \begin{enumerate}
-                        \item[\textbf{SP18}:] The platform, whenever a new tournament is created, notifies all Students registers of its creation.
+                        \item[\textbf{SP18}:] The platform, whenever a new tournament is created, notifies all registered Students of its creation.
                         \item[\textbf{SP19}:] The platform, whenever a new battle is created in a tournament, notifies all Students subscribed to that 
                         tournament of the new battle created.
                         \item[\textbf{SP20}:] The platform, whenever an invite is sent from a Student to another for joining a group, notifies the recipient 
@@ -316,7 +316,7 @@ Phenomena that take place in the real World and are not observable by the Machin
 Phenomena that take place in the Machine World and are not observable from the real World
 \begin{enumerate}
     \item[\textbf{MP1:}] The platform creates a GitHub repository containing the code kata when a battle's registration deadline expires.
-    \item[\textbf{MP2:}] The platform, when notified by the GitHub API, pulls the latest sources of a battle's the repository.
+    \item[\textbf{MP2:}] The platform, when notified by the GitHub API, pulls the latest sources of a battle's repository.
     \item[\textbf{MP3:}] The platform analyses the sources by running tests on them.
     \item[\textbf{MP4:}] The platform computes the scores of a team, based on the executables uploaded by the Students for a battle. 
     The score is automatically updated when the platform receives a notification from GitHub about new push actions%??? Chiedere a toso.
@@ -355,18 +355,15 @@ Phenomena that take place in the Machine World and are not observable from the r
     %table in the page where it appears last.
 
     \textit{GitHub Repository} & $\rightarrow$ A place on the GitHub platform where a user can store code, files and each file's revision history. \\
-    \textit{Registration deadline} & $\rightarrow$ Maximum timespan in which a Student can subscribe in a battle or in a tournament. \\
+    \textit{Registration deadline} & $\rightarrow$ Maximum timespan in which a Student can subscribe to a battle or to a tournament. \\
     \textit{Submission deadline} & $\rightarrow$ Maximum timespan in which a Student, or a group of Students, can upload their solution to a battle. \\
     \textit{Code Kata} & $\rightarrow$ The word "kata" refers to a karate exercise in which a form gets repeated many times, 
     making little improvements each time.
     In this context it is used to express the fact that the code needs to be developed multiple times to reach an optimal solution. \\
     \textit{Consolidation phase} & $\rightarrow$ Phase started at the end of a battle's submission deadline, used to consolidate the score of each Student 
     in that battle. A manual evaluation of the students' code by an Educator may occur. \\
-    \textit{View-only mode} & $\rightarrow$ An abstract mode (not an implementation detail) in which an Educator can be if he accesses
-     a tournament in which he has no rights of creating new battles. \\
-    \textit{Modify-enabled mode }& $\rightarrow$ An abstract mode (not an implementation detail) in which an Educator can be if
-     he accesses a tournament he got granted modificational access to by that tournament's creator. 
-     In this mode, the first Educator can create new battles in the tournament.
+    \textit{Guidelines} & $\rightarrow$ Rules that must be followed regarding battle, tournament, badges, ... characteristics while creating
+    them. They are imposed by the platform itself.
 \end{xltabular}
 
 \subsubsection{Acronyms}
@@ -443,6 +440,7 @@ Phenomena that take place in the Machine World and are not observable from the r
 \subsection{Revision history}
 \begin{itemize}
     \item 12 December 2023: version 1.0
+    \item 20 December 2023: version 1.1
 \end{itemize}
 \subsection{Reference documents}
 GitHub references:
@@ -458,12 +456,15 @@ BPMN official specification $\rightarrow$ \url{https://www.omg.org/spec/BPMN/2.0
 Use case diagrams specification used $\rightarrow$ \url{https://it.wikipedia.org/wiki/Use_Case_Diagram}
 \\ \\
 Sequence diagrams specification $\rightarrow$ \url{https://www.uml-diagrams.org/sequence-diagrams.html}
+\\ \\
+Alloy documentation $\rightarrow$ \url{https://alloy.readthedocs.io/en/latest/}
+
 \subsection{Document structure}
 \begin{itemize}
     \item \textbf{\textit{Section 1: Introduction}} \\
           This section introduces the problem and the platform/application that needs to be developed in order to resolve it.
-           It describes the major purpose of the project, every goal of it, the analysis of its domain and every World and phenomena, 
-           shared, Machine only and real World only, associated with it.
+           It describes the major purpose of the project, every goal of it, the analysis of its domain and every 
+          real World only, Machine only and shared phenomena associated with it.
           In addition, in this section are inserted definitions, acronyms and abbreviations used in this document, including 
           its revision history and refereced documents or web pages.
     \item \textbf{\textit{Section 2: Overall description}} \\
@@ -500,7 +501,7 @@ Peter is extremely intrigued by the idea and the platform, so much that the same
 Peter opens his personal browser and goes to the CKB site's homepage. Here he navigates to the student's dedicated page and clicks the 
 "Sign-up" button in order to register. 
 He inserts all the required information in the registration page's mandatory fields(e.g. name, surname, attended school, email, username, password, ...)
- and clicks the "Confirm" button.
+ and clicks on a "Confirm" button.
 Peter now looks his email homepage for the notification about the correctness of his registration 
 and can now access all the CBK platform's features, after loggin in with his credentials.
 \subsubsubsection{Educator signs up to the platform}
@@ -509,7 +510,7 @@ He discovered the CKB platform while searching the web for new testing ideas.
 Vittorio decides to register to the platform as he's very intrigued with it. 
 To register, Vittorio goes on the CKB's Homepage, then on the page dedicated to educators and clicks the "Sign-up" button.
  After the registration page shows up, he compiles all the fields in the registration form (e.g. name, surname, school in which he teaches, istitutional email, password, ...), 
- especially the ones related to his profession, then clicks on the "Confirm" button.
+ especially the ones related to his profession, then clicks on a "Confirm" button.
 Vittorio then waits for the registration confirm email and starts using the CKB platform's features, after loggin in with his credentials.
 \subsubsubsection{Educator creates a new tournament (and badges)}
 Laura is a c.s. educator who registered to CKB platform. She decides to create a new tournament to let her Students compete with each other and improve their software developing skills. 
@@ -522,16 +523,16 @@ To do so, Laura accesses the appopriate section while creating the tournament an
 that will be added to the Student's score when obtained.
 At the end of the process Laura confirms her choices and the tournament starts.
 \subsubsubsection{Educator creates a new battle}
-Laura is a c.s educator who registered to the CKB platform. After she created a new tournament, Laura wants to create a new battle within it to let her students compete with each other. 
+Laura is a c.s Educator who registered to the CKB platform. After she created a new tournament, Laura wants to create a new battle within it to let her students compete with each other. 
 To do so Laura logs in her account and accesses the tournament in which she wants to create a new battle. 
 At this point Laura tries to create a new battle within the tournament. 
 While doing so, she decides the battle's name, the programming language allowed in the battle, the dimensions of the students' groups that can partecipate in it, 
-a registration and submission deadline and some personalized rules to elaborate students' scores.
+a registration and submission deadline and eventually some personalized rules to elaborate students' scores.
 Laura then waits for her class' students subscribed to the tournament in which the battle has been created to join the battle. 
 At the end of the registration deadline the partecipants can start competing with each other while Laura supervises their work.
 At the end of the battle, which is automaticaly closed at submission deadline, the students' work gets evaluated and the battle's score added to their overall tournament score.
 \subsubsubsection{Educator closes a tournament}
-Marco is a c.s educator who is registered to the CKB platform. He has created a new tournament a month ago and today, after this month he decides to close it. 
+Marco is a c.s Educator who is registered to the CKB platform. He has created a new tournament a month ago and today, after this month he decides to close it. 
 In order to do so, Marco logs in his account and accesses the tournament that he wants to close, at this point Marco controls if there are battles still open. 
 Marco notices that Noemi has created a battle in his tournament, and that said battle is still open.
 Him being the tournament owner, he can control all battles contained in it. 
@@ -539,14 +540,14 @@ He notices that Noemi's battle's submission deadline is in two days, so he decid
 After three days Marco, after logging in the platform, checks that there aren't open battles or ones that are waiting for manual evaluation. 
 He then proceeds to close the tournament.
 \subsubsubsection{Educator manually evaluates a battle after its end}
-Luca is a c.s educator registered to the CKB platform. 
-He has created a new battle in a tournament 16 days ago, choosing as the submission deadline the day 14 days after the battle's creation.
+Luca is a c.s Educator registered to the CKB platform. 
+He has created a new battle in a tournament 16 days ago, choosing as the submission deadline 14 days after the battle's creation.
 Luca logs in his account on the platform, accesses the tournament in which he created the battle and sees that said battle is closed and waiting for a manual evaluation.
 He then decides to examine the solutions that have been submitted by the different groups.
 The first group he analyses is composed of three students. He sees that they have a score of 90/100 in the automated evaluation. 
 Luca opens the solution proposed by the group, then he checks if the number of commits is equal amongst the students in the group.
 Since he doesn't notice any large differences between the number of lines of code written and the number of commits made by each student he decides to go to the comment section.
-By looking at the code written bu the students, Luca relises that they have not written any specific explanation to the code, and that the overall documentation is very lacking 
+By looking at the code written by the students, Luca relises that they have not written any specific explanation to the code, and that the overall documentation is very lacking 
 in quality and detail. 
 Because of this, he decides to modify the previously assigned grade by reducing it from a 90/100 to a 80/100.
 He then writes an explanation for this change to the group. 
@@ -555,7 +556,7 @@ When there are no more groups to evaluate, he closes the battle.
 \subsubsubsection{Student forms a group then joins a tournament}
 Francesca signs in the platform with her credentials and sees that a new tournament has opened. 
 She would like to participate in it, and so decides to form a group with two of her friends to compete in the tournament's battles. 
-She clicks on the apposite menu and chooses the users she would like to invite to join her group.
+She clicks on the apposite menu and chooses the students she would like to invite to join her group.
 After both her friends accept her invite, she enters the tournament by signing up her group as participant.
 \subsubsubsection{Student joins a battle}
 Andres is subscribed to a tournament with his group. One day he is notified that a new battle for the tournament he is subscribed to is available.
@@ -646,12 +647,12 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
           %newpage command used to better format the pdf content
           \newpage
 
-    \item \textbf{Student gets notified of new events:} Notify a Student about new tournaments created, if signed into the platform, 
-    and new battles for the tournaments he is subscribed to.
+    \item \textbf{Student gets notified of new events:} Notify a Student, if registered to the platform, about new created tournaments and
+      new created battles within the tournaments he is subscribed to.
           \begin{figure}[H]
               \centering
               \includegraphics[scale=0.4]{images/BPMN/BPMN5.png}
-              \caption{Student notification BPMN}
+              \caption{Student notification (Tournament) BPMN}
               \label{fig:studNotificationBPMN}
           \end{figure}
 
@@ -728,7 +729,7 @@ CKB platform has 2 different users:
     \item \textbf{Educators:} They are Educators teaching in a school
           environment. They must be qualified to teach. They need to have
           medium to high programming skills, or at least enough knowledge of a programming language
-          to create test codes for the tournament they want to create.
+          to create test codes for the battles they want to create.
           Finally they must be provided with an istitutional email in order to properly
           register to the platform.
     \item \textbf{Students:} They are Students of a school that want to
@@ -756,11 +757,11 @@ CKB platform has 2 different users:
     \item[\textbf{D10:}] Code written by Students cannnot make the platform crash while testing it.
     \item[\textbf{D11:}] Educators upload, when creating a battle, some correct, meaningful and faultproof test cases and automation scripts.
     \item[\textbf{D12:}] Students score is always correctly calculated.
-    \item[\textbf{D13:}] Educators always access a tournament either in view-only mode, if not allowed by the tournament's creator, or in modify-enabled mode if the
-     tournament's creator has granted him the access.
+    \item[\textbf{D13:}] Educators can always access to their tournaments and to the ones that has been granted the access to
+    by their creators.
     \item[\textbf{D14:}] In order to register to a battle, all the group members must be registered in the tournament
           in which the battle takes place.
-    \item[\textbf{D15:}] Students and Educators have to install on their devices, a functioning browser application.
+    \item[\textbf{D15:}] Students and Educators must have a functioning browser application installed on their devices.
     \item[\textbf{D16:}] Only the Student that created the group can invite other Students in it.
 \end{itemize}
 
@@ -774,7 +775,8 @@ CKB platform has 2 different users:
 \subsubsection{User Interfaces}
 The system should interface with the users (both Educator and Students) through their
 devices, such as: laptops, PC desktops and smartphones, whom must be connected to the internet.
-Every user, in order to access the platform, has to connect to an existing domain (like "www.codekatabattle.com").
+Every user, in order to access the platform, has to connect to an existing domain (like "www.codekatabattle.com"),
+by using an appropriate and functioning browser application in order to navigate on the platform.
 
 \subsubsection{Software Interfaces}
 The system has to use different software interfaces in order to properly function:
@@ -792,7 +794,9 @@ The system has to use different software interfaces in order to properly functio
 The system has to interface with the hardware components containing
 the DB.
 \subsubsection{Communication Interfaces}
-All communication from and to the CKB platform has to be done through the HTTPS protocol.
+All communication from and to the CKB platform has to be done through the HTTP/HTTPS protocol.
+
+\newpage
 \subsection{Functional requirements}
 \subsubsection{Requirements}
 \begin{itemize}
@@ -926,7 +930,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
                   \item[2.] Student presses the sign-up button.
                   \item[3.] Student fills the form with all the required informations (name, surname, username
                         attended school, email, password, ...), accepts the "Terms \& Conditions".
-                  \item[4.] Student clicks on the "Confirm" button to confirm.
+                  \item[4.] Student clicks on a "Confirm" button to confirm.
                   \item[5.] CKB platform validates the personal information inserted by the Student.
                   \item[6.] CBK platform displays a confirmation message.
                   \item[7.] CKB platform sends an email notification to the Student regarding the registration outcome.
@@ -983,7 +987,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
                   \item[2.] Educator presses the sign-up button.
                   \item[3.] Educator fills the form with all the required informations (name, surname, username
                         school in which teaches, istitutional email, password, ...), accepts the "Terms \& Conditions".
-                  \item[4.] Educator clicks on "Confirm" button to confirm.
+                  \item[4.] Educator clicks on a "Confirm" button to confirm.
                   \item[5.] CKB platform validates the personal information inserted by the Educator.
                   \item[6.] CBK platform displays a confirmation message.
                   \item[7.] CKB platform sends an email notification to the Educator regarding the registration outcome.
@@ -1034,12 +1038,11 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               wants to create a new tournament\\
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
-                  \item[1.] Educator clicks on "Create tournament" button.
+                  \item[1.] Educator clicks on a "Create tournament" button.
                   \item[2.] Educator fills a form on the page that has appeared with tournament details,
-                        such as: deadline (eventually), allowed programming languages, name, access method and related
-                        information about how to use it, etc.
+                        such as: deadline, allowed programming languages, name, access method, etc.
                   \item[3.] Eventually the Educator defines new badges for the tournament (see UC.4)
-                  \item[4.] Educator clicks on "Confirmation" button.
+                  \item[4.] Educator clicks on a "Confirmation" button.
                   \item[5.] CKB platform checks the validity of the informations inserted by the Educator.
                   \item[6.] CKB platform displays a message that confirms that the tournament
                         has been created successfully.
@@ -1109,7 +1112,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \hline
               \textbf{Exceptions} &    \begin{itemize}
                   \item[4.1] Badge's name contain forbidden characters
-                  \item[4.2] The image uploaded as icon image is too big or has an unsupported format.
+                  \item[4.2] The image uploaded as icon is too big or has an unsupported format.
                   \item[4.3] Badge's rules are not well defined.
                   \item[4.4] Some badge's features have been left empty
                         \begin{itemize}
@@ -1354,7 +1357,7 @@ All communication from and to the CKB platform has to be done through the HTTPS 
                   \item[1.] Educator accesses the page related to the tournament
                         he has created.
                   \item[2.] Educator accesses the page related to a terminated
-                        battle within that tournament.
+                        battle within that tournament and that is in the consolidation phase.
                   \item[3.] Educator manually evaluates groups' works by decreasing or
                         increasing their scores according to his personal preferences or
                         the ones accorded with the students.
@@ -1663,9 +1666,9 @@ All communication from and to the CKB platform has to be done through the HTTPS 
               \hline
               \textbf{Flow of events} &    \begin{enumerate}
                   \item[1.] Student enters in his profile page or in the profile
-                        page's of the Student for which he wants to see the tournament scores
+                        page of the Student he wants to see the tournament scores
                         and badges.
-                  \item[2.] Student chooses the tournament for which he wants to see the
+                  \item[2.] Student chooses the tournament of which he wants to see the
                         details from the appropriate section.
                   \item[3.] Student consults his tournament scores and badges
               \end{enumerate} \\
