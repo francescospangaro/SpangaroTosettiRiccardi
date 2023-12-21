@@ -824,7 +824,7 @@ All communication from and to the CKB platform has to be done through the HTTP/H
     \item[\textbf{R.9}] The CKB platform should allow Educators to create battles within a tournament only to the tournament
           creator and to any other Educator that has been granted permission to do so by the tournament creator.
     \item[\textbf{R.10}] The CKB platform must allow Educators to personalise the tournaments they create.
-    \item[\textbf{R.11}] The CKB platform must allow Edcuators to personalise the battles they create.
+    \item[\textbf{R.11}] The CKB platform must allow Educators to personalise the battles they create.
     \item[\textbf{R.12}] The CKB platform must allow Educators to define new obtainable badges for each tournament they
           create.
     \item[\textbf{R.13}] The CKB platform must allow Educators to manually evaluate the solutions uploaded by the Students for the battles that
@@ -840,7 +840,7 @@ All communication from and to the CKB platform has to be done through the HTTP/H
     \item[\textbf{R.20}] The CKB platform must ensure that when a tournament is closed, Educators cannot create new battles
           within it.
     \item[\textbf{R.21}] The CKB platform must ensure that if a group uploads a solution to a battle after the submission's deadline,
-          that solution will not be considered in the score computation by preventing its upload.
+          that solution will not be considered in the score computation.
     \item[\textbf{R.22}] The CKB platform must ensure that the score given to a group in a tournament is
           coherent with scores given to the same group in the battles they have partecipated in.
     \item[\textbf{R.23}] The CKB platform must ensure fair competition between group scores. In the tournament's evaluation, the final
@@ -850,29 +850,25 @@ All communication from and to the CKB platform has to be done through the HTTP/H
     \item[\textbf{R.25}] The CKB platform must allow Students to subscribe to a tournament's battle
           within the registration deadline.
     \item[\textbf{R.26}] The CKB platform must allow Students to submit solutions to a tournament's battle
-          within the battle's deadline.
+          within the battle's deadline relying on the external GitHub service.
     \item[\textbf{R.27}] The CKB platform must allow Students to send and receive group invitations to and from
           other Students in order to form groups.
     \item[\textbf{R.28}] The CKB platform should allow Students to join a battle only if the group composition rules
           for that battle are complied with.
     \item[\textbf{R.29}] The CKB platform must ensure that solutions uploaded by a Student for a battle are evaluated.
-    \item[\textbf{R.30}] The CKB platform must allow a Student to upload solutions to a battle relying on the
-          external GitHub service.
-    \item[\textbf{R.31}] The CKB platform must ensure that only the latest solution uploaded by a Student for a battle he is subscribed to will
+    \item[\textbf{R.30}] The CKB platform must ensure that only the latest solution uploaded by a Student for a battle he is subscribed to will
           be taken into consideration for the final score.
-    \item[\textbf{R.32}] The CKB platform must allow groups partecipating in a battle to change their solution,
+    \item[\textbf{R.31}] The CKB platform must allow groups partecipating in a battle to change their solution,
           if the battle's submission deadline hasn't expired yet.
-    \item[\textbf{R.33}] The CKB platform must ensure that the score given to a group's solution is
-          updated as soon as possible.
-    \item[\textbf{R.34}] The CKB platform must allow an Educator to modify the score for a Student's solution.
-    \item[\textbf{R.35}] The CKB platform must ensure that when a new tournament is created, all
+    \item[\textbf{R.32}] The CKB platform must allow an Educator to modify the score for a Student's solution.
+    \item[\textbf{R.33}] The CKB platform must ensure that when a new tournament is created, all
           Students subscribed to the platform are going to receive a notification.
-    \item[\textbf{R.36}] The CKB platform must ensure that when a new battle is created in a tournament,
+    \item[\textbf{R.34}] The CKB platform must ensure that when a new battle is created in a tournament,
           all Students subscribed to that tournament are going to receive a notification.
-    \item[\textbf{R.37}] The CKB platform must allow Students to visualise the score they obtained in a battle they partecipated in.
-    \item[\textbf{R.38}] The CKB platform must allow Students to visualise the score they obtained in a tournament they partecipated in.
-    \item[\textbf{R.39}] The CKB platform must allow Students to visualise the badges they obtained.
-    \item[\textbf{R.40}] The CKB platform must ensures that battles' characteristics respect guidelines
+    \item[\textbf{R.35}] The CKB platform must allow Students to visualise the score they obtained in a battle they partecipated in.
+    \item[\textbf{R.36}] The CKB platform must allow Students to visualise the score they obtained in a tournament they partecipated in.
+    \item[\textbf{R.37}] The CKB platform must allow Students to visualise the badges they obtained.
+    \item[\textbf{R.38}] The CKB platform must ensures that battles' characteristics respect guidelines
           regarding their name, deadlines, programming language, number of member per group.
 \end{itemize}
 
@@ -1724,15 +1720,15 @@ All communication from and to the CKB platform has to be done through the HTTP/H
     \textbf{Goal ID} & \multicolumn{1}{|g|}{\textbf{Req. ID}} & \multicolumn{1}{|g|}{\textbf{Use case ID}} & \multicolumn{1}{|g|}{\textbf{Assump. ID}} \\
     \hline
     \textbf{G.1} & R.2, R.3, R.5, R.6, R.8, R.10, R.12, R.14, R.15, R.16, R.17, R.18 & UC.2, UC.3, UC.4, UC.5 & D.1, D.2, D.3, D.8, D.9, D.15\\
-    \textbf{G.2} & R.2, R.3, R.5, R.6, R.8, R.9, R.11, R.40 & UC.2, UC.6 & D.1, D.2, D.3, D.9, D.11, D.15\\
+    \textbf{G.2} & R.2, R.3, R.5, R.6, R.8, R.9, R.11, R.38 & UC.2, UC.6 & D.1, D.2, D.3, D.9, D.11, D.15\\
     \textbf{G.3} & R.2, R.3, R.5, R.6, R.19, R.20 & UC.2, UC.7 & D.1, D.2, D.3, D.13, D.15\\
-    \textbf{G.4} & R.2, R.3, R.5, R.6, R.13, R.34 & UC.2, UC.8 & D.1, D.2, D.3, D.12, D.15\\
+    \textbf{G.4} & R.2, R.3, R.5, R.6, R.13, R.32 & UC.2, UC.8 & D.1, D.2, D.3, D.12, D.15\\
     \textbf{G.5} & R.1, R.3, R.4, R.7, R.24 & UC.1 & D.1, D.2, D.3, D.9, D.15\\
     \textbf{G.6} & R.1, R.3, R.4, R.7, R.25, R.27, R.28 & UC.1, UC.10 & D.1, D.2, D.3, D.4, D.5, D.6, D.9, D.14, D.15\\
     \textbf{G.6.1} & R.1, R.3, R.4, R.7, R.27 & UC.1, UC.9 & D.1, D.2, D.3, D.14, D.15, D.16\\
-    \textbf{G.6.2} & R.1, R.3, R.4, R.7, R.21, R.26, R.29, R.30, R.31, R.32 & UC.1, UC.11, UC.12 & D.1, D.2, D.3, D.4, D.5, D.7, D.9, D.10, D.15\\
-    \textbf{G.6.3} & R.1, R.3, R.4, R.7, R.22, R.23, R.33, R.37, R.38, R.39 & UC.1, UC.13 & D.1, D.2, D.3, D.12, D.15\\
-    \textbf{G.7} & R.1, R.3, R.4, R.7, R.35, R.36 & UC.1, UC.3, UC.6 & D.1, D.2, D.3, D.15\\
+    \textbf{G.6.2} & R.1, R.3, R.4, R.7, R.21, R.26, R.29, R.30, R.31 & UC.1, UC.11, UC.12 & D.1, D.2, D.3, D.4, D.5, D.7, D.9, D.10, D.15\\
+    \textbf{G.6.3} & R.1, R.3, R.4, R.7, R.22, R.23, R.35, R.36, R.37 & UC.1, UC.13 & D.1, D.2, D.3, D.12, D.15\\
+    \textbf{G.7} & R.1, R.3, R.4, R.7, R.33, R.34 & UC.1, UC.3, UC.6 & D.1, D.2, D.3, D.15\\
 
 \end{xltabular}
 \subsection{Performance requirements}
