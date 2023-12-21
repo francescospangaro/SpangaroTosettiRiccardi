@@ -597,7 +597,7 @@ Alessandro checks that too, and sees that he obtained only 13 badges total.
 \subsubsection{Class diagram}
 \begin{figure}[H]
     \centering
-    \hspace*{-4.3cm}\includegraphics[scale=0.38]{images/ClassDiagram/ClassDiagram.jpg}
+    \hspace*{-4.3cm}\includegraphics[scale=0.52]{images/ClassDiagram/ClassDiagram.pdf}
     \caption{Class Diagram}
     \label{fig:classDiagram}
 \end{figure}
@@ -1912,7 +1912,23 @@ Invite\{\\
 \-\hspace{1cm}    sender \color{blue} = \color{black} group.groupCreator \\
 \}\\
 \\
-
+\color{gray}
+//Signature that defines the state of the battle\\
+\color{blue} abstract sig \color{black} BattleState{}\\
+\\
+\color{blue} one sig \color{black}  RegistrationPhase \color{blue} extends \color{black} BattleState{}\\
+\color{blue} one sig \color{black}  SubmissionPhase \color{blue} extends \color{black} BattleState{}\\
+\color{blue} one sig \color{black}  ConsolidationPhase \color{blue} extends \color{black} BattleState{}\\
+\color{blue} one sig \color{black}  ClosedBattle \color{blue} extends \color{black} BattleState{}\\
+\\
+\color{gray}
+//Signature that defines the state of the invite\\
+\color{blue} abstract sig \color{black} InviteState{}\\
+\\
+\color{blue} one sig \color{black} Accepted \color{blue} extends \color{black} InviteState{}\\
+\color{blue} one sig \color{black} Refused \color{blue} extends \color{black} InviteState{}\\
+\color{blue} one sig \color{black} Waiting \color{blue} extends \color{black} InviteState{}\\
+\\
 \subsection{Facts}
 \color{gray}
 //A tournament's creator can grant another Educator permission to create battles in his tournament only once per Educator\\
@@ -1944,7 +1960,7 @@ Invite\{\\
 \color{black}
 \color{blue} fact \color{black} SenderAndReceiverInSameTournament\{\\
 \-\hspace{1cm} \color{blue} all \color{black} i : Invite | \color{blue} all \color{black} r : i.receiver |  \color{blue} some \color{black} t : r.tournament | \\
-\-\hspace{1cm} t \color{blue} in \color{black} i.sender.tournament\\
+\-\hspace{1cm} t \color{blue} in \color{black} i.sender.tournament \color{blue} and \color{black} i.inviteState = Accepted \\
 \}\\
 \\
 \color{gray}

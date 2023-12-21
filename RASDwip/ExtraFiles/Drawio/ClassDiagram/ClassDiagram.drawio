@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-12-15T15:24:48.843Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="RFAt7ucwxdCPBkebwLkf" version="22.1.11" type="device">
+<mxfile host="app.diagrams.net" modified="2023-12-21T10:09:29.538Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="rBqoB8XuMmKaAC6lkheu" version="22.1.11" type="device">
   <diagram name="Pagina-1" id="TD-ASpUao2gz_EuhN9df">
-    <mxGraphModel dx="2440" dy="759" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3694" dy="1238" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -249,7 +249,7 @@
           <mxGeometry y="52" width="160" height="8" as="geometry" />
         </mxCell>
         <mxCell id="koIIA-zapqMguD-rZjef-28" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
-          <mxGeometry x="635" y="930" width="30" height="30" as="geometry" />
+          <mxGeometry x="640" y="890" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="koIIA-zapqMguD-rZjef-29" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="925" y="818" width="30" height="30" as="geometry" />
@@ -464,11 +464,44 @@
         <mxCell id="J-DPbWgY0Jyy4PXl9U7m-5" value="Subscribes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="300" y="518" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="S3LKCFV0lgaDSlcLPn-H-6" value="Permission" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="S3LKCFV0lgaDSlcLPn-H-6" value="Permission" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-60" y="520" width="160" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="S3LKCFV0lgaDSlcLPn-H-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="S3LKCFV0lgaDSlcLPn-H-6">
+        <mxCell id="S3LKCFV0lgaDSlcLPn-H-8" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="S3LKCFV0lgaDSlcLPn-H-6" vertex="1">
           <mxGeometry y="26" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="AjsdrS8DWmsue9hXb7EJ-1" value="&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;br&gt;BattleState" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="800" width="120" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="AjsdrS8DWmsue9hXb7EJ-3" value="RegistrationPhase" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="AjsdrS8DWmsue9hXb7EJ-1">
+          <mxGeometry y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AjsdrS8DWmsue9hXb7EJ-2" value="SubmissionPhase" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="AjsdrS8DWmsue9hXb7EJ-1">
+          <mxGeometry y="60" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AjsdrS8DWmsue9hXb7EJ-4" value="ConsolidationPhase" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="AjsdrS8DWmsue9hXb7EJ-1">
+          <mxGeometry y="90" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AjsdrS8DWmsue9hXb7EJ-10" value="ClosedBattle" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="AjsdrS8DWmsue9hXb7EJ-1">
+          <mxGeometry y="120" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AjsdrS8DWmsue9hXb7EJ-6" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="EsQn2x5b7RgHpTbDy1mJ-43" target="AjsdrS8DWmsue9hXb7EJ-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="780" y="990" as="sourcePoint" />
+            <mxPoint x="830" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AjsdrS8DWmsue9hXb7EJ-8" value="BattleState defines the state of the battle, the first phase is the registration, where the group register to the battle, then submission, where the group submit their solution and that after the deadline the educator decide if is necessary to evaluate manually the project, if is necessary the battle state become ConsolidationPhase, otherwise it become closed" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="840" y="950" width="240" height="212" as="geometry" />
+        </mxCell>
+        <mxCell id="AjsdrS8DWmsue9hXb7EJ-9" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1" target="AjsdrS8DWmsue9hXb7EJ-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="760" y="940" as="sourcePoint" />
+            <mxPoint x="740" y="1070" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="760" y="1077" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
