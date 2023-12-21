@@ -101,7 +101,7 @@
 %Defines the content of the header and the footer of the pages of the fifth section
 \fancypagestyle{EffortSpentStyle}{
 \fancyhf{}
-\fancyhead[L]{\textit{\textbf{SECTION 5. EFFORT}}}
+\fancyhead[L]{\textit{\textbf{SECTION 5. EFFORT SPENT}}}
 \fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
@@ -1717,7 +1717,7 @@ All communication from and to the CKB platform has to be done through the HTTP/H
     \textbf{G.4} & R.2, R.3, R.5, R.6, R.13, R.34 & UC.2, UC.8 & D.1, D.2, D.3, D.12, D.15\\
     \textbf{G.5} & R.1, R.3, R.4, R.7, R.24 & UC.1 & D.1, D.2, D.3, D.9, D.15\\
     \textbf{G.6} & R.1, R.3, R.4, R.7, R.25, R.27, R.28 & UC.1, UC.10 & D.1, D.2, D.3, D.4, D.5, D.6, D.9, D.14, D.15\\
-    \textbf{G.6.1} & R.1, R.3, R.4, R.7, R.27 & UC.1, UC.9 & D.1, D.2, D.3, D.14, D.15, D.17\\
+    \textbf{G.6.1} & R.1, R.3, R.4, R.7, R.27 & UC.1, UC.9 & D.1, D.2, D.3, D.14, D.15, D.16\\
     \textbf{G.6.2} & R.1, R.3, R.4, R.7, R.21, R.26, R.29, R.30, R.31, R.32 & UC.1, UC.11, UC.12 & D.1, D.2, D.3, D.4, D.5, D.7, D.9, D.10, D.15\\
     \textbf{G.6.3} & R.1, R.3, R.4, R.7, R.22, R.23, R.33, R.37, R.38, R.39 & UC.1, UC.13 & D.1, D.2, D.3, D.12, D.15\\
     \textbf{G.7} & R.1, R.3, R.4, R.7, R.35, R.36 & UC.1, UC.3, UC.6 & D.1, D.2, D.3, D.15\\
@@ -1738,9 +1738,9 @@ We need to guarantee a low response time in order to let Students and Educators 
 without high delays that could compromise Students' works.
 We have to take into consideration reliability since with a low reliability platform when Students upload their solutions on the
 forked GitHub repository, triggering GitHub Actions to upload the solutions to the CKB platform, if the CKB platform is not reliable,
-this could cause delays in the solution's uploading to the platform.
+it could cause delays in the solution's uploading to the platform.
 A low reliable platform can also mean that Student's solutions may not be correctly graded, since the platform may incur in a byzantine failure
-type and erroneusly attribute points to some solutions.
+type and erroneusly attributes points to some solutions.
 Educators would also not be able to access the platform and manually evaluate Students' solutions, and would be a bad experience overall.
 For data storing, we expect we'll need a high capacity DB. It's necessary for storing
 the user's data, tournaments and battles' data and statistics, informations and code about groups' commits.
@@ -1752,7 +1752,7 @@ New Zealand it starts in July. The platform being based around schools means tha
 \subsubsection{Hardware constraints}
 The users, both Educators and Students, to have access to the platform need to have a functioning internet access and a device connected to the net.
 The Educators must have at least a smartphone, so that they can perform all of the different functions the platform offers them, like creating new battles
-and tournament, badges and manually evaluate groups' solutions. All of this can be done via smartphone.
+and tournament, badges and manually evaluate groups' solutions. All of this can be done via browser installed on a smartphone.
 The Students are required to have a personal computer, either a desktop or a laptop, such that they can write and submit their solutions to the platform.
 Students can access the platform via smartphone too, for consulting their profile and looking at new tournaments and battles, but it would be
 best if everything that is concerning to coding and submitting a solution is done via personal computer.
@@ -1829,7 +1829,7 @@ Tournament \{ \\
 \}\\
 \color{gray}
 \\
-//A battle has a creator and a tournament, the creator must be the tournament's creator or another Educator that can create battles within that tournament\\
+//A battle has a creator and a tournament to which it belongs, the creator must be the tournament's creator or another Educator that can create battles within that tournament\\
 \color{blue}
 sig
 \color{black}
@@ -1874,7 +1874,7 @@ Repository\{\\
 \}\\
 \\
 \color{gray}
-//A group is formed by some Students and partecipates to one tournament\\
+//A group is formed by some Students and partecipates to one battle\\
 \color{blue}
 sig
 \color{black}
@@ -1931,7 +1931,7 @@ Invite\{\\
 \\
 \subsection{Facts}
 \color{gray}
-//A tournament's creator can grant another Educator permission to create battles in his tournament only once per Educator\\
+//A tournament's creator can grant to (only once per Educator) another Educator the permission to create battles in his tournament\\
 \color{black}
 \color{blue} fact \color{black} NoTwoPermissionAtSameEducator\{\\
 \-\hspace{1cm} \color{blue} all disj \color{black} p1, p2 : Permit | \\
@@ -1948,7 +1948,7 @@ Invite\{\\
 \}
 \\
 \color{gray}
-//For each battle, a Student can only participate in one group\\
+//For each battle, a Student can participate to it while being in only one group\\
 \color{black}
 \color{blue} fact \color{black} noStudentsInMoreGroupInABattle\{\\
 \-\hspace{1cm} \color{blue} all \color{black} s: Student | \color{blue} all disj \color{black} g1, g2: Group | \\
@@ -2072,10 +2072,10 @@ A permission can only be granted by an Educator that created at least one tourna
     \multicolumn{2}{|g|}{\textbf{Group member}} & \multicolumn{1}{|g|}{\textbf{Effort spent}} \\
     \hline
     \textbf{Francesco Spangaro} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\
-     \vspace{\baselineskip}} & \makecell[l]{\textit{6h}\\\textit{13h}\\\textit{7h}\\\textit{2h} \vspace{\baselineskip}}\\
+     \vspace{\baselineskip}} & \makecell[l]{\textit{6h}\\\textit{14h}\\\textit{8h}\\\textit{2h} \vspace{\baselineskip}}\\
     \hline
     \textbf{Luca Tosetti} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\
-     \vspace{\baselineskip}} & \makecell[l]{\textit{6h}\\\textit{6h}\\\textit{18h}\\\textit{2h}}\\
+     \vspace{\baselineskip}} & \makecell[l]{\textit{6h}\\\textit{7h}\\\textit{19h}\\\textit{2h}}\\
     \hline
     \textbf{Francesco Riccardi} & \makecell[l]{\\Introduction\\Overall description\\Specific Requirements\\Formal analysis using Alloy\\
      \vspace{\baselineskip}} & \makecell[l]{\textit{6h}\\\textit{10h}\\\textit{2h}\\\textit{13h} \vspace{\baselineskip}}\\
@@ -2095,7 +2095,7 @@ A permission can only be granted by an Educator that created at least one tourna
 \begin{itemize}
     \item GitHub for project versioning.
     \item Diagrams.net for UML,Use case,Sequence and BPMN diagrams.
-    \item Visual Studio Code as \LaTeX editor.
+    \item Visual Studio Code as {\LaTeX} editor.
     \item Alloy analyzer for alloy code's formal analysis.
 \end{itemize}
 
