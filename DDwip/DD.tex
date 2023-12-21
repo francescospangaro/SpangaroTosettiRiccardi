@@ -60,7 +60,7 @@
 \fancypagestyle{IntroductionStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 1. INTRODUCTION}}}
-\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\fancyfoot[L]{CKB \quad - \quad \textbf{D}esign \textbf{D}ocument}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -69,7 +69,7 @@
 \fancypagestyle{OverallDescriptionStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 2. ARCHITECTURAL DESIGN}}}
-\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\fancyfoot[L]{CKB \quad - \quad \textbf{D}esign \textbf{D}ocument}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -78,7 +78,7 @@
 \fancypagestyle{SpecificRequirementsStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 3. USER INTERFACE DESING}}}
-\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\fancyfoot[L]{CKB \quad - \quad \textbf{D}esign \textbf{D}ocument}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -87,7 +87,7 @@
 \fancypagestyle{FormalAnalysisAlloyStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 4. REQUIREMENTS TRACEABILITY}}}
-\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\fancyfoot[L]{CKB \quad - \quad \textbf{D}esign \textbf{D}ocument}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -96,7 +96,7 @@
 \fancypagestyle{EffortSpentStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 5. IMPLEMENTATION, INTEGRATION, TEST PLAN}}}
-\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\fancyfoot[L]{CKB \quad - \quad \textbf{D}esign \textbf{D}ocument}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -105,7 +105,7 @@
 \fancypagestyle{ReferencesStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 6. EFFORT SPENT}}}
-\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\fancyfoot[L]{CKB \quad - \quad \textbf{D}esign \textbf{D}ocument}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -114,7 +114,7 @@
 \fancypagestyle{ReferencesStyle}{
 \fancyhf{}
 \fancyhead[L]{\textit{\textbf{SECTION 7. REFERENCES}}}
-\fancyfoot[L]{CKB \quad - \quad \textbf{R}equirements \textbf{A}nalysis \textbf{S}pecifications \textbf{D}ocument}
+\fancyfoot[L]{CKB \quad - \quad \textbf{D}esign \textbf{D}ocument}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -134,8 +134,8 @@
 %Set the default path of images (used in includegraphics command)
 \graphicspath{ {images/} }
 
-\title{DD-v0.1}
-\author{Francesco Spangaro - Tosetti Luca - Francesco Riccardi}
+\title{\Huge{\textbf{Design Document}}}
+\author{\Large{Francesco Spangaro - Tosetti Luca - Francesco Riccardi}}
 \date{07 January 2024}
 
 \begin{document}
@@ -144,8 +144,20 @@
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.5]{politecnico-di-milano-logo.png}
+    \includegraphics[scale=0.6]{politecnico-di-milano-logo.png}
 \end{figure}
+
+\vspace*{1cm}
+\begin{center}
+      \Large{\textbf{Prof.}} \\
+      \Large{\textbf{Matteo Camilli}}
+\end{center}
+\vspace*{1cm}
+
+\begin{center}
+      \large{Version 0.1} \\
+      \large{Academic Year 2023 - 2024}
+\end{center}
 
 \tableofcontents
 
@@ -340,20 +352,21 @@ Figure 1. shows how the tiers are divided, and what are the relations between ea
     \caption{Four-tier architecture}
     \label{fig:Figure 1}
 \end{figure}
-The main components are: \\
+\noindent
+The main components are: \\ \\
 \textbf{Web Application:} The web application allows users to connect to the platform's services. The web application can be accessed by any device
 that is connected to the internet and can browse the web. Students and Educators will have different views of the web application, because they have
-different parameters that they can view and manage. \\
+different parameters that they can view and manage. \\ \\
 \textbf{Web Server:} The web server is what manages the web application. It is connected directly to the GitHub Platform to give Educators the possibility
 of seeing their Students' uploaded solutions. It is connected to the GitHub platform to also give Students the possibility of seeing their
 solutions uploaded to the platform in real time. It is the main container for the JavaScript and general backend code for the platform.
 The web server is connected to the Application server because it needs to be automatically updated when new grades for Students' solutions are generated
-by the platform. \\
+by the platform. \\ \\
 \textbf{Application Server:} The application server is the main backend of the CKB Platform. It contains all the code needed for th eplatform to run
 smoothly and without interruptions. It contains the logic needed to answer the API requests made by the users to the platform. It
-automatically evaluates Students' solutions proposed via the GitHub platform and uploads the new grade to the web server. \\
-\textbf{DBMS:} The DBMS is the main interpreter between the CKB platform and the data stored onto the database. \\
-\textbf{DataBase:} The database stores all the information needed by the application. \\
+automatically evaluates Students' solutions proposed via the GitHub platform and uploads the new grade to the web server. \\ \\
+\textbf{DBMS:} The DBMS is the main interpreter between the CKB platform and the data stored onto the database. \\ \\
+\textbf{DataBase:} The database stores all the information needed by the application. \\ \\
 \textbf{External Services:} These services provide informations and funtionalities that the CKB platform alone could not provide.
 These funtionalities include a \textit{GitHub actions API} that notifies the platform of the upload of a new Student's solution, a \textit{notification API}
 that notify Students when a new tournament or a new battle in a tournament they are subscribed to is created and a connection to the \textit{GitHub platform}
@@ -361,8 +374,8 @@ since the code needs to be uploaded from the GitHub platform to the CKB platform
 \subsection{Component view}
 \begin{figure}[H]
     \centering
-    \hspace*{-4.3cm}\includegraphics[scale=0.5]{images/ComponentView.pdf}
-    \caption{Class Diagram}
+    \hspace*{-4.1cm}\includegraphics[scale=0.5]{images/ComponentView.pdf}
+    \caption{Component diagram}
     \label{fig:classDiagram}
 \end{figure}
 In Figure 2 we can see a more detailed diagram, representing all the components previously described.
@@ -392,188 +405,249 @@ It collects all of the Students' and Educators' requests, forwards them to the r
 \section{Requirements traceability}
 \begin{itemize}
     \item \textbf{R.1:} The CKB platform should allow an
-          unregistered Student to create a new account.
-          \begin{itemize}
-              \item
-          \end{itemize}
+        unregistered Student to create a new account.
+        \begin{itemize}
+            \item \textbf{Account Manager:} Used to register or login to the platform.
+            \item \textbf{Query Manager:} Used to store Students' informations after registration.
+        \end{itemize}
     \item \textbf{R.2:} The CKB platform should allow an
-          unregistered Educator to create a new account.
-          \begin{itemize}
-              \item
-          \end{itemize}
+        unregistered Educator to create a new account.
+        \begin{itemize}
+            \item \textbf{Account Manager:} Used to register or login to the platform.
+            \item \textbf{Query Manager:} Used to store Educators' informations after registration.
+        \end{itemize}
     \item \textbf{R.3:} The CKB platform must allow access to its pages only if the used credentials are correct.
-    \item
-          \begin{itemize}
-              \item
-          \end{itemize}
+        \begin{itemize}
+            \item \textbf{Account Manager:} Used to check whether the credentials used are correct.
+            \item \textbf{Query Manager:} Used to retrieve users' data.
+        \end{itemize}
     \item \textbf{R.4:} The CKB platform must not allow a Student to register more than once in the system.
           \begin{itemize}
-              \item
+              \item \textbf{Account Manager:} Used to check if the Student has 
+              already registered to the platform.
+              \item \textbf{Query Manager:} Used to retrieve Student's data.
           \end{itemize}
     \item \textbf{R.5:} The CKB platform must not allow an Educator to register more than once in the system.
           \begin{itemize}
-              \item
+              \item \textbf{Account Manager:} Used to check if the Educator has already
+              registered to the platform.
+              \item \textbf{Query Manager:} Used to retrieve Educator's data.
           \end{itemize}
     \item \textbf{R.6:} Educators can access the platform's services only if they are registered to it.
           \begin{itemize}
-              \item
+              \item \textbf{Account Manager:} Used to check if the Educator is registered to
+              the platform.
+              \item \textbf{Query Manager:} Used to retrieve Educator's data.
           \end{itemize}
     \item \textbf{R.7:} Students can access the platform's services only if they are registered to it.
           \begin{itemize}
-              \item
+            \item \textbf{Account Manager:} Used to check if the Student is registered to
+            the platform.
+            \item \textbf{Query Manager:} Used to retrieve Student's data.
           \end{itemize}
     \item \textbf{R.8:} The CKB platform should not allow Students to create tournaments and/or battles.
           \begin{itemize}
-              \item
+              \item \textbf{Account Manager:} Used to check if the user is a Student and prevent him
+              to access Tournament Manager APIs that should not have access to.
+              \item \textbf{Query Manager:} Used to retrieve Student's data.
           \end{itemize}
     \item \textbf{R.9:} The CKB platform should allow Educators to create battles within a tournament only to the tournament
           creator and to any other Educator that has been granted permission to do so by the tournament creator.
           \begin{itemize}
-              \item
+              \item \textbf{Account Manager:} Used to check whether the logged Educator can create
+              a battle within a certain tournament.
+              \item \textbf{Battle Manager:} Used to create the new battle within the tournament.
+              \item \textbf{Query Manager:} Used to retrieve Educator's data and eventually store battle's data
+              just created.
           \end{itemize}
     \item \textbf{R.10:} The CKB platform must allow Educators to personalise the tournaments they create.
           \begin{itemize}
-              \item
+              \item \textbf{Tournament Manager:} Used to create and personalize new tournaments.
+              \item \textbf{Query Manager:} Used to store tournament's data.
           \end{itemize}
-    \item \textbf{R.11:} The CKB platform must allow Edcuators to personalise the battles they create.
+    \item \textbf{R.11:} The CKB platform must allow Educators to personalise the battles they create.
           \begin{itemize}
-              \item
+              \item \textbf{Battle Manager:} Used to create and personalize new battles.
+              \item \textbf{Query Manager:} Used to store battle's data.
           \end{itemize}
     \item \textbf{R.12:} The CKB platform must allow Educators to define new obtainable badges for each tournament they
           create.
           \begin{itemize}
-              \item
+              \item \textbf{Badges Manager:} Used to create new badges for a new tournament.
+              \item \textbf{Query Manager:} Used to store badges data.
           \end{itemize}
     \item \textbf{R.13:} The CKB platform must allow Educators to manually evaluate the solutions uploaded by the Students for the battles that
           the Educators created.
           \begin{itemize}
-              \item
+              \item \textbf{Battle Manager:} Used to check whether the battle is enabled to be manually
+              evaluated.
+              \item \textbf{Evaluation Manager:} Used to allow the Educator to manually evaluate Students'
+              work.
+              \item \textbf{Query Manager:} Used to retrieve Educator and battle's data. Used to store
+              scores given by the Educator through the manual evaluation.
           \end{itemize}
     \item \textbf{R.14:} The CKB platform must allow Educators to delete or update badges before finalizing a tournament's creation.
           \begin{itemize}
-              \item
+              \item \textbf{Badges Manager:} Used to update or delete some badges during tournament creation.
+              \item \textbf{Query Manager:} Used to retrieve old badges's data and store the new ones.
           \end{itemize}
     \item \textbf{R.15:} The CKB platform must allow Educators to define rules to obtain badges in tournaments created by them.
           \begin{itemize}
-              \item
+              \item \textbf{Badges Manager:} Used to define the rules to obtain the badges.
+              \item \textbf{Query Manager:} Used to store badges's obtaining rules.
           \end{itemize}
     \item \textbf{R.16:} The CKB platform must ensure that badges' characteristics respect guidelines regarding their
           name, icon format and rules to obtain them.
           \begin{itemize}
-              \item
+              \item \textbf{Badges Manager:} Used to check if the characteristics of the new badges
+              that the Educator want to create, or the modifications made to the ones already 
+              created respect some constraints.
           \end{itemize}
     \item \textbf{R.17:} The CKB platform must allow Educators to create new tournaments.
           \begin{itemize}
-              \item
+              \item \textbf{Tournament Manager:} Used to create new tournaments.
+              \item \textbf{Query Manager:} Used to store tournament's data.
           \end{itemize}
     \item \textbf{R.18:} The CKB platform must ensure that tournaments' characteristics respect guidelines regarding their
           name, deadline, access method, programming language.
           \begin{itemize}
-              \item
+              \item \textbf{Tournament Manager:} Used to check if the characteristics of the tournaments
+              that the Educator want to create, respect some constraints.
           \end{itemize}
     \item \textbf{R.19:} The CKB platform must allow Educators to close tournaments they have created.
           \begin{itemize}
-              \item
+              \item \textbf{Tournament Manager:} Used to allow Educators to close the tournaments that they have
+              created.
+              \item \textbf{Query Manager:} Used to retrieve old tournament's data and store
+              the new ones.
           \end{itemize}
     \item \textbf{R.20:} The CKB platform must ensure that when a tournament is closed, Educators cannot create new battles
           within it.
           \begin{itemize}
-              \item
+              \item \textbf{Tournament Manager:} Used to prevent Educators to create new battles
+                within closed tournaments.
+            \item \textbf{Battle Manager:} Used to try to create a new battle.
+            \item \textbf{Query Manager:} Used to retrieve the data of the tournament in which
+            the Educator want to create a new battle. 
           \end{itemize}
     \item \textbf{R.21:} The CKB platform must ensure that if a group uploads a solution to a battle after the submission's deadline,
           that solution will not be considered in the score computation by preventing its upload.
           \begin{itemize}
-              \item
+              \item \textbf{Battle Manager:} Used to check if the submission phase of the battle has ended.
+              \item \textbf{Query Manager:} Used to retrieve battle's data. 
           \end{itemize}
     \item \textbf{R.22:} The CKB platform must ensure that the score given to a group in a tournament is
           coherent with scores given to the same group in the battles they have partecipated in.
           \begin{itemize}
-              \item
+              \item \textbf{Evaluation Manager:} Used to automatically evaluate Students' uploads,
+              give them a score and subsequently update Students' tournament score.
+              \item \textbf{Query Manager:} Used to store Students's scores.
           \end{itemize}
     \item \textbf{R.23:} The CKB platform must ensure fair competition between group scores. In the tournament's evaluation, the final
           group score should be the average score of all the battles in the tournament for each group. Any battle with no solution submitted will count
           as 0 points.
           \begin{itemize}
-              \item
+            \item \textbf{Evaluation Manager:} Used to automatically evaluate Students' uploads.
+            In case of no upload by a group assigns to them 0 points.
+            \item \textbf{Query Manager:} Used to store Students's scores.
           \end{itemize}
     \item \textbf{R.24:} The CKB platform must allow Students to subscribe to a tournament.
           \begin{itemize}
-              \item
+              \item \textbf{Tournament Manager:} Used to allow Students to register to a tournament.
+              \item \textbf{Query Manager:} Used to store registrations' data.
           \end{itemize}
     \item \textbf{R.25:} The CKB platform must allow Students to subscribe to a tournament's battle
           within the registration deadline.
           \begin{itemize}
-              \item
+              \item \textbf{Battle Manager:} Used to allow Students to register to a battle if the
+              registration deadline has not expired yet.
+              \item \textbf{Query Manager:} Used to retrieve battle's data and store Student's registration
+              to the battle.
           \end{itemize}
     \item \textbf{R.26:} The CKB platform must allow Students to submit solutions to a tournament's battle
-          within the battle's deadline.
+        within the battle's deadline relying on the external GitHub service.
           \begin{itemize}
-              \item
+              \item \textbf{Evaluation Manager:} Used to retrieve group's solution from GitHub.
+              \item \textbf{Query Manager:} Used to store solution's data.
           \end{itemize}
     \item \textbf{R.27:} The CKB platform must allow Students to send and receive group invitations to and from
           other Students in order to form groups.
           \begin{itemize}
-              \item
+              \item \textbf{Account Manager:} Used to search Students and send them invitations to groups.
+              \item \textbf{Query Manager:} Used to retrieve Students' data and store invitation and group's data.
           \end{itemize}
     \item \textbf{R.28:} The CKB platform should allow Students to join a battle only if the group composition rules
           for that battle are complied with.
           \begin{itemize}
-              \item
+              \item \textbf{Battle Manager:} Used to check whether the group that is trying to
+              access the battle is violating some battle's rules, if not allows it to register to
+              the battle.
+              \item \textbf{Query Manager:} Used to retrieve battle's data and store registration's data.
           \end{itemize}
     \item \textbf{R.29:} The CKB platform must ensure that solutions uploaded by a Student for a battle are evaluated.
           \begin{itemize}
-              \item
+              \item \textbf{Evaluation Manager:} Used to evaluate solutions uploaded on GitHub by Students.
+              \item \textbf{Query Manager:} Used to store Students' scores.
           \end{itemize}
-    \item \textbf{R.30:} The CKB platform must allow a Student to upload solutions to a battle relying on the
-          external GitHub service.
-          \begin{itemize}
-              \item
-          \end{itemize}
-    \item \textbf{R.31:} The CKB platform must ensure that only the latest solution uploaded by a Student for a battle he is subscribed to will
+    \item \textbf{R.30:} The CKB platform must ensure that only the latest solution uploaded by a Student for a battle he is subscribed to will
           be taken into consideration for the final score.
           \begin{itemize}
-              \item
+              \item \textbf{Evaluation Manager:} Used to evaluate the last solution uploaded and
+              overwrite Students' score according to it.
+              \item \textbf{Query Manager:} Used to store Students' scores and new solutions' data.
           \end{itemize}
-    \item \textbf{R.32:} The CKB platform must allow groups partecipating in a battle to change their solution,
+    \item \textbf{R.31:} The CKB platform must allow groups partecipating in a battle to change their solution,
           if the battle's submission deadline hasn't expired yet.
           \begin{itemize}
-              \item
+            \item \textbf{Evaluation Manager:} Used to retrieve latest group's solution from GitHub and evaluate it.
+              \item \textbf{Query Manager:} Used to store Students' scores and new solutions' data.
           \end{itemize}
-    \item \textbf{R.33:} The CKB platform must ensure that the score given to a group's solution is
-          updated as soon as possible.
+    \item \textbf{R.32:} The CKB platform must allow an Educator to modify the score for a Student's solution.
           \begin{itemize}
-              \item
+              \item \textbf{Evaluation Manager:} Used to allow an Educator to manually evaluate Students'
+              work and change their score.
+              \item \textbf{Query Manager:} Used to retrieve data of Students' work, score and store the
+              new score.
           \end{itemize}
-    \item \textbf{R.34:} The CKB platform must allow an Educator to modify the score for a Student's solution.
-          \begin{itemize}
-              \item
-          \end{itemize}
-    \item \textbf{R.35:} The CKB platform must ensure that when a new tournament is created, all
+    \item \textbf{R.33:} The CKB platform must ensure that when a new tournament is created, all
           Students subscribed to the platform are going to receive a notification.
           \begin{itemize}
-              \item
+              \item \textbf{Notification Manager:} Used to send a notification to all the Students
+              registered to the platform.
+              \item \textbf{Query Manager:} Used to retrieve Students' data.
           \end{itemize}
-    \item \textbf{R.36:} The CKB platform must ensure that when a new battle is created in a tournament,
+    \item \textbf{R.34:} The CKB platform must ensure that when a new battle is created in a tournament,
           all Students subscribed to that tournament are going to receive a notification.
           \begin{itemize}
-              \item
+              \item \textbf{Notification Manager:} Used to send a notification to all the Students
+              registered to the tournament in which the battle will take place.
+              \item \textbf{Query Manager:} Used to retrieve Students' data.
           \end{itemize}
-    \item \textbf{R.37:} The CKB platform must allow Students to visualise the score they obtained in a battle they partecipated in.
+    \item \textbf{R.35:} The CKB platform must allow Students to visualise the score they obtained in a battle they partecipated in.
           \begin{itemize}
-              \item
+              \item \textbf{Battle Manager:} Used to allow Students access the score obtained
+              in a battle they partecipated to.
+              \item \textbf{Query Manager:} Used to retrieve battle's data and specifically
+              Student's results in it.
           \end{itemize}
-    \item \textbf{R.38:} The CKB platform must allow Students to visualise the score they obtained in a tournament they partecipated in.
+    \item \textbf{R.36:} The CKB platform must allow Students to visualise the score they obtained in a tournament they partecipated in.
           \begin{itemize}
-              \item
+            \item \textbf{Tournament Manager:} Used to allow Students access the score obtained
+            in a tournament they partecipated to.
+            \item \textbf{Query Manager:} Used to retrieve tournament's data and specifically
+            Student's results in it.
           \end{itemize}
-    \item \textbf{R.39:} The CKB platform must allow Students to visualise the badges they obtained.
+    \item \textbf{R.37:} The CKB platform must allow Students to visualise the badges they obtained.
           \begin{itemize}
-              \item
+              \item \textbf{Account Manager:} Used to allow Students to access their, or others'
+              profile pages and visualize the badges in it.
+              \item \textbf{Query Manager:} Used to retrieve Student's data.
           \end{itemize}
-    \item \textbf{R.40:} The CKB platform must ensures that battles' characteristics respect guidelines
+    \item \textbf{R.38:} The CKB platform must ensures that battles' characteristics respect guidelines
           regarding their name, deadlines, programming language, number of member per group.
           \begin{itemize}
-              \item
+            \item \textbf{Tournament Manager:} Used to check if the characteristics of the battles
+              that the Educator want to create, respect some constraints.
           \end{itemize}
 \end{itemize}
 \section{Implementation, Integration \& Test plan}
