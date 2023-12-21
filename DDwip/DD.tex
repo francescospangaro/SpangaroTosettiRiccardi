@@ -340,7 +340,7 @@ Figure 1. shows how the tiers are divided, and what are the relations between ea
     \caption{Four-tier architecture}
     \label{fig:Figure 1}
 \end{figure}
-The main components are:
+The main components are: \\
 \textbf{Web Application:} The web application allows users to connect to the platform's services. The web application can be accessed by any device
 that is connected to the internet and can browse the web. Students and Educators will have different views of the web application, because they have
 different parameters that they can view and manage. \\
@@ -359,6 +359,30 @@ These funtionalities include a \textit{GitHub actions API} that notifies the pla
 that notify Students when a new tournament or a new battle in a tournament they are subscribed to is created and a connection to the \textit{GitHub platform}
 since the code needs to be uploaded from the GitHub platform to the CKB platform automatically. \\
 \subsection{Component view}
+\begin{figure}[H]
+    \centering
+    \hspace*{-4.3cm}\includegraphics[scale=0.5]{images/ComponentView.pdf}
+    \caption{Class Diagram}
+    \label{fig:classDiagram}
+\end{figure}
+In Figure 2 we can see a more detailed diagram, representing all the components previously described.
+The Web App is what Students and Educator connect to via their web browsers.
+It collects all of the Students' and Educators' requests, forwards them to the right service or component and sends back different responses.
+\\
+\textbf{Account Manager:}\\
+\textbf{Tournament Manager:}\\
+\textbf{Battle Manager:}\\
+\textbf{Badges Manager:}\\
+\textbf{Query Manager:}\\
+\textbf{Notification Manager:}\\
+\textbf{Evaluation Manager:}\\
+\textbf{DBMS:}\\
+\textbf{GitHub Actions APIs:}\\
+\textbf{Testing APIs:}\\
+\textbf{Notification APIs:}\\
+
+
+
 \subsection{Deployment view}
 \subsection{Component interfaces}
 \subsection{Runtime view}
