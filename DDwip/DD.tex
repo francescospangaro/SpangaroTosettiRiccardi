@@ -399,17 +399,25 @@ badges in tournaments. It also checks if Students have obtained any badges and u
 \textbf{Query Manager:} The Query Manager is the module that connects the Application Server to the Data Server. It functions as the mediator between the 
 clients' requests and the data stored in the DataBase. 
 \\
-\textbf{Notification Manager:}\\
-\textbf{Evaluation Manager:}\\
-\textbf{Group Manager:}\\
-\textbf{DBMS:}\\
-\textbf{GitHub Actions APIs:}\\
-\textbf{Testing APIs:}\\
-\textbf{Notification APIs:}\\
-
-
+\textbf{Notification Manager:} The Notification Manager is the module in charge of notifying Students of new tournaments' creation, new battles' creation
+in a tournament they are subscribed into and when they receive an invite to join a group. \\
+The Notification Manager achieves this by interfacing itself with some external Notification APIs, in charge of sending each notification. \\
+\textbf{Evaluation Manager:} The Evaluation Manager is the module responsible for grading each Student's entry as solution for a battle.
+The Evaluation Manager uses external Testing APIs to test the Students' code for correction checking and the GitHub Actions APIs for downloading the Students'
+solution they upload on the GitHub platform.\\
+The Evaluation Manager interacts with the Query Manager to update and upload the Students' grades for each battle, after the Evaluation Process ends.\\
+The Evaluation Manager also lets Educators manually evaluate each Student's solution, and upload the grade to the platform via the Query Manager.\\
+\textbf{Group Manager:} The Group Manager lets Students' create new groups to participate in battles with. It lets Students' send invites to other Students.\\
+\textbf{DBMS:} The DBMS is the module in charge of interacting directly with the DataBase, translating each query written by the Query Manager so that
+the DataBase understands the request, and responding with the correct data requested.\\
+\textbf{GitHub Actions APIs:} The GitHub Actions APIs are external APIs used to have the CKB platform interact with the GitHub platform, since the Sutdents will
+upload their solutions on the latter. \\
+\textbf{Testing APIs:} The Testing APIs are external APIs used to run tests on the code written by the students and submitted as a solution for each battle.\\
+\textbf{Notification APIs:} The Notification APIs are external APIs used to notify Students of some events happening on the CKB platform.\\
+E.G. A new tournament is created, a new battle is created in a tournament they are subscribed into and they received an invite for joining a group. \\
 
 \subsection{Deployment view}
+
 \subsection{Component interfaces}
 \subsection{Runtime view}
 \subsection{Selected architectural styles and patterns}
