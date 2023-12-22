@@ -382,13 +382,26 @@ In Figure 2 we can see a more detailed diagram, representing all the components 
 The Web App is what Students and Educator connect to via their web browsers.
 It collects all of the Students' and Educators' requests, forwards them to the right service or component and sends back different responses.
 \\
-\textbf{Account Manager:}\\
-\textbf{Tournament Manager:}\\
-\textbf{Battle Manager:}\\
-\textbf{Badges Manager:}\\
-\textbf{Query Manager:}\\
+\textbf{Account Manager:} The Account Manager is the module that hanldes the client's logins and creates the session. 
+It checks the client's data and permissions and creates a session with the data he collects. This data session is what is used by the other services and
+interfaces to grant the user different permission levels. \\
+E.G. A Student can use the Tournament Manager differently from an Educator, since the Student can subscribe to a tournament and see the battles it contains,
+while an Educator can use the Interface to manage the tournament.\\
+\textbf{Tournament Manager:} The Tournament Manager is the module that lets Educators create and manage tournaments and it lets them grant permission
+to create battles in their tournaments to other Educators. \\
+It lets Students visualise all open tournaments and subscribe to each tournament they want. \\
+\textbf{Battle Manager:} The Battle Manager is the module that lets Educators create and manage battles within their tournaments, or within tournaments
+for which they have been granted permission to create and manage battles from the tournament's creator. \\
+It lets Students visualise the battles in tournaments they are subscribed into and lets them subscribe to each battle they want, if they are within 
+the subscription deadline for the battle they want to participate in and if their group respects the battle's requirements. \\
+\textbf{Badges Manager:} The Badges Manager lets Educators create and manage badges for their tournaments. It lets Educators define new rules for obtaining
+badges in tournaments. It also checks if Students have obtained any badges and updates the Students' pages on rule completion. \\
+\textbf{Query Manager:} The Query Manager is the module that connects the Application Server to the Data Server. It functions as the mediator between the 
+clients' requests and the data stored in the DataBase. 
+\\
 \textbf{Notification Manager:}\\
 \textbf{Evaluation Manager:}\\
+\textbf{Group Manager:}\\
 \textbf{DBMS:}\\
 \textbf{GitHub Actions APIs:}\\
 \textbf{Testing APIs:}\\
