@@ -376,7 +376,7 @@ since the code needs to be uploaded from the GitHub platform to the CKB platform
     \centering
     \hspace*{-4.1cm}\includegraphics[scale=0.5]{images/ComponentView.pdf}
     \caption{Component diagram}
-    \label{fig:classDiagram}
+    \label{fig:componentView}
 \end{figure}
 In Figure 2 we can see a more detailed diagram, representing all the components previously described.
 The Web App is what Students and Educator connect to via their web browsers.
@@ -417,7 +417,28 @@ upload their solutions on the latter. \\
 E.G. A new tournament is created, a new battle is created in a tournament they are subscribed into and they received an invite for joining a group. \\
 
 \subsection{Deployment view}
+\begin{figure}[H]
+    \centering
+    \hspace*{-4.1cm}\includegraphics[scale=0.53]{images/DeploymentDiagram.pdf}
+    \caption{Component diagram}
+    \label{fig:deploymentDiagram}
+\end{figure}
 
+The Deployment Diagram in figure shows the components needed for the correct system behaviour. The External APIs are not included, since they 
+are already implemented and found online.\\
+Each device has its own operating system downloaded, the different tiers in the figure are:\\
+\textbf{Tier 1:} The First tier is the client tier. On the client's machine can run any OS (Windows 11 32 bit, for example) and any web browser. The web application
+needs to be able to correctly run on any web browser downloaded on any OS.\\
+\textbf{Tier 2:} The Second tier is the Web Application tier. Here no logic is found, is where the CKB platform can be accessed.
+The Web Server is stored here, is contains no logic besides the bases needed for a correct execution of the website (CSS, JavaScript and Bootsrap 5.0). \\
+This tier simply receives request from the client and forwards them to the Third tier, it then receives and shows the answer he received from the Third tier
+ to the requesting client. \\
+\textbf{Tier 3:} The Third tier stores the Application Servers. The servers include all the main logic needed by the CKB platform to correctly perform.
+The Third tier receives all the forwarded requests from the clients, interacts with the Fourth tier to get data, and evaluates a response. The response is 
+then sent up to the Second tier, which will show the answer to the client. Each module is mapped onto this tier. This tier is the one that mainly interacts
+with all external APIs. \\
+\textbf{Tier 4:} The Fourth tier is composed by the DBMSs needed by the CKB platform for correctly interacting with the DataBase. The DBMSs function as gateways 
+between the Third tier and the actual DataBase. They perform the actions requested by the Third tier and respond with the data requested.\\
 \subsection{Component interfaces}
 \subsection{Runtime view}
 \subsection{Selected architectural styles and patterns}
