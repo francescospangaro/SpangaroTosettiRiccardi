@@ -382,7 +382,7 @@ In Figure 2 we can see a more detailed diagram, representing all the components 
 The Web App is what Students and Educator connect to via their web browsers.
 It collects all of the Students' and Educators' requests, forwards them to the right service or component and sends back different responses.
 \\
-\textbf{Account Manager:} The Account Manager is the module that hanldes the client's logins and creates the session. 
+\textbf{Account Manager:} The Account Manager is the module that handles the client's logins and creates the session. 
 It checks the client's data and permissions and creates a session with the data he collects. This data session is what is used by the other services and
 interfaces to grant the user different permission levels. \\
 E.G. A Student can use the Tournament Manager differently from an Educator, since the Student can subscribe to a tournament and see the battles it contains,
@@ -441,6 +441,128 @@ with all external APIs. \\
 between the Third tier and the actual DataBase. They perform the actions requested by the Third tier and respond with the data requested.\\
 \subsection{Component interfaces}
 \subsection{Runtime view}
+    \subsubsection{Student sign-up to the platform}
+        \begin{figure}[H]
+            \centering
+            \hspace*{-3.7cm}\includegraphics[scale=0.65]{Sequence/Sequence1DD.pdf}
+            \caption{Sign-up sequence diagram}
+            \label{fig:Sequence1DD}
+        \end{figure}
+
+        The above diagram represents the process of signing up a Student.
+        The Student accesses to the CKB platform WebApp Homepage through their browser
+        (omitted for simplicity). They then clicks on the "SIGN IN" button as
+        shown in figure \ref{fig:homepageMockup}. The WebApp will show a form
+        which the Student has to fill with their informations such as
+        name, surname, username that want to use in the platform, email,
+        password, attended school, ... 
+        \\ \\
+        Once the Student confirms the registration the WebApp contacts the
+        Account Manager which redirects the request to the Query Manager.
+        The Query Manager is in charge of checking the validity of the Student's credentials,
+        i.e. checking whether the name, surname or username inserted by the Student
+        contains some not acceptable characters for some reason, the password
+        don't respects security standards, ... \\
+        Other than that the Query Manager takes care to verify if the Student is already
+        registered, i.e. if the used email already appears in the DB. This is done by interfacing
+        with the DBMS.
+        \\ \\
+        At this point we can have three possible situations:
+        \begin{enumerate}
+            \item \textbf{Credentials validation went wrong:} In this case the WebApp will show to the
+            Student an error message of invalid credentials
+            \item \textbf{Student has already registered with the same email:} In this case the WebApp will show to the
+            Student an error message stating that they have already registered.
+            \item \textbf{Valid credentials and email used for the first time:} In this case the Query
+            Query Manager proceeds to communicate to the DBMS to insert the Student's data in the DB.
+            Proceeds to inform the Notification Manager to send an email of confirmation.
+            Finally returns the positive outcome of the operation to the Account Manager,
+            which will do the same to the WebApp, which in turn will show a confirmation message to the Student.
+        \end{enumerate}
+    \subsubsection{Educator sign-up to the platform}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Educator creates a new tournament}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Educator creates new badges}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Educator deletes and/or updates a badge}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Educator creates a new battle}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Educator closes a tournament}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Educator evaluates a battle's results}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Student forms a group}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Student joins a battle}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Student uploads a new solution}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Student uploads a solution after submission deadline}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
+    \subsubsection{Student visualizes his tournament's results and badges}
+        \begin{figure}[H]
+            \centering
+            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \caption{}
+            \label{fig:}
+        \end{figure}
 \subsection{Selected architectural styles and patterns}
 \subsection{Other design decisions}
 \section{User Interface Design}
@@ -449,13 +571,11 @@ between the Third tier and the actual DataBase. They perform the actions request
     \item \textbf{R.1:} The CKB platform should allow an
         unregistered Student to create a new account.
         \begin{itemize}
-            \item \textbf{Account Manager:} Used to register or login to the platform.
             \item \textbf{Query Manager:} Used to store Students' informations after registration.
         \end{itemize}
     \item \textbf{R.2:} The CKB platform should allow an
         unregistered Educator to create a new account.
         \begin{itemize}
-            \item \textbf{Account Manager:} Used to register or login to the platform.
             \item \textbf{Query Manager:} Used to store Educators' informations after registration.
         \end{itemize}
     \item \textbf{R.3:} The CKB platform must allow access to its pages only if the used credentials are correct.
@@ -615,7 +735,8 @@ between the Third tier and the actual DataBase. They perform the actions request
     \item \textbf{R.27:} The CKB platform must allow Students to send and receive group invitations to and from
           other Students in order to form groups.
           \begin{itemize}
-              \item \textbf{Account Manager:} Used to search Students and send them invitations to groups.
+              \item \textbf{Group Manager:} Used to search Students and send them invitations to groups.
+              \item \textbf{Notification Manager:} Takes care of sending emails to the invited Students.
               \item \textbf{Query Manager:} Used to retrieve Students' data and store invitation and group's data.
           \end{itemize}
     \item \textbf{R.28:} The CKB platform should allow Students to join a battle only if the group composition rules
