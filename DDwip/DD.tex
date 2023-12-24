@@ -354,23 +354,25 @@ Figure 1. shows how the tiers are divided, and what are the relations between ea
 \end{figure}
 \noindent
 The main components are: \\ \\
-\textbf{Web Application:} The web application allows users to connect to the platform's services. The web application can be accessed by any device
+\begin{itemize}
+\item \textbf{Web Application:} The web application allows users to connect to the platform's services. The web application can be accessed by any device
 that is connected to the internet and can browse the web. Students and Educators will have different views of the web application, because they have
 different parameters that they can view and manage. \\ \\
-\textbf{Web Server:} The web server is what manages the web application. It is connected directly to the GitHub Platform to give Educators the possibility
+\item \textbf{Web Server:} The web server is what manages the web application. It is connected directly to the GitHub Platform to give Educators the possibility
 of seeing their Students' uploaded solutions. It is connected to the GitHub platform to also give Students the possibility of seeing their
 solutions uploaded to the platform in real time. It is the main container for the JavaScript and general backend code for the platform.
 The web server is connected to the Application server because it needs to be automatically updated when new grades for Students' solutions are generated
 by the platform. \\ \\
-\textbf{Application Server:} The application server is the main backend of the CKB Platform. It contains all the code needed for th eplatform to run
+\item \textbf{Application Server:} The application server is the main backend of the CKB Platform. It contains all the code needed for th eplatform to run
 smoothly and without interruptions. It contains the logic needed to answer the API requests made by the users to the platform. It
 automatically evaluates Students' solutions proposed via the GitHub platform and uploads the new grade to the web server. \\ \\
-\textbf{DBMS:} The DBMS is the main interpreter between the CKB platform and the data stored onto the database. \\ \\
-\textbf{DataBase:} The database stores all the information needed by the application. \\ \\
-\textbf{External Services:} These services provide informations and funtionalities that the CKB platform alone could not provide.
+\item \textbf{DBMS:} The DBMS is the main interpreter between the CKB platform and the data stored onto the database. \\ \\
+\item \textbf{DataBase:} The database stores all the information needed by the application. \\ \\
+\item \textbf{External Services:} These services provide informations and funtionalities that the CKB platform alone could not provide.
 These funtionalities include a \textit{GitHub actions API} that notifies the platform of the upload of a new Student's solution, a \textit{notification API}
 that notify Students when a new tournament or a new battle in a tournament they are subscribed to is created and a connection to the \textit{GitHub platform}
 since the code needs to be uploaded from the GitHub platform to the CKB platform automatically. \\
+\end{itemize}
 \subsection{Component view}
 \begin{figure}[H]
     \centering
@@ -382,40 +384,41 @@ In Figure 2 we can see a more detailed diagram, representing all the components 
 The Web App is what Students and Educator connect to via their web browsers.
 It collects all of the Students' and Educators' requests, forwards them to the right service or component and sends back different responses.
 \\
-\textbf{Account Manager:} The Account Manager is the module that handles the client's logins and creates the session. 
+\begin{itemize}
+\item \textbf{Account Manager:} The Account Manager is the module that handles the client's logins and creates the session. 
 It checks the client's data and permissions and creates a session with the data he collects. This data session is what is used by the other services and
 interfaces to grant the user different permission levels. \\
 E.G. A Student can use the Tournament Manager differently from an Educator, since the Student can subscribe to a tournament and see the battles it contains,
 while an Educator can use the Interface to manage the tournament.\\
-\textbf{Tournament Manager:} The Tournament Manager is the module that lets Educators create and manage tournaments and it lets them grant permission
+\item \textbf{Tournament Manager:} The Tournament Manager is the module that lets Educators create and manage tournaments and it lets them grant permission
 to create battles in their tournaments to other Educators. \\
 It lets Students visualise all open tournaments and subscribe to each tournament they want. \\
-\textbf{Battle Manager:} The Battle Manager is the module that lets Educators create and manage battles within their tournaments, or within tournaments
+\item \textbf{Battle Manager:} The Battle Manager is the module that lets Educators create and manage battles within their tournaments, or within tournaments
 for which they have been granted permission to create and manage battles from the tournament's creator. \\
 It lets Students visualise the battles in tournaments they are subscribed into and lets them subscribe to each battle they want, if they are within 
 the subscription deadline for the battle they want to participate in and if their group respects the battle's requirements. \\
-\textbf{Badges Manager:} The Badges Manager lets Educators create and manage badges for their tournaments. It lets Educators define new rules for obtaining
+\item \textbf{Badges Manager:} The Badges Manager lets Educators create and manage badges for their tournaments. It lets Educators define new rules for obtaining
 badges in tournaments. It also checks if Students have obtained any badges and updates the Students' pages on rule completion. \\
-\textbf{Query Manager:} The Query Manager is the module that connects the Application Server to the Data Server. It functions as the mediator between the 
+\item \textbf{Query Manager:} The Query Manager is the module that connects the Application Server to the Data Server. It functions as the mediator between the 
 clients' requests and the data stored in the DataBase. 
 \\
-\textbf{Notification Manager:} The Notification Manager is the module in charge of notifying Students of new tournaments' creation, new battles' creation
+\item \textbf{Notification Manager:} The Notification Manager is the module in charge of notifying Students of new tournaments' creation, new battles' creation
 in a tournament they are subscribed into and when they receive an invite to join a group. \\
 The Notification Manager achieves this by interfacing itself with some external Notification APIs, in charge of sending each notification. \\
-\textbf{Evaluation Manager:} The Evaluation Manager is the module responsible for grading each Student's entry as solution for a battle.
+\item \textbf{Evaluation Manager:} The Evaluation Manager is the module responsible for grading each Student's entry as solution for a battle.
 The Evaluation Manager uses external Testing APIs to test the Students' code for correction checking and the GitHub Actions APIs for downloading the Students'
 solution they upload on the GitHub platform.\\
 The Evaluation Manager interacts with the Query Manager to update and upload the Students' grades for each battle, after the Evaluation Process ends.\\
 The Evaluation Manager also lets Educators manually evaluate each Student's solution, and upload the grade to the platform via the Query Manager.\\
-\textbf{Group Manager:} The Group Manager lets Students' create new groups to participate in battles with. It lets Students' send invites to other Students.\\
-\textbf{DBMS:} The DBMS is the module in charge of interacting directly with the DataBase, translating each query written by the Query Manager so that
+\item \textbf{Group Manager:} The Group Manager lets Students' create new groups to participate in battles with. It lets Students' send invites to other Students.\\
+\item \textbf{DBMS:} The DBMS is the module in charge of interacting directly with the DataBase, translating each query written by the Query Manager so that
 the DataBase understands the request, and responding with the correct data requested.\\
-\textbf{GitHub Actions APIs:} The GitHub Actions APIs are external APIs used to have the CKB platform interact with the GitHub platform, since the Sutdents will
+\item \textbf{GitHub Actions APIs:} The GitHub Actions APIs are external APIs used to have the CKB platform interact with the GitHub platform, since the Sutdents will
 upload their solutions on the latter. \\
-\textbf{Testing APIs:} The Testing APIs are external APIs used to run tests on the code written by the students and submitted as a solution for each battle.\\
-\textbf{Notification APIs:} The Notification APIs are external APIs used to notify Students of some events happening on the CKB platform.\\
+\item \textbf{Testing APIs:} The Testing APIs are external APIs used to run tests on the code written by the students and submitted as a solution for each battle.\\
+\item \textbf{Notification APIs:} The Notification APIs are external APIs used to notify Students of some events happening on the CKB platform.\\
 E.G. A new tournament is created, a new battle is created in a tournament they are subscribed into and they received an invite for joining a group. \\
-
+\end{itemize}
 \subsection{Deployment view}
 \begin{figure}[H]
     \centering
@@ -427,19 +430,127 @@ E.G. A new tournament is created, a new battle is created in a tournament they a
 The Deployment Diagram in figure shows the components needed for the correct system behaviour. The External APIs are not included, since they 
 are already implemented and found online.\\
 Each device has its own operating system downloaded, the different tiers in the figure are:\\
-\textbf{Tier 1:} The First tier is the client tier. On the client's machine can run any OS (Windows 11 32 bit, for example) and any web browser. The web application
+\begin{itemize}
+\item \textbf{Tier 1:} The First tier is the client tier. On the client's machine can run any OS (Windows 11 32 bit, for example) and any web browser. The web application
 needs to be able to correctly run on any web browser downloaded on any OS.\\
-\textbf{Tier 2:} The Second tier is the Web Application tier. Here no logic is found, is where the CKB platform can be accessed.
+\item \textbf{Tier 2:} The Second tier is the Web Application tier. Here no logic is found, is where the CKB platform can be accessed.
 The Web Server is stored here, is contains no logic besides the bases needed for a correct execution of the website (CSS, JavaScript and Bootsrap 5.0). \\
 This tier simply receives request from the client and forwards them to the Third tier, it then receives and shows the answer he received from the Third tier
  to the requesting client. \\
-\textbf{Tier 3:} The Third tier stores the Application Servers. The servers include all the main logic needed by the CKB platform to correctly perform.
+ \item \textbf{Tier 3:} The Third tier stores the Application Servers. The servers include all the main logic needed by the CKB platform to correctly perform.
 The Third tier receives all the forwarded requests from the clients, interacts with the Fourth tier to get data, and evaluates a response. The response is 
 then sent up to the Second tier, which will show the answer to the client. Each module is mapped onto this tier. This tier is the one that mainly interacts
 with all external APIs. \\
-\textbf{Tier 4:} The Fourth tier is composed by the DBMSs needed by the CKB platform for correctly interacting with the DataBase. The DBMSs function as gateways 
+\item \textbf{Tier 4:} The Fourth tier is composed by the DBMSs needed by the CKB platform for correctly interacting with the DataBase. The DBMSs function as gateways 
 between the Third tier and the actual DataBase. They perform the actions requested by the Third tier and respond with the data requested.\\
-\subsection{Component interfaces}
+\end{itemize}
+\subsection{Component Interfaces}
+The Component Interfaces here described are the most important ones exposed by the components.
+Only the most relevant method parameters and methods are shown.
+\begin{itemize}
+\item \textbf{Account Manager}
+    \begin{itemize}
+        \item 
+    \end{itemize}
+    \item \textbf{Tournament Manager}
+    \begin{itemize}
+        \item
+    \end{itemize} 
+    \item \textbf{Battle Manager}
+    \begin{itemize}
+        \item
+    \end{itemize}
+    \item \textbf{Badge Manager}
+    \begin{itemize}
+        \item
+    \end{itemize}
+    \item \textbf{Query Manager}
+    \begin{itemize}
+        \item \textbf{registerUser(userData):} This method takes a data struct containing all the user's data and contacts the DBMS in order to 
+        register the new user in the system. A reply is then sent to the caller.
+        \item \textbf{loginUser(userData):} This method takes a data struct conntaining all the user's data, contacts the DMBS, runs a query that checks
+        for the data matching the user's data provided and, if found, creates a valid session with the user's data, then logs the user in the platform.
+        \item \textbf{checkUser(sessionData):} This method takes the session data and checks whether the user is a Student or and Educator.
+        This method is needed and will be used by all the methods that need to show the created battles and tournaments by an Educator.
+        \item \textbf{getCreatedTournaments(userId):} This method takes the user's ID from the session data, contact the DBMS which will check 
+        if the user has created any tournaments and returns the json containing the new page to display, containing all the user's created tournaments.
+         If no tournaments are found, the json returned will be an empty page.
+        \item \textbf{getCreatedBattles(userId):} This method takes the user's ID from the session data, contact the DBMS which will check if the 
+        user has created any battles and returns the json containing the new page to display, containing all the user's created battles. 
+        If no battles are found, the json returned will be an empty page.
+        \item \textbf{getCreatedBadges(userId):} This method takes the user's ID from the session data, contact the DBMS which will check if the 
+        user has created any badges and returns the json containing the new page to display, containing all the user's created badges. 
+        If no badges are found, the json returned will be an empty page.
+        \item \textbf{createTournament(userId, tournamentData):} This method takes the user's ID and the tournament's data, which will be contained in an ad-hoc
+        created struct. The Query Manager will check if the user is an Educator through the checkUser method, if the return is positive the method will contact the 
+        DBMS and create a new tournament with the data contained in the tournamentData. The method will then return a json file containing a confirmation page.
+        If any check returns negative, or the process incurs in any errors, an error message will be returned, and nothing will be inserted in the DB.
+        \item \textbf{createBattle(userId, battleData):} This method takes the user's ID and the battle's data, which will be contained in an ad-hoc
+        created struct. The Query Manager will check if the user is an Educator through the checkUser method and if the battle will be contained in a tournament in which 
+        the user's has permission to create one. If all the checks pass then the method will contact the DBMS and create a new battle with the data contained in battleData. 
+        The method will then return a json file containing a confirmation page. 
+        If any check returns negative, or the process incurs in any errors, an error message will be returned, and nothing will be inserted in the DB.
+        \item \textbf{createBadge(userId, badgeData):} This method takes the user's ID and the badge's data, which will be contained in an ad-hoc
+        created struct. The Query Manager will check if the user is an Educator through the checkUser method and if the badge will be contained in a tournament in which 
+        the user's has permission to create one. If all the checks pass then the method will contact the DBMS and create a new badge with the data contained in badgeData. 
+        The method will then return a json file containing a confirmation page. 
+        If any check returns negative, or the process incurs in any errors, an error message will be returned, and nothing will be inserted in the DB.
+        \item \textbf{closeTournament(tournamentId, userId):} This method takes the user's ID and a tournament's ID, contacts the DBMS which will
+        check if the tournament corresponding to the tournament's ID provided is created by the user with the provided user's ID, then, if the 
+        check returns a positive result, updates the tournament in the database and sets its state to "closed", then returns a json containing a confirmation page.
+        If the check provides a negative result, an error message will be displayed.
+        \item \textbf{editScore(battleId, userId, score, studentID):} This method takes the user's ID, the battle's ID, the student's ID and the new score to assign to the 
+        corresponding student for the corresponding battle. The method checks if the user has permission to edit the Student's grade in the corresponding battle and, 
+        if he can, will then contact the DBMS and update the Student's old grade with the new one provided for the specified battle. 
+        A confirmation page will be sent back to the user.
+        If the platform runs into any error in the process, or if the user doesn't have the necessary permissions, an error page will be displayed, and the database will not be
+        updated.
+        \item \textbf{editBadge(badgeId, userId, badgeData):} This method takes the user's ID, the badge's ID and the new badge data, which will be
+        contained in an ad-hoc made struct. The method then contact the DBMS, which will check if the badge is contained in a tournament created by
+        the user corresponding to the user provided, if the badge exists and, if the badge is not a tournament the user created, if the user has
+        permission to edit the tournament. If each check passes, then the old badge's data will be overwritten by the new data and a json containing
+        a confirmation page will be returned, else an error will be displayed.
+        \item \textbf{deleteBadge(badgeId, userId, tournamentId):} This method takes the user's ID, the badge's ID and the tournament's ID and, 
+        after having run checks to verify that the user has permission to delete the specified badge in the specified tournament, contacts the DBMS which will
+        delete the badge from the database.
+        If everything in the procedure is correct, a confirmation page will be returned, else an error page will be displayed.
+        \item \textbf{getSubscribedTournaments(userId):} This methods takes the user's ID, checks if the user is a Student by interacting with the DBMS and, 
+        if the user is indeed a Student, returns the page containing all the tournaments he is subscribed to in json format.
+        If the user is not a Student or an error occurs while interacting with the DBMS, an error page will be displayed.
+        \item \textbf{getSubscribedBattles(userId, tournamentId):} This methods takes the user's ID and the tournament ID,
+        checks if the user is a Student and if the user is subscribed to the tournament corresponding to the given tournament ID by interacting with the DBMS and, 
+        returns a page containing all the battles the user is subscribed to, contained in the tournament provided.
+        If the user is not a Student or an error occurs while interacting with the DBMS, an error page will be displayed.
+        \item \textbf{getBattleData(battleId, userId):} This method takes the battle's ID and the user's ID and performs a check to understand whether the 
+        user is a Student or an Educator.
+        If he's a Student, the returned page will contain data corresponding to the battle provided, which are deemed interesting to a Student, if he's an Educator,
+        different type of data will be provided, also relative to the battle provided.
+        If an error occurs while interacting with the DBMS, an error page will be provided.
+        \item \textbf{enterTournament(userId, tournamentId):} This method takes the user's ID and tournament's ID and checks whether the user is a Student and if the 
+        tournament is still open.
+        If the user is a Student and the tournament is open, the Query Manager will interact with the DBMS and subscribe the provided Student to the provided tournament
+        by updating the database. A confirmation page will appear after the update.
+        If an error occurs while interacting with the DBMS, the user is not a Student or if the tournament is closed, an error page will be displayed.
+        \item \textbf{enterBattle(userId, battleId): } This method takes the user's ID and battle's ID and checks whether the user is a Student, if the 
+        battle is still open and if the Student is subscribed to the tournament containing the provided battle.
+        If the user is a Student, the battle is open and the Student is subscribed to the tournament containing the battle, the Query Manager will 
+        interact with the DBMS and subscribe the provided Student to the provided battle by updating the database. A confirmation page will appear after the update.
+        If an error occurs while interacting with the DBMS or any of the checks are not passed an error page will be displayed.
+        
+    \end{itemize}
+    \item \textbf{Notification Manager}
+    \begin{itemize}
+        \item
+    \end{itemize}
+    \item \textbf{Evaluation Manager}
+    \begin{itemize}
+        \item
+    \end{itemize}
+    \item \textbf{Group Manager}
+    \begin{itemize}
+        \item
+    \end{itemize}
+\end{itemize}
 \subsection{Runtime view}
     \subsubsection{Student sign-up to the platform}
         \begin{figure}[H]
