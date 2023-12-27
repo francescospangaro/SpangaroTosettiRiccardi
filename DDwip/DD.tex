@@ -155,7 +155,7 @@
 \vspace*{1cm}
 
 \begin{center}
-      \large{Version 0.1} \\
+      \large{Version 0.2} \\
       \large{Academic Year 2023 - 2024}
 \end{center}
 \newpage
@@ -287,7 +287,7 @@ with a MSA server side, in addition to a MVC software architectural choice.
 
     \textit{e.g.} & $\rightarrow$ Exempli gratia, latin phrase meaning "for example".
     \\
-    \textit{} & $\rightarrow$
+    \textit{i.e} & $\rightarrow$ Id Est, lating phrase meaning "that is".
     \\
     \textit{} & $\rightarrow$
     \\
@@ -607,38 +607,80 @@ Only the most relevant method parameters and methods are shown.
     \subsubsection{Educator sign-up to the platform}
         \begin{figure}[H]
             \centering
-            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \hspace*{-2.2cm}\includegraphics[scale=0.65]{Sequence/Sequence2DD.pdf}
             \caption{}
             \label{fig:}
         \end{figure}
     \subsubsection{Educator creates a new tournament}
         \begin{figure}[H]
             \centering
-            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \hspace*{-4cm}\includegraphics[scale=0.65]{Sequence/Sequence3DD.pdf}
             \caption{}
             \label{fig:}
         \end{figure}
     \subsubsection{Educator creates new badges}
         \begin{figure}[H]
             \centering
-            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \hspace*{-1cm}\includegraphics[scale=0.65]{Sequence/Sequence4DD.pdf}
             \caption{}
             \label{fig:}
         \end{figure}
     \subsubsection{Educator deletes and/or updates a badge}
         \begin{figure}[H]
             \centering
-            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \hspace*{-0.7cm}\includegraphics[scale=0.60]{Sequence/Sequence5DD.pdf}
             \caption{}
             \label{fig:}
         \end{figure}
     \subsubsection{Educator creates a new battle}
         \begin{figure}[H]
             \centering
-            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \hspace*{-3.1cm}\includegraphics[scale=0.6]{Sequence/Sequence6DD.pdf}
             \caption{}
             \label{fig:}
         \end{figure}
+
+        The above diagrams represents the process of creating a new battle within a tournament,
+        by an Educator. \\
+        The Educator accesses to the CKB platform WebApp Homepage and subsequently
+        to the page of one of the tournaments they have created, through their browser
+        (omitted for simplicity).
+        They then clicks on the "Create new Battle" button as shown in figure \ref{fig:tournamentManagementPage}.
+        \\ \\
+        The WebApp will show a page which will contains a form that the Educator can fill with
+        the battle's characteristics, such as its name, maximum and minumum number of member per group,
+        registration and submission deadlines, programming language accepted, ... 
+        \\ \\
+        Once the Educator press the "Confirm" button (as shown in figure \ref{fig:battleCreationPage})
+        the battle's data will be sent to the Battle Manager. \\
+        The Battle Manager will contacts the Account Manager, which in turn will contacts the Query Manager, 
+        to verify whether the logged Educator has the permissions to create a new battle within that tournament. 
+        If that's the case then the Battle Manager will check the validity of the battle's data inserted,
+        i.e. checking whether one or more data don't respect some standards.
+        \\ \\
+        If the checks succeeds then the Battle Manager will try to insert the battle in the DB,
+        by contacting the Query Manager which in turn will contact the DBMS. \\
+        If the insertion succeeded then the Battle Manager will interfaces with the Notification
+        Manager which will send the notification of the battle's creation to all the Student
+        subscribed to the tournament. In the meantime the Battle Manager component will return a 
+        message of success to the Educator through the WebApp.
+        \\ \\
+        There are several cases in which this process won't succeeds. In order we have:
+        \begin{itemize}
+            \item \textbf{Educator does not have permissions:} In case the Educator is not the tournament's creator
+            or has not been granted access to it from another collegue, the Battle Manager will return an
+            error message stating that the the procedure was denied. 
+            The message will be shown by the WebApp to the Educator themselves.
+            \item \textbf{Battle's data are invalid} In this case after the check, the Battle Manager component
+            just return an error message to the WebApp stating that the inserted data were not valid.
+            The message will then be shown to the Educator by the WebApp.
+            \item \textbf{Battle's insertion in the DB went wrong:} In this case no notification will be sent to
+            the Students, and the Battle Manager component will return to the WebApp an error message stating
+            that there was an error while creating the battle.
+            The message will then be shown by the WebApp to the Educator.
+        \end{itemize}
+
+
     \subsubsection{Educator closes a tournament}
         \begin{figure}[H]
             \centering
