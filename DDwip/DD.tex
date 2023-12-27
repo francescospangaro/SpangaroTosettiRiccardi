@@ -689,7 +689,28 @@ Only the most relevant method parameters and methods are shown.
             \label{fig:}
         \end{figure}
 \subsection{Selected architectural styles and patterns}
+    \subsubsection{Four-layered architecture:} We chose this architecture for many reasons, mainly:
+    \begin{itemize}
+        \item \textbf{Maintainability:} By having four different layers, with separated logic and code, once the platform's structure is fully defined
+        each layer's interior logic will be fully defined.
+        By having separated logic and code, it will be easier in the future to access and solve possible problems that can occur in different 
+        layers.
+        \item \textbf{Security:} By separating the web, application and data servers in different internet partition divided by firewalls, we create multiple
+        DMZs, resulting in a more secure architecture. Before accessing the data layer, a malicious user would need to surpass three different firewalls. 
+    \end{itemize}
+    \subsubsection{MicroServices architecture:} The MicroServices architecture is what we chose since the platform will be developed as a collection of 
+    services. MicroServices are needed for a fast, modern and reliable system, since what we want to achieve here is dividing each task in multiple, 
+    smaller ones, that are easier to work with.
+    We chose the MicroServices architecture to ensure these properties in the system:
+    \begin{itemize}
+        \item \textbf{Load Distribution:} The presence of multiple application servers and databases assures us that the platform will be fast 
+        and reliable in all its elaborations. If we didn't have load balancing or any sort of redundancy we would have found ourselves with multiple
+        single nodes having to serve multiple requests, causing overloading and possible deadly failures.
+        \item \textbf{Scalability:} The result of load distribution ensures that redundancy is provided only for the most important parts of the platform.
+        This ensures maximum scalability with minimal cost.
+    \end{itemize}
 \subsection{Other design decisions}
+    tbd
 \section{User Interface Design}
 \section{Requirements traceability}
 \begin{itemize}
