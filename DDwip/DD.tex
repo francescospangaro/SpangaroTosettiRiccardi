@@ -1051,6 +1051,18 @@ Only the most relevant method parameters and methods are shown.
           \end{itemize}
 \end{itemize}
 \section{Implementation, Integration \& Test plan}
+The CKB platform will be divided in:
+\begin{itemize}
+    \item \textbf{Client;}
+    \item \textbf{Web Server;}
+    \item \textbf{Application Server;}
+    \item \textbf{Databases;}
+    \item \textbf{External APIs.}
+\end{itemize}
+These elements will be implemented by exploiting the microservices architecture feature that explains that each microservice is separated from the others 
+and works independently.
+Knowing this, we can implement and test each little microservice each time we develop a new one and each time we create a new microservice we
+can test its integration with the others easily, since they are all independent from one another.
 
 
 \newpage
@@ -1059,14 +1071,20 @@ Only the most relevant method parameters and methods are shown.
     \hline
     \multicolumn{2}{|g|}{\textbf{Group member}} & \multicolumn{1}{|g|}{\textbf{Effort spent}} \\
     \hline
-    \textbf{Francesco Spangaro}                 & \makecell[l]{                               \\Introduction\\Architectural Design\\User Interface Design\\Requirement Traceability\\Implementation, Integration and Test plan\\
-    \vspace{\baselineskip}}                     & \makecell[l]{\textit{Xh}                    \\\textit{Xh}\\\textit{Xh}\\\textit{Xh}\\\textit{Xh} \vspace{\baselineskip}}\\
+    \textbf{Francesco Spangaro}                 & \makecell[l]{                               
+        \\Introduction  \\Architectural Design  \\User Interface Design \\Requirement Traceability\\Implementation, Integration and Test plan\\
+    \vspace{\baselineskip}}                     & \makecell[l]{
+        \textit{1h}     \\\textit{14h}          \\\textit{1h}           \\\textit{1h}             \\\textit{Xh} \vspace{\baselineskip}}\\
     \hline
-    \textbf{Luca Tosetti}                       & \makecell[l]{                               \\Introduction\\Architectural Design\\User Interface Design\\Requirement Traceability\\Implementation, Integration and Test plan\\
-    \vspace{\baselineskip}}                     & \makecell[l]{\textit{Xh}                    \\\textit{Xh}\\\textit{Xh}\\\textit{Xh}\\\textit{Xh}}\\
+    \textbf{Luca Tosetti}                       & \makecell[l]{                               
+        \\Introduction  \\Architectural Design  \\User Interface Design\\Requirement Traceability\\Implementation, Integration and Test plan\\
+    \vspace{\baselineskip}}                     & \makecell[l]{
+        \textit{5h}     \\\textit{6h}           \\\textit{2h}          \\\textit{3h}             \\\textit{Xh}}\\
     \hline
-    \textbf{Francesco Riccardi}                 & \makecell[l]{                               \\Introduction\\Architectural Design\\User Interface Design\\Requirement Traceability\\Implementation, Integration and Test plan\\
-    \vspace{\baselineskip}}                     & \makecell[l]{\textit{Xh}                    \\\textit{Xh}\\\textit{Xh}\\\textit{Xh}\\\textit{Xh} \vspace{\baselineskip}}\\
+    \textbf{Francesco Riccardi}                 & \makecell[l]{                               
+        \\Introduction\\Architectural Design    \\User Interface Design\\Requirement Traceability\\Implementation, Integration and Test plan\\
+    \vspace{\baselineskip}}                     & \makecell[l]{
+        \textit{1h}   \\\textit{6h}             \\\textit{10h}         \\\textit{1h}             \\\textit{Xh} \vspace{\baselineskip}}\\
     \hline
 \end{tabular}
 \section{References}
