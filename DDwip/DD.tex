@@ -482,7 +482,7 @@ Only the most relevant method parameters and methods are shown.
         \item \textbf{getCreatedBattles(userId):} This method takes the user's ID from the session data, contact the DBMS which will check if the 
         user has created any battles and returns the json containing the new page to display, containing all the user's created battles. 
         If no battles are found, the json returned will be an empty page.
-        \item \textbf{createBattle(userId, battleData):} This method takes the user's ID and the battle's data, which will be contained in an ad-hoc
+        \item \textbf{createBattle(userId, battleData, tournamentId):} This method takes the user's ID, the tournament's ID and the battle's data, which will be contained in an ad-hoc
         created struct. The Battle Manager will check if the user is an Educator through the checkUser method and if the battle will be contained in a tournament in which 
         the user's has permission to create one. If all the checks pass then the method will contact the DBMS and create a new battle with the data contained in battleData. 
         The method will then return a json file containing a confirmation page. 
