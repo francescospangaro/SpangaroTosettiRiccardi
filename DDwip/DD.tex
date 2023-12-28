@@ -569,13 +569,25 @@ Only the most relevant method parameters and methods are shown.
     \end{itemize}
 \end{itemize}
 \subsection{Runtime view}
+    \begin{figure}[H]
+        \centering
+        \hspace*{-1cm}\includegraphics[scale=0.8]{Sequence/SequenceLogin.pdf}
+        \caption{User login sequence diagram}
+        \label{fig:userLogin}
+    \end{figure}
+
+    Most of the actions described in the following Sequence Diagrams require that the User
+    (either a Student or an Educator) is logged in the platform to actually perform the actions.
+    The diagram above represents the User's login process.
+
     \subsubsection{Student sign-up to the platform}
         \begin{figure}[H]
             \centering
             \hspace*{-2cm}\includegraphics[scale=0.65]{Sequence/Sequence1DD.pdf}
-            \caption{Sign-up sequence diagram}
+            \caption{Student sign-up sequence diagram}
             \label{fig:Sequence1DD}
         \end{figure}
+
         The above diagram represents the process of a Student's signing up.
         The Student accesses to the CKB platform WebApp Homepage through their browser
         (omitted for simplicity). They then clicks on the "SIGN IN" button as
@@ -611,7 +623,7 @@ Only the most relevant method parameters and methods are shown.
         \begin{figure}[H]
             \centering
             \hspace*{-2.2cm}\includegraphics[scale=0.65]{Sequence/Sequence2DD.pdf}
-            \caption{}
+            \caption{Educator sign-up sequence diagram}
             \label{fig:Sequence2DD}
         \end{figure}
 
@@ -624,33 +636,64 @@ Only the most relevant method parameters and methods are shown.
         \begin{figure}[H]
             \centering
             \hspace*{-4cm}\includegraphics[scale=0.65]{Sequence/Sequence3DD.pdf}
-            \caption{}
+            \caption{Tournament creation sequence diagram}
             \label{fig:Sequence3DD}
         \end{figure}
 
         The above diagram represents the tournament's creation by an Educator.
         In order to start this process the Educator must have completed the login procedure
-        first, as shown in \ref{fig:loginSequence} figure.
+        first, as shown in \ref{fig:userLogin} figure.
         The Educator has to access to the riepilogative page of their tournaments 
         (this part of the process was omitted for simplicity) and here, they have to click 
         on the "Create new Tournament" button (as shown in \ref{fig:tournamentsPage}).
         The WebApp will show a Tournament creation page (\ref{fig:tournamentCreationPage})
         in which there is a form that the Educator has to fill.
-        At this point the Edcuator can creates new badges to insert in the tournament. This
-        process is displayed in the Sequence Diagram 2.5.4 \ref{fig:Sequence4DD}
+        At this point the Educator can creates new badges to insert in the tournament. This
+        process is displayed in the Sequence Diagram 2.5.4 in figure \ref{fig:Sequence4DD}.
+        \\ \\
+        After that, the Educator click on the "Confirm" button as shown in figure 
+        \ref{fig:tournamentCreationPage}, in this way the tournament's data will be sent to the
+        Tournament Manager which will check first, if the user has the permission to use the API
+        by contacting the Account Manager. Then it will check if the tournament's inserted data
+        are valid. In all the checks were successful the Tournament Manager proceeds to
+        contact the DBMS, which will insert the new tournament in the DB.
+        \\ \\
+        At this point if everything went well, the Tournament Manager contacts the Notification
+        Manager which will send a tournament's creation notification to all the Students
+        subscribed to the platform. 
+        Finally the Tournament Manager component will return to the WebApp a message of success
+        which in turn will return it to the Educator, who will be redirected to the 
+        riepilogative page of their tournaments.
 
+        There are several cases in which this process could go wrong. In order we have:
+        \begin{itemize}
+            \item \textbf{User does not have permissions:} In case the logged User is not an
+            Educator, or isn't correctly logged. The Tournament Manager will return an
+            error message to the WebApp, which will display it to the User.
+            \item \textbf{Tournament's data are invalid} In this case after the check, the 
+            Tournament Manager component just return an error message to the WebApp stating 
+            that the inserted data were not valid. The message will then be shown to the 
+            Educator by the WebApp.
+            \item \textbf{Tournament's DB insertion went wrong:} In this case no 
+            notification will be sent to the Students, and the Tournament Manager component will 
+            return to the WebApp an error message stating that there was an error while 
+            creating the tournament.
+            The message will then be shown by the WebApp to the Educator.
+        \end{itemize}
     \subsubsection{Educator creates new badges}
         \begin{figure}[H]
             \centering
             \hspace*{-1cm}\includegraphics[scale=0.65]{Sequence/Sequence4DD.pdf}
-            \caption{}
+            \caption{Badges creation sequence diagram}
             \label{fig:Sequence4DD}
         \end{figure}
+
+        The diagram above represents the process of badges' creation.
     \subsubsection{Educator deletes and/or updates a badge}
         \begin{figure}[H]
             \centering
             \hspace*{-0.7cm}\includegraphics[scale=0.60]{Sequence/Sequence5DD.pdf}
-            \caption{}
+            \caption{Badges }
             \label{fig:Sequence5DD}
         \end{figure}
     \subsubsection{Educator creates a new battle}
@@ -701,7 +744,7 @@ Only the most relevant method parameters and methods are shown.
             Manager component just return an error message to the WebApp stating that the 
             inserted data were not valid. The message will then be shown to the Educator by 
             the WebApp.
-            \item \textbf{Battle's insertion in the DB went wrong:} In this case no 
+            \item \textbf{Battle's DB insertion went wrong:} In this case no 
             notification will be sent to the Students, and the Battle Manager component will 
             return to the WebApp an error message stating that there was an error while 
             creating the battle.
@@ -1063,7 +1106,6 @@ These elements will be implemented by exploiting the microservices architecture 
 and works independently.
 Knowing this, we can implement and test each little microservice each time we develop a new one and each time we create a new microservice we
 can test its integration with the others easily, since they are all independent from one another.
-
 
 \newpage
 \section{Effort Spent}
