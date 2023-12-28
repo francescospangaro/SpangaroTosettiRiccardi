@@ -569,12 +569,12 @@ Only the most relevant method parameters and methods are shown.
     \subsubsection{Student sign-up to the platform}
         \begin{figure}[H]
             \centering
-            \hspace*{-3.7cm}\includegraphics[scale=0.65]{Sequence/Sequence1DD.pdf}
+            \hspace*{-2cm}\includegraphics[scale=0.65]{Sequence/Sequence1DD.pdf}
             \caption{Sign-up sequence diagram}
             \label{fig:Sequence1DD}
         \end{figure}
 
-        The above diagram represents the process of signing up a Student.
+        The above diagram represents the process of a Student's signing up.
         The Student accesses to the CKB platform WebApp Homepage through their browser
         (omitted for simplicity). They then clicks on the "SIGN IN" button as
         shown in figure \ref{fig:homepageMockup}. The WebApp will show a form
@@ -600,83 +600,109 @@ Only the most relevant method parameters and methods are shown.
             Student an error message stating that they have already registered.
             \item \textbf{Valid credentials and email used for the first time:} In this case the Account
             Manager proceeds to communicate to the DBMS to insert the Student's data in the DB.
-            Proceeds to inform the Notification Manager to send an email of confirmation.
-            Finally returns the positive outcome of the operation to the Account Manager,
-            which will do the same to the WebApp, which in turn will show a confirmation message to the Student.
+            Proceeds to inform the Notification Manager to send an email of confirmation for the registration.
+            Finally returns the positive outcome of the operation to the WebApp, which in 
+            turn will show a confirmation message to the Student.
         \end{enumerate}
+
     \subsubsection{Educator sign-up to the platform}
         \begin{figure}[H]
             \centering
             \hspace*{-2.2cm}\includegraphics[scale=0.65]{Sequence/Sequence2DD.pdf}
             \caption{}
-            \label{fig:}
+            \label{fig:Sequence2DD}
         \end{figure}
+
+        The above diagram, represents the process of an Educator's signing up.
+        The process is pratically identical to the Student's one with the exception of the
+        data that the Educator is requested to insert in the form, such as their name, surname
+        username, school in which they teaches, istitutional email, password, ... 
+
     \subsubsection{Educator creates a new tournament}
         \begin{figure}[H]
             \centering
             \hspace*{-4cm}\includegraphics[scale=0.65]{Sequence/Sequence3DD.pdf}
             \caption{}
-            \label{fig:}
+            \label{fig:Sequence3DD}
         \end{figure}
+
+        The above diagram represents the tournament's creation by an Educator.
+        In order to start this process the Educator must have completed the login procedure
+        first, as shown in \ref{fig:loginSequence} figure.
+        The Educator has to access to the riepilogative page of their tournaments 
+        (this part of the process was omitted for simplicity) and here, they have to click 
+        on the "Create new Tournament" button (as shown in \ref{fig:tournamentsPage}).
+        The WebApp will show a Tournament creation page (\ref{fig:tournamentCreationPage})
+        in which there is a form that the Educator has to fill.
+        At this point the Edcuator can creates new badges to insert in the tournament. This
+        process is displayed in the Sequence Diagram 2.5.4 \ref{fig:Sequence4DD}
+
     \subsubsection{Educator creates new badges}
         \begin{figure}[H]
             \centering
             \hspace*{-1cm}\includegraphics[scale=0.65]{Sequence/Sequence4DD.pdf}
             \caption{}
-            \label{fig:}
+            \label{fig:Sequence4DD}
         \end{figure}
     \subsubsection{Educator deletes and/or updates a badge}
         \begin{figure}[H]
             \centering
             \hspace*{-0.7cm}\includegraphics[scale=0.60]{Sequence/Sequence5DD.pdf}
             \caption{}
-            \label{fig:}
+            \label{fig:Sequence5DD}
         \end{figure}
     \subsubsection{Educator creates a new battle}
         \begin{figure}[H]
             \centering
             \hspace*{-3.1cm}\includegraphics[scale=0.6]{Sequence/Sequence6DD.pdf}
             \caption{}
-            \label{fig:}
+            \label{fig:Sequence6DD}
         \end{figure}
 
         The above diagrams represents the process of creating a new battle within a tournament,
         by an Educator. \\
         The Educator accesses to the CKB platform WebApp Homepage and subsequently
-        to the page of one of the tournaments they have created, through their browser
+        to the page of one of the tournaments they have created, all of this through their browser
         (omitted for simplicity).
-        They then clicks on the "Create new Battle" button as shown in figure \ref{fig:tournamentManagementPage}.
+        They then click on the "Create new Battle" button as shown in figure \ref{fig:tournamentManagementPage}.
         \\ \\
         The WebApp will show a page which will contains a form that the Educator can fill with
-        the battle's characteristics, such as its name, maximum and minumum number of member per group,
+        the battle's data, such as its name, maximum and minumum number of member per group,
         registration and submission deadlines, programming language accepted, ... 
         \\ \\
         Once the Educator press the "Confirm" button (as shown in figure \ref{fig:battleCreationPage})
         the battle's data will be sent to the Battle Manager. \\
-        The Battle Manager will contacts the Account Manager, which in turn will contacts the Query Manager, 
-        to verify whether the logged Educator has the permissions to create a new battle within that tournament. 
-        If that's the case then the Battle Manager will check the validity of the battle's data inserted,
-        i.e. checking whether one or more data don't respect some standards.
+        The Battle Manager will contacts the Account Manager, to verify, through the session's 
+        data, whether the logged Educator has the permissions to create a new battle within that 
+        tournament. 
+        If that's the case then the Battle Manager will check the validity of the battle's data 
+        inserted, i.e. checking whether one or more data don't respect some standards.
         \\ \\
-        If the checks succeeds then the Battle Manager will try to insert the battle in the DB,
-        by contacting the Query Manager which in turn will contact the DBMS. \\
+        If the check succeeds then the Battle Manager will try to insert the battle in the DB,
+        by contacting the DBMS. \\
         If the insertion succeeded then the Battle Manager will interfaces with the Notification
         Manager which will send the notification of the battle's creation to all the Student
-        subscribed to the tournament. In the meantime the Battle Manager component will return a 
-        message of success to the Educator through the WebApp.
+        subscribed to the tournament (N.B. The notification manager will continuosly trying to
+        send notification if their SUBMISSION fails server side for some reasons, it will NOT
+        try to resend them if the receivers don't receive them). 
+        In the meantime the Battle Manager component will return a message of success to 
+        the Educator through the WebApp.
         \\ \\
         There are several cases in which this process won't succeeds. In order we have:
         \begin{itemize}
-            \item \textbf{Educator does not have permissions:} In case the Educator is not the tournament's creator
-            or has not been granted access to it from another collegue, the Battle Manager will return an
-            error message stating that the the procedure was denied. 
+            \item \textbf{Educator does not have permissions:} In case the Educator is not the 
+            tournament's creator or has not been granted access to it from another collegue, 
+            the Battle Manager will return an error message stating that the the procedure was 
+            denied. 
             The message will be shown by the WebApp to the Educator themselves.
-            \item \textbf{Battle's data are invalid} In this case after the check, the Battle Manager component
-            just return an error message to the WebApp stating that the inserted data were not valid.
-            The message will then be shown to the Educator by the WebApp.
-            \item \textbf{Battle's insertion in the DB went wrong:} In this case no notification will be sent to
-            the Students, and the Battle Manager component will return to the WebApp an error message stating
-            that there was an error while creating the battle.
+            \item \textbf{Battle's data are invalid} In this case after the check, the Battle 
+            Manager component just return an error message to the WebApp stating that the 
+            inserted data were not valid. The message will then be shown to the Educator by 
+            the WebApp.
+            \item \textbf{Battle's insertion in the DB went wrong:} In this case no 
+            notification will be sent to the Students, and the Battle Manager component will 
+            return to the WebApp an error message stating that there was an error while 
+            creating the battle.
             The message will then be shown by the WebApp to the Educator.
         \end{itemize}
 
