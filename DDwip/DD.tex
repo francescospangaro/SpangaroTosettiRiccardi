@@ -759,9 +759,9 @@ Only the most relevant method parameters and methods are shown.
 \subsection{Selected architectural styles and patterns}
     \subsubsection{Four-layered architecture:} We chose this architecture for many reasons, mainly:
     \begin{itemize}
-        \item \textbf{Maintainability:} By having four different layers, with separated logic and code, once the platform's structure is fully defined
+        \item \textbf{Maintainability:} By having four different layers, with separated logic and data, once the platform's structure is fully defined
         each layer's interior logic will be fully defined.
-        By having separated logic and code, it will be easier in the future to access and solve possible problems that can occur in different 
+        By having separated logic and data, it will be easier in the future to access and solve possible problems that can occur in different 
         layers.
         \item \textbf{Security:} By separating the web, application and data servers in different internet partition divided by firewalls, we create multiple
         DMZs, resulting in a more secure architecture. Before accessing the data layer, a malicious user would need to surpass three different firewalls. 
@@ -777,8 +777,26 @@ Only the most relevant method parameters and methods are shown.
         \item \textbf{Scalability:} The result of load distribution ensures that redundancy is provided only for the most important parts of the platform.
         This ensures maximum scalability with minimal cost.
     \end{itemize}
+    \subsubsection{REST architecture:}
+    The REST architecture is a set of rules to follow while building a web application, to ensure that the web application being built is stateless.
+    This means that the server does not care about the client's status information, but those informations are dealt with by the client.
+    \begin{itemize}
+    \item \textbf{Cacheability:} For a web application to be RESTFul, it needs to be cacheable. Having a web cache makes the web application much faster when handling 
+    requests, since the application servers will not be accessed each time a request is made. Instead, cache proxies present in the network will parse the requests and
+     answer for them, if the data they have is not too old.
+    \item \textbf{Uniform interface:} Having uniform interfaces thoughout all its users, the web application ensures that it can be accessed from any browser, downloaded
+    on any operating system. This is an important constraint, as any user can access and use the CKB platform.
+    \end{itemize}
 \subsection{Other design decisions}
-    tbd
+    \subsubsection{Relational Database:} We chose to implement our databases in a relational way, since relational databases are the go-to choice when 
+    implementing a web application. Relational databases are needed when we want to ensure that data will not be lost in time and we want data to be kept sure.
+    Since we want to implement our web application following the MicroServices architectural style, we chose to separate our data in three different databases.
+    We have a database dedicated only to the users' data, containing all the different users. This database is accessed on login, registration and when the 
+    session is created.
+    We have a database dedicated to the tournaments' data, containing all battles, badges and tournaments. This database is accessed each time a request 
+    is made that needs to access or modify some data related to tournaments.
+    We have a database dedicated to Students' groups, accessed each time a new group is created.
+    Each database is developed using the PostgreSQL language, since it has a better trigger architecture than MySQL or MariaDB.
 \section{User Interface Design}
 \section{Requirements traceability}
 \begin{itemize}
@@ -1031,6 +1049,7 @@ Only the most relevant method parameters and methods are shown.
           \end{itemize}
 \end{itemize}
 \section{Implementation, Integration \& Test plan}
+
 
 \newpage
 \section{Effort Spent}
