@@ -544,6 +544,9 @@ Only the most relevant method parameters and methods are shown.
         \item \textbf{evalBattleNot(battleId, groupId):} This method is called after the computation of the "evaluate" and "editScore" methods. It takes the battle's ID and 
         the evaluated group's ID, then sends each group member a notification via e-mail, letting them know that a new score was assigned to them for their newly
         uploaded solution. This is achieved using external Notification APIs.
+        \item \textbf{sendRegistrationNot(userId):} This method is called after a user's registration procedure is completed. Once the user's data is saved 
+        in the user's database, an e-mail, containing a confirmation message for the registration procedure is sent to the user.
+        This is achieved using external Notification APIs.  
     \end{itemize}
     \item \textbf{Evaluation Manager}
     \begin{itemize}
@@ -561,8 +564,8 @@ Only the most relevant method parameters and methods are shown.
     \end{itemize}
     \item \textbf{Group Manager}
     \begin{itemize}
-        \item \textbf{createGroup(studentId, invitedIds):} This method takes the provided Student's ID and an array of the invited Students' IDs, checks if each ID corresponds
-        to a Student's id saved in the platform and, if so, creates the group, saving it in the group's database.  
+        \item \textbf{createGroup(studentId, invitedIds):} This method takes the provided Student's ID and an array of the invited Students' IDs,
+        checks if each ID corresponds to a Student's id saved in the platform and, if so, creates the group, saving it in the group's database.  
     \end{itemize}
 \end{itemize}
 \subsection{Runtime view}
@@ -573,7 +576,6 @@ Only the most relevant method parameters and methods are shown.
             \caption{Sign-up sequence diagram}
             \label{fig:Sequence1DD}
         \end{figure}
-
         The above diagram represents the process of a Student's signing up.
         The Student accesses to the CKB platform WebApp Homepage through their browser
         (omitted for simplicity). They then clicks on the "SIGN IN" button as
