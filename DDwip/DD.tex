@@ -155,7 +155,7 @@
 \vspace*{1cm}
 
 \begin{center}
-      \large{Version 0.2} \\
+      \large{Version 0.3} \\
       \large{Academic Year 2023 - 2024}
 \end{center}
 \newpage
@@ -241,7 +241,9 @@ with a MSA server side, in addition to a MVC software architectural choice.
     \textit{Controller} & $\rightarrow$ Part of the MVC pattern that receives commands from the user, and execute them
     by modifying the View and/or Model parts. \\
     \textit{Model} & $\rightarrow$ Part of the MVC pattern that gives to the Controller part, the
-    methods to access the application's data and to modify them.
+    methods to access the application's data and to modify them. \\
+    \textit{DBMS} & $\rightarrow$ A software system projected in order to allow the creation,
+    manipulation and querying of one or more databases in an effecient and correct manner.
 \end{xltabular}
 
 \subsubsection{Acronyms}
@@ -265,7 +267,9 @@ with a MSA server side, in addition to a MVC software architectural choice.
     \textit{RASD} & $\rightarrow$ Requirement Analysis and Specification Document\\
     \textit{DD} & $\rightarrow$ Design Document\\
     \textit{CKB} & $\rightarrow$ CodeKataBattle\\
-    \textit{} & $\rightarrow$ \\
+    \textit{DB} & $\rightarrow$ DataBase \\
+    \textit{DBMS} & $\rightarrow$ DataBase Management System
+
 \end{xltabular}
 
 
@@ -289,7 +293,7 @@ with a MSA server side, in addition to a MVC software architectural choice.
     \\
     \textit{i.e} & $\rightarrow$ Id Est, lating phrase meaning "that is".
     \\
-    \textit{} & $\rightarrow$
+    \textit{id} & $\rightarrow$ Identifier.
     \\
     \textit{} & $\rightarrow$
     \\
@@ -607,7 +611,7 @@ Only the most relevant method parameters and methods are shown.
         with the DBMS.
         \\ \\
         At this point we can have three possible situations:
-        \begin{enumerate}
+        \begin{itemize}
             \item \textbf{Credentials validation went wrong:} In this case the WebApp will show to the
             Student an error message of invalid credentials
             \item \textbf{Student has already registered with the same email:} In this case the WebApp will show to the
@@ -617,7 +621,7 @@ Only the most relevant method parameters and methods are shown.
             Proceeds to inform the Notification Manager to send an email of confirmation for the registration.
             Finally returns the positive outcome of the operation to the WebApp, which in 
             turn will show a confirmation message to the Student.
-        \end{enumerate}
+        \end{itemize}
 
     \subsubsection{Educator sign-up to the platform}
         \begin{figure}[H]
@@ -670,6 +674,7 @@ Only the most relevant method parameters and methods are shown.
             \item \textbf{User does not have permissions:} In case the logged User is not an
             Educator, or isn't correctly logged. The Tournament Manager will return an
             error message to the WebApp, which will display it to the User.
+            Finally the user will be redirected to the login page (omitted for simplicity).
             \item \textbf{Tournament's data are invalid} In this case after the check, the 
             Tournament Manager component just return an error message to the WebApp stating 
             that the inserted data were not valid. The message will then be shown to the 
@@ -680,6 +685,7 @@ Only the most relevant method parameters and methods are shown.
             creating the tournament.
             The message will then be shown by the WebApp to the Educator.
         \end{itemize}
+
     \subsubsection{Educator creates new badges}
         \begin{figure}[H]
             \centering
@@ -688,7 +694,40 @@ Only the most relevant method parameters and methods are shown.
             \label{fig:Sequence4DD}
         \end{figure}
 
-        The diagram above represents the process of badges' creation.
+        The diagram above represents the process of badges' creation by an Educator.
+        In order to start the process the Educator must have completed the login procedure first,
+        as shown in figure \ref{fig:userLogin}. \\
+        The Educator during the creation of a tournament, have the possibility to create new badges.
+        In order to do so the Educator clicks on the "Create badge" button (as shown in figure
+        \ref{fig:tournamentCreationPage}). The WebApp will show a form that the Educator has to fill
+        with the badge's data. \\ \\
+        After clicking on the "Confirm button" (as shown in figure \ref{fig:badgeCreationPage})
+        the WebApp contacts the Badge Manager component in order to start the badge's creation.
+        \\ \\
+        The Badge Manager communicate with the Account Manager which will check whether the 
+        logged User has the right permission to create a new badge. The Badge Manager will also
+        check the validity of the data inserted by the Educator in the form.
+        \\ \\
+        If all the checks goes well, the Badge Manager contacts the DBMS in order to insert the
+        badge's data into the DB.
+        If the insertion goes well, then the Badge Manager sends back to the WebApp a confirmation
+        message stating that the creation of the badge was successful, and the Educator is led back
+        to the page dedicated to the tournaments' creation.
+        \\ \\
+        The process can go wrong in several situations. In order we have:
+        \begin{itemize}
+            \item \textbf{User does not have permissions:} In case the logged User is not an
+            Educator, or isn't correctly logged. The Badge Manager will return an
+            error message to the WebApp, which will display it to the User.
+            Finally the user will be redirected to the login page (omitted for simplicity).
+            \item \textbf{Badge's data are invalid:} In this case, the Badge Manager component 
+            just return an error message to the WebApp stating that the inserted data were not 
+            valid. The message will then be shown to the Educator by the WebApp.
+            \item \textbf{Badge's DB insertion went wrong:} In this case the Badge Manager will 
+            return to the WebApp an error message stating that there was an error while creating 
+            the badge. The message will then be shown by the WebApp to the Educator.
+        \end{itemize}
+
     \subsubsection{Educator deletes and/or updates a badge}
         \begin{figure}[H]
             \centering
@@ -696,6 +735,44 @@ Only the most relevant method parameters and methods are shown.
             \caption{Badges }
             \label{fig:Sequence5DD}
         \end{figure}
+        
+        The diagram above represents the process of badges' modification and/or deletion by an 
+        Educator. In order to start the process the Educator must have completed the login 
+        procedure first, as shown in figure \ref{fig:userLogin}. \\
+        The Educator during the creation of a tournament, have the possibility to modify and/or
+        delete badges that have precedently created during the same tournament creation procedure.
+        In order to modify a badge, the Educator can click on the "Edit badge" button 
+        (as shown in figure \ref{fig:tournamentCreationPage}). The WebApp will show a form 
+        containing all the information related to the badge that the Educator want to modify.
+        At this point the Educator can modify the badge's data to their liking and press the
+        "Confirm button" (as shown in figure \ref{fig:badgeCreationPage}) to confirm the changes.
+        \\ \\
+        The WebApp contacts the Badge Manager component in order to start the badge's edit.
+        The Badge Manager communicate with the Account Manager which will check whether the 
+        logged User has the right permission to modify the badge. The Badge Manager will also
+        check the validity of the data inserted by the Educator in the form.
+        \\ \\
+        If all the checks goes well, the Badge Manager contacts the DBMS in order to update the
+        badge's data stored in the DB.
+        If the update goes well, then the Badge Manager sends back to the WebApp a confirmation
+        message stating that the modification of the badge was successful, and the Educator 
+        is led back to the page dedicated to the tournaments' creation.
+        \\ \\
+        The process can go wrong in several situations. In order we have:
+        \begin{itemize}
+            \item \textbf{User does not have permissions:} In case the logged User is not an
+            Educator, or isn't correctly logged. The Badge Manager will return an
+            error message to the WebApp, which will display it to the User.
+            Finally the user will be redirected to the login page (omitted for simplicity).
+            \item \textbf{Badge's data are invalid:} In this case, the Badge Manager component 
+            just return an error message to the WebApp stating that the inserted data were not 
+            valid. The message will then be shown to the Educator by the WebApp.
+            \item \textbf{Badge's DB insertion went wrong:} In this case the Badge Manager will 
+            return to the WebApp an error message stating that there was an error while updating 
+            the badge. The message will then be shown by the WebApp to the Educator.
+        \end{itemize}
+
+
     \subsubsection{Educator creates a new battle}
         \begin{figure}[H]
             \centering
@@ -705,7 +782,8 @@ Only the most relevant method parameters and methods are shown.
         \end{figure}
 
         The above diagrams represents the process of creating a new battle within a tournament,
-        by an Educator. \\
+        by an Educator. In order to start the process the Educator must have completed the login 
+        procedure first, as shown in figure \ref{fig:userLogin}. \\
         The Educator accesses to the CKB platform WebApp Homepage and subsequently
         to the page of one of the tournaments they have created, all of this through their browser
         (omitted for simplicity).
@@ -718,18 +796,18 @@ Only the most relevant method parameters and methods are shown.
         Once the Educator press the "Confirm" button (as shown in figure \ref{fig:battleCreationPage})
         the battle's data will be sent to the Battle Manager. \\
         The Battle Manager will contacts the Account Manager, to verify, through the session's 
-        data, whether the logged Educator has the permissions to create a new battle within that 
+        data, whether the logged User has the permissions to create a new battle within that 
         tournament. 
         If that's the case then the Battle Manager will check the validity of the battle's data 
         inserted, i.e. checking whether one or more data don't respect some standards.
         \\ \\
         If the check succeeds then the Battle Manager will try to insert the battle in the DB,
         by contacting the DBMS. \\
-        If the insertion succeeded then the Battle Manager will interfaces with the Notification
+        If the insertion succeeds then the Battle Manager will interfaces with the Notification
         Manager which will send the notification of the battle's creation to all the Student
-        subscribed to the tournament (N.B. The notification manager will continuosly trying to
-        send notification if their SUBMISSION fails server side for some reasons, it will NOT
-        try to resend them if the receivers don't receive them). 
+        subscribed to the tournament (Note that the notification manager will continuosly trying 
+        to send notification if their submission, for some reasons, fails server side. It will 
+        NOT try to resend them if the receivers don't receive them). 
         In the meantime the Battle Manager component will return a message of success to 
         the Educator through the WebApp.
         \\ \\
@@ -739,7 +817,8 @@ Only the most relevant method parameters and methods are shown.
             tournament's creator or has not been granted access to it from another collegue, 
             the Battle Manager will return an error message stating that the the procedure was 
             denied. 
-            The message will be shown by the WebApp to the Educator themselves.
+            The message will be shown by the WebApp to the Educator themselves and finally
+            the User will redirected to the login page (omitted for simplicity).
             \item \textbf{Battle's data are invalid} In this case after the check, the Battle 
             Manager component just return an error message to the WebApp stating that the 
             inserted data were not valid. The message will then be shown to the Educator by 
@@ -759,6 +838,8 @@ Only the most relevant method parameters and methods are shown.
             \caption{}
             \label{fig:}
         \end{figure}
+
+        The above diagrams represents the process of tournament closing, by an Educator. \\
     \subsubsection{Educator evaluates a battle's results}
         \begin{figure}[H]
             \centering
