@@ -543,6 +543,8 @@ Only the most relevant method parameters and methods are shown.
         external Notification APIs.
         \item \textbf{sendTournamentNot(tournamentId):} This method takes the newly created tournament's ID and automatically sends each Student subscribed to the platform an 
         e-mail, notifying them of the creation of the new tournament, using external Notification APIs. 
+        \item \textbf{sendClosedTournamentNot(tournamentId):} This method takes the closed tournament's ID and automatically sends to each Student subscribed to that tournament
+        an e-mail, notifying them of the closure of the tournament, using external Notification APIs.
         \item \textbf{sendBattleNot(battleId):} This method takes the newly created battle's ID and automatically sends each Student subscribed to the tournament containing the 
         new battle a notification, notifying them of the creation of this battle via e-mail, using external Notification APIs.
         \item \textbf{evalBattleNot(battleId, groupId):} This method is called after the computation of the "evaluate" and "editScore" methods. It takes the battle's ID and 
@@ -834,12 +836,52 @@ Only the most relevant method parameters and methods are shown.
     \subsubsection{Educator closes a tournament}
         \begin{figure}[H]
             \centering
-            %\hspace*{-3.7cm}\includegraphics[scale=0.65]{}
+            \hspace*{-4cm}\includegraphics[scale=0.65]{Sequence/Sequence7DD.pdf}
             \caption{}
             \label{fig:}
         \end{figure}
 
         The above diagrams represents the process of tournament closing, by an Educator. \\
+        In order to start this process the Educator must have completed the login procedure
+        first, as shown in \ref{fig:userLogin} figure.
+        The Educator has to access to the riepilogative page of their tournaments 
+        (this part of the process was omitted for simplicity) and here, they have to click 
+        on a tournament in order to access it, and subsequently click the "Close" button
+        in order to close it (as shown in \ref{fig:tournamentPage}).
+        The WebApp will show a confirmation modal to the Educator, which can click the "Confirm"
+        button as shown in figure \ref{fig:tournamentPage} starting in this way the procedure of 
+        the tournament's closure. 
+        \\ \\
+        At this point the WebApp contacts the TournamentManager which will rely on the Account
+        Manager in order to check if the user has the permission to use the APIs.
+        Then, the Tournament Manager will check if there is at least one active battle within the
+        tournament. If that is not the case then it will contact the DBMS in order to update the
+        tournament's information and close it.
+        \\ \\
+        If everything went well, the Tournament Manager contacts the Notification
+        Manager which will send a notification for the closure of the tournament to all the 
+        Students subscribed to that tournament. 
+        Finally the Tournament Manager component will return to the WebApp a message of success
+        which in turn will return it to the Educator, who will be redirected to the 
+        riepilogative page of their tournaments.
+        \\ \\
+        There are several cases in which this process may go wrong. In order we have:
+        \begin{itemize}
+            \item \textbf{User does not have permissions:} In case the logged User is not an
+            Educator, or isn't correctly logged. The Tournament Manager will return an
+            error message to the WebApp, which will display it to the User.
+            Finally the user will be redirected to the login page (omitted for simplicity).
+            \item \textbf{Tournament contains active battles} In this case after the check, the 
+            Tournament Manager component just return an error message to the WebApp stating 
+            that the closure of the tournament has been denied since there is still at least
+            one battle active within it. The message will then be shown to the Educator by the 
+            WebApp.
+            \item \textbf{Tournament's DB insertion went wrong:} In this case no 
+            notification will be sent to the Students, and the Tournament Manager component will 
+            return to the WebApp an error message stating that there was an error while 
+            updating the tournament.
+            The message will then be shown by the WebApp to the Educator.
+        \end{itemize}
     \subsubsection{Educator evaluates a battle's results}
         \begin{figure}[H]
             \centering

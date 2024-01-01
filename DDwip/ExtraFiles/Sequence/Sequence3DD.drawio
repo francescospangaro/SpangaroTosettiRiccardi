@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-27T21:55:26.460Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="aS_L80XVd17ZkL9Gcz8F" version="22.1.15" type="device">
+<mxfile host="app.diagrams.net" modified="2024-01-01T11:28:01.788Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="vybQhARe9w3W0Q4E3JCs" version="22.1.16" type="device">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
     <mxGraphModel dx="2524" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -285,7 +285,7 @@
         <mxCell id="QL39jGxponw7_m6vHBpY-80" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
           <mxGeometry x="655" y="584.9999999999999" width="10" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="QL39jGxponw7_m6vHBpY-82" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;12 : getUserSubscribed(tournamentId)&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;endSize=6;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endFill=1;startArrow=none;startFill=0;" parent="1" source="QL39jGxponw7_m6vHBpY-36" target="QL39jGxponw7_m6vHBpY-80" edge="1">
+        <mxCell id="QL39jGxponw7_m6vHBpY-82" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;12 : getUserSubscribedToPlatform()&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;endSize=6;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endFill=1;startArrow=none;startFill=0;" parent="1" source="QL39jGxponw7_m6vHBpY-36" target="QL39jGxponw7_m6vHBpY-80" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="704" y="585" as="targetPoint" />
             <Array as="points">
