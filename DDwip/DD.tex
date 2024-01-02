@@ -902,8 +902,8 @@ Only the most relevant method parameters and methods are shown.
         After select a solution, They click on the ”manually Evaluate Battle” button as shown in figure ??.\\
         \\
         The WebApp will show a page which will contains the actuale grade of the group and the group last solution.
-        that the Educator, after having inspected the code can update the grade of the group\\
-
+        that the Educator, after having inspected the code can update the grade of the group.
+        \\ \\
         Once the Educator press the ”Confirm” button (as shown in figure ??) the score data will be sent to the Evaluation Manager.\\
         The Evaluation Manager will contacts the Account Manager, to verify, through
         the session’s data, whether the logged User has the permissions to manually
@@ -914,7 +914,8 @@ Only the most relevant method parameters and methods are shown.
         If the check succeeds then the Evaluation Manager will try to update the score
         in the DB, by contacting the DBMS.\\
         If the update succeeds then the Evaluation Manager component will return a message
-        of success to the Educator through the WebApp.\\\\
+        of success to the Educator through the WebApp.
+        \\ \\
         There are several cases in which this process may go wrong. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the User is not and Educator
@@ -948,26 +949,27 @@ Only the most relevant method parameters and methods are shown.
         procedure first, as shown in \ref{fig:userLogin} figure.\\  
         The Student has to access to the tournaments' page, access 
         to tournament's page where he wants to create the group then 
-        they click on the ”Create new group” button (as shown in figure ??).\\
-        \\
+        they click on the ”Create new group” button (as shown in figure ??).
+        \\ \\
         The WebApp will show a page which will contains the students that can be
         invited to the group. After choosing the students to invite, the student 
         clicks the "Confirm" Button (as shown in figure ??) and the group's data 
-        will be sent to the Group Manager.\\
-        \\
+        will be sent to the Group Manager.
+        \\ \\
         The Group Manager will contacts the Account Manager, to verify, through
         the session’s data, whether the logged User has the permissions to create
         a group. If that’s the case then the Group Manager will effectively create
-        the group by contacting the DBMS.\\
-        \\
+        the group by contacting the DBMS.
+        \\ \\
         If the check succeeds then the Group Manager will try to insert the group
         in the DB, by contacting the DBMS.
         If the update succeeds then the Group Manager component will continue by
-        sending the invite.\\
-        \\
+        sending the invite.
+        \\ \\
         The Group Manager will proceed to invite individually the selected students.
         Once sending the invite to all the students the Group Manager component will 
-        return a message of success to the Student through the WebApp.\\\\
+        return a message of success to the Student through the WebApp.
+        \\ \\
         There are several cases in which this process may go wrong. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the User is not a Student
@@ -997,26 +999,26 @@ Only the most relevant method parameters and methods are shown.
         group creation procedure (as shown in \ref{fig:Sequence9DD} figure). 
         The Student has to access to the page of the tournaments, access 
         to the page of the battle that he wants to join then the Student
-        clicks on the ”joinBattlePage” button (as shown in figure ??).\\
-
+        clicks on the ”joinBattlePage” button (as shown in figure ??).
+        \\ \\
         The WebApp will show a page which will contains the group that the 
         Student has created in the battle's tournament. After choosing the 
         group to register the student click the "Confirm" Button 
         (as shown in figure ??) and the score data will be sent to the 
-        Battle Manager.\\
-
+        Battle Manager.
+        \\ \\
         The Battle Manager will contacts the Account Manager, to verify, 
         through the session’s data, whether the logged User has the 
         permissions to join the battle. If that’s the case then the Battle 
         Manager will check the validity of the group data inserted, i.e. 
         checking whether one or mone students are already subscrive to 
-        the battle with other groups.\\
-
+        the battle with other groups.
+        \\ \\
         If the check succeeds then the Battle Manager will try to subscrive 
         the group in the battle's, by contacting the DBMS.
         If the update succeeds then the Battle Manager component will 
-        return a message of success to the Student through the WebApp.\\ \\
-
+        return a message of success to the Student through the WebApp.
+        \\ \\
         There are several cases in which this process may go wrong. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the User in not a Student 
@@ -1064,8 +1066,8 @@ Only the most relevant method parameters and methods are shown.
         In order to start this process the Student must have 
         completed the login procedure first, (as shown in fig. 4).
         The Student has to access to his profile page, then he have to
-        clicks on the ”myTournamentResult” button (as shown in figure ??).\\
-
+        clicks on the ”myTournamentResult” button (as shown in figure ??).
+        \\ \\
         The WebApp will send the user data to the Tournament Manager.\\
         The Tournament Manager will contacts the Account Manager, to verify, 
         through the session’s data, whether the logged User has the 
@@ -1073,23 +1075,23 @@ Only the most relevant method parameters and methods are shown.
         the Tournament Manager will ask to the DBMS all the tournaments
         of the student. After receiving the list of tournaments, the Tournament
         Manager will ask, for each tournament in the list, what is the result
-        of the Student, receiving the results.\\\\
+        of the Student, receiving the results.
+        \\ \\
         When received all the results the Tournament Manager component will 
         return the page with the tournaments' result to the Student through 
-        the WebApp.\\
-
+        the WebApp.
+        \\ \\
         The Student now wants to see his badges, so he have to
         clicks on the ”myBadges” button (as shown in figure ??).\\
-        The WebApp will send the user data to the Badge Manager.\\
-
+        The WebApp will send the user data to the Badge Manager.
+        \\ \\
         The Badge Manager will contacts the Account Manager, to verify, 
         through the session’s data, whether the logged User has the 
         permissions to see the badges. If that’s the case then 
         the Badge Manager will ask to the DBMS all the badges obtained by
         the student. When received the badges the Badge Manager component will 
-        return the page with the badges to the Student through the WebApp. \\
-
-
+        return the page with the badges to the Student through the WebApp. 
+        \\ \\
         There are several cases in which this process may go wrong. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the User isn't a Student or
