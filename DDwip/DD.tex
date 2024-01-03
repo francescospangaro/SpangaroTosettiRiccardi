@@ -1057,6 +1057,33 @@ Only the most relevant method parameters and methods are shown.
             \caption{}
             \label{fig:Sequence11DD}
         \end{figure}
+
+
+        The above diagram represents the uploading of a new solution
+        of a battle by a Student.
+        In order to start this process the Student upload a 
+        new solution on the GitHub platform that will activate the GitHub
+        Actions APIs. The GitHub Actions APIs will communicate to the Evaluation Manager
+        that a new solution has been loaded and need to be evaluate.
+        \\ \\
+        The Evaluation Manager will check the validity of the group and battle data inserted,
+        i.e. checking whether the group is subscribed to the battle.
+        \\ \\
+        If the check succeeds then the Evaluation Manager will download the
+        solution just upload from the GitHub Actions APIs.
+        Here there will be the test of the deadline, omitted because part
+        of a successive Diagrams (shown in \ref{fig:Sequence12DD} figure ).
+        The Evaluation Manager will now test the solution by passing them to the Testing APIs.
+        After receive the result of the test by the Testing APIs, the Evaluation Manager will
+        try to update the past grade in the DBMS.
+        \\ \\
+        There is one case in which this process won’t succeeds:        
+        \begin{itemize}
+            \item \textbf{Group isn't subscribed to the battle:} In case the Evaluation Manager will 
+            abort the execution and don't try to update the grade.
+            (Shown for semplicity with a comment section)
+          \end{itemize}
+
     \subsubsection{Student uploads a solution after submission deadline}
         \begin{figure}[H]
             \centering
@@ -1064,6 +1091,34 @@ Only the most relevant method parameters and methods are shown.
             \caption{}
             \label{fig:Sequence12DD}
         \end{figure}
+
+
+        The above diagram represents the uploading of a new solution
+        of a battle by a Student when the deadline is expired.
+        In order to start this process the Student upload a 
+        new solution on the GitHub platform that will activate the GitHub
+        Actions APIs. The GitHub Actions APIs will communicate to the Evaluation Manager
+        that a new solution has been loaded and need to be evaluate.
+        \\ \\
+        The Evaluation Manager will check the validity of the group and battle data inserted,
+        i.e. checking whether the group is subscribed to the battle.
+        \\ \\
+        If the check succeeds then the Evaluation Manager will download the
+        solution just upload from the GitHub Actions APIs.
+        The Evaluation Manager will now control if the battle's deadline is altready expired,
+        if that's the case the Battle Manager will abort the execution and don't try 
+        to update the grade (Shown for semplicity with a comment section).
+        \\ \\
+        There are some cases in which this process won’t succeeds. In order we have:
+        \begin{itemize}
+            \item \textbf{Group isn't subscribed to the battle:} In case the Evaluation Manager will 
+            abort the execution and don't try to update the grade.
+            (Shown for semplicity with a comment section)
+            \item \textbf{Deadline isn't expired:} In case the Evaluation Manager will 
+            continue the evaluation of the solution as show in \ref{fig:Sequence11DD} figure 
+            (Shown for semplicity with a comment section).
+          \end{itemize}
+
     \subsubsection{Student visualizes his tournament's results and badges}
         \begin{figure}[H]
             \centering
