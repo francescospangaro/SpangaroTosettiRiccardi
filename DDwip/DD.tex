@@ -367,37 +367,48 @@ Deployment diagrams specification $\rightarrow$ \url{https://pubs.opengroup.org/
 \pagestyle{ArchitecturalDesignStyle}
 
 \section{Architectural Design}
-\subsection{Overview: High-level components and interactions}
-To ensure high maintainability, security and reliability, the service is structured by following 
-the four-tier architecture model.
-Figure \ref{fig:Figure 1} shows how the tiers are divided, and what are the relations between each tier of the system.
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.35]{images/FourTierApplication.png}
-    \caption{Four-tier architecture}
-    \label{fig:Figure 1}
-\end{figure}
-\noindent
-The main components are: \\ \\
-\begin{itemize}
-\item \textbf{Web Application:} The web application allows users to connect to the platform's services. The web application can be accessed by any device
-that is connected to the internet and can browse the web. Students and Educators will have different views of the web application, because they have
-different parameters that they can view and manage. \\ \\
-\item \textbf{Web Server:} The web server is what manages the web application. It is connected directly to the GitHub Platform to give Educators the possibility
-of seeing their Students' uploaded solutions. It is connected to the GitHub platform to also give Students the possibility of seeing their
-solutions uploaded to the platform in real time. It is the main container for the JavaScript and general backend code for the platform.
-The web server is connected to the Application server because it needs to be automatically updated when new grades for Students' solutions are generated
-by the platform. \\ \\
-\item \textbf{Application Server:} The application server is the main backend of the CKB Platform. It contains all the code needed for th eplatform to run
-smoothly and without interruptions. It contains the logic needed to answer the API requests made by the users to the platform. It
-automatically evaluates Students' solutions proposed via the GitHub platform and uploads the new grade to the web server. \\ \\
-\item \textbf{DBMS:} The DBMS is the main interpreter between the CKB platform and the data stored onto the database. \\ \\
-\item \textbf{DataBase:} The database stores all the information needed by the application. \\ \\
-\item \textbf{External Services:} These services provide informations and funtionalities that the CKB platform alone could not provide.
-These funtionalities include a \textit{GitHub actions API} that notifies the platform of the upload of a new Student's solution, a \textit{notification API}
-that notify Students when a new tournament or a new battle in a tournament they are subscribed to is created and a connection to the \textit{GitHub platform}
-since the code needs to be uploaded from the GitHub platform to the CKB platform automatically. \\
-\end{itemize}
+    \subsection{Overview: High-level components and interactions}
+    To ensure high maintainability, security and reliability, the service is structured by following 
+    the four-tier architecture model.
+    Figure \ref{fig:Figure 1} shows how the tiers are divided, and what are the relations between 
+    each tier of the system.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.35]{images/FourTierApplication.png}
+        \caption{Four-tier architecture}
+        \label{fig:Figure 1}
+    \end{figure}
+    \noindent
+    The main components are: \\ \\
+    \begin{itemize}
+        \item \textbf{Web Application:} The Web application allows users to connect to the platform's 
+        services. The web application can be accessed by any device that is connected to the internet 
+        and can browse the Web. Students and Educators will have different views of the Web application, 
+        because they have different parameters that they can view and manage. \\ \\
+        \item \textbf{Web Server:} The Web server is what manages the Web application. It is connected 
+        directly to the GitHub Platform to give Educators the possibility of seeing their Students' 
+        uploaded solutions. It is connected to the GitHub platform to also give Students the possibility 
+        of seeing their solutions uploaded to the platform in real time. 
+        It is the main container for the JavaScript and general backend code for the platform.
+        The Web server is connected to the Application server because it needs to be automatically updated when new grades for Students' solutions are generated
+        by the platform. \\ \\
+        \item \textbf{Application Server:} The application server is the main backend of the CKB Platform. 
+        It contains all the code needed for the platform to run smoothly and without interruptions. 
+        It contains the logic needed to answer the API requests made by the users to the platform. It
+        automatically evaluates Students' solutions proposed via the GitHub platform and uploads the 
+        new grade to the web server. \\ \\
+        \item \textbf{DBMS:} The DBMS is the main interpreter between the CKB platform and the data 
+        stored onto the database. \\ \\
+        \item \textbf{DataBase:} The database stores all the information needed by the application. \\ \\
+        \item \textbf{External Services:} These services provide informations and funtionalities that 
+        the CKB platform alone could not provide.
+        These funtionalities include a \textit{GitHub actions API} that notifies the platform of the 
+        upload of a new Student's solution, a \textit{notification API} that notify Students when a new 
+        tournament or a new battle in a tournament they are subscribed to is created or more generally
+        whenever there's the need to notify a User. It's also included a connection to the 
+        \textit{GitHub platform} since the code needs to be uploaded from the GitHub platform to the 
+        CKB platform automatically. \\
+    \end{itemize}
 \subsection{Component view}
 \begin{figure}[H]
     \centering
@@ -405,17 +416,21 @@ since the code needs to be uploaded from the GitHub platform to the CKB platform
     \caption{Component diagram}
     \label{fig:componentView}
 \end{figure}
-In Figure 2 we can see a more detailed diagram, representing all the components previously described.
-The Web App is what Students and Educator connect to via their web browsers.
-It collects all of the Students' and Educators' requests, forwards them to the right service or component and sends back different responses.
+In Figure \ref{fig:componentView} we can see a more detailed diagram, representing all the 
+components previously described. The Web App is what Students and Educator connect to via their 
+web browsers. It collects all of the Students' and Educators' requests, forwards them to the 
+right service or component and sends back different responses.
 \\
 \begin{itemize}
-\item \textbf{Account Manager:} The Account Manager is the module that handles the client's logins and creates the session. 
-It checks the client's data and permissions and creates a session with the data he collects. This data session is what is used by the other services and
+\item \textbf{Account Manager:} The Account Manager is the module that handles the client's 
+logins and creates the session. It checks the client's data and permissions and creates a session 
+with the data he collects. This data session is what is used by the other services and
 interfaces to grant the user different permission levels. \\
-E.G. A Student can use the Tournament Manager differently from an Educator, since the Student can subscribe to a tournament and see the battles it contains,
-while an Educator can use the Interface to manage the tournament.\\
-\item \textbf{Tournament Manager:} The Tournament Manager is the module that lets Educators create and manage tournaments and it lets them grant permission
+E.G. A Student can use the Tournament Manager differently from an Educator, since the Student 
+can subscribe to a tournament and see the battles it contains, while an Educator can use the 
+interface to manage the tournament.\\
+\item \textbf{Tournament Manager:} The Tournament Manager is the module that lets Educators 
+create and manage tournaments and it lets them grant permission
 to create battles in their tournaments to other Educators. \\
 It lets Students visualise all open tournaments and subscribe to each tournament they want. \\
 \item \textbf{Battle Manager:} The Battle Manager is the module that lets Educators create and manage battles within their tournaments, or within tournaments
@@ -454,13 +469,13 @@ The Deployment Diagram in figure shows the components needed for the correct sys
 are already implemented and found online.\\
 Each device has its own operating system downloaded, the different tiers in the figure are:\\
 \begin{itemize}
-\item \textbf{Tier 1:} The First tier is the client tier. On the client's machine can run any OS (Windows 11 32 bit, for example) and any web browser. The web application
+\item \textbf{Tier 1:} The First tier is the client tier. On the client's machine can be run any OS (Windows 11 32 bit, for example) and any web browser. The web application
 needs to be able to correctly run on any web browser downloaded on any OS.\\
 \item \textbf{Tier 2:} The Second tier is the Web Application tier. Here no logic is found, is where the CKB platform can be accessed.
 The Web Server is stored here, is contains no logic besides the bases needed for a correct execution of the website (CSS, JavaScript and Bootsrap 5.0). \\
 This tier simply receives request from the client and forwards them to the Third tier, it then receives and shows the answer he received from the Third tier
- to the requesting client. \\
- \item \textbf{Tier 3:} The Third tier stores the Application Servers. The servers include all the main logic needed by the CKB platform to correctly perform.
+to the requesting client. \\
+\item \textbf{Tier 3:} The Third tier stores the Application Servers. The servers include all the main logic needed by the CKB platform to correctly perform.
 The Third tier receives all the forwarded requests from the clients, interacts with the Fourth tier to get data, and evaluates a response. The response is 
 then sent up to the Second tier, which will show the answer to the client. Each module is mapped onto this tier. This tier is the one that mainly interacts
 with all external APIs. \\
@@ -596,6 +611,7 @@ Only the most relevant method parameters and methods are shown.
         checks if each ID corresponds to a Student's id saved in the platform and, if so, creates the group, saving it in the group's database.  
     \end{itemize}
 \end{itemize}
+
 \subsection{Runtime view}
     \begin{figure}[H]
         \centering
@@ -616,7 +632,7 @@ Only the most relevant method parameters and methods are shown.
             \label{fig:Sequence1DD}
         \end{figure}
 
-        The above diagram represents the process of a Student's signing up.
+        The above diagram represents the signing up process of a Student.
         The Student accesses to the CKB platform WebApp Homepage through their browser
         (omitted for simplicity). They then clicks on the "SIGN IN" button as
         shown in figure \ref{fig:homepageMockup}. The WebApp will show a form
@@ -628,7 +644,7 @@ Only the most relevant method parameters and methods are shown.
         Account Manager which evaluates the request.
         The Account Manager is in charge of checking the validity of the Student's credentials,
         i.e. checking whether the name, surname or username inserted by the Student
-        contains some not acceptable characters for some reason, the password
+        contains, for some reasons, some not acceptable characters, the password
         don't respects security standards, ... \\
         Other than that the Account Manager takes care to verify if the Student is already
         registered, i.e. if the used email already appears in the DB. This is done by interfacing
@@ -657,7 +673,7 @@ Only the most relevant method parameters and methods are shown.
 
         The above diagram, represents the process of an Educator's signing up.
         The process is pratically identical to the Student's one with the exception of the
-        data that the Educator is requested to insert in the form, such as their name, surname
+        data that the Educator is requested to enter in the form, such as their name, surname
         username, school in which they teaches, istitutional email, password, ... 
 
     \subsubsection{Educator creates a new tournament}
@@ -683,7 +699,7 @@ Only the most relevant method parameters and methods are shown.
         \ref{fig:tournamentCreationPage}, in this way the tournament's data will be sent to the
         Tournament Manager which will check first, if the user has the permission to use the API
         by contacting the Account Manager. Then it will check if the tournament's inserted data
-        are valid. In all the checks were successful the Tournament Manager proceeds to
+        are valid. If all the checks were successful the Tournament Manager proceeds to
         contact the DBMS, which will insert the new tournament in the DB.
         \\ \\
         At this point if everything went well, the Tournament Manager contacts the Notification
@@ -700,7 +716,7 @@ Only the most relevant method parameters and methods are shown.
             error message to the WebApp, which will display it to the User.
             Finally the user will be redirected to the login page (omitted for simplicity).
             \item \textbf{Tournament's data are invalid} In this case after the check, the 
-            Tournament Manager component just return an error message to the WebApp stating 
+            Tournament Manager component return an error message to the WebApp stating 
             that the inserted data were not valid. The message will then be shown to the 
             Educator by the WebApp.
             \item \textbf{Tournament's DB insertion went wrong:} In this case no 
@@ -719,12 +735,12 @@ Only the most relevant method parameters and methods are shown.
         \end{figure}
 
         The diagram above represents the process of badges' creation by an Educator.
-        In order to start the process the Educator must have completed the login procedure first,
-        as shown in figure \ref{fig:userLogin}. \\
-        The Educator during the creation of a tournament, have the possibility to create new badges.
-        In order to do so the Educator clicks on the "Create badge" button (as shown in figure
-        \ref{fig:tournamentCreationPage}). The WebApp will show a form that the Educator has to fill
-        with the badge's data. \\ \\
+        In order to start this process the Educator must start creating a new tournament as first
+        step and as shown in figure \ref{fig:Sequence3DD}. \\
+        To create new badges during tournament's creation the Educator clicks on the 
+        "Create badge" button (as shown in figure \ref{fig:tournamentCreationPage}). 
+        The WebApp will show a form that the Educator has to fill with the badge's data. 
+        \\ \\
         After clicking on the "Confirm button" (as shown in figure \ref{fig:badgeCreationPage})
         the WebApp contacts the Badge Manager component in order to start the badge's creation.
         \\ \\
@@ -741,7 +757,7 @@ Only the most relevant method parameters and methods are shown.
         The process can go wrong in several situations. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the logged User is not an
-            Educator, or isn't correctly logged. The Badge Manager will return an
+            Educator, or isn't correctly logged, the Badge Manager will return an
             error message to the WebApp, which will display it to the User.
             Finally the user will be redirected to the login page (omitted for simplicity).
             \item \textbf{Badge's data are invalid:} In this case, the Badge Manager component 
@@ -809,7 +825,7 @@ Only the most relevant method parameters and methods are shown.
         by an Educator. In order to start the process the Educator must have completed the login 
         procedure first, as shown in figure \ref{fig:userLogin}. \\
         The Educator accesses to the CKB platform WebApp Homepage and subsequently
-        to the page of one of the tournaments they have created, all of this through their browser
+        to the page of one of the tournaments they have created through their browser
         (omitted for simplicity).
         They then click on the "Create new Battle" button as shown in figure \ref{fig:tournamentManagementPage}.
         \\ \\
@@ -842,8 +858,8 @@ Only the most relevant method parameters and methods are shown.
             the Battle Manager will return an error message stating that the the procedure was 
             denied. 
             The message will be shown by the WebApp to the Educator themselves and finally
-            the User will redirected to the login page (omitted for simplicity).
-            \item \textbf{Battle's data are invalid:} In this case after the check, the Battle 
+            the User will be redirected to the login page (omitted for simplicity).
+            \item \textbf{Battle's data are invalid:} In this case, after the check, the Battle 
             Manager component just return an error message to the WebApp stating that the 
             inserted data were not valid. The message will then be shown to the Educator by 
             the WebApp.
@@ -868,11 +884,11 @@ Only the most relevant method parameters and methods are shown.
         first, as shown in \ref{fig:userLogin} figure.
         The Educator has to access to the riepilogative page of their tournaments 
         (this part of the process was omitted for simplicity) and here, they have to click 
-        on a tournament in order to access it, and subsequently click the "Close" button
+        on a tournament in order to access it. Subsequently they have to click the "Close" button
         in order to close it (as shown in \ref{fig:tournamentPage}).
-        The WebApp will show a confirmation modal to the Educator, which can click the "Confirm"
-        button as shown in figure \ref{fig:tournamentPage} starting in this way the procedure of 
-        the tournament's closure. 
+        The WebApp will show a confirmation modal to the Educator, who can click the "Confirm"
+        button as shown in figure \ref{fig:tournamentPage} starting in this way the 
+        tournament's closure. 
         \\ \\
         At this point the WebApp contacts the TournamentManager which will rely on the Account
         Manager in order to check if the user has the permission to use the APIs.
@@ -896,7 +912,7 @@ Only the most relevant method parameters and methods are shown.
             \item \textbf{Tournament contains active battles} In this case after the check, the 
             Tournament Manager component just return an error message to the WebApp stating 
             that the closure of the tournament has been denied since there is still at least
-            one battle active within it. The message will then be shown to the Educator by the 
+            one battle active within it. The message will be shown then to the Educator by the 
             WebApp.
             \item \textbf{Tournament's DB insertion went wrong:} In this case no 
             notification will be sent to the Students, and the Tournament Manager component will 
@@ -915,27 +931,26 @@ Only the most relevant method parameters and methods are shown.
         \end{figure}
         
         \newpage
-        The above diagram represents the manual evaluations of a battle’s results by an Educator.
+        The above diagram represents the manual evaluation of a battle’s by an Educator.
         In order to start this process the Educator must have completed the login procedure first, as shown in \ref{fig:userLogin}
         figure.\\ 
-        The Educator has to access to the page of their tournaments, access to the page of the battle and access to the page 
-        of the battle that need manual evaluation, where there are the battle's last solution updated by the group before 
-        the ending of the battle (omitted for simplicity).\\
+        The Educator has to access the page of their tournaments, access to the tournament's page containing the 
+        battle that needs a manual evaluation. (omitted for simplicity).\\
         After select a solution, They click on the ”manually Evaluate Battle” button as shown in figure ??.\\
         \\
-        The WebApp will show a page which will contains the actuale grade of the group and the group last solution.
-        that the Educator, after having inspected the code can update the grade of the group.
+        The WebApp will show a page which will contains the current score of the groups and their last solutions to the battle.
+        The Educator, after having inspected the codes can update groups' score and give a litte explanation
+        about their decisions.
         \\ \\
         Once the Educator press the ”Confirm” button (as shown in figure ??) the score data will be sent to the Evaluation Manager.\\
         The Evaluation Manager will contacts the Account Manager, to verify, through
-        the session’s data, whether the logged User has the permissions to manually
+        session’s data, whether the logged User has the permissions to manually
         evaluate a battle.\\ If that’s the case then the Evaluation Manager will
-        check the validity of the score data inserted, i.e. checking whether one or
-        more data don’t respect some standards.\\
+        check the validity of the inserted score data.
         \\
         If the check succeeds then the Evaluation Manager will try to update the score
         in the DB, by contacting the DBMS.\\
-        If the update succeeds then the Evaluation Manager component will return a message
+        If the update succeeds, the Evaluation Manager component will return a message
         of success to the Educator through the WebApp.
         \\ \\
         There are several cases in which this process may go wrong. In order we have:
@@ -943,12 +958,15 @@ Only the most relevant method parameters and methods are shown.
             \item \textbf{User does not have permissions:} In case the User is not and Educator
             or is not the battle’s creator the Evaluation Manager will return an error message 
             stating that the the procedure was denied. The message will be shown 
-            by the WebApp to the Educator themselves and finally the User will 
+            by the WebApp to the Educator, and finally the User will be
             redirected to the login page (omitted for simplicity).
             \item \textbf{Score's data are invalid:} In this case after the check, 
             the Evaluation Manager component just return an error message to the 
             WebApp stating that the inserted data were not valid. The message will 
             then be shown to the Educator by the WebApp.
+            \item \textbf{Battle is not enabled to be manually evaluated:} In this case after 
+            the check, the Evaluation Manager return an error message to the WebApp
+            stating that the battle was not enabled to be manually evaluated.
             \item \textbf{Score's DB insertion went wrong:} In this case no update will
             be done to the previous score, and the Evaluation Manager component 
             will return to the WebApp an error message stating that there was an 
@@ -985,23 +1003,29 @@ Only the most relevant method parameters and methods are shown.
         \\ \\
         If the check succeeds then the Group Manager will try to insert the group
         in the DB, by contacting the DBMS.
-        If the update succeeds then the Group Manager component will continue by
-        sending the invite.
+        If the insertion succeeds then the Group Manager component will return a confirmation
+        message to the WebApp and to the Student.
         \\ \\
-        The Group Manager will proceed to invite individually the selected students.
-        Once sending the invite to all the students the Group Manager component will 
-        return a message of success to the Student through the WebApp.
+        At this point the Student can choose the Students to invite, by searching them, eventually
+        using some filters, within all the Students that joined the tournament in which the group
+        has been created.
+        Once decided who to invite, the Student click on the appropriate button to contacts the
+        Group Manager, which once again will contacts the Account Manager to verify the User's 
+        permissions. If the check goes well the Group Manager interfaces with the Notification
+        Manager in order to send all the notifications to the Students chosen by the group
+        creator. \\
+        Finally if everything went well, the Group Manager will return a message of success.
         \\ \\
         There are several cases in which this process may go wrong. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the User is not a Student
             or isn't subscribed to the tournament the Group Manager will return an error message 
             stating that the the procedure was denied. The message will be shown 
-            by the WebApp to the Student themselves and finally the User will be
+            by the WebApp to the User and finally they will be
             redirected to the profile page (omitted for simplicity).
             \item \textbf{Group's DB insertion went wrong} In this case no insertion will
             be done, and the Group Manager component will return to the WebApp 
-            an error message stating that there was an error while inserting the group. 
+            an error message stating that there was an error while creating the group. 
             The message will then be shown by the WebApp to the Student.
         \end{itemize}
 
@@ -1019,26 +1043,19 @@ Only the most relevant method parameters and methods are shown.
         In order to start this process the Student must have 
         completed the login procedure first, (as shown in \ref{fig:userLogin} figure) and the
         group creation procedure (as shown in \ref{fig:Sequence9DD} figure). 
-        The Student has to access to the page of the tournaments, access 
+        The Student has to access to a tournament, access 
         to the page of the battle that he wants to join then the Student
-        clicks on the ”joinBattlePage” button (as shown in figure ??).
-        \\ \\
-        The WebApp will show a page which will contains the group that the 
-        Student has created in the battle's tournament. After choosing the 
-        group to register the student click the "Confirm" Button 
-        (as shown in figure ??) and the score data will be sent to the 
-        Battle Manager.
+        clicks on the ”Join battle” button (as shown in figure ??).
         \\ \\
         The Battle Manager will contacts the Account Manager, to verify, 
         through the session’s data, whether the logged User has the 
         permissions to join the battle. If that’s the case then the Battle 
-        Manager will check the validity of the group data inserted, i.e. 
-        checking whether one or mone students are already subscrive to 
-        the battle with other groups.
+        Manager will check the validity of the group, i.e. 
+        checking whether the group violates some dimension constraints.
         \\ \\
-        If the check succeeds then the Battle Manager will try to subscrive 
-        the group in the battle's, by contacting the DBMS.
-        If the update succeeds then the Battle Manager component will 
+        If the check succeeds then the Battle Manager will try to subscribe 
+        the group in the battle, by contacting the DBMS.
+        If the insertion succeeds then the Battle Manager component will 
         return a message of success to the Student through the WebApp.
         \\ \\
         There are several cases in which this process may go wrong. In order we have:
@@ -1046,11 +1063,11 @@ Only the most relevant method parameters and methods are shown.
             \item \textbf{User does not have permissions:} In case the User in not a Student 
             or have not the permission to join a battle the Battle Manager will return an 
             error message stating that the the procedure was denied. The message will be shown 
-            by the WebApp to the Student themselves and finally the User will 
+            by the WebApp to the Student and finally the User will be
             redirected to the profile page (omitted for simplicity).
-            \item \textbf{ Group's data are invalid} In this case after the check, the Battle
+            \item \textbf{Group's data are invalid} In this case after the check, the Battle
             Manager component just return an error message to the WebApp stating that
-            the selected data were not valid. The message will then be shown to the
+            the group don't respect the battle's rules. The message will then be shown to the
             Student by the WebApp.
             \item \textbf{Group's DB insertion went wrong:} In this case no subscription will
             be done, and the Battle Manager component will return to the WebApp 
@@ -1068,29 +1085,29 @@ Only the most relevant method parameters and methods are shown.
         \end{figure}
 
 
-        The above diagram represents the uploading of a new solution
-        of a battle by a Student.
-        In order to start this process the Student upload a 
-        new solution on the GitHub platform that will activate the GitHub
+        The above diagram represents the uploading of a new battle's solution by a Student.
+        In order to start this process the Student must have 
+        completed the login procedure first, (as shown in figure \ref{fig:userLogin})
+        The Student upload a new solution on the GitHub platform that will activate the GitHub
         Actions APIs. The GitHub Actions APIs will communicate to the Evaluation Manager
         that a new solution has been loaded and need to be evaluate.
         \\ \\
-        The Evaluation Manager will check the validity of the group and battle data inserted,
-        i.e. checking whether the group is subscribed to the battle.
+        The Evaluation Manager will check the validity of the group and battle,
+        i.e. checking whether the group is actually subscribed to that battle.
         \\ \\
         If the check succeeds then the Evaluation Manager will download the
-        solution just upload from the GitHub Actions APIs.
+        solution from the GitHub Actions APIs.
         Here there will be the test of the deadline, omitted because part
-        of a successive Diagrams (shown in \ref{fig:Sequence12DD} figure ).
-        The Evaluation Manager will now test the solution by passing them to the Testing APIs.
-        After receive the result of the test by the Testing APIs, the Evaluation Manager will
-        try to update the past grade in the DBMS.
+        of a successive Diagrams (shown in figure \ref{fig:Sequence12DD}).
+        The Evaluation Manager will now test the solution by passing it to the Testing APIs.
+        After receiving the result of the test by the Testing APIs, the Evaluation Manager will
+        try to update the past group's score in the battle by interacting with the DBMS.
         \\ \\
         There is one case in which this process won’t succeeds:        
         \begin{itemize}
-            \item \textbf{Group isn't subscribed to the battle:} In case the Evaluation Manager will 
-            abort the execution and don't try to update the grade.
-            (Shown for semplicity with a comment section)
+            \item \textbf{Group isn't subscribed to the battle:} In this case the Evaluation Manager 
+            will abort the execution and don't try neither to evaluate the solution and 
+            to update the grade. (Shown for simplicity with a comment)
           \end{itemize}
 
     \subsubsection{Student uploads a solution after submission deadline}
@@ -1103,30 +1120,16 @@ Only the most relevant method parameters and methods are shown.
 
 
         The above diagram represents the uploading of a new solution
-        of a battle by a Student when the deadline is expired.
-        In order to start this process the Student upload a 
-        new solution on the GitHub platform that will activate the GitHub
-        Actions APIs. The GitHub Actions APIs will communicate to the Evaluation Manager
-        that a new solution has been loaded and need to be evaluate.
+        of a battle by a Student when the battle's deadline is expired.
+        The process is very similar to the one described in the precedent diagram (see figure
+        \ref{fig:Sequence11DD}), but with the addition of the deadline check.
+        If the check goes well, then the Evaluation Manager component will download the solution
+        by interacting with the GitHub APIs and it will have the same behaviour as in the
+        previous diagram.
         \\ \\
-        The Evaluation Manager will check the validity of the group and battle data inserted,
-        i.e. checking whether the group is subscribed to the battle.
+        If the check highlights some problems, i.e. if the battle's deadline has already expired,
+        then the execution is aborted.
         \\ \\
-        If the check succeeds then the Evaluation Manager will download the
-        solution just upload from the GitHub Actions APIs.
-        The Evaluation Manager will now control if the battle's deadline is altready expired,
-        if that's the case the Battle Manager will abort the execution and don't try 
-        to update the grade (Shown for semplicity with a comment section).
-        \\ \\
-        There are some cases in which this process won’t succeeds. In order we have:
-        \begin{itemize}
-            \item \textbf{Group isn't subscribed to the battle:} In case the Evaluation Manager will 
-            abort the execution and don't try to update the grade.
-            (Shown for semplicity with a comment section)
-            \item \textbf{Deadline isn't expired:} In case the Evaluation Manager will 
-            continue the evaluation of the solution as show in \ref{fig:Sequence11DD} figure 
-            (Shown for semplicity with a comment section).
-          \end{itemize}
 
     \subsubsection{Student visualizes his tournament's results and badges}
         \begin{figure}[H]
@@ -1138,27 +1141,25 @@ Only the most relevant method parameters and methods are shown.
 
         
 
-        The above diagram represents the visualization of the tournaments'
-        result and the badges by a Student. \\
+        The above diagram represents the visualization of a Student's results and badges
+        in tournaments. \\
         In order to start this process the Student must have 
-        completed the login procedure first, (as shown in fig. 4).
-        The Student has to access to his profile page, then he have to
-        clicks on the ”myTournamentResult” button (as shown in figure ??).
+        completed the login procedure first, (as shown in fig. \ref{fig:userLogin}).
+        The Student has to access to their profile page (omitted for simplicity), 
+        then they have to clicks on the ”myTournamentResults” button (as shown in figure ??).
         \\ \\
         The WebApp will send the user data to the Tournament Manager.\\
         The Tournament Manager will contacts the Account Manager, to verify, 
         through the session’s data, whether the logged User has the 
         permissions to see the tournaments' result. If that’s the case then 
-        the Tournament Manager will ask to the DBMS all the tournaments
-        of the student. After receiving the list of tournaments, the Tournament
-        Manager will ask, for each tournament in the list, what is the result
-        of the Student, receiving the results.
+        the Tournament Manager will ask to the DBMS to get all the scores 
+        obtained by the Student in the tournament that they have partecipated to.
         \\ \\
-        When received all the results the Tournament Manager component will 
+        After receiving the list of scores, the Tournament Manager component will 
         return the page with the tournaments' result to the Student through 
         the WebApp.
         \\ \\
-        The Student now wants to see his badges, so he have to
+        The Student now wants to see their badges, so they have to
         clicks on the ”myBadges” button (as shown in figure ??).\\
         The WebApp will send the user data to the Badge Manager.
         \\ \\
@@ -1166,26 +1167,21 @@ Only the most relevant method parameters and methods are shown.
         through the session’s data, whether the logged User has the 
         permissions to see the badges. If that’s the case then 
         the Badge Manager will ask to the DBMS all the badges obtained by
-        the student. When received the badges the Badge Manager component will 
+        the student. After receiving the badges, the Badge Manager will 
         return the page with the badges to the Student through the WebApp. 
         \\ \\
         There are several cases in which this process may go wrong. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the User isn't a Student or
-            haven't the permission to see tournaments' result the Tournament Manager 
+            they have not the permission to see tournaments' result, the Tournament Manager 
             will return an error message stating that the the procedure was denied. 
-            The message will be shown by the WebApp to the Student themselves and finally the User will 
-            redirected to the profile page (omitted for simplicity).
-            \item \textbf{User does not have permissions to see badges:} In case the User
-            haven't the permission to see badges the Badge Manager 
-            will return an error message stating that the the procedure was denied. 
-            The message will be shown by the WebApp to the Student themselves and finally the User will 
+            The message will be shown by the WebApp to the Student and finally the User will be
             redirected to the profile page (omitted for simplicity).
         \end{itemize}
 
 
 \subsection{Selected architectural styles and patterns}
-    \subsubsection{Four-layered architecture:} We chose this architecture for many reasons, mainly:
+    \subsubsection{Four-layered architecture:} We chose this architecture for many reasons, mainly because:
     \begin{itemize}
         \item \textbf{Maintainability:} By having four different layers, with separated logic and data, once the platform's structure is fully defined
         each layer's interior logic will be fully defined.
@@ -1211,7 +1207,7 @@ Only the most relevant method parameters and methods are shown.
     \begin{itemize}
     \item \textbf{Cacheability:} For a web application to be RESTFul, it needs to be cacheable. Having a web cache makes the web application much faster when handling 
     requests, since the application servers will not be accessed each time a request is made. Instead, cache proxies present in the network will parse the requests and
-     answer for them, if the data they have is not too old.
+    answer for them, if the data they have is not too old.
     \item \textbf{Uniform interface:} Having uniform interfaces thoughout all its users, the web application ensures that it can be accessed from any browser, downloaded
     on any operating system. This is an important constraint, as any user can access and use the CKB platform.
     \end{itemize}
@@ -1223,7 +1219,8 @@ Only the most relevant method parameters and methods are shown.
     session is created.
     We have a database dedicated to the tournaments' data, containing all battles, badges and tournaments. This database is accessed each time a request 
     is made that needs to access or modify some data related to tournaments.
-    We have a database dedicated to Students' groups, accessed each time a new group is created.
+    We have a database dedicated to Students' groups, accessed each time a new group is created. This database will also contains all the
+    useful information regarding groups' work on their repositories, gathered via the GitHub APIs.
     Each database is developed using the PostgreSQL language, since it has a better trigger architecture than MySQL or MariaDB.
 
 \newpage
@@ -1236,55 +1233,51 @@ Only the most relevant method parameters and methods are shown.
     \item \textbf{R.1:} The CKB platform should allow an
         unregistered Student to create a new account.
         \begin{itemize}
+            \item \textbf{Account Manager:} Used to handle the registration requests.
             \item \textbf{User Database:} Used to store Students' informations after registration.
         \end{itemize}
     \item \textbf{R.2:} The CKB platform should allow an
         unregistered Educator to create a new account.
         \begin{itemize}
+            \item \textbf{Account Manager:} Used to handle the registration requests.
             \item \textbf{User Database:} Used to store Educators' informations after registration.
         \end{itemize}
     \item \textbf{R.3:} The CKB platform must allow access to its pages only if the used credentials are correct.
         \begin{itemize}
-            \item \textbf{Account Manager:} Used to check whether the credentials used are correct.
-            \item \textbf{Account Manager:} Used to retrieve users' data.
+            \item \textbf{Account Manager:} Used to check whether the credentials used are correct and to retrieve users' data.
         \end{itemize}
     \item \textbf{R.4:} The CKB platform must not allow a Student to register more than once in the system.
           \begin{itemize}
               \item \textbf{Account Manager:} Used to check if the Student has 
-              already registered to the platform.
-              \item \textbf{Account Manager:} Used to retrieve Student's data.
+              already registered to the platform and retrieve Student's data.
           \end{itemize}
     \item \textbf{R.5:} The CKB platform must not allow an Educator to register more than once in the system.
           \begin{itemize}
               \item \textbf{Account Manager:} Used to check if the Educator has already
-              registered to the platform.
-              \item \textbf{Account Manager:} Used to retrieve Educator's data.
+              registered to the platform and retrieve Educator's data.
           \end{itemize}
     \item \textbf{R.6:} Educators can access the platform's services only if they are registered to it.
           \begin{itemize}
               \item \textbf{Account Manager:} Used to check if the Educator is registered to
-              the platform.
-              \item \textbf{Account Manager:} Used to retrieve Educator's data.
+              the platform and retrieve Educator's data.
           \end{itemize}
     \item \textbf{R.7:} Students can access the platform's services only if they are registered to it.
           \begin{itemize}
             \item \textbf{Account Manager:} Used to check if the Student is registered to
-            the platform.
-            \item \textbf{Account Manager:} Used to retrieve Student's data.
+            the platform and retrieve Student's data.
           \end{itemize}
     \item \textbf{R.8:} The CKB platform should not allow Students to create tournaments and/or battles.
           \begin{itemize}
               \item \textbf{Account Manager:} Used to check if the user is a Student and prevent him
-              to access Tournament Manager APIs that should not have access to.
-              \item \textbf{Account Manager:} Used to retrieve Student's data.
+              to access Tournament Manager APIs that should not have access to. Also used to 
+              retrieve Student's data.
           \end{itemize}
     \item \textbf{R.9:} The CKB platform should allow Educators to create battles within a tournament only to the tournament
-          creator and to any other Educator that has been granted permission to do so by the tournament creator.
+          creator and to any other Educator that has been granted permission to do so by the tournament's creator.
           \begin{itemize}
               \item \textbf{Account Manager:} Used to check whether the logged Educator can create
-              a battle within a certain tournament.
+              a battle within a certain tournament and to retrieve Educator's data.
               \item \textbf{Battle Manager:} Used to create the new battle within the tournament.
-              \item \textbf{Account Manager:} Used to retrieve Educator's data. 
               \item \textbf{Tournament Database:} Used to store the newly created battle's data.
           \end{itemize}
     \item \textbf{R.10:} The CKB platform must allow Educators to personalise the tournaments they create.
@@ -1306,18 +1299,16 @@ Only the most relevant method parameters and methods are shown.
     \item \textbf{R.13:} The CKB platform must allow Educators to manually evaluate the solutions uploaded by the Students for the battles that
           the Educators created.
           \begin{itemize}
-              \item \textbf{Battle Manager:} Used to check whether the battle is enabled to be manually
-              evaluated.
               \item \textbf{Evaluation Manager:} Used to allow the Educator to manually evaluate Students'
-              work.
-              \item \textbf{Account Manager:} Used to retrieve Educator's data.
-              \item \textbf{Tournament Database:} Used to store battle and scores' data. The scores are both the automatically generated ones and the ones
+              work and check whether the battle is enabled to be manually evaluated.
+              \item \textbf{Account Manager:} Used to retrieve Educator's data and check whether
+              the User has the permission to manually evaluate a battle.
+              \item \textbf{Group Database:} Used to store battle and scores' data. The scores are both the automatically generated ones and the ones
               given by the Educator through the manual evaluation process.  
           \end{itemize}
     \item \textbf{R.14:} The CKB platform must allow Educators to delete or update badges before finalizing a tournament's creation.
           \begin{itemize}
               \item \textbf{Badges Manager:} Used to update or delete some badges during tournament creation.
-              \item \textbf{Tournament Manager:} Used to retrieve old badges's data.
               \item \textbf{Tournament Database:}  Used to store the badge's data.
           \end{itemize}
     \item \textbf{R.15:} The CKB platform must allow Educators to define rules to obtain badges in tournaments created by them.
@@ -1346,100 +1337,96 @@ Only the most relevant method parameters and methods are shown.
     \item \textbf{R.19:} The CKB platform must allow Educators to close tournaments they have created.
           \begin{itemize}
               \item \textbf{Tournament Manager:} Used to allow Educators to close the tournaments that they have
-              created.
-              \item \textbf{Tournament Manager:} Used to retrieve old tournament's data.
+              created and retrieve old tournament's data.
               \item \textbf{Tournament Database:} Used to store tournaments' data.
           \end{itemize}
     \item \textbf{R.20:} The CKB platform must ensure that when a tournament is closed, Educators cannot create new battles
           within it.
           \begin{itemize}
               \item \textbf{Tournament Manager:} Used to prevent Educators to create new battles
-                within closed tournaments.
+                within closed tournaments and to retrieve the data of the tournament in which
+                the Educator wants to create a new battle.
             \item \textbf{Battle Manager:} Used to try to create a new battle.
-            \item \textbf{Tournament Manager:} Used to retrieve the data of the tournament in which
-            the Educator wants to create a new battle. 
           \end{itemize}
     \item \textbf{R.21:} The CKB platform must ensure that if a group uploads a solution to a battle after the submission's deadline,
           that solution will not be considered in the score computation by preventing its upload.
           \begin{itemize}
-              \item \textbf{Battle Manager:} Used to check if the submission phase of the battle has ended.
-              \item \textbf{Tournament Manager:} Used to retrieve battle's data. 
+              \item \textbf{Battle Manager:} Used to check if the submission phase of the battle has ended and
+              retrieve battle's data. 
           \end{itemize}
     \item \textbf{R.22:} The CKB platform must ensure that the score given to a group in a tournament is
           coherent with scores given to the same group in the battles they have partecipated in.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to automatically evaluate Students' uploads,
               give them a score and subsequently update Students' tournament score.
-              \item \textbf{Tournament Database:} Used to store Students's scores.
+              \item \textbf{Group Database:} Used to store Students's scores.
           \end{itemize}
     \item \textbf{R.23:} The CKB platform must ensure fair competition between group scores. In the tournament's evaluation, the final
           group score should be the average score of all the battles in the tournament for each group. Any battle with no solution submitted will count
           as 0 points.
           \begin{itemize}
             \item \textbf{Evaluation Manager:} Used to automatically evaluate Students' uploads.
-            In case of no upload by a group assigns to them 0 points.
-            \item \textbf{Tournament Database:} Used to store Students's scores.
+            In case of no upload by a group, assigns to them 0 points.
+            \item \textbf{Group Database:} Used to store Students's scores.
           \end{itemize}
     \item \textbf{R.24:} The CKB platform must allow Students to subscribe to a tournament.
           \begin{itemize}
               \item \textbf{Tournament Manager:} Used to allow Students to register to a tournament.
-              \item \textbf{User Database:} Used to store registrations' data.
+              \item \textbf{Tournament Database:} Used to store registrations' data.
           \end{itemize}
     \item \textbf{R.25:} The CKB platform must allow Students to subscribe to a tournament's battle
           within the registration deadline.
           \begin{itemize}
               \item \textbf{Battle Manager:} Used to allow Students to register to a battle if the
               registration deadline has not expired yet.
-              \item \textbf{Tournament Manager:} Used to retrieve battle's data.
-              \item \textbf{Tournament Database:} Used to store Student's registration to the battle.
+              \item \textbf{Tournament Database:} Used to store Student's registration to the battle
+              and retrieve battle's data..
           \end{itemize}
     \item \textbf{R.26:} The CKB platform must allow Students to submit solutions to a tournament's battle
         within the battle's deadline relying on the external GitHub service.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to retrieve group's solution from GitHub.
-              \item \textbf{Tournament Database:} Used to store solution's data.
+              \item \textbf{Group Database:} Used to store solution's data.
           \end{itemize}
     \item \textbf{R.27:} The CKB platform must allow Students to send and receive group invitations to and from
           other Students in order to form groups.
           \begin{itemize}
               \item \textbf{Group Manager:} Used to search Students and send them invitations to groups.
+              Also used to create such groups.
               \item \textbf{Notification Manager:} Takes care of sending emails to the invited Students.
-              \item \textbf{Account Manager:} Used to retrieve Students' data.
               \item \textbf{Group Database:} Used to store invitation and group's data.
           \end{itemize}
     \item \textbf{R.28:} The CKB platform should allow Students to join a battle only if the group composition rules
           for that battle are complied with.
           \begin{itemize}
               \item \textbf{Battle Manager:} Used to check whether the group that is trying to
-              access the battle is violating some battle's rules, if not allows it to register to
+              access the battle is violating some battle's rules, if not, allows it to register to
               the battle.
-              \item \textbf{Tournament Manager:} Used to retrieve battle's data.
               \item \textbf{Tournament Database:} Used to store battle registration's data.
           \end{itemize}
     \item \textbf{R.29:} The CKB platform must ensure that solutions uploaded by a Student for a battle are evaluated.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to evaluate solutions uploaded on GitHub by Students.
-              \item \textbf{Tournament Database:} Used to store Students' scores.
+              \item \textbf{Group Database:} Used to store Students' scores.
           \end{itemize}
     \item \textbf{R.30:} The CKB platform must ensure that only the latest solution uploaded by a Student for a battle he is subscribed to will
           be taken into consideration for the final score.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to evaluate the last solution uploaded and
               overwrite Students' score according to it.
-              \item \textbf{Tournament Database:} Used to store Students' scores and new solutions' data.
+              \item \textbf{Group Database:} Used to store Students' scores and new solutions' data.
           \end{itemize}
     \item \textbf{R.31:} The CKB platform must allow groups partecipating in a battle to change their solution,
           if the battle's submission deadline hasn't expired yet.
           \begin{itemize}
             \item \textbf{Evaluation Manager:} Used to retrieve latest group's solution from GitHub and evaluate it.
-              \item \textbf{Tournament Database:} Used to store Students' scores and new solutions' data.
+              \item \textbf{Group Database:} Used to store Students' scores and new solutions' data.
           \end{itemize}
     \item \textbf{R.32:} The CKB platform must allow an Educator to modify the score for a Student's solution.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to allow an Educator to manually evaluate Students'
               work and change their score.
-              \item \textbf{Tournament Manager:} Used to retrieve of Students' work and score.
-              \item \textbf{Tournament Database:} Used to and store Studentd' scores.
+              \item \textbf{Group Database:} Used to and store Studentd' scores and retrieve Students' work and score.
           \end{itemize}
     \item \textbf{R.33:} The CKB platform must ensure that when a new tournament is created, all
           Students subscribed to the platform are going to receive a notification.
@@ -1465,14 +1452,13 @@ Only the most relevant method parameters and methods are shown.
     \item \textbf{R.36:} The CKB platform must allow Students to visualise the score they obtained in a tournament they partecipated in.
           \begin{itemize}
             \item \textbf{Tournament Manager:} Used to allow Students access the score obtained
-            in a tournament they partecipated to.
-            \item \textbf{Tournament Manager:} Used to retrieve tournament's data and specifically Student's results in it.
+            in a tournament they partecipated to. Also used to retrieve tournament's data and 
+            specifically Student's results in it.
           \end{itemize}
     \item \textbf{R.37:} The CKB platform must allow Students to visualise the badges they obtained.
           \begin{itemize}
               \item \textbf{Account Manager:} Used to allow Students to access their, or others'
-              profile pages and visualize the badges in it.
-              \item \textbf{Account Manager:} Used to retrieve Student's data.
+              profile pages and visualize the badges in it. Also used to retrieve Student's data.
           \end{itemize}
     \item \textbf{R.38:} The CKB platform must ensures that battles' characteristics respect guidelines
           regarding their name, deadlines, programming language, number of member per group.
