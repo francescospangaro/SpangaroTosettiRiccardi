@@ -577,9 +577,10 @@ Only the most relevant method parameters and methods are shown.
     \end{itemize}
     \item \textbf{Evaluation Manager}
     \begin{itemize}
-        \item \textbf{editScore(battleId, userId, score, studentID):} This method takes the user's ID, the battle's ID, the Student's ID and the new score to assign to the 
+        \item \textbf{editScore(battleId, userId, score, studentID, description):} This method takes the user's ID, the battle's ID, the Student's ID and the new score to assign to the 
         corresponding Student for the corresponding battle. The method checks if the user has permission to edit the Student's grade in the corresponding battle and, 
-        if he can, will then contact the DBMS and update the Student's old grade with the new one provided for the specified battle. 
+        if he can, will then contact the DBMS and update the Student's old grade with the new one provided for the specified battle, a description parameter is not mandatory, 
+        but if the Evaluation Manager finds it the grade is updated with the description provided. 
         A confirmation page will be sent back to the user.
         If the platform runs into any error in the process, or if the user doesn't have the necessary permissions, an error page will be displayed, and the database will not be
         updated.
