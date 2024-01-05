@@ -374,9 +374,9 @@ Deployment diagrams specification $\rightarrow$ \url{https://pubs.opengroup.org/
     each tier of the system.
     \begin{figure}[H]
         \centering
-        \includegraphics[scale=0.35]{images/FourTierApplication.png}
+        \includegraphics[scale=0.5]{images/FourTierApplication.pdf}
         \caption{Four-tier architecture}
-        \label{fig:Figure 1}
+        \label{fig:componentView}
     \end{figure}
     \noindent
     The main components are: \\ \\
@@ -399,7 +399,7 @@ Deployment diagrams specification $\rightarrow$ \url{https://pubs.opengroup.org/
         new grade to the web server. \\ \\
         \item \textbf{DBMS:} The DBMS is the main interpreter between the CKB platform and the data 
         stored onto the database. \\ \\
-        \item \textbf{DataBase:} The database stores all the information needed by the application. \\ \\
+        \item \textbf{DataBase:} The databases store all the informations needed by the application. \\ \\
         \item \textbf{External Services:} These services provide informations and funtionalities that 
         the CKB platform alone could not provide.
         These funtionalities include a \textit{GitHub actions API} that notifies the platform of the 
@@ -407,7 +407,7 @@ Deployment diagrams specification $\rightarrow$ \url{https://pubs.opengroup.org/
         tournament or a new battle in a tournament they are subscribed to is created or more generally
         whenever there's the need to notify a User. It's also included a connection to the 
         \textit{GitHub platform} since the code needs to be uploaded from the GitHub platform to the 
-        CKB platform automatically. \\
+        CKB platform automatically. This is also done through the \textit{GitHub actions APIs}. \\
     \end{itemize}
 \subsection{Component view}
 \begin{figure}[H]
@@ -608,7 +608,9 @@ Only the most relevant method parameters and methods are shown.
     \item \textbf{Group Manager}
     \begin{itemize}
         \item \textbf{createGroup(studentId, invitedIds):} This method takes the provided Student's ID and an array of the invited Students' IDs,
-        checks if each ID corresponds to a Student's id saved in the platform and, if so, creates the group, saving it in the group's database.  
+        checks if each ID corresponds to a Student's ID saved in the platform and, if so, creates the group, saving it in the group's database. 
+        \item \textbf{invite(senderId, receiverIds):} This method takes the inviter Student's ID and an array of the invited Students' IDs, checks if
+        each ID corresponds to a Student's ID saved in the platform and, if so, sends each invited Student a notification, notifying them of the invitation they just received.
     \end{itemize}
 \end{itemize}
 
@@ -1362,7 +1364,7 @@ Only the most relevant method parameters and methods are shown.
               work and check whether the battle is enabled to be manually evaluated.
               \item \textbf{Account Manager:} Used to retrieve Educator's data and check whether
               the User has the permission to manually evaluate a battle.
-              \item \textbf{Group Database:} Used to store battle and scores' data. The scores are both the automatically generated ones and the ones
+              \item \textbf{Tournament Database:} Used to store battle and scores' data. The scores are both the automatically generated ones and the ones
               given by the Educator through the manual evaluation process.  
           \end{itemize}
     \item \textbf{R.14:} The CKB platform must allow Educators to delete or update badges before finalizing a tournament's creation.
@@ -1418,7 +1420,7 @@ Only the most relevant method parameters and methods are shown.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to automatically evaluate Students' uploads,
               give them a score and subsequently update Students' tournament score.
-              \item \textbf{Group Database:} Used to store Students's scores.
+              \item \textbf{Tournament Database:} Used to store Students's scores.
           \end{itemize}
     \item \textbf{R.23:} The CKB platform must ensure fair competition between group scores. In the tournament's evaluation, the final
           group score should be the average score of all the battles in the tournament for each group. Any battle with no solution submitted will count
@@ -1426,7 +1428,7 @@ Only the most relevant method parameters and methods are shown.
           \begin{itemize}
             \item \textbf{Evaluation Manager:} Used to automatically evaluate Students' uploads.
             In case of no upload by a group, assigns to them 0 points.
-            \item \textbf{Group Database:} Used to store Students's scores.
+            \item \textbf{Tournament Database:} Used to store Students's scores.
           \end{itemize}
     \item \textbf{R.24:} The CKB platform must allow Students to subscribe to a tournament.
           \begin{itemize}
@@ -1439,13 +1441,13 @@ Only the most relevant method parameters and methods are shown.
               \item \textbf{Battle Manager:} Used to allow Students to register to a battle if the
               registration deadline has not expired yet.
               \item \textbf{Tournament Database:} Used to store Student's registration to the battle
-              and retrieve battle's data..
+              and retrieve battle's data.
           \end{itemize}
     \item \textbf{R.26:} The CKB platform must allow Students to submit solutions to a tournament's battle
         within the battle's deadline relying on the external GitHub service.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to retrieve group's solution from GitHub.
-              \item \textbf{Group Database:} Used to store solution's data.
+              \item \textbf{Tournament Database:} Used to store solution's data.
           \end{itemize}
     \item \textbf{R.27:} The CKB platform must allow Students to send and receive group invitations to and from
           other Students in order to form groups.
@@ -1466,26 +1468,26 @@ Only the most relevant method parameters and methods are shown.
     \item \textbf{R.29:} The CKB platform must ensure that solutions uploaded by a Student for a battle are evaluated.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to evaluate solutions uploaded on GitHub by Students.
-              \item \textbf{Group Database:} Used to store Students' scores.
+              \item \textbf{Tournament Database:} Used to store Students' scores.
           \end{itemize}
     \item \textbf{R.30:} The CKB platform must ensure that only the latest solution uploaded by a Student for a battle he is subscribed to will
           be taken into consideration for the final score.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to evaluate the last solution uploaded and
               overwrite Students' score according to it.
-              \item \textbf{Group Database:} Used to store Students' scores and new solutions' data.
+              \item \textbf{Tournament Database:} Used to store Students' scores and new solutions' data.
           \end{itemize}
     \item \textbf{R.31:} The CKB platform must allow groups partecipating in a battle to change their solution,
           if the battle's submission deadline hasn't expired yet.
           \begin{itemize}
             \item \textbf{Evaluation Manager:} Used to retrieve latest group's solution from GitHub and evaluate it.
-              \item \textbf{Group Database:} Used to store Students' scores and new solutions' data.
+              \item \textbf{Tournament Database:} Used to store Students' scores and new solutions' data.
           \end{itemize}
     \item \textbf{R.32:} The CKB platform must allow an Educator to modify the score for a Student's solution.
           \begin{itemize}
               \item \textbf{Evaluation Manager:} Used to allow an Educator to manually evaluate Students'
               work and change their score.
-              \item \textbf{Group Database:} Used to and store Studentd' scores and retrieve Students' work and score.
+              \item \textbf{Tournament Database:} Used to and store Students' scores and retrieve Students' work and score.
           \end{itemize}
     \item \textbf{R.33:} The CKB platform must ensure that when a new tournament is created, all
           Students subscribed to the platform are going to receive a notification.
