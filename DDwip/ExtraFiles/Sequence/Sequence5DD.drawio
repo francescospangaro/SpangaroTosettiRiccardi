@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-04T14:40:09.447Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="uu6V2XhJIUrZSyuxMxh5" version="22.1.16" type="device">
+<mxfile host="app.diagrams.net" modified="2024-01-05T20:10:17.505Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="5A-7u2W3eI03x2aaxgG4" version="22.1.16" type="device">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="2524" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1322" dy="744" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -115,7 +115,7 @@
         <mxCell id="Grd5uSEgUyq1KPTetLDH-19" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
           <mxGeometry x="-95" y="110" width="10" height="1070" as="geometry" />
         </mxCell>
-        <mxCell id="Grd5uSEgUyq1KPTetLDH-20" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;1 : click(updateBadgesButton)&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" source="Grd5uSEgUyq1KPTetLDH-19" edge="1">
+        <mxCell id="Grd5uSEgUyq1KPTetLDH-20" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;1 : click(editBadgesButton)&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" source="Grd5uSEgUyq1KPTetLDH-19" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-85" y="140" as="sourcePoint" />
             <Array as="points">

@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-12-28T10:18:05.889Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="93Ru0jErBc7wb-65wZxe" version="22.1.15" type="device">
+<mxfile host="app.diagrams.net" modified="2024-01-05T20:08:02.165Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="m6e81BwRh2eGSlZ2t0dq" version="22.1.16" type="device">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="2524" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1322" dy="744" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -25,7 +25,7 @@
         <mxCell id="xujpHnGjbQcPWJrS-wD8-6" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
           <mxGeometry x="-95" y="110" width="10" height="520" as="geometry" />
         </mxCell>
-        <mxCell id="xujpHnGjbQcPWJrS-wD8-7" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;1 : click(signInButton)&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" source="xujpHnGjbQcPWJrS-wD8-6" target="xujpHnGjbQcPWJrS-wD8-2" edge="1">
+        <mxCell id="xujpHnGjbQcPWJrS-wD8-7" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;1 : click(educatorRegistrationButton)&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" source="xujpHnGjbQcPWJrS-wD8-6" target="xujpHnGjbQcPWJrS-wD8-2" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="-50" y="110" as="sourcePoint" />
             <Array as="points">

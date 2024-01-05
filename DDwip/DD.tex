@@ -287,7 +287,7 @@ with a MSA server side, in addition to a MVC software architectural choice.
 
 \end{xltabular}
 
-
+\newpage
 \subsubsection{Abbreviations}
 \begin{xltabular}{\textwidth}{ >{\raggedright\arraybackslash}c >{\raggedright\arraybackslash}X }
     \hline
@@ -326,8 +326,7 @@ UML official specification $\rightarrow$ \url{https://www.omg.org/spec/UML}
 Sequence diagrams specification $\rightarrow$ \url{https://www.uml-diagrams.org/sequence-diagrams.html}
 \\ \\
 Component diagrams specification $\rightarrow$ \url{https://creately.com/blog/software-teams/component-diagram-tutorial/}
-\\ \\
-Deployment diagrams specification $\rightarrow$ \url{https://pubs.opengroup.org/architecture/archimate32-doc.singlepage/}
+
 \subsection{Document structure}
 \begin{itemize}
     \item \textbf{\textit{Section 1: Introduction}} \\
@@ -370,36 +369,36 @@ Deployment diagrams specification $\rightarrow$ \url{https://pubs.opengroup.org/
     \subsection{Overview: High-level components and interactions}
     To ensure high maintainability, security and reliability, the service is structured by following 
     the four-tier architecture model.
-    Figure \ref{fig:Figure 1} shows how the tiers are divided, and what are the relations between 
+    Figure \ref{fig:fourTierArchitecture} shows how the tiers are divided, and what are the relations between 
     each tier of the system.
     \begin{figure}[H]
         \centering
         \includegraphics[scale=0.5]{images/FourTierApplication.pdf}
         \caption{Four-tier architecture}
-        \label{fig:componentView}
+        \label{fig:fourTierArchitecture}
     \end{figure}
     \noindent
-    The main components are: \\ \\
+    The main components are:
     \begin{itemize}
         \item \textbf{Web Application:} The Web application allows users to connect to the platform's 
         services. The web application can be accessed by any device that is connected to the internet 
         and can browse the Web. Students and Educators will have different views of the Web application, 
-        because they have different parameters that they can view and manage. \\ \\
+        because they have different parameters that they can view and manage.\\
         \item \textbf{Web Server:} The Web server is what manages the Web application. It is connected 
         directly to the GitHub Platform to give Educators the possibility of seeing their Students' 
         uploaded solutions. It is connected to the GitHub platform to also give Students the possibility 
-        of seeing their solutions uploaded to the platform in real time. 
+        of seeing their solutions uploaded to the platform in real time.
         It is the main container for the JavaScript and general backend code for the platform.
         The Web server is connected to the Application server because it needs to be automatically updated when new grades for Students' solutions are generated
-        by the platform. \\ \\
+        by the platform.\\
         \item \textbf{Application Server:} The application server is the main backend of the CKB Platform. 
         It contains all the code needed for the platform to run smoothly and without interruptions. 
         It contains the logic needed to answer the API requests made by the users to the platform. It
         automatically evaluates Students' solutions proposed via the GitHub platform and uploads the 
-        new grade to the web server. \\ \\
+        new grade to the web server.\\
         \item \textbf{DBMS:} The DBMS is the main interpreter between the CKB platform and the data 
-        stored onto the database. \\ \\
-        \item \textbf{DataBase:} The databases store all the informations needed by the application. \\ \\
+        stored onto the database.\\
+        \item \textbf{DataBase:} The databases store all the informations needed by the application.\\
         \item \textbf{External Services:} These services provide informations and funtionalities that 
         the CKB platform alone could not provide.
         These funtionalities include a \textit{GitHub actions API} that notifies the platform of the 
@@ -407,12 +406,12 @@ Deployment diagrams specification $\rightarrow$ \url{https://pubs.opengroup.org/
         tournament or a new battle in a tournament they are subscribed to is created or more generally
         whenever there's the need to notify a User. It's also included a connection to the 
         \textit{GitHub platform} since the code needs to be uploaded from the GitHub platform to the 
-        CKB platform automatically. This is also done through the \textit{GitHub actions APIs}. \\
+        CKB platform automatically. This is also done through the \textit{GitHub actions APIs}.
     \end{itemize}
 \subsection{Component view}
 \begin{figure}[H]
     \centering
-    \hspace*{-4.1cm}\includegraphics[scale=0.5]{images/ComponentView.pdf}
+    \hspace*{-4cm}\includegraphics[scale=0.5]{images/ComponentView.pdf}
     \caption{Component diagram}
     \label{fig:componentView}
 \end{figure}
@@ -420,7 +419,6 @@ In Figure \ref{fig:componentView} we can see a more detailed diagram, representi
 components previously described. The Web App is what Students and Educator connect to via their 
 web browsers. It collects all of the Students' and Educators' requests, forwards them to the 
 right service or component and sends back different responses.
-\\
 \begin{itemize}
 \item \textbf{Account Manager:} The Account Manager is the module that handles the client's 
 logins and creates the session. It checks the client's data and permissions and creates a session 
@@ -460,14 +458,14 @@ E.G. A new tournament is created, a new battle is created in a tournament they a
 \subsection{Deployment view}
 \begin{figure}[H]
     \centering
-    \hspace*{-2.1cm}\includegraphics[scale=0.53]{images/DeploymentDiagram.pdf}
+    \hspace*{-2.6cm}\includegraphics[scale=0.53]{images/DeploymentDiagram.pdf}
     \caption{Component diagram}
     \label{fig:deploymentDiagram}
 \end{figure}
 
 The Deployment Diagram in figure shows the components needed for the correct system behaviour. The External APIs are not included, since they 
 are already implemented and found online.\\
-Each device has its own operating system downloaded, the different tiers in the figure are:\\
+Each device has its own operating system downloaded, the different tiers in the figure are:
 \begin{itemize}
 \item \textbf{Tier 1:} The First tier is the client tier. On the client's machine can be run any OS (Windows 11 32 bit, for example) and any web browser. The web application
 needs to be able to correctly run on any web browser downloaded on any OS.\\
@@ -492,7 +490,7 @@ Only the most relevant method parameters and methods are shown.
         register the new user in the system. A reply is then sent to the caller.
         \item \textbf{loginUser(userData):} This method takes a data struct conntaining all the user's data, contacts the DMBS, runs a query that checks
         for the data matching the user's data provided and, if found, creates a valid session with the user's data, then logs the user in the platform.
-        \item \textbf{checkUser(sessionData):} This method takes the session data and checks whether the user is a Student or and Educator.
+        \item \textbf{checkUser(sessionData):} This method takes the session data and checks whether the user is a Student or an Educator.
         This method is needed and will be used by all the methods that need to show the created battles and tournaments by an Educator.
     \end{itemize}
     \item \textbf{Tournament Manager}
@@ -500,7 +498,7 @@ Only the most relevant method parameters and methods are shown.
         \item \textbf{getCreatedTournaments(userId):} This method takes the user's ID from the session data, contact the DBMS which will check 
         if the user has created any tournaments and returns the json containing the new page to display, containing all the user's created tournaments.
         If no tournaments are found, the json returned will be an empty page.
-        \item \textbf{createTournament(userId, tournamentData):} This method takes the user's ID and the tournament's data, which will be contained in an ad-hoc
+        \item \textbf{createTournament(userId, tournamentData):} This method ta-kes the user's ID and the tournament's data, which will be contained in an ad-hoc
         created struct. The method will contact the DBMS and create a new tournament with the data contained in the tournamentData. 
         The method will then return a json file containing a confirmation page.
         If any check returns negative, or the process incurs in any errors, an error message will be returned, and nothing will be inserted in the DB.
@@ -636,7 +634,7 @@ Only the most relevant method parameters and methods are shown.
 
         The above diagram represents the signing up process of a Student.
         The Student accesses to the CKB platform WebApp Homepage through their browser
-        (omitted for simplicity). They then clicks on the "SIGN IN" button as
+        (omitted for simplicity). They then clicks on the "Student Registration" button as
         shown in figure \ref{fig:homepageMockup}. The WebApp will show a form
         which the Student has to fill with their informations such as
         name, surname, username that want to use in the platform, email,
@@ -647,7 +645,7 @@ Only the most relevant method parameters and methods are shown.
         The Account Manager is in charge of checking the validity of the Student's credentials,
         i.e. checking whether the name, surname or username inserted by the Student
         contains, for some reasons, some not acceptable characters, the password
-        don't respects security standards, ... \\
+        doesn't respects security standards, ... \\
         Other than that the Account Manager takes care to verify if the Student is already
         registered, i.e. if the used email already appears in the DB. This is done by interfacing
         with the DBMS.
@@ -665,6 +663,7 @@ Only the most relevant method parameters and methods are shown.
             turn will show a confirmation message to the Student.
         \end{itemize}
 
+    \newpage
     \subsubsection{Educator sign-up to the platform}
         \begin{figure}[H]
             \centering
@@ -691,14 +690,14 @@ Only the most relevant method parameters and methods are shown.
         first, as shown in \ref{fig:userLogin} figure.
         The Educator has to access to the riepilogative page of their tournaments 
         (this part of the process was omitted for simplicity) and here, they have to click 
-        on the "Create new Tournament" button (as shown in \ref{fig:tournamentsPage}).
-        The WebApp will show a Tournament creation page (\ref{fig:tournamentCreationPage})
+        on the "Create new Tournament" button (as shown in \ref{fig:tournamentsPageMockup}).
+        The WebApp will show a Tournament creation page (Figure \ref{fig:tournamentCreationPageMockup})
         in which there is a form that the Educator has to fill.
         At this point the Educator can creates new badges to insert in the tournament. This
         process is displayed in the Sequence Diagram 2.5.4 in figure \ref{fig:Sequence4DD}.
         \\ \\
-        After that, the Educator click on the "Confirm" button as shown in figure 
-        \ref{fig:tournamentCreationPage}, in this way the tournament's data will be sent to the
+        After that, the Educator click on the "Confirm creation" button as shown in figure 
+        \ref{fig:tournamentCreationPageMockup}, in this way the tournament's data will be sent to the
         Tournament Manager which will check first, if the user has the permission to use the API
         by contacting the Account Manager. Then it will check if the tournament's inserted data
         are valid. If all the checks were successful the Tournament Manager proceeds to
@@ -710,7 +709,7 @@ Only the most relevant method parameters and methods are shown.
         Finally the Tournament Manager component will return to the WebApp a message of success
         which in turn will return it to the Educator, who will be redirected to the 
         riepilogative page of their tournaments.
-
+        \\ \\
         There are several cases in which this process could go wrong. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the logged User is not an
@@ -731,7 +730,7 @@ Only the most relevant method parameters and methods are shown.
     \subsubsection{Educator creates new badges}
         \begin{figure}[H]
             \centering
-            \hspace*{-1cm}\includegraphics[scale=0.65]{Sequence/Sequence4DD.pdf}
+            \hspace*{-3.3cm}\includegraphics[scale=0.85]{Sequence/Sequence4DD.pdf}
             \caption{Badges creation sequence diagram}
             \label{fig:Sequence4DD}
         \end{figure}
@@ -740,10 +739,10 @@ Only the most relevant method parameters and methods are shown.
         In order to start this process the Educator must start creating a new tournament as first
         step and as shown in figure \ref{fig:Sequence3DD}. \\
         To create new badges during tournament's creation the Educator clicks on the 
-        "Create badge" button (as shown in figure \ref{fig:tournamentCreationPage}). 
+        "Add new badge" button (as shown in figure \ref{fig:tournamentCreationPageMockup}). 
         The WebApp will show a form that the Educator has to fill with the badge's data. 
         \\ \\
-        After clicking on the "Confirm button" (as shown in figure \ref{fig:badgeCreationPage})
+        After clicking on the "Confirm creation" button (as shown in figure \ref{fig:badgeCreationPageMockup})
         the WebApp contacts the Badge Manager component in order to start the badge's creation.
         \\ \\
         The Badge Manager communicate with the Account Manager which will check whether the 
@@ -770,24 +769,29 @@ Only the most relevant method parameters and methods are shown.
             the badge. The message will then be shown by the WebApp to the Educator.
         \end{itemize}
 
+        As said at the beginning the Educator can also deletes
+        badges just pressing the "Delete" button as shown on Figure
+        \ref{fig:tournamentCreationPageMockup}
+
     \subsubsection{Educator deletes and/or updates a badge}
         \begin{figure}[H]
             \centering
             \hspace*{-0.7cm}\includegraphics[scale=0.60]{Sequence/Sequence5DD.pdf}
-            \caption{Badges }
+            \caption{Badges deletion/update sequence diagram}
             \label{fig:Sequence5DD}
         \end{figure}
         
         The diagram above represents the process of badges' modification and/or deletion by an 
         Educator. In order to start the process the Educator must have completed the login 
-        procedure first, as shown in figure \ref{fig:userLogin}. \\
+        procedure first, as shown in figure \ref{fig:userLogin}.
+        \\ \\
         The Educator during the creation of a tournament, have the possibility to modify and/or
         delete badges that have precedently created during the same tournament creation procedure.
-        In order to modify a badge, the Educator can click on the "Edit badge" button 
-        (as shown in figure \ref{fig:tournamentCreationPage}). The WebApp will show a form 
+        In order to modify a badge, the Educator can click on the "Edit" button 
+        (as shown in figure \ref{fig:tournamentCreationPageMockup}). The WebApp will show a form 
         containing all the information related to the badge that the Educator want to modify.
         At this point the Educator can modify the badge's data to their liking and press the
-        "Confirm button" (as shown in figure \ref{fig:badgeCreationPage}) to confirm the changes.
+        "Confirm creation" button (as shown in figure \ref{fig:badgeCreationPageMockup}) to confirm the changes.
         \\ \\
         The WebApp contacts the Badge Manager component in order to start the badge's edit.
         The Badge Manager communicate with the Account Manager which will check whether the 
@@ -818,8 +822,8 @@ Only the most relevant method parameters and methods are shown.
     \subsubsection{Educator creates a new battle}
         \begin{figure}[H]
             \centering
-            \hspace*{-3.1cm}\includegraphics[scale=0.6]{Sequence/Sequence6DD.pdf}
-            \caption{}
+            \hspace*{-3.7cm}\includegraphics[scale=0.65]{Sequence/Sequence6DD.pdf}
+            \caption{Battle creation sequence diagram}
             \label{fig:Sequence6DD}
         \end{figure}
 
@@ -829,13 +833,13 @@ Only the most relevant method parameters and methods are shown.
         The Educator accesses to the CKB platform WebApp Homepage and subsequently
         to the page of one of the tournaments they have created through their browser
         (omitted for simplicity).
-        They then click on the "Create new Battle" button as shown in figure \ref{fig:tournamentManagementPage}.
+        They then click on the "Create new Battle" button as shown in figure \ref{fig:tournamentManagementPageMockup}.
         \\ \\
         The WebApp will show a page which will contains a form that the Educator can fill with
         the battle's data, such as its name, maximum and minumum number of member per group,
         registration and submission deadlines, programming language accepted, ... 
         \\ \\
-        Once the Educator press the "Confirm" button (as shown in figure \ref{fig:battleCreationPage})
+        Once the Educator press the "Confirm" button,
         the battle's data will be sent to the Battle Manager. \\
         The Battle Manager will contacts the Account Manager, to verify, through the session's 
         data, whether the logged User has the permissions to create a new battle within that 
@@ -877,7 +881,7 @@ Only the most relevant method parameters and methods are shown.
         \begin{figure}[H]
             \centering
             \hspace*{-4cm}\includegraphics[scale=0.65]{Sequence/Sequence7DD.pdf}
-            \caption{}
+            \caption{Tournament closure sequence diagram}
             \label{fig:Sequence7DD}
         \end{figure}
 
@@ -886,11 +890,10 @@ Only the most relevant method parameters and methods are shown.
         first, as shown in \ref{fig:userLogin} figure.
         The Educator has to access to the riepilogative page of their tournaments 
         (this part of the process was omitted for simplicity) and here, they have to click 
-        on a tournament in order to access it. Subsequently they have to click the "Close" button
-        in order to close it (as shown in \ref{fig:tournamentPage}).
+        on a tournament in order to access it. Subsequently they have to click the "Close tournament" button
+        in order to close it (as shown in \ref{fig:tournamentsPageMockup}).
         The WebApp will show a confirmation modal to the Educator, who can click the "Confirm"
-        button as shown in figure \ref{fig:tournamentPage} starting in this way the 
-        tournament's closure. 
+        button starting in this way the tournament's closure. 
         \\ \\
         At this point the WebApp contacts the TournamentManager which will rely on the Account
         Manager in order to check if the user has the permission to use the APIs.
@@ -927,8 +930,8 @@ Only the most relevant method parameters and methods are shown.
     \subsubsection{Educator evaluates a battle's results}
         \begin{figure}[H]
             \centering
-            \hspace*{-3.1cm}\includegraphics[scale=0.55]{Sequence/Sequence8DD.pdf}
-            \caption{}
+            \hspace*{-3.5cm}\includegraphics[scale=0.65]{Sequence/Sequence8DD.pdf}
+            \caption{Manual solution's evaluation sequence diagram}
             \label{fig:Sequence8DD}
         \end{figure}
         
@@ -938,13 +941,13 @@ Only the most relevant method parameters and methods are shown.
         figure.\\ 
         The Educator has to access the page of their tournaments, access to the tournament's page containing the 
         battle that needs a manual evaluation. (omitted for simplicity).\\
-        After select a solution, They click on the ”manually Evaluate Battle” button as shown in figure ??.\\
+        After select a solution, They click on the ”manually Evaluate Battle” button.\\
         \\
         The WebApp will show a page which will contains the current score of the groups and their last solutions to the battle.
         The Educator, after having inspected the codes can update groups' score and give a litte explanation
         about their decisions.
         \\ \\
-        Once the Educator press the ”Confirm” button (as shown in figure ??) the score data will be sent to the Evaluation Manager.\\
+        Once the Educator press the ”Confirm” button, the score data will be sent to the Evaluation Manager.\\
         The Evaluation Manager will contacts the Account Manager, to verify, through
         session’s data, whether the logged User has the permissions to manually
         evaluate a battle.\\ If that’s the case then the Evaluation Manager will
@@ -981,21 +984,21 @@ Only the most relevant method parameters and methods are shown.
         \begin{figure}[H]
             \centering
             \hspace*{-3.1cm}\includegraphics[scale=0.6]{Sequence/Sequence9DD.pdf}
-            \caption{}
+            \caption{Group creation sequence diagram}
             \label{fig:Sequence9DD}
         \end{figure}
 
-        \newpage
+        
         The above diagram represents the formation of a group by a Student.
         In order to start this process the Student must have completed the login 
         procedure first, as shown in \ref{fig:userLogin} figure.\\  
         The Student has to access to the tournaments' page, access 
         to tournament's page where he wants to create the group then 
-        they click on the ”Create new group” button (as shown in figure ??).
+        they click on the ”Create new group” button (as shown in figure \ref{fig:studentBattlesPageMockup}).
         \\ \\
-        The WebApp will show a page which will contains the students that can be
-        invited to the group. After choosing the students to invite, the student 
-        clicks the "Confirm" Button (as shown in figure ??) and the group's data 
+        The WebApp will show a page containing a fillable form in which the Student can decide the Students to
+        invite in the group and the group dimension. After choosing the students to invite, the student 
+        clicks the "Confirm creation" Button (as shown in figure \ref{fig:groupCreationPageMockup}) and the group's data 
         will be sent to the Group Manager.
         \\ \\
         The Group Manager will contacts the Account Manager, to verify, through
@@ -1005,18 +1008,12 @@ Only the most relevant method parameters and methods are shown.
         \\ \\
         If the check succeeds then the Group Manager will try to insert the group
         in the DB, by contacting the DBMS.
-        If the insertion succeeds then the Group Manager component will return a confirmation
-        message to the WebApp and to the Student.
+        If the insertion succeeds then the Group Manager component will interacts with the 
+        Notification Manager component, which in turn will send a notification to all the invited
+        Students.
         \\ \\
-        At this point the Student can choose the Students to invite, by searching them, eventually
-        using some filters, within all the Students that joined the tournament in which the group
-        has been created.
-        Once decided who to invite, the Student click on the appropriate button to contacts the
-        Group Manager, which once again will contacts the Account Manager to verify the User's 
-        permissions. If the check goes well the Group Manager interfaces with the Notification
-        Manager in order to send all the notifications to the Students chosen by the group
-        creator. \\
-        Finally if everything went well, the Group Manager will return a message of success.
+        At this point the Group Manager will return to the WebApp a message of success. That message
+        will be showed to the Student by the WebApp itself.
         \\ \\
         There are several cases in which this process may go wrong. In order we have:
         \begin{itemize}
@@ -1035,8 +1032,8 @@ Only the most relevant method parameters and methods are shown.
     \subsubsection{Student joins a battle}
         \begin{figure}[H]
             \centering
-            \hspace*{-2.1cm}\includegraphics[scale=0.7]{Sequence/Sequence10DD.pdf}
-            \caption{}
+            \hspace*{-3.1cm}\includegraphics[scale=0.8]{Sequence/Sequence10DD.pdf}
+            \caption{Battle joining sequence diagram}
             \label{fig:Sequence10DD}
         \end{figure}
         
@@ -1047,7 +1044,7 @@ Only the most relevant method parameters and methods are shown.
         group creation procedure (as shown in \ref{fig:Sequence9DD} figure). 
         The Student has to access to a tournament, access 
         to the page of the battle that he wants to join then the Student
-        clicks on the ”Join battle” button (as shown in figure ??).
+        clicks on the ”Enroll” button (as shown in figure \ref{fig:studentBattlesPageMockup}).
         \\ \\
         The Battle Manager will contacts the Account Manager, to verify, 
         through the session’s data, whether the logged User has the 
@@ -1081,8 +1078,8 @@ Only the most relevant method parameters and methods are shown.
     \subsubsection{Student uploads a new solution}
         \begin{figure}[H]
             \centering
-            \hspace*{-3cm}\includegraphics[scale=0.62]{Sequence/Sequence11DD.pdf}
-            \caption{}
+            \hspace*{-3.4cm}\includegraphics[scale=0.62]{Sequence/Sequence11DD.pdf}
+            \caption{Upload of a new solution sequence diagram}
             \label{fig:Sequence11DD}
         \end{figure}
 
@@ -1105,6 +1102,10 @@ Only the most relevant method parameters and methods are shown.
         After receiving the result of the test by the Testing APIs, the Evaluation Manager will
         try to update the past group's score in the battle by interacting with the DBMS.
         \\ \\
+        Finally the Evaluation Manager component will interact with the
+        Notification Manager one, in order to send a notification to all the
+        group's member that their solution has been evaluated.
+        \\ \\
         There is one case in which this process won’t succeeds:        
         \begin{itemize}
             \item \textbf{Group isn't subscribed to the battle:} In this case the Evaluation Manager 
@@ -1115,8 +1116,8 @@ Only the most relevant method parameters and methods are shown.
     \subsubsection{Student uploads a solution after submission deadline}
         \begin{figure}[H]
             \centering
-            \hspace*{-3cm}\includegraphics[scale=0.62]{Sequence/Sequence12DD.pdf}
-            \caption{}
+            \hspace*{-2.4cm}\includegraphics[scale=0.8]{Sequence/Sequence12DD.pdf}
+            \caption{Upload of a new solution after deadline sequence diagram}
             \label{fig:Sequence12DD}
         \end{figure}
 
@@ -1131,13 +1132,12 @@ Only the most relevant method parameters and methods are shown.
         \\ \\
         If the check highlights some problems, i.e. if the battle's deadline has already expired,
         then the execution is aborted.
-        \\ \\
 
     \subsubsection{Student visualizes his tournament's results and badges}
-        \begin{figure}[H]
+        \begin{figure}[H] 
             \centering
-            \hspace*{-2.9cm}\includegraphics[scale=0.65]{Sequence/Sequence13DD.pdf}
-            \caption{}
+            \hspace*{-2.4cm}\includegraphics[scale=0.65]{Sequence/Sequence13DD.pdf}
+            \caption{Badges and result visualization sequence diagram}
             \label{fig:Sequence13DD}
         \end{figure}
 
@@ -1148,7 +1148,7 @@ Only the most relevant method parameters and methods are shown.
         In order to start this process the Student must have 
         completed the login procedure first, (as shown in fig. \ref{fig:userLogin}).
         The Student has to access to their profile page (omitted for simplicity), 
-        then they have to clicks on the ”myTournamentResults” button (as shown in figure ??).
+        then they have to clicks on the ”My Tournaments” button (as shown in figure \ref{fig:studentProfilePageMockup}).
         \\ \\
         The WebApp will send the user data to the Tournament Manager.\\
         The Tournament Manager will contacts the Account Manager, to verify, 
@@ -1162,7 +1162,7 @@ Only the most relevant method parameters and methods are shown.
         the WebApp.
         \\ \\
         The Student now wants to see their badges, so they have to
-        clicks on the ”myBadges” button (as shown in figure ??).\\
+        clicks on the ”My Badges” button (as shown in figure \ref{fig:studentProfilePageMockup}).\\
         The WebApp will send the user data to the Badge Manager.
         \\ \\
         The Badge Manager will contacts the Account Manager, to verify, 
@@ -1181,7 +1181,7 @@ Only the most relevant method parameters and methods are shown.
             redirected to the profile page (omitted for simplicity).
         \end{itemize}
 
-
+\newpage
 \subsection{Selected architectural styles and patterns}
     \subsubsection{Four-layered architecture:} We chose this architecture for many reasons, mainly because:
     \begin{itemize}
@@ -1231,57 +1231,68 @@ Only the most relevant method parameters and methods are shown.
 \begin{figure}[H]
     \centering
     \hspace*{-2.5cm}\includegraphics[scale=0.7]{UserInterface/Homepage.png}
-    \caption{}
+    \caption{Homepage mockup}
+    \label{fig:homepageMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.55]{UserInterface/StudentRegistration.png}
-    \caption{}
+    \caption{Student registration form, mockup}
+    \label{fig:studentRegistrationFormMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.55]{UserInterface/EducatorRegistration.png}
-    \caption{}
+    \caption{Educator registration form, mockup}
+    \label{fig:EducatorRegistrationFormMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.52]{UserInterface/EducatorTournaments.png}
-    \caption{}
+    \caption{Page of the Educator's tournaments, mockup}
+    \label{fig:tournamentsPageMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.52]{UserInterface/TournamentCreation.png}
-    \caption{}
+    \caption{Tournament creation form, mockup}
+    \label{fig:tournamentCreationPageMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.52]{UserInterface/BadgeCreation.png}
-    \caption{}
+    \caption{Badge creation form, mockup}
+    \label{fig:badgeCreationPageMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.52]{UserInterface/EducatorBattles.png}
-    \caption{}
+    \caption{Page of tournament's battles created by an Educator, mockup}
+    \label{fig:tournamentManagementPageMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.52]{UserInterface/StudentTournament.png}
-    \caption{}
+    \caption{Page of Student's tournaments, mockup}
+    \label{fig:studentTournamentsPageMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.52]{UserInterface/StudentProfile.png}
-    \caption{}
+    \caption{Student's profile page, mockup}
+    \label{fig:studentProfilePageMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.52]{UserInterface/StudentBattles.png}
-    \caption{}
+    \caption{Page of tournament's battle the Student partecipate to, mockup}
+    \label{fig:studentBattlesPageMockup}
 \end{figure}
 \begin{figure}[H]
     \centering
     \hspace*{-0.2cm}\includegraphics[scale=0.52]{UserInterface/GroupCreation.png}
-    \caption{}
+    \caption{Group creation page, mockup}
+    \label{fig:groupCreationPageMockup}
 \end{figure}
 
 
@@ -1390,7 +1401,7 @@ Only the most relevant method parameters and methods are shown.
               \item \textbf{Tournament Database:} Used to store tournament's data.
           \end{itemize}
     \item \textbf{R.18:} The CKB platform must ensure that tournaments' characteristics respect guidelines regarding their
-          name, deadline, access method, programming language.
+          name, programming language.
           \begin{itemize}
               \item \textbf{Tournament Manager:} Used to check if the characteristics of the tournaments
               that the Educator wants to create respect some constraints.
@@ -1614,17 +1625,17 @@ Only the most relevant method parameters and methods are shown.
     \textbf{Francesco Spangaro}                 & \makecell[l]{                               
         \\Introduction  \\Architectural Design  \\User Interface Design \\Requirement Traceability\\Implementation, Integration and Test plan\\
     \vspace{\baselineskip}}                     & \makecell[l]{
-        \textit{1h}     \\\textit{14h}          \\\textit{1h}           \\\textit{2h}             \\\textit{2h} \vspace{\baselineskip}}\\
+        \textit{2h}     \\\textit{16h}          \\\textit{3h}           \\\textit{3h}             \\\textit{2h} \vspace{\baselineskip}}\\
     \hline
     \textbf{Luca Tosetti}                       & \makecell[l]{                               
         \\Introduction  \\Architectural Design  \\User Interface Design\\Requirement Traceability\\Implementation, Integration and Test plan\\
     \vspace{\baselineskip}}                     & \makecell[l]{
-        \textit{3h}     \\\textit{8h}           \\\textit{2h}          \\\textit{3h}             \\\textit{3h}}\\
+        \textit{3h}     \\\textit{13h}           \\\textit{3h}          \\\textit{3h}             \\\textit{4h}}\\
     \hline
     \textbf{Francesco Riccardi}                 & \makecell[l]{                               
         \\Introduction\\Architectural Design    \\User Interface Design\\Requirement Traceability\\Implementation, Integration and Test plan\\
     \vspace{\baselineskip}}                     & \makecell[l]{
-        \textit{1h}   \\\textit{8h}             \\\textit{10h}         \\\textit{1h}             \\\textit{1h} \vspace{\baselineskip}}\\
+        \textit{1h}   \\\textit{7h}             \\\textit{16h}         \\\textit{1h}             \\\textit{1h} \vspace{\baselineskip}}\\
     \hline
 \end{tabular}
 
