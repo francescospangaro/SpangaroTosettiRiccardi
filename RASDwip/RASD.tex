@@ -152,7 +152,7 @@
 \vspace*{1cm}
 
 \begin{center}
-      \large{Version 1.0} \\
+      \large{Version 1.1} \\
       \large{Academic Year 2023 - 2024}
 \end{center}
 
@@ -278,7 +278,7 @@ Phenomena that take place in the real World and are not observable by the Machin
                     \begin{enumerate}
                         \item[\textbf{SP1:}] Student registers to the platform.
                         \item[\textbf{SP2:}] Student logs in the platform.
-                        \item[\textbf{SP3:}] Student subscribes to a tournament within a deadline.
+                        \item[\textbf{SP3:}] Student subscribes to a tournament.
                         \item[\textbf{SP4:}] Student invites other students to form a team.
                         \item[\textbf{SP5:}] Student accepts an invite from another student and joins his group.
                         \item[\textbf{SP6:}] Student or a group of Students joins a battle in a tournament they are subscribed in within a deadline.
@@ -452,6 +452,13 @@ Phenomena that take place in the Machine World and are not observable from the r
 \subsection{Revision history}
 \begin{itemize}
     \item 22 December 2023: version 1.0
+    \item 07 January 2024: version 1.1
+      \begin{itemize}
+            \item Removed every mention of tournament's deadline in the document.
+            \item Removed every mention of tournament's access method in the document.
+            \item Riformulated scenario 7, in such a way that it adapts better and more 
+            consistently to the decisions made in the RASD and DD.
+      \end{itemize}
 \end{itemize}
 \subsection{Reference documents}
 GitHub references:
@@ -564,11 +571,13 @@ Because of this, he decides to modify the previously assigned grade by reducing 
 He then writes an explanation for this change to the group. 
 He then confirms his modifications and goes on evaluating the next group.
 When there are no more groups to evaluate, he closes the battle.
-\subsubsubsection{Student forms a group then joins a tournament}
-Francesca signs in the platform with her credentials and sees that a new tournament has opened. 
-She would like to participate in it, and so decides to form a group with two of her friends to compete in the tournament's battles. 
+\subsubsubsection{Student forms a group}
+Francesca signs in the platform with her credentials and sees that, in a tournament to which
+she is subscribed, a new battle has opened. 
+She would like to participate in it, and so decides to form a group with two of her friends to compete in the battle. 
 She clicks on the apposite menu and chooses the students she would like to invite to join her group.
-After both her friends accept her invite, she enters the tournament by signing up her group as participant.
+After both her friends accept her invite, the group is correctly formed and now, as a group creator,
+she can subscribe her group to the battle.
 \subsubsubsection{Student joins a battle}
 Andres is subscribed to a tournament with his group. One day he is notified that a new battle for the tournament he is subscribed to is available.
 After reading the battle's description, Andres decides that he wants to try and join in. He autonomously asks his group members if they want to join
@@ -764,7 +773,7 @@ CKB platform has 2 different users:
     \item[\textbf{D6:}] A Student can join a battle only if subscribed to the tournament in which that battle takes place.
     \item[\textbf{D7:}] GitHub platform offers reliable services through its API allowing the CKB platform to always get notified when new code is uploaded by Students.
     \item[\textbf{D8:}] Educator knows how to create new badges and new rules to obtain them.
-    \item[\textbf{D9:}] Time information about registration and submission deadlines for tournaments and battles are always correct.
+    \item[\textbf{D9:}] Time information about registration and submission deadlines for battles are always correct.
     \item[\textbf{D10:}] Code written by Students cannnot make the platform crash while testing it.
     \item[\textbf{D11:}] Educators upload, when creating a battle, some correct, meaningful and faultproof test cases and automation scripts.
     \item[\textbf{D12:}] Students score is always correctly calculated.
@@ -834,7 +843,7 @@ All communication from and to the CKB platform has to be done through the HTTP/H
           name, icon format and rules to obtain them.
     \item[\textbf{R.17}] The CKB platform must allow Educators to create new tournaments.
     \item[\textbf{R.18}] The CKB platform must ensure that tournaments' characteristics respect guidelines regarding their
-          name, deadline, access method, programming language.
+          name, programming language.
     \item[\textbf{R.19}] The CKB platform must allow Educators to close tournaments they have created.
     \item[\textbf{R.20}] The CKB platform must ensure that when a tournament is closed, Educators cannot create new battles
           within it.
@@ -1047,7 +1056,7 @@ All communication from and to the CKB platform has to be done through the HTTP/H
               \textbf{Flow of events} &    \begin{enumerate}
                   \item[1.] Educator clicks on a "Create tournament" button.
                   \item[2.] Educator fills a form on the page that has appeared with tournament details,
-                        such as: deadline, allowed programming languages, name, access method, etc.
+                        such as: Allowed programming languages, name, etc.
                   \item[3.] Eventually the Educator defines new badges for the tournament (see UC.4)
                   \item[4.] Educator clicks on a "Confirmation" button.
                   \item[5.] CKB platform checks the validity of the informations inserted by the Educator.
@@ -1061,9 +1070,7 @@ All communication from and to the CKB platform has to be done through the HTTP/H
               \hline
               \textbf{Exceptions} &    \begin{itemize}
                   \item[5.1] Tournament's name contain forbidden characters.
-                  \item[5.2] Deadline inserted for the tournament is invalid.
-                  \item[5.3] Tournament's access method has been configured wrongly.
-                  \item[5.4] The programming language inserted is not recognized by the platform.
+                  \item[5.2] The programming language inserted is not recognized by the platform.
                         \begin{itemize}
                             \item[$\rightarrow$] Educator gets notified about the tournament's creation failure
                                   through an error message displayed by the platform. The flow restarts from point 2.
