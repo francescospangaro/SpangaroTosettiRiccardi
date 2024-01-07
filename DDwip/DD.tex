@@ -688,43 +688,42 @@ Only the most relevant method parameters and methods are shown.
             \label{fig:Sequence3DD}
         \end{figure}
 
-        The above diagram represents the tournament's creation by an Educator.
-        In order to start this process the Educator must have completed the login procedure
-        first, as shown in \ref{fig:userLogin} figure.
-        The Educator has to access to the riepilogative page of their tournaments 
-        (this part of the process was omitted for simplicity) and here, they have to click 
+        The above diagram represents the creation of a tournament process.
+        In order to start this process the Educator must have completed the login procedure, as shown in \ref{fig:userLogin} figure.
+        The Educator has to access the riepilogative page of their tournaments 
+        (this part of the process was omitted for simplicity) and here he has to click 
         on the "Create new Tournament" button (as shown in \ref{fig:tournamentsPageMockup}).
-        The WebApp will show a Tournament creation page (Figure \ref{fig:tournamentCreationPageMockup})
+        The WebApp will show the Tournament creation page (Figure \ref{fig:tournamentCreationPageMockup})
         in which there is a form that the Educator has to fill.
-        At this point the Educator can creates new badges to insert in the tournament. This
+        At this point the Educator can create new badges to insert in the tournament. This
         process is displayed in the Sequence Diagram 2.5.4 in figure \ref{fig:Sequence4DD}.
         \\ \\
-        After that, the Educator click on the "Confirm creation" button as shown in figure 
+        The Educator then clicks on the "Confirm creation" button as shown in figure 
         \ref{fig:tournamentCreationPageMockup}, in this way the tournament's data will be sent to the
-        Tournament Manager which will check first, if the user has the permission to use the API
-        by contacting the Account Manager. Then it will check if the tournament's inserted data
+        Tournament Manager which will check if the user has the permission to use the API
+        by contacting the Account Manager. It will then check if the tournament's inserted data
         are valid. If all the checks were successful the Tournament Manager proceeds to
-        contact the DBMS, which will insert the new tournament in the DB.
+        contact the DBMS which will insert the new tournament in the DB.
         \\ \\
-        At this point if everything went well, the Tournament Manager contacts the Notification
+        If everything went well, the Tournament Manager contacts the Notification
         Manager which will send a tournament's creation notification to all the Students
         subscribed to the platform. 
-        Finally the Tournament Manager component will return to the WebApp a message of success
-        which in turn will return it to the Educator, who will be redirected to the 
+        Finally the Tournament Manager will return to the WebApp a message of success,
+        which in turn will return it to the Educator who will be redirected to the 
         riepilogative page of their tournaments.
         \\ \\
         There are several cases in which this process could go wrong. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the logged User is not an
-            Educator, or isn't correctly logged. The Tournament Manager will return an
+            Educator, or isn't logged. The Tournament Manager will return an
             error message to the WebApp, which will display it to the User.
-            Finally the user will be redirected to the login page (omitted for simplicity).
+            The user will be redirected to the login page (omitted for simplicity).
             \item \textbf{Tournament's data are invalid} In this case after the check, the 
-            Tournament Manager component return an error message to the WebApp stating 
-            that the inserted data were not valid. The message will then be shown to the 
+            Tournament Manager component returns an error message to the WebApp, stating 
+            that the data inserted is not valid. The message will then be shown to the 
             Educator by the WebApp.
             \item \textbf{Tournament's DB insertion went wrong:} In this case no 
-            notification will be sent to the Students, and the Tournament Manager component will 
+            notification will be sent to the Students and the Tournament Manager will 
             return to the WebApp an error message stating that there was an error while 
             creating the tournament.
             The message will then be shown by the WebApp to the Educator.
@@ -738,43 +737,43 @@ Only the most relevant method parameters and methods are shown.
             \label{fig:Sequence4DD}
         \end{figure}
 
-        The diagram above represents the process of badges' creation by an Educator.
+        The diagram above represents the process of a badge's creation.
         In order to start this process the Educator must start creating a new tournament as first
         step and as shown in figure \ref{fig:Sequence3DD}. \\
-        To create new badges during tournament's creation the Educator clicks on the 
+        To create new badges during a tournament's creation the Educator clicks on the 
         "Add new badge" button (as shown in figure \ref{fig:tournamentCreationPageMockup}). 
         The WebApp will show a form that the Educator has to fill with the badge's data. 
         \\ \\
         After clicking on the "Confirm creation" button (as shown in figure \ref{fig:badgeCreationPageMockup})
         the WebApp contacts the Badge Manager component in order to start the badge's creation.
         \\ \\
-        The Badge Manager communicate with the Account Manager which will check whether the 
-        logged User has the right permission to create a new badge. The Badge Manager will also
+        The Badge Manager communicates with the Account Manager, which will check whether the 
+        logged User has permission to create a new badge. The Badge Manager will also
         check the validity of the data inserted by the Educator in the form.
         \\ \\
-        If all the checks goes well, the Badge Manager contacts the DBMS in order to insert the
+        If all the checks go well, the Badge Manager contacts the DBMS in order to insert the
         badge's data into the DB.
-        If the insertion goes well, then the Badge Manager sends back to the WebApp a confirmation
-        message stating that the creation of the badge was successful, and the Educator is led back
+        If the insertion goes well, the Badge Manager sends back to the WebApp a confirmation
+        message stating that the creation of the badge was successful and the Educator is led back
         to the page dedicated to the tournaments' creation.
         \\ \\
         The process can go wrong in several situations. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the logged User is not an
             Educator, or isn't correctly logged, the Badge Manager will return an
-            error message to the WebApp, which will display it to the User.
+            error message to the WebApp. The WebApp will then display it to the User.
             Finally the user will be redirected to the login page (omitted for simplicity).
             \item \textbf{Badge's data are invalid:} In this case, the Badge Manager component 
-            just return an error message to the WebApp stating that the inserted data were not 
+            returns an error message to the WebApp stating that the inserted data is not 
             valid. The message will then be shown to the Educator by the WebApp.
             \item \textbf{Badge's DB insertion went wrong:} In this case the Badge Manager will 
             return to the WebApp an error message stating that there was an error while creating 
             the badge. The message will then be shown by the WebApp to the Educator.
         \end{itemize}
 
-        As said at the beginning the Educator can also deletes
-        badges just pressing the "Delete" button as shown on Figure
-        \ref{fig:tournamentCreationPageMockup}
+        As said at the beginning the Educator can also delete
+        badges just by pressing the "Delete" button as shown in Figure
+        \ref{fig:tournamentCreationPageMockup}.
 
     \subsubsection{Educator deletes and/or updates a badge}
         \begin{figure}[H]
@@ -784,37 +783,37 @@ Only the most relevant method parameters and methods are shown.
             \label{fig:Sequence5DD}
         \end{figure}
         
-        The diagram above represents the process of badges' modification and/or deletion by an 
-        Educator. In order to start the process the Educator must have completed the login 
+        The diagram above represents the process of badges' modification and/or deletion. 
+        In order to start the process the Educator must have completed the login 
         procedure first, as shown in figure \ref{fig:userLogin}.
         \\ \\
-        The Educator during the creation of a tournament, have the possibility to modify and/or
-        delete badges that have precedently created during the same tournament creation procedure.
+        The Educator, during the creation of a tournament, has the possibility of modifying and/or
+        deleting badges that he has precedently created during the same tournament creation procedure.
         In order to modify a badge, the Educator can click on the "Edit" button 
         (as shown in figure \ref{fig:tournamentCreationPageMockup}). The WebApp will show a form 
-        containing all the information related to the badge that the Educator want to modify.
-        At this point the Educator can modify the badge's data to their liking and press the
+        containing all the informations related to the badge that the Educator wants to modify.
+        At this point the Educator can modify the badge's data to their liking. After the modification the Educator has press the
         "Confirm creation" button (as shown in figure \ref{fig:badgeCreationPageMockup}) to confirm the changes.
         \\ \\
-        The WebApp contacts the Badge Manager component in order to start the badge's edit.
-        The Badge Manager communicate with the Account Manager which will check whether the 
-        logged User has the right permission to modify the badge. The Badge Manager will also
+        The WebApp contacts the Badge Manager in order to start the badge's edit.
+        The Badge Manager communicates with the Account Manager which will check whether the 
+        logged User has permission to modify the badge. The Badge Manager will also
         check the validity of the data inserted by the Educator in the form.
         \\ \\
-        If all the checks goes well, the Badge Manager contacts the DBMS in order to update the
+        If all the checks go well, the Badge Manager contacts the DBMS in order to update the
         badge's data stored in the DB.
-        If the update goes well, then the Badge Manager sends back to the WebApp a confirmation
-        message stating that the modification of the badge was successful, and the Educator 
+        If the update goes well, the Badge Manager sends to the WebApp a confirmation
+        message stating that the modification of the badge was successful and the Educator 
         is led back to the page dedicated to the tournaments' creation.
         \\ \\
         The process can go wrong in several situations. In order we have:
         \begin{itemize}
             \item \textbf{User does not have permissions:} In case the logged User is not an
-            Educator, or isn't correctly logged. The Badge Manager will return an
-            error message to the WebApp, which will display it to the User.
+            Educator. The Badge Manager will return an
+            error message to the WebApp, which will be displayed it to the User.
             Finally the user will be redirected to the login page (omitted for simplicity).
-            \item \textbf{Badge's data are invalid:} In this case, the Badge Manager component 
-            just return an error message to the WebApp stating that the inserted data were not 
+            \item \textbf{Badge's data are invalid:} In this case the Badge Manager 
+            returns an error message to the WebApp stating that the inserted data were not 
             valid. The message will then be shown to the Educator by the WebApp.
             \item \textbf{Badge's DB insertion went wrong:} In this case the Badge Manager will 
             return to the WebApp an error message stating that there was an error while updating 
