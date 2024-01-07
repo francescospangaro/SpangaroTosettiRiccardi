@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-01-01T11:30:36.572Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="52M1MDE0j2WIqvSNeMMX" version="22.1.16" type="device">
+<mxfile host="app.diagrams.net" modified="2024-01-07T14:49:15.415Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="HMlTmBL2_vcHakLEBNmA" version="22.1.17" type="device">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
-    <mxGraphModel dx="2524" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2284" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -183,9 +183,6 @@
         </mxCell>
         <mxCell id="RbzXPUkc1lSmBt4J0QIF-31" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
           <mxGeometry x="840" y="480.41" width="10" height="110" as="geometry" />
-        </mxCell>
-        <mxCell id="RbzXPUkc1lSmBt4J0QIF-32" value="&lt;p style=&quot;line-height: 120%; font-size: 9px;&quot;&gt;&lt;b&gt;loop: &lt;/b&gt;sendNotification&amp;nbsp; &amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;Outcome == false&lt;/span&gt;&lt;/p&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;width=100;height=28;verticalAlign=middle;horizontal=1;labelPosition=center;verticalLabelPosition=middle;align=center;" parent="1" vertex="1">
-          <mxGeometry x="240" y="461.82" width="750" height="138.18" as="geometry" />
         </mxCell>
         <mxCell id="RbzXPUkc1lSmBt4J0QIF-33" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;17 : outcomeMessage&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=openThin;dashed=1;endSize=8;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;endFill=0;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
