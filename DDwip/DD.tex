@@ -1543,45 +1543,45 @@ Only the most relevant method parameters and methods are shown.
         \item \textbf{External APIs.}
     \end{itemize}
     These elements will be implemented by exploiting the microservices architecture feature that 
-    exploits that each microservice is separated from the others and works independently.
+    exploits the fact that each microservice is separated from the others and works independently.
     Knowing this, we can implement and test each microservice through several small 
     development teams, reducing in this way the huge synchronization overhead that would be
     necessary in case of a monolithic platform. 
     Other key factors are the reusability and composability of the functionalities offered by the
     implemented microservices and the smaller codebase provided by this architecture, which makes
     debugging easier and maintenance cheaper.
-    The most important approaches used, are the Bottom-Up approach and the Thread approach.
+    The most important approaches used are the Bottom-Up approach and the Thread approach.
     The Bottom-Up approach consists in starting building the system from its foundations and
-    from there going up to the root components.
-    The Thread approach on the other hand focuses more on developing in parallel specific 
+    from there going up to the most in-depth components.
+    The Thread approach focuses more on developing in parallel specific 
     functionalities across multiple components providing in this user-visible program progress.
 
     \subsection{Implementation Plan}
         \subsubsection{Backend}
         \textbf{Step 1 (Bottom-Up):} The implementation should start with a bottom-up approach, which
-        will allow to develop as first the Account Manager and Notification Manager components.
-        These are, within all the components, the ones that will interact more with the others, and
+        will allow to develop first the Account Manager and Notification Manager components.
+        These are, within all the components, the ones that will interact more with the others and
         for this reason they should be developed first.
         
         \textbf{Step 2 (Thread):} After having fully developed the two components mentioned in the
         precedent paragraph, the rest of the services should be developed in parallel by exploiting 
         fully the Microservices Architecture's characteristics. In particular the Thread
         development approach should initially focus on the major functionalities that the services
-        have to offers, especially the ones that require the comunication (such as the creation
+        have to offer, especially the ones that require the communication (such as the creation
         of a battle in a tournament, the evaluation of the battle's uploads, \dots) through 
-        lightweight protocols with other components, and later moving to the simplier/less 
+        lightweight protocols with other components and later moving to the simplier/less 
         important ones.
 
         \subsubsection{Frontend}
         In parallel with the development of the platform's backend, the frontend can also be
         developed, possibly (not mandatory) following the development of the various 
-        functionalities.    
+        functionalities.
 
     \subsection{Integration Plan}
-        The integration plan basically follow the implementation plan explained above.
-        The main part of the platform is developed through the Thread approach. This allow to
-        directly integrate the components while they are developed.
-        In our case in particular the integration will happen mostly during the early/mid phases
+        The integration plan follows the implementation plan explained above.
+        The main part of the platform is developed through the Thread approach. This allows to
+        directly integrate the components while they are being developed.
+        In our case the integration will mostly happen during the early/mid stages
         of the development, during which the several teams will focus on the major functionalities
         that the components will offer.
 
@@ -1589,21 +1589,20 @@ Only the most relevant method parameters and methods are shown.
         The test plan includes several types of testing, such as:
         \begin{itemize}
             \item \textbf{Unit testing:} Testing used in order to check whether the 
-            written code does what is supposed to do. Should be performed immediately after the
+            written code does what is supposed to. Should be performed immediately after the
             completition of a component's feature or of the component itself, in order to 
-            immediatly spot eventual bugs in the implementation.
+            immediatly spot eventual implementative bugs.
             \item \textbf{Functional testing:} Used to check if the CKB platform meets the
-            functional requirements established in the RASD document. Particularly important
-            ,as the unit testing, after the completition of a component's feature.
-            \item \textbf{Performance testing:} Used to detects platform's bottlenecks that
+            functional requirements established in the RASD document. The functional testing is very important 
+            and will be done in parallel with the unit testing.
+            \item \textbf{Performance testing:} Used to detect platform's bottlenecks that
             can potentially affect the platform's response time, utilization and throughput, which
             are very important requirements specified in the RASD document.
-            It's also used to detect inefficiency and optimization possibilities and finally
-            if there are HW/Network issues.
-            \item \textbf{Load testing:} Used in order to identify possible memory leaks, buffer
-            overflow and other memory related problems.
+            It's also used to detect inefficiencies, optimization opportinities and HW/Network issues.
+            \item \textbf{Load testing:} Used in order to identify memory leaks, buffer
+            overflows and other memory related problems.
             \item \textbf{Stress testing:} Used to test the capability of the platform to 
-            recover gracefully after a failure.
+            recover after a failure.
         \end{itemize}
 
 \newpage
@@ -1616,17 +1615,17 @@ Only the most relevant method parameters and methods are shown.
     \textbf{Francesco Spangaro}                 & \makecell[l]{                               
         \\Introduction  \\Architectural Design  \\User Interface Design \\Requirement Traceability\\Implementation, Integration and Test plan\\
     \vspace{\baselineskip}}                     & \makecell[l]{
-        \textit{2h}     \\\textit{16h}          \\\textit{3h}           \\\textit{3h}             \\\textit{2h} \vspace{\baselineskip}}\\
+        \textit{2h}     \\\textit{14h}          \\\textit{3h}           \\\textit{3h}             \\\textit{3h} \vspace{\baselineskip}}\\
     \hline
     \textbf{Luca Tosetti}                       & \makecell[l]{                               
         \\Introduction  \\Architectural Design  \\User Interface Design\\Requirement Traceability\\Implementation, Integration and Test plan\\
     \vspace{\baselineskip}}                     & \makecell[l]{
-        \textit{3h}     \\\textit{13h}           \\\textit{3h}          \\\textit{3h}             \\\textit{4h}}\\
+        \textit{3h}     \\\textit{10h}           \\\textit{3h}          \\\textit{3h}             \\\textit{4h}}\\
     \hline
     \textbf{Francesco Riccardi}                 & \makecell[l]{                               
         \\Introduction\\Architectural Design    \\User Interface Design\\Requirement Traceability\\Implementation, Integration and Test plan\\
     \vspace{\baselineskip}}                     & \makecell[l]{
-        \textit{1h}   \\\textit{7h}             \\\textit{16h}         \\\textit{1h}             \\\textit{1h} \vspace{\baselineskip}}\\
+        \textit{1h}   \\\textit{7h}             \\\textit{14h}         \\\textit{1h}             \\\textit{1h} \vspace{\baselineskip}}\\
     \hline
 \end{tabular}
 
