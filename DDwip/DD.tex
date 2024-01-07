@@ -1178,9 +1178,9 @@ Only the most relevant method parameters and methods are shown.
     \begin{itemize}
         \item \textbf{Maintainability:} By having four different layers, with separated logic and data, once the platform's structure is fully defined
         each layer's interior logic will be fully defined.
-        By having separated logic and data, it will be easier in the future to access and solve possible problems that can occur in different 
+        By having separated logic and data it will be easier in the future to access and solve possible problems that can occur in different 
         layers.
-        \item \textbf{Security:} By separating the web, application and data servers in different internet partition divided by firewalls, we create multiple
+        \item \textbf{Security:} By separating the web, application and data servers in different internet partitions divided by firewalls we create multiple
         DMZs, resulting in a more secure architecture. Before accessing the data layer, a malicious user would need to surpass three different firewalls. 
     \end{itemize}
     \subsubsection{MicroServices architecture:} The MicroServices architecture is what we chose since the platform will be developed as a collection of 
@@ -1212,7 +1212,7 @@ Only the most relevant method parameters and methods are shown.
     session is created.
     We have a database dedicated to the tournaments' data, containing all battles, badges and tournaments. This database is accessed each time a request 
     is made that needs to access or modify some data related to tournaments.
-    We have a database dedicated to Students' groups, accessed each time a new group is created. This database will also contains all the
+    We have a database dedicated to Students' groups, accessed each time a new group is created. This database will also contain all the
     useful information regarding groups' work on their repositories, gathered via the GitHub APIs.
     Each database is developed using the PostgreSQL language, since it has a better trigger architecture than MySQL or MariaDB.
 
