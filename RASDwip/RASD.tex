@@ -144,15 +144,15 @@
     \includegraphics[scale=0.6]{politecnico-di-milano-logo.png}
 \end{figure}
 
-\vspace*{1cm}
+\vspace*{0.5cm}
 \begin{center}
       \Large{\textbf{Prof.}} \\
       \Large{\textbf{Matteo Camilli}}
 \end{center}
-\vspace*{1cm}
+\vspace*{0.5cm}
 
 \begin{center}
-      \large{Version 1.1} \\
+      \large{Version 1.2} \\
       \large{Academic Year 2023 - 2024}
 \end{center}
 
@@ -456,9 +456,15 @@ Phenomena that take place in the Machine World and are not observable from the r
       \begin{itemize}
             \item Removed every mention of tournament's deadline in the document.
             \item Removed every mention of tournament's access method in the document.
-            \item Riformulated scenario 7 in such a way that it adapts better and more 
+            \item Reformulated scenario 7 in such a way that it adapts better and more 
             consistently to the decisions made in the RASD and DD.
       \end{itemize}
+      \item 23 January 2024: version 1.2
+      \begin{itemize}
+            \item Fixed LaTeX formatting for alloy's signatures and facts.
+            \item Fixed inconsistencies in alloy's code emerged after DD's file completion.
+      \end{itemize}
+      
 \end{itemize}
 \subsection{Reference documents}
 GitHub references:
@@ -1810,12 +1816,31 @@ reliability and availability failures can be corrected.
 \section{Formal analysis using Alloy}
 
 \subsection{Signatures}
+
 \color{gray}
+//Base signatures used to identify an Educator and a Student \\
+\color{blue}
+sig
+\color{black}
+Name  \{\}\\
+\color{blue}
+sig
+\color{black}
+Email \{\}\\
+\color{blue}
+sig
+\color{black}
+Password \{\}\\
+\color{gray}\\
 //Used to represent an Educator subscribed to the CBK platform \\
 \color{blue}
 sig
 \color{black}
-Educator  \{\} \\
+Educator  \{\\
+\-\hspace{1cm}    name : \color{blue} one \color{black} Name,\\
+\-\hspace{1cm}    email : \color{blue} one \color{black} Email,\\
+\-\hspace{1cm}    password : \color{blue} one \color{black} Password\\
+\} \\
 \\
 \color{gray}
 //A Permit is given by an Educator to a set of other Educators, and regards only one tournament created by the permit's sender\\
@@ -1838,8 +1863,8 @@ Permit \{\\
 sig
 \color{black}
 Tournament \{ \\
-\-\hspace{1cm}    creator : \color{blue} one \color{black} Educator,\\
-\-\hspace{1cm}    battleCreators : \color{blue} set \color{black} Educator\\
+\-\hspace{1cm}    name : \color{blue} one \color{black} Name,\\
+\-\hspace{1cm}    creator : \color{blue} one \color{black} Educator\\
 \}\\
 \color{gray}
 \\
@@ -1848,9 +1873,11 @@ Tournament \{ \\
 sig
 \color{black}
 Battle \{\\
+\-\hspace{1cm}    name : \color{blue} one \color{black} Name,\\
 \-\hspace{1cm}    tournament : \color{blue} one \color{black} Tournament,\\
 \-\hspace{1cm}    creator : \color{blue} one \color{black} Educator,\\
-\-\hspace{1cm}	tests : \color{blue} set \color{black} Test\\
+\-\hspace{1cm}	tests : \color{blue} set \color{black} Test,\\
+\-\hspace{1cm}	battleState : \color{blue} one \color{black} BattleState\\
 \}\{\\
 \-\hspace{1cm}	creator \color{blue} in \color{black} tournament.battleCreators \color{blue} or \color{black}\\
 \-\hspace{1cm}	creator \color{blue} = \color{black} tournament.creator\\
@@ -1861,26 +1888,27 @@ Battle \{\\
 \color{blue}
 sig
 \color{black}
-Test \{\}
-
-\newpage
+Test \{\}\\
 
 \color{gray}
-\noindent//Students subscribed to the CKB platform can have a set of badges\\
+\noindent//Students subscribed to the CKB platform can have a set of badges they obtained and a set of tournaments they are subscribed to\\
 \color{blue}
 sig
 \color{black}
 Student\{\\
+\-\hspace{1cm}    name : \color{blue} one \color{black} Name,\\
+\-\hspace{1cm}    email : \color{blue} one \color{black} Email,\\
+\-\hspace{1cm}    password : \color{blue} one \color{black} Password\\
 \-\hspace{1cm}    badges : \color{blue} set \color{black} Badge,\\
 \-\hspace{1cm}    tournament : \color{blue} set \color{black} Tournament\\
 \}\\
 \color{gray}
 \\
-//A repository is assigned to a group and is relative to one battle\\
+//A forked repository is assigned to a group and is relative to one battle\\
 \color{blue}
 sig
 \color{black}
-Repository\{\\
+ForkedRepository\{\\
 \-\hspace{1cm}    group : \color{blue} one \color{black} Group,\\
 \-\hspace{1cm}    battle : \color{blue} one \color{black} Battle\\
 \}\{\\
@@ -1901,17 +1929,28 @@ Group\{\\
 \}\\
 \\
 \color{gray}
-//A badge is created by an Educator\\
+//A badge is created by an Educator, is relative to one tournament and has some rules that needs to be checked before is obtained by any Student\\
 \color{blue}
 sig
 \color{black}
 Badge\{\\
 \-\hspace{1cm}    creator : \color{blue} one \color{black} Educator,\\
 \-\hspace{1cm}    tournament : \color{blue} one \color{black} Tournament\\
+\-\hspace{1cm}    rules : \color{blue} some \color{black} Rule\\
 \}\{\\
 \-\hspace{1cm}    creator \color{blue} = \color{black} tournament.creator\\
 \}\\
 \\
+\newpage
+\noindent
+\color{gray}
+//A rule needs to be defined for a badge to be created\\
+\color{blue}
+sig
+\color{black}
+Rule\{\}\\
+
+\noindent
 \color{gray}
 //An invite is made by a Student of a group and directed to another Student\\
 \color{blue}
@@ -1920,78 +1959,84 @@ sig
 Invite\{\\
 \-\hspace{1cm}    sender : \color{blue} one \color{black} Student,\\
 \-\hspace{1cm}    receiver : \color{blue} one \color{black} Student,\\
-\-\hspace{1cm}    group : \color{blue} one \color{black} Group\\
+\-\hspace{1cm}    group : \color{blue} one \color{black} Group,\\
+\-\hspace{1cm}	inviteState : \color{blue} one \color{black} InviteState\\
 \}\{\\
 \-\hspace{1cm}    sender \color{blue} != \color{black} receiver \color{blue} and \color{black}\\
 \-\hspace{1cm}    sender \color{blue} = \color{black} group.groupCreator \\
 \}\\
 \\
 \color{gray}
-//Signature that defines the state of the battle\\
-\color{blue} abstract sig \color{black} BattleState{}\\
+//Signature that defines the battle's state\\
+\color{blue} abstract sig \color{black} BattleState\{\}\\
 \\
-\color{blue} one sig \color{black}  RegistrationPhase \color{blue} extends \color{black} BattleState{}\\
-\color{blue} one sig \color{black}  SubmissionPhase \color{blue} extends \color{black} BattleState{}\\
-\color{blue} one sig \color{black}  ConsolidationPhase \color{blue} extends \color{black} BattleState{}\\
-\color{blue} one sig \color{black}  ClosedBattle \color{blue} extends \color{black} BattleState{}\\
+\color{blue} one sig \color{black}  RegistrationPhase \color{blue} extends \color{black} BattleState\{\}\\
+\color{blue} one sig \color{black}  SubmissionPhase \color{blue} extends \color{black} BattleState\{\}\\
+\color{blue} one sig \color{black}  ConsolidationPhase \color{blue} extends \color{black} BattleState\{\}\\
+\color{blue} one sig \color{black}  ClosedBattle \color{blue} extends \color{black} BattleState\{\}\\
 \\
 \color{gray}
-//Signature that defines the state of the invite\\
-\color{blue} abstract sig \color{black} InviteState{}\\
+//Signature that defines the invite's state\\
+\color{blue} abstract sig \color{black} InviteState\{\}\\
 \\
-\color{blue} one sig \color{black} Accepted \color{blue} extends \color{black} InviteState{}\\
-\color{blue} one sig \color{black} Refused \color{blue} extends \color{black} InviteState{}\\
-\color{blue} one sig \color{black} Waiting \color{blue} extends \color{black} InviteState{}\\
+\color{blue} one sig \color{black} Accepted \color{blue} extends \color{black} InviteState\{\}\\
+\color{blue} one sig \color{black} Refused \color{blue} extends \color{black} InviteState\{\}\\
+\color{blue} one sig \color{black} Waiting \color{blue} extends \color{black} InviteState\{\}\\
 \\
-\subsection{Facts}
+\subsection{Facts and Predicates}
 \color{gray}
 //A tournament's creator can grant to (only once per Educator) another Educator the permission to create battles in his tournament\\
 \color{black}
-\color{blue} fact \color{black} NoTwoPermissionAtSameEducator\{\\
-\-\hspace{1cm} \color{blue} all disj \color{black} p1, p2 : Permit | \\
-\-\hspace{1cm} (p1.tournament \color{blue} = \color{black} p2.tournament an\color{blue} and \color{black}d p1.tournamentCreator \color{blue} = \color{black} p2.tournamentCreator) \\
-\-\hspace{1cm} implies (\color{blue} all \color{black} bC : p1.battleCreators | bC \color{blue} not in \color{black} p2.battleCreators)\\
-\}
+\color{blue} pred \color{black} NewGrantedPermit[ t : Tournament, e : Educator, p, p' : Permit ]\{\\
+\color{gray}
+//Preconditions\\
+\color{black}
+\-\hspace{1cm}e \color{blue} != \color{black} t.creator\\
+\-\hspace{1cm}e \color{blue} not in \color{black} p.battleCreators\\
+\-\hspace{1cm}t \color{blue} = \color{black} p.tournament\\
+\color{gray}
+//Postconditions\\
+\-\hspace{1cm}\color{black}p'.battleCreators \color{blue} = \color{black} p.battleCreators \color{blue} + \color{black} e\\
+\-\hspace{1cm}p'.tournamentCreator \color{blue} = \color{black} p.tournamentCreator\\
+\-\hspace{1cm}p'.tournament \color{blue} = \color{black} p.tournament\\
+\noindent
+\}\\
 \\
 \color{gray}
 //A group can have at most one repository for each battle\\
 \color{blue} fact \color{black} onlyOneRepository \{\\
-\-\hspace{1cm} \color{blue} all disj \color{black} r1, r2 : Repository | \color{blue} all \color{black} g : r1.group | \color{blue} all \color{black} b : r1.battle | \\
-\-\hspace{1cm}b \color{blue} != \color{black} r2.battle or \\
-\-\hspace{1cm}g \color{blue} != \color{black} r2.group \\
-\}
+\-\hspace{1cm}\color{blue}all disj \color{black} r1, r2 : ForkedRepository $|$ \\
+\-\hspace{1cm}r1.battle \color{blue} != \color{black} r2.battle \color{blue} or \color{black}\\
+\-\hspace{1cm}r1.group \color{blue} != \color{black} r2.group \\
+\}\\
 \\
 \color{gray}
-//For each battle, a Student can participate to it while being in only one group\\
+//For each battle, a Student can participate in it while being in only one group\\
 \color{black}
 \color{blue} fact \color{black} noStudentsInMoreGroupInABattle\{\\
-\-\hspace{1cm} \color{blue} all \color{black} s: Student | \color{blue} all disj \color{black} g1, g2: Group | \\
-\-\hspace{1cm}(s \color{blue} in \color{black} g1.students \color{blue} and \color{black} s \color{blue} in \color{black} g2.students ) \color{blue} implies \color{black} g1.battle != g2.battle \\
+\-\hspace{1cm} \color{blue} all \color{black} s : Student $|$ \color{blue} all disj \color{black} g1, g2 : Group $|$ \\
+\-\hspace{1cm}((s \color{blue} in \color{black} g1.students \color{blue} and \color{black} s \color{blue} in \color{black} g2.students ) \color{blue} or \color{black} \\
+\-\hspace{1cm}(s \color{blue} = \color{black} g1.groupCreator \color{blue} and \color{black} s \color{blue} = \color{black} g2.groupCreator ) \color{blue} or \color{black}\\
+\-\hspace{1cm}(s \color{blue} in \color{black} g1.students \color{blue} and \color{black} s \color{blue} = \color{black} g2.groupCreator ) \color{blue} or \color{black}\\
+\-\hspace{1cm}(s \color{blue} = \color{black} g1.groupCreator \color{blue} and \color{black} s \color{blue} in \color{black} g2.students )) \color{blue} iff \\
+\-\hspace{1cm}\color{black} (( g1.battle \color{blue} != \color{black} g2.battle ) \color{blue} or \color{black} (g1.battle \color{blue} = none and \color{black} g2.battle \color{blue} = none\color{black} ))\\
 \}\\
 \\
+\noindent
 \color{gray}
-//The sender and the receiver of a group invite must have at least one tournament subscription in common\\
+//The sender and the receiver of a group invitation must have at least one tournament subscription in common\\
 \color{black}
 \color{blue} fact \color{black} SenderAndReceiverInSameTournament\{\\
-\-\hspace{1cm} \color{blue} all \color{black} i : Invite | \color{blue} all \color{black} r : i.receiver |  \color{blue} some \color{black} t : r.tournament | \\
-\-\hspace{1cm} t \color{blue} in \color{black} i.sender.tournament \color{blue} and \color{black} i.inviteState = Accepted \\
+\-\hspace{1cm} \color{blue} all \color{black} i : Invite  $|$ \color{blue} some \color{black} t : i.receiver.tournament $|$ \\
+\-\hspace{1cm} t \color{blue} in \color{black} i.sender.tournament\\
 \}\\
 \\
 \color{gray}
-//All Students in a group must be subscribed to a tournament for the group to compete in one battle of that tournament\\%magic
-\color{black}
-\color{blue} fact \color{black} memberOfAGroupSameTournament\{\\
-\-\hspace{1cm} \color{blue} all \color{black} g : Group | \color{blue} all disj \color{black} s1, s2 : g.students | \\
-\-\hspace{1cm} \color{blue} some \color{black} t1 : s1.tournament | \color{blue} some \color{black} t2 : s2.tournament | \\
-\-\hspace{1cm} t1 \color{blue} = \color{black} t2\\
-\}\\
-\\
-\color{gray}
-//Students must be subscribed to at least one battle to receive badges from it\\
+//Students must be subscribed to at least one battle to receive badges from the tournament that contains that battle\\
 \color{black}
 \color{blue} fact \color{black} StudentReceiveBadges\{\\
-\-\hspace{1cm} \color{blue} all \color{black} s:Student | \color{blue} all \color{black} b : s.badges | \color{blue} all \color{black} g: Group |  \\
-\-\hspace{1cm} s \color{blue} in \color{black} g.students and    \\
+\-\hspace{1cm} \color{blue} all \color{black} s : Student $|$ \color{blue} all \color{black} b : s.badges $|$ \color{blue} all \color{black} g : Group $|$  \\
+\-\hspace{1cm} ((s \color{blue} in \color{black} g.students) \color{blue} or \color{black} (s \color{blue} = \color{black} g.groupCreator)) \color{blue} and \color{black}\\
 \-\hspace{1cm} g.battle.tournament \color{blue} = \color{black} b.tournament\\
 \}\\
 
@@ -1999,18 +2044,19 @@ Invite\{\\
 \noindent//Students must be subscribed in a tournament to compete in that tournament's battles\\
 \color{black}
 \color{blue} fact \color{black} StudentsGroupBattleInTournament\{\\
-\-\hspace{1cm} \color{blue} all \color{black} g : Group | \color{blue} all \color{black} s : g.students | \\
-\-\hspace{1cm} g.battle.tournament \color{blue} in \color{black} s.tournament and \\
+\-\hspace{1cm} \color{blue} all \color{black} g : Group $|$ \color{blue} all \color{black} s : g.students $|$ \\
+\-\hspace{1cm} g.battle.tournament \color{blue} in \color{black} s.tournament \color{blue} and \color{black} \\
 \-\hspace{1cm} g.battle.tournament \color{blue} in \color{black} g.groupCreator.tournament\\
-\}\\
-\\
+\}
+\newpage
+\noindent
 \color{gray}
 //A Student needs to receive at least one invite from the leader of a group to be a member of that group\\
 \color{black}
 \color{blue} fact \color{black} StudentInAGroup\{\\
-\-\hspace{1cm} \color{blue} all \color{black} g : Group | \color{blue} all \color{black} s : g.students | \color{blue} some \color{black} i : Invite |\\
-\-\hspace{1cm} i.sender \color{blue} = \color{black} g.groupCreator and\\
-\-\hspace{1cm} i.receiver \color{blue} = \color{black} s  and \\
+\-\hspace{1cm} \color{blue} all \color{black} g : Group $|$ \color{blue} all \color{black} s : g.students $|$ \color{blue} some \color{black} i : Invite $|$\\
+\-\hspace{1cm} i.sender \color{blue} = \color{black} g.groupCreator\\
+\-\hspace{1cm} i.receiver \color{blue} = \color{black} s \\
 \-\hspace{1cm} i.group \color{blue} = \color{black} g\\
 \}\\
 
@@ -2043,13 +2089,13 @@ Invite\{\\
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.85]{images/ALLOY/receiver.png}
-    \caption{All invite are being sent to Student0}
+    \caption{All invites are being sent to Student0}
     \label{fig:receiving invite}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics{images/ALLOY/students.png}
-    \caption{Here we can see Student0 in group1 and group0, since he has received two invite for group0 he has rejected the first one but accepted the second one}
+    \caption{Here we can see Student0 in group1 and group0, since he has received two invites feom group0's creator, Student0 has rejected the first invite, but has accepted the second one}
     \label{fig:receivingAcceptingRefusingInvite}
 \end{figure}
 \newpage
