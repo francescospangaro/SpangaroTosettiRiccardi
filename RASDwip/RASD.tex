@@ -1984,7 +1984,7 @@ Invite\{\\
 \color{gray}
 //A tournament's creator can grant to (only once per Educator) another Educator the permission to create battles in his tournament\\
 \color{black}
-\color{blue} pred \color{black} NewGrantedPermit[ t : Tournament, e : Educator, p, p' : Permit ]\{\\
+\color{blue} pred \color{black} NewGrantedPermit[ t : Tournament, e : Educator, p, pf : Permit ]\{\\
 \color{gray}
 //Preconditions\\
 \color{black}
@@ -1993,9 +1993,9 @@ Invite\{\\
 \-\hspace{1cm}t \color{blue} = \color{black} p.tournament\\
 \color{gray}
 //Postconditions\\
-\-\hspace{1cm}\color{black}p'.battleCreators \color{blue} = \color{black} p.battleCreators \color{blue} + \color{black} e\\
-\-\hspace{1cm}p'.tournamentCreator \color{blue} = \color{black} p.tournamentCreator\\
-\-\hspace{1cm}p'.tournament \color{blue} = \color{black} p.tournament\\
+\-\hspace{1cm}\color{black}pf.battleCreators \color{blue} = \color{black} p.battleCreators \color{blue} + \color{black} e\\
+\-\hspace{1cm}pf.tournamentCreator \color{blue} = \color{black} p.tournamentCreator\\
+\-\hspace{1cm}pf.tournament \color{blue} = \color{black} p.tournament\\
 \noindent
 \}\\
 \\
