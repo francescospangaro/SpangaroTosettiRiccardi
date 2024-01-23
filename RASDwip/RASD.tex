@@ -1854,8 +1854,7 @@ Permit \{\\
 \-\hspace{1cm}    tournament : \color{blue} one \color{black} Tournament\\
 \}	\{\\
 \-\hspace{1cm}    tournamentCreator \color{blue} not in \color{black} battleCreators \color{blue} and \color{black}\\
-\-\hspace{1cm}    tournament.creator \color{blue} = \color{black} tournamentCreator \color{blue} and \color{black}\\
-\-\hspace{1cm}    tournament.battleCreators \color{blue} = \color{black} battleCreators\\
+\-\hspace{1cm}    tournament.creator \color{blue} = \color{black} tournamentCreator 
 \}\\
 \\
 \color{gray}
@@ -1879,10 +1878,7 @@ Battle \{\\
 \-\hspace{1cm}    creator : \color{blue} one \color{black} Educator,\\
 \-\hspace{1cm}	tests : \color{blue} set \color{black} Test,\\
 \-\hspace{1cm}	battleState : \color{blue} one \color{black} BattleState\\
-\}\{\\
-\-\hspace{1cm}	creator \color{blue} in \color{black} tournament.battleCreators \color{blue} or \color{black}\\
-\-\hspace{1cm}	creator \color{blue} = \color{black} tournament.creator\\
-\}\\
+\}\
 \color{gray}
 \\
 //Test represents a battle's test\\
@@ -1899,7 +1895,7 @@ sig
 Student\{\\
 \-\hspace{1cm}    name : \color{blue} one \color{black} Name,\\
 \-\hspace{1cm}    email : \color{blue} one \color{black} Email,\\
-\-\hspace{1cm}    password : \color{blue} one \color{black} Password\\
+\-\hspace{1cm}    password : \color{blue} one \color{black} Password,\\
 \-\hspace{1cm}    badges : \color{blue} set \color{black} Badge,\\
 \-\hspace{1cm}    tournament : \color{blue} set \color{black} Tournament\\
 \}\\
@@ -1936,7 +1932,7 @@ sig
 \color{black}
 Badge\{\\
 \-\hspace{1cm}    creator : \color{blue} one \color{black} Educator,\\
-\-\hspace{1cm}    tournament : \color{blue} one \color{black} Tournament\\
+\-\hspace{1cm}    tournament : \color{blue} one \color{black} Tournament,\\
 \-\hspace{1cm}    rules : \color{blue} some \color{black} Rule\\
 \}\{\\
 \-\hspace{1cm}    creator \color{blue} = \color{black} tournament.creator\\
@@ -2056,16 +2052,25 @@ Invite\{\\
 \color{black}
 \color{blue} fact \color{black} StudentInAGroup\{\\
 \-\hspace{1cm} \color{blue} all \color{black} g : Group $|$ \color{blue} all \color{black} s : g.students $|$ \color{blue} some \color{black} i : Invite $|$\\
-\-\hspace{1cm} i.sender \color{blue} = \color{black} g.groupCreator\\
-\-\hspace{1cm} i.receiver \color{blue} = \color{black} s \\
+\-\hspace{1cm} i.sender \color{blue} = \color{black} g.groupCreator \color{blue} and \color{black}\\
+\-\hspace{1cm} i.receiver \color{blue} = \color{black} s \color{blue} and \color{black} \\
 \-\hspace{1cm} i.group \color{blue} = \color{black} g\\
 \}\\
-
+\\
+\color{gray}
+\noindent//Educator must has the permission to create battle in a tournament or be the tournament's creator\\
+\color{black}
+\color{blue} fact \color{black} battleCreatorHasPermit\{\\
+\-\hspace{1cm} \color{blue} all \color{black} b : Battle $|$ \color{blue} some \color{black} p : Permit $|$ \\
+\-\hspace{1cm} (b.creator \color{blue} in \color{black} p.battleCreators \color{blue} or \color{black} \\
+\-\hspace{1cm} b.creator \color{blue} = \color{black} p.tournamentCreator) \color{blue} and \color{black}\\
+\-\hspace{1cm} p.tournament \color{blue} = \color{black} b.tournament\\
+\}
 
 \subsection{Examples of instances}
-\begin{figure}[H]
+\vspace*{-2cm}\begin{figure}[H]
     \centering
-    \hspace*{-4.3cm}\includegraphics[scale=0.68]{images/ALLOY/AlloyInstance1.png}
+    \hspace*{-9cm}\includegraphics[scale=1.19]{images/ALLOY/AlloyInstance.pdf}
     \caption{Picture of a general instance}
     \label{fig:Picture of a general instance}
 \end{figure}
@@ -2099,7 +2104,6 @@ Invite\{\\
     \caption{Here we can see Student0 in group1 and group0, since he has received two invites feom group0's creator, Student0 has rejected the first invite, but has accepted the second one}
     \label{fig:receivingAcceptingRefusingInvite}
 \end{figure}
-\newpage
 \begin{figure}[H]
     \centering
     \hspace*{-4cm}\includegraphics[scale=0.59]{images/ALLOY/AlloyTournament.png}
@@ -2124,7 +2128,7 @@ A permission is relative to one tournament created by an Educator (tournament)\\
 \color{brown}
 A permission can only be granted by an Educator that created at least one tournament (tournamentCreator)\\
 \color{black}
-
+\newpage
 \pagestyle{EffortSpentStyle}
 
 \section{Effort spent}
